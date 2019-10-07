@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entyti
 {
-    public class NhanVien
+    public class eNhanVien
     {
         private string maNV, hoTen, soCMND, soDT, passWord;
         private bool gioiTinh, chucVu;
         private DateTime ngaySinh;
 
-        public NhanVien(string maNV, string hoTen, string soCMND, string soDT, string passWord, bool gioiTinh, bool chucVu, DateTime ngaySinh)
+        public eNhanVien(string maNV, string hoTen, string soCMND, string soDT, string passWord, bool gioiTinh, bool chucVu, DateTime ngaySinh)
         {
             this.maNV = maNV;
             this.hoTen = hoTen;
@@ -24,7 +24,7 @@ namespace Entyti
             this.ngaySinh = ngaySinh;
         }
 
-        public NhanVien()
+        public eNhanVien()
         {
             this.maNV = "";
             this.hoTen = "";
@@ -33,7 +33,7 @@ namespace Entyti
             this.passWord = "";
             this.gioiTinh = true;
             this.chucVu = true;
-            this.ngaySinh = Convert.ToDateTime(1/1/1);
+            this.ngaySinh = Convert.ToDateTime(0);
         }
 
         public string MaNV

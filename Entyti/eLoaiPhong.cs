@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entyti
 {
-    public class LoaiPhong
+    public class eLoaiPhong
     {
         private string maLoaiPhong, tenLoaiPhong;
         private decimal donGia;
         private int soGiuong, soNguoi;
 
-        public LoaiPhong(string maLoaiPhong, string tenLoaiPhong, decimal donGia, int soGiuong, int soNguoi)
+        public eLoaiPhong(string maLoaiPhong, string tenLoaiPhong, decimal donGia, int soGiuong, int soNguoi)
         {
             this.maLoaiPhong = maLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
@@ -21,7 +21,7 @@ namespace Entyti
             this.soNguoi = soNguoi;
         }
 
-        public LoaiPhong()
+        public eLoaiPhong()
         {
             this.maLoaiPhong = "";
             this.tenLoaiPhong = "";

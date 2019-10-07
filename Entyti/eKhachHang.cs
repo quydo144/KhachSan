@@ -6,26 +6,28 @@ using System.Threading.Tasks;
 
 namespace Entyti
 {
-    public class KhachHang
+    public class eKhachHang
     {
-        private string maKH, tenKH, soCMND, soDT;
+        private string maKH, tenKH, soCMND, soDT, maDoan;
         private bool gioiTinh;
 
-        public KhachHang(string maKH, string tenKH, string soCMND, string soDT, bool gioiTinh)
+        public eKhachHang(string maKH, string tenKH, string soCMND, string soDT, string maDoan, bool gioiTinh)
         {
             this.maKH = maKH;
             this.tenKH = tenKH;
             this.soCMND = soCMND;
             this.soDT = soDT;
+            this.maDoan = maDoan;
             this.gioiTinh = gioiTinh;
         }
 
-        public KhachHang()
+        public eKhachHang()
         {
             this.maKH = "";
             this.tenKH = "";
             this.soCMND = "";
             this.soDT = "";
+            this.maDoan = "";
             this.gioiTinh = true;
         }
 
@@ -78,6 +80,19 @@ namespace Entyti
             set
             {
                 soDT = value;
+            }
+        }
+
+        public string MaDoan
+        {
+            get
+            {
+                return maDoan;
+            }
+
+            set
+            {
+                maDoan = value;
             }
         }
 
