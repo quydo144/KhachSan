@@ -68,83 +68,83 @@
             this.timerDateSystem = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblTT1 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.pnl2 = new DevExpress.XtraEditors.PanelControl();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblTT2 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
             this.pnl3 = new DevExpress.XtraEditors.PanelControl();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTT3 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
             this.pnl4 = new DevExpress.XtraEditors.PanelControl();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblTT4 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
             this.pnl5 = new DevExpress.XtraEditors.PanelControl();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblTT5 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
             this.pnl6 = new DevExpress.XtraEditors.PanelControl();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblTT6 = new System.Windows.Forms.Label();
+            this.lnl6 = new System.Windows.Forms.Label();
             this.pnl7 = new DevExpress.XtraEditors.PanelControl();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblTT7 = new System.Windows.Forms.Label();
+            this.lbl7 = new System.Windows.Forms.Label();
             this.pnl8 = new DevExpress.XtraEditors.PanelControl();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTT8 = new System.Windows.Forms.Label();
+            this.lbl8 = new System.Windows.Forms.Label();
             this.pnl9 = new DevExpress.XtraEditors.PanelControl();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblTT9 = new System.Windows.Forms.Label();
+            this.lbl9 = new System.Windows.Forms.Label();
             this.pnl10 = new DevExpress.XtraEditors.PanelControl();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblTT10 = new System.Windows.Forms.Label();
+            this.lbl10 = new System.Windows.Forms.Label();
             this.pnl11 = new DevExpress.XtraEditors.PanelControl();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblTT11 = new System.Windows.Forms.Label();
+            this.lbl11 = new System.Windows.Forms.Label();
             this.pnl12 = new DevExpress.XtraEditors.PanelControl();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lblTT12 = new System.Windows.Forms.Label();
+            this.lbl12 = new System.Windows.Forms.Label();
             this.pnl13 = new DevExpress.XtraEditors.PanelControl();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lblTT13 = new System.Windows.Forms.Label();
+            this.lbl13 = new System.Windows.Forms.Label();
             this.pnl14 = new DevExpress.XtraEditors.PanelControl();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lblTT14 = new System.Windows.Forms.Label();
+            this.lbl14 = new System.Windows.Forms.Label();
             this.pnl15 = new DevExpress.XtraEditors.PanelControl();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.lblTT15 = new System.Windows.Forms.Label();
+            this.lbl15 = new System.Windows.Forms.Label();
             this.pnl16 = new DevExpress.XtraEditors.PanelControl();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
+            this.lblTT16 = new System.Windows.Forms.Label();
+            this.lbl16 = new System.Windows.Forms.Label();
             this.pnl17 = new DevExpress.XtraEditors.PanelControl();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
+            this.lblTT17 = new System.Windows.Forms.Label();
+            this.lbl17 = new System.Windows.Forms.Label();
             this.pnl18 = new DevExpress.XtraEditors.PanelControl();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
+            this.lblTT18 = new System.Windows.Forms.Label();
+            this.lbl18 = new System.Windows.Forms.Label();
             this.pnl19 = new DevExpress.XtraEditors.PanelControl();
-            this.lblTT23 = new System.Windows.Forms.Label();
-            this.lblP23 = new System.Windows.Forms.Label();
+            this.lblTT19 = new System.Windows.Forms.Label();
+            this.lbl19 = new System.Windows.Forms.Label();
             this.pnl20 = new DevExpress.XtraEditors.PanelControl();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
+            this.lblTT20 = new System.Windows.Forms.Label();
+            this.lbl20 = new System.Windows.Forms.Label();
             this.pnl21 = new DevExpress.XtraEditors.PanelControl();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
+            this.lblTT21 = new System.Windows.Forms.Label();
+            this.lbl21 = new System.Windows.Forms.Label();
             this.pnl22 = new DevExpress.XtraEditors.PanelControl();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
+            this.lblTT22 = new System.Windows.Forms.Label();
+            this.lbl22 = new System.Windows.Forms.Label();
             this.pnl23 = new DevExpress.XtraEditors.PanelControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTT23 = new System.Windows.Forms.Label();
+            this.lbl23 = new System.Windows.Forms.Label();
             this.pnl24 = new DevExpress.XtraEditors.PanelControl();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTT24 = new System.Windows.Forms.Label();
+            this.lbl24 = new System.Windows.Forms.Label();
             this.pnl25 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTT25 = new System.Windows.Forms.Label();
+            this.lbl25 = new System.Windows.Forms.Label();
             this.pnl26 = new DevExpress.XtraEditors.PanelControl();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.lblTT26 = new System.Windows.Forms.Label();
+            this.lbl26 = new System.Windows.Forms.Label();
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toggleSwitchCK = new DevExpress.XtraEditors.ToggleSwitch();
@@ -555,660 +555,804 @@
             this.pnl1.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl1.Appearance.Options.UseBackColor = true;
             this.pnl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl1.Controls.Add(this.label14);
-            this.pnl1.Controls.Add(this.label23);
+            this.pnl1.Controls.Add(this.lblTT1);
+            this.pnl1.Controls.Add(this.lbl1);
             this.pnl1.Location = new System.Drawing.Point(3, 3);
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(256, 163);
             this.pnl1.TabIndex = 9;
             // 
-            // label14
+            // lblTT1
             // 
-            this.label14.BackColor = System.Drawing.Color.Red;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label14.Location = new System.Drawing.Point(2, 106);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(252, 55);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Sẵn sàng";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT1.BackColor = System.Drawing.Color.Red;
+            this.lblTT1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT1.Location = new System.Drawing.Point(2, 106);
+            this.lblTT1.Name = "lblTT1";
+            this.lblTT1.Size = new System.Drawing.Size(252, 55);
+            this.lblTT1.TabIndex = 1;
+            this.lblTT1.Text = "Sẵn sàng";
+            this.lblTT1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // lbl1
             // 
-            this.label23.BackColor = System.Drawing.Color.Red;
-            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label23.Location = new System.Drawing.Point(2, 2);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(252, 159);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Phòng 1";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl1.BackColor = System.Drawing.Color.Red;
+            this.lbl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl1.Location = new System.Drawing.Point(2, 2);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(252, 159);
+            this.lbl1.TabIndex = 2;
+            this.lbl1.Text = "Phòng 1";
+            this.lbl1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl2
             // 
             this.pnl2.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl2.Appearance.Options.UseBackColor = true;
             this.pnl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl2.Controls.Add(this.label9);
-            this.pnl2.Controls.Add(this.label11);
+            this.pnl2.Controls.Add(this.lblTT2);
+            this.pnl2.Controls.Add(this.lbl2);
             this.pnl2.Location = new System.Drawing.Point(265, 3);
             this.pnl2.Name = "pnl2";
             this.pnl2.Size = new System.Drawing.Size(256, 163);
             this.pnl2.TabIndex = 10;
             // 
-            // label9
+            // lblTT2
             // 
-            this.label9.BackColor = System.Drawing.Color.LawnGreen;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(2, 106);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(252, 55);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Sẵn sàng";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT2.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT2.Location = new System.Drawing.Point(2, 106);
+            this.lblTT2.Name = "lblTT2";
+            this.lblTT2.Size = new System.Drawing.Size(252, 55);
+            this.lblTT2.TabIndex = 1;
+            this.lblTT2.Text = "Sẵn sàng";
+            this.lblTT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // lbl2
             // 
-            this.label11.BackColor = System.Drawing.Color.LawnGreen;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label11.Location = new System.Drawing.Point(2, 2);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(252, 159);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Phòng 1";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl2.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl2.Location = new System.Drawing.Point(2, 2);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(252, 159);
+            this.lbl2.TabIndex = 2;
+            this.lbl2.Text = "Phòng 1";
+            this.lbl2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl3
             // 
             this.pnl3.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl3.Appearance.Options.UseBackColor = true;
             this.pnl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl3.Controls.Add(this.label5);
-            this.pnl3.Controls.Add(this.label7);
+            this.pnl3.Controls.Add(this.lblTT3);
+            this.pnl3.Controls.Add(this.lbl3);
             this.pnl3.Location = new System.Drawing.Point(527, 3);
             this.pnl3.Name = "pnl3";
             this.pnl3.Size = new System.Drawing.Size(256, 163);
             this.pnl3.TabIndex = 11;
             // 
-            // label5
+            // lblTT3
             // 
-            this.label5.BackColor = System.Drawing.Color.LawnGreen;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label5.Location = new System.Drawing.Point(2, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(252, 55);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Sẵn sàng";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT3.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT3.Location = new System.Drawing.Point(2, 106);
+            this.lblTT3.Name = "lblTT3";
+            this.lblTT3.Size = new System.Drawing.Size(252, 55);
+            this.lblTT3.TabIndex = 1;
+            this.lblTT3.Text = "Sẵn sàng";
+            this.lblTT3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // lbl3
             // 
-            this.label7.BackColor = System.Drawing.Color.LawnGreen;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label7.Location = new System.Drawing.Point(2, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(252, 159);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Phòng 1";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl3.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl3.Location = new System.Drawing.Point(2, 2);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(252, 159);
+            this.lbl3.TabIndex = 2;
+            this.lbl3.Text = "Phòng 1";
+            this.lbl3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl4
             // 
             this.pnl4.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl4.Appearance.Options.UseBackColor = true;
             this.pnl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl4.Controls.Add(this.label15);
-            this.pnl4.Controls.Add(this.label16);
+            this.pnl4.Controls.Add(this.lblTT4);
+            this.pnl4.Controls.Add(this.lbl4);
             this.pnl4.Location = new System.Drawing.Point(789, 3);
             this.pnl4.Name = "pnl4";
             this.pnl4.Size = new System.Drawing.Size(256, 163);
             this.pnl4.TabIndex = 12;
             // 
-            // label15
+            // lblTT4
             // 
-            this.label15.BackColor = System.Drawing.Color.LawnGreen;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label15.Location = new System.Drawing.Point(2, 106);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(252, 55);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Sẵn sàng";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT4.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT4.Location = new System.Drawing.Point(2, 106);
+            this.lblTT4.Name = "lblTT4";
+            this.lblTT4.Size = new System.Drawing.Size(252, 55);
+            this.lblTT4.TabIndex = 0;
+            this.lblTT4.Text = "Sẵn sàng";
+            this.lblTT4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // lbl4
             // 
-            this.label16.BackColor = System.Drawing.Color.LawnGreen;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label16.Location = new System.Drawing.Point(2, 2);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(252, 159);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Phòng 1";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl4.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl4.Location = new System.Drawing.Point(2, 2);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(252, 159);
+            this.lbl4.TabIndex = 0;
+            this.lbl4.Text = "Phòng 1";
+            this.lbl4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl5
             // 
             this.pnl5.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl5.Appearance.Options.UseBackColor = true;
             this.pnl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl5.Controls.Add(this.label17);
-            this.pnl5.Controls.Add(this.label18);
+            this.pnl5.Controls.Add(this.lblTT5);
+            this.pnl5.Controls.Add(this.lbl5);
             this.pnl5.Location = new System.Drawing.Point(1051, 3);
             this.pnl5.Name = "pnl5";
             this.pnl5.Size = new System.Drawing.Size(256, 163);
             this.pnl5.TabIndex = 13;
             // 
-            // label17
+            // lblTT5
             // 
-            this.label17.BackColor = System.Drawing.Color.Red;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label17.Location = new System.Drawing.Point(2, 106);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(252, 55);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Sẵn sàng";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT5.BackColor = System.Drawing.Color.Red;
+            this.lblTT5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT5.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT5.Location = new System.Drawing.Point(2, 106);
+            this.lblTT5.Name = "lblTT5";
+            this.lblTT5.Size = new System.Drawing.Size(252, 55);
+            this.lblTT5.TabIndex = 0;
+            this.lblTT5.Text = "Sẵn sàng";
+            this.lblTT5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // lbl5
             // 
-            this.label18.BackColor = System.Drawing.Color.Red;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label18.Location = new System.Drawing.Point(2, 2);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(252, 159);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Phòng 1";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl5.BackColor = System.Drawing.Color.Red;
+            this.lbl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl5.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl5.Location = new System.Drawing.Point(2, 2);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(252, 159);
+            this.lbl5.TabIndex = 0;
+            this.lbl5.Text = "Phòng 1";
+            this.lbl5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl6
             // 
             this.pnl6.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl6.Appearance.Options.UseBackColor = true;
             this.pnl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl6.Controls.Add(this.label19);
-            this.pnl6.Controls.Add(this.label20);
+            this.pnl6.Controls.Add(this.lblTT6);
+            this.pnl6.Controls.Add(this.lnl6);
             this.pnl6.Location = new System.Drawing.Point(3, 172);
             this.pnl6.Name = "pnl6";
             this.pnl6.Size = new System.Drawing.Size(256, 163);
             this.pnl6.TabIndex = 14;
             // 
-            // label19
+            // lblTT6
             // 
-            this.label19.BackColor = System.Drawing.Color.LawnGreen;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label19.Location = new System.Drawing.Point(2, 106);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(252, 55);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Sẵn sàng";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT6.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT6.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT6.Location = new System.Drawing.Point(2, 106);
+            this.lblTT6.Name = "lblTT6";
+            this.lblTT6.Size = new System.Drawing.Size(252, 55);
+            this.lblTT6.TabIndex = 0;
+            this.lblTT6.Text = "Sẵn sàng";
+            this.lblTT6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
+            // lnl6
             // 
-            this.label20.BackColor = System.Drawing.Color.LawnGreen;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label20.Location = new System.Drawing.Point(2, 2);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(252, 159);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Phòng 1";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lnl6.BackColor = System.Drawing.Color.LawnGreen;
+            this.lnl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lnl6.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lnl6.Location = new System.Drawing.Point(2, 2);
+            this.lnl6.Name = "lnl6";
+            this.lnl6.Size = new System.Drawing.Size(252, 159);
+            this.lnl6.TabIndex = 0;
+            this.lnl6.Text = "Phòng 1";
+            this.lnl6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl7
             // 
             this.pnl7.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl7.Appearance.Options.UseBackColor = true;
             this.pnl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl7.Controls.Add(this.label21);
-            this.pnl7.Controls.Add(this.label22);
+            this.pnl7.Controls.Add(this.lblTT7);
+            this.pnl7.Controls.Add(this.lbl7);
             this.pnl7.Location = new System.Drawing.Point(265, 172);
             this.pnl7.Name = "pnl7";
             this.pnl7.Size = new System.Drawing.Size(256, 163);
             this.pnl7.TabIndex = 15;
             // 
-            // label21
+            // lblTT7
             // 
-            this.label21.BackColor = System.Drawing.Color.LawnGreen;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label21.Location = new System.Drawing.Point(2, 106);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(252, 55);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Sẵn sàng";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT7.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT7.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT7.Location = new System.Drawing.Point(2, 106);
+            this.lblTT7.Name = "lblTT7";
+            this.lblTT7.Size = new System.Drawing.Size(252, 55);
+            this.lblTT7.TabIndex = 0;
+            this.lblTT7.Text = "Sẵn sàng";
+            this.lblTT7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label22
+            // lbl7
             // 
-            this.label22.BackColor = System.Drawing.Color.LawnGreen;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label22.Location = new System.Drawing.Point(2, 2);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(252, 159);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Phòng 1";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl7.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl7.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl7.Location = new System.Drawing.Point(2, 2);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(252, 159);
+            this.lbl7.TabIndex = 0;
+            this.lbl7.Text = "Phòng 1";
+            this.lbl7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl8
             // 
             this.pnl8.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl8.Appearance.Options.UseBackColor = true;
             this.pnl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl8.Controls.Add(this.label12);
-            this.pnl8.Controls.Add(this.label13);
+            this.pnl8.Controls.Add(this.lblTT8);
+            this.pnl8.Controls.Add(this.lbl8);
             this.pnl8.Location = new System.Drawing.Point(527, 172);
             this.pnl8.Name = "pnl8";
             this.pnl8.Size = new System.Drawing.Size(256, 163);
             this.pnl8.TabIndex = 16;
             // 
-            // label12
+            // lblTT8
             // 
-            this.label12.BackColor = System.Drawing.Color.Red;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label12.Location = new System.Drawing.Point(2, 106);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(252, 55);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Sẵn sàng";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT8.BackColor = System.Drawing.Color.Red;
+            this.lblTT8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT8.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT8.Location = new System.Drawing.Point(2, 106);
+            this.lblTT8.Name = "lblTT8";
+            this.lblTT8.Size = new System.Drawing.Size(252, 55);
+            this.lblTT8.TabIndex = 1;
+            this.lblTT8.Text = "Sẵn sàng";
+            this.lblTT8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // lbl8
             // 
-            this.label13.BackColor = System.Drawing.Color.Red;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label13.Location = new System.Drawing.Point(2, 2);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(252, 159);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Phòng 1";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl8.BackColor = System.Drawing.Color.Red;
+            this.lbl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl8.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl8.Location = new System.Drawing.Point(2, 2);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(252, 159);
+            this.lbl8.TabIndex = 2;
+            this.lbl8.Text = "Phòng 1";
+            this.lbl8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl9
             // 
             this.pnl9.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl9.Appearance.Options.UseBackColor = true;
             this.pnl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl9.Controls.Add(this.label25);
-            this.pnl9.Controls.Add(this.label26);
+            this.pnl9.Controls.Add(this.lblTT9);
+            this.pnl9.Controls.Add(this.lbl9);
             this.pnl9.Location = new System.Drawing.Point(789, 172);
             this.pnl9.Name = "pnl9";
             this.pnl9.Size = new System.Drawing.Size(256, 163);
             this.pnl9.TabIndex = 17;
             // 
-            // label25
+            // lblTT9
             // 
-            this.label25.BackColor = System.Drawing.Color.Red;
-            this.label25.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label25.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label25.Location = new System.Drawing.Point(2, 106);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(252, 55);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Sẵn sàng";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT9.BackColor = System.Drawing.Color.Red;
+            this.lblTT9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT9.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT9.Location = new System.Drawing.Point(2, 106);
+            this.lblTT9.Name = "lblTT9";
+            this.lblTT9.Size = new System.Drawing.Size(252, 55);
+            this.lblTT9.TabIndex = 0;
+            this.lblTT9.Text = "Sẵn sàng";
+            this.lblTT9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label26
+            // lbl9
             // 
-            this.label26.BackColor = System.Drawing.Color.Red;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label26.Location = new System.Drawing.Point(2, 2);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(252, 159);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Phòng 1";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl9.BackColor = System.Drawing.Color.Red;
+            this.lbl9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl9.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl9.Location = new System.Drawing.Point(2, 2);
+            this.lbl9.Name = "lbl9";
+            this.lbl9.Size = new System.Drawing.Size(252, 159);
+            this.lbl9.TabIndex = 0;
+            this.lbl9.Text = "Phòng 1";
+            this.lbl9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl10
             // 
             this.pnl10.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl10.Appearance.Options.UseBackColor = true;
             this.pnl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl10.Controls.Add(this.label27);
-            this.pnl10.Controls.Add(this.label28);
+            this.pnl10.Controls.Add(this.lblTT10);
+            this.pnl10.Controls.Add(this.lbl10);
             this.pnl10.Location = new System.Drawing.Point(1051, 172);
             this.pnl10.Name = "pnl10";
             this.pnl10.Size = new System.Drawing.Size(256, 163);
             this.pnl10.TabIndex = 18;
             // 
-            // label27
+            // lblTT10
             // 
-            this.label27.BackColor = System.Drawing.Color.Red;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label27.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label27.Location = new System.Drawing.Point(2, 106);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(252, 55);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Sẵn sàng";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT10.BackColor = System.Drawing.Color.Red;
+            this.lblTT10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT10.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT10.Location = new System.Drawing.Point(2, 106);
+            this.lblTT10.Name = "lblTT10";
+            this.lblTT10.Size = new System.Drawing.Size(252, 55);
+            this.lblTT10.TabIndex = 0;
+            this.lblTT10.Text = "Sẵn sàng";
+            this.lblTT10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // lbl10
             // 
-            this.label28.BackColor = System.Drawing.Color.Red;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label28.Location = new System.Drawing.Point(2, 2);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(252, 159);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Phòng 1";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl10.BackColor = System.Drawing.Color.Red;
+            this.lbl10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl10.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl10.Location = new System.Drawing.Point(2, 2);
+            this.lbl10.Name = "lbl10";
+            this.lbl10.Size = new System.Drawing.Size(252, 159);
+            this.lbl10.TabIndex = 0;
+            this.lbl10.Text = "Phòng 1";
+            this.lbl10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl11
             // 
             this.pnl11.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl11.Appearance.Options.UseBackColor = true;
             this.pnl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl11.Controls.Add(this.label31);
-            this.pnl11.Controls.Add(this.label32);
+            this.pnl11.Controls.Add(this.lblTT11);
+            this.pnl11.Controls.Add(this.lbl11);
             this.pnl11.Location = new System.Drawing.Point(3, 341);
             this.pnl11.Name = "pnl11";
             this.pnl11.Size = new System.Drawing.Size(256, 163);
             this.pnl11.TabIndex = 20;
             // 
-            // label31
+            // lblTT11
             // 
-            this.label31.BackColor = System.Drawing.Color.LawnGreen;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label31.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label31.Location = new System.Drawing.Point(2, 106);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(252, 55);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "Sẵn sàng";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT11.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT11.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT11.Location = new System.Drawing.Point(2, 106);
+            this.lblTT11.Name = "lblTT11";
+            this.lblTT11.Size = new System.Drawing.Size(252, 55);
+            this.lblTT11.TabIndex = 0;
+            this.lblTT11.Text = "Sẵn sàng";
+            this.lblTT11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label32
+            // lbl11
             // 
-            this.label32.BackColor = System.Drawing.Color.LawnGreen;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label32.Location = new System.Drawing.Point(2, 2);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(252, 159);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Phòng 1";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl11.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl11.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl11.Location = new System.Drawing.Point(2, 2);
+            this.lbl11.Name = "lbl11";
+            this.lbl11.Size = new System.Drawing.Size(252, 159);
+            this.lbl11.TabIndex = 0;
+            this.lbl11.Text = "Phòng 1";
+            this.lbl11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl12
             // 
             this.pnl12.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl12.Appearance.Options.UseBackColor = true;
             this.pnl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl12.Controls.Add(this.label29);
-            this.pnl12.Controls.Add(this.label30);
+            this.pnl12.Controls.Add(this.lblTT12);
+            this.pnl12.Controls.Add(this.lbl12);
             this.pnl12.Location = new System.Drawing.Point(265, 341);
             this.pnl12.Name = "pnl12";
             this.pnl12.Size = new System.Drawing.Size(256, 163);
             this.pnl12.TabIndex = 19;
             // 
-            // label29
+            // lblTT12
             // 
-            this.label29.BackColor = System.Drawing.Color.Red;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label29.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label29.Location = new System.Drawing.Point(2, 106);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(252, 55);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Sẵn sàng";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT12.BackColor = System.Drawing.Color.Red;
+            this.lblTT12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT12.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT12.Location = new System.Drawing.Point(2, 106);
+            this.lblTT12.Name = "lblTT12";
+            this.lblTT12.Size = new System.Drawing.Size(252, 55);
+            this.lblTT12.TabIndex = 0;
+            this.lblTT12.Text = "Sẵn sàng";
+            this.lblTT12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // lbl12
             // 
-            this.label30.BackColor = System.Drawing.Color.Red;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label30.Location = new System.Drawing.Point(2, 2);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(252, 159);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Phòng 1";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl12.BackColor = System.Drawing.Color.Red;
+            this.lbl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl12.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl12.Location = new System.Drawing.Point(2, 2);
+            this.lbl12.Name = "lbl12";
+            this.lbl12.Size = new System.Drawing.Size(252, 159);
+            this.lbl12.TabIndex = 0;
+            this.lbl12.Text = "Phòng 1";
+            this.lbl12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl13
             // 
             this.pnl13.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl13.Appearance.Options.UseBackColor = true;
             this.pnl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl13.Controls.Add(this.label33);
-            this.pnl13.Controls.Add(this.label34);
+            this.pnl13.Controls.Add(this.lblTT13);
+            this.pnl13.Controls.Add(this.lbl13);
             this.pnl13.Location = new System.Drawing.Point(527, 341);
             this.pnl13.Name = "pnl13";
             this.pnl13.Size = new System.Drawing.Size(256, 163);
             this.pnl13.TabIndex = 21;
             // 
-            // label33
+            // lblTT13
             // 
-            this.label33.BackColor = System.Drawing.Color.LawnGreen;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label33.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label33.Location = new System.Drawing.Point(2, 106);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(252, 55);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "Sẵn sàng";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT13.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT13.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT13.Location = new System.Drawing.Point(2, 106);
+            this.lblTT13.Name = "lblTT13";
+            this.lblTT13.Size = new System.Drawing.Size(252, 55);
+            this.lblTT13.TabIndex = 0;
+            this.lblTT13.Text = "Sẵn sàng";
+            this.lblTT13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label34
+            // lbl13
             // 
-            this.label34.BackColor = System.Drawing.Color.LawnGreen;
-            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label34.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label34.Location = new System.Drawing.Point(2, 2);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(252, 159);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Phòng 1";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl13.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl13.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl13.Location = new System.Drawing.Point(2, 2);
+            this.lbl13.Name = "lbl13";
+            this.lbl13.Size = new System.Drawing.Size(252, 159);
+            this.lbl13.TabIndex = 0;
+            this.lbl13.Text = "Phòng 1";
+            this.lbl13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl14
             // 
             this.pnl14.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl14.Appearance.Options.UseBackColor = true;
             this.pnl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl14.Controls.Add(this.label35);
-            this.pnl14.Controls.Add(this.label36);
+            this.pnl14.Controls.Add(this.lblTT14);
+            this.pnl14.Controls.Add(this.lbl14);
             this.pnl14.Location = new System.Drawing.Point(789, 341);
             this.pnl14.Name = "pnl14";
             this.pnl14.Size = new System.Drawing.Size(256, 163);
             this.pnl14.TabIndex = 22;
             // 
-            // label35
+            // lblTT14
             // 
-            this.label35.BackColor = System.Drawing.Color.LawnGreen;
-            this.label35.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label35.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label35.Location = new System.Drawing.Point(2, 106);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(252, 55);
-            this.label35.TabIndex = 0;
-            this.label35.Text = "Sẵn sàng";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT14.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT14.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT14.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT14.Location = new System.Drawing.Point(2, 106);
+            this.lblTT14.Name = "lblTT14";
+            this.lblTT14.Size = new System.Drawing.Size(252, 55);
+            this.lblTT14.TabIndex = 0;
+            this.lblTT14.Text = "Sẵn sàng";
+            this.lblTT14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label36
+            // lbl14
             // 
-            this.label36.BackColor = System.Drawing.Color.LawnGreen;
-            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label36.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label36.Location = new System.Drawing.Point(2, 2);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(252, 159);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "Phòng 1";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl14.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl14.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl14.Location = new System.Drawing.Point(2, 2);
+            this.lbl14.Name = "lbl14";
+            this.lbl14.Size = new System.Drawing.Size(252, 159);
+            this.lbl14.TabIndex = 0;
+            this.lbl14.Text = "Phòng 1";
+            this.lbl14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl15
             // 
             this.pnl15.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl15.Appearance.Options.UseBackColor = true;
             this.pnl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl15.Controls.Add(this.label37);
-            this.pnl15.Controls.Add(this.label38);
+            this.pnl15.Controls.Add(this.lblTT15);
+            this.pnl15.Controls.Add(this.lbl15);
             this.pnl15.Location = new System.Drawing.Point(1051, 341);
             this.pnl15.Name = "pnl15";
             this.pnl15.Size = new System.Drawing.Size(256, 163);
             this.pnl15.TabIndex = 23;
             // 
-            // label37
+            // lblTT15
             // 
-            this.label37.BackColor = System.Drawing.Color.LawnGreen;
-            this.label37.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label37.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label37.Location = new System.Drawing.Point(2, 106);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(252, 55);
-            this.label37.TabIndex = 0;
-            this.label37.Text = "Sẵn sàng";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT15.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT15.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT15.Location = new System.Drawing.Point(2, 106);
+            this.lblTT15.Name = "lblTT15";
+            this.lblTT15.Size = new System.Drawing.Size(252, 55);
+            this.lblTT15.TabIndex = 0;
+            this.lblTT15.Text = "Sẵn sàng";
+            this.lblTT15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label38
+            // lbl15
             // 
-            this.label38.BackColor = System.Drawing.Color.LawnGreen;
-            this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label38.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label38.Location = new System.Drawing.Point(2, 2);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(252, 159);
-            this.label38.TabIndex = 0;
-            this.label38.Text = "Phòng 1";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl15.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl15.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl15.Location = new System.Drawing.Point(2, 2);
+            this.lbl15.Name = "lbl15";
+            this.lbl15.Size = new System.Drawing.Size(252, 159);
+            this.lbl15.TabIndex = 0;
+            this.lbl15.Text = "Phòng 1";
+            this.lbl15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl16
             // 
             this.pnl16.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl16.Appearance.Options.UseBackColor = true;
             this.pnl16.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl16.Controls.Add(this.label41);
-            this.pnl16.Controls.Add(this.label42);
+            this.pnl16.Controls.Add(this.lblTT16);
+            this.pnl16.Controls.Add(this.lbl16);
             this.pnl16.Location = new System.Drawing.Point(3, 510);
             this.pnl16.Name = "pnl16";
             this.pnl16.Size = new System.Drawing.Size(256, 163);
             this.pnl16.TabIndex = 20;
             // 
-            // label41
+            // lblTT16
             // 
-            this.label41.BackColor = System.Drawing.Color.LawnGreen;
-            this.label41.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label41.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label41.Location = new System.Drawing.Point(2, 106);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(252, 55);
-            this.label41.TabIndex = 0;
-            this.label41.Text = "Sẵn sàng";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT16.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT16.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT16.Location = new System.Drawing.Point(2, 106);
+            this.lblTT16.Name = "lblTT16";
+            this.lblTT16.Size = new System.Drawing.Size(252, 55);
+            this.lblTT16.TabIndex = 0;
+            this.lblTT16.Text = "Sẵn sàng";
+            this.lblTT16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label42
+            // lbl16
             // 
-            this.label42.BackColor = System.Drawing.Color.LawnGreen;
-            this.label42.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label42.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label42.Location = new System.Drawing.Point(2, 2);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(252, 159);
-            this.label42.TabIndex = 0;
-            this.label42.Text = "Phòng 1";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl16.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl16.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl16.Location = new System.Drawing.Point(2, 2);
+            this.lbl16.Name = "lbl16";
+            this.lbl16.Size = new System.Drawing.Size(252, 159);
+            this.lbl16.TabIndex = 0;
+            this.lbl16.Text = "Phòng 1";
+            this.lbl16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl17
             // 
             this.pnl17.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl17.Appearance.Options.UseBackColor = true;
             this.pnl17.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl17.Controls.Add(this.label39);
-            this.pnl17.Controls.Add(this.label40);
+            this.pnl17.Controls.Add(this.lblTT17);
+            this.pnl17.Controls.Add(this.lbl17);
             this.pnl17.Location = new System.Drawing.Point(265, 510);
             this.pnl17.Name = "pnl17";
             this.pnl17.Size = new System.Drawing.Size(256, 163);
             this.pnl17.TabIndex = 24;
             // 
-            // label39
+            // lblTT17
             // 
-            this.label39.BackColor = System.Drawing.Color.Red;
-            this.label39.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label39.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label39.Location = new System.Drawing.Point(2, 106);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(252, 55);
-            this.label39.TabIndex = 0;
-            this.label39.Text = "Sẵn sàng";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT17.BackColor = System.Drawing.Color.Red;
+            this.lblTT17.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT17.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT17.Location = new System.Drawing.Point(2, 106);
+            this.lblTT17.Name = "lblTT17";
+            this.lblTT17.Size = new System.Drawing.Size(252, 55);
+            this.lblTT17.TabIndex = 0;
+            this.lblTT17.Text = "Sẵn sàng";
+            this.lblTT17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label40
+            // lbl17
             // 
-            this.label40.BackColor = System.Drawing.Color.Red;
-            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label40.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label40.Location = new System.Drawing.Point(2, 2);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(252, 159);
-            this.label40.TabIndex = 0;
-            this.label40.Text = "Phòng 1";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl17.BackColor = System.Drawing.Color.Red;
+            this.lbl17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl17.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl17.Location = new System.Drawing.Point(2, 2);
+            this.lbl17.Name = "lbl17";
+            this.lbl17.Size = new System.Drawing.Size(252, 159);
+            this.lbl17.TabIndex = 0;
+            this.lbl17.Text = "Phòng 1";
+            this.lbl17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl18
             // 
             this.pnl18.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl18.Appearance.Options.UseBackColor = true;
             this.pnl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl18.Controls.Add(this.label43);
-            this.pnl18.Controls.Add(this.label44);
+            this.pnl18.Controls.Add(this.lblTT18);
+            this.pnl18.Controls.Add(this.lbl18);
             this.pnl18.Location = new System.Drawing.Point(527, 510);
             this.pnl18.Name = "pnl18";
             this.pnl18.Size = new System.Drawing.Size(256, 163);
             this.pnl18.TabIndex = 25;
             // 
-            // label43
+            // lblTT18
             // 
-            this.label43.BackColor = System.Drawing.Color.Red;
-            this.label43.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label43.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label43.Location = new System.Drawing.Point(2, 106);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(252, 55);
-            this.label43.TabIndex = 0;
-            this.label43.Text = "Sẵn sàng";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT18.BackColor = System.Drawing.Color.Red;
+            this.lblTT18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT18.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT18.Location = new System.Drawing.Point(2, 106);
+            this.lblTT18.Name = "lblTT18";
+            this.lblTT18.Size = new System.Drawing.Size(252, 55);
+            this.lblTT18.TabIndex = 0;
+            this.lblTT18.Text = "Sẵn sàng";
+            this.lblTT18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label44
+            // lbl18
             // 
-            this.label44.BackColor = System.Drawing.Color.Red;
-            this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label44.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label44.Location = new System.Drawing.Point(2, 2);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(252, 159);
-            this.label44.TabIndex = 0;
-            this.label44.Text = "Phòng 1";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl18.BackColor = System.Drawing.Color.Red;
+            this.lbl18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl18.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl18.Location = new System.Drawing.Point(2, 2);
+            this.lbl18.Name = "lbl18";
+            this.lbl18.Size = new System.Drawing.Size(252, 159);
+            this.lbl18.TabIndex = 0;
+            this.lbl18.Text = "Phòng 1";
+            this.lbl18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl19
             // 
             this.pnl19.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl19.Appearance.Options.UseBackColor = true;
             this.pnl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl19.Controls.Add(this.lblTT23);
-            this.pnl19.Controls.Add(this.lblP23);
+            this.pnl19.Controls.Add(this.lblTT19);
+            this.pnl19.Controls.Add(this.lbl19);
             this.pnl19.Location = new System.Drawing.Point(789, 510);
             this.pnl19.Name = "pnl19";
             this.pnl19.Size = new System.Drawing.Size(256, 163);
             this.pnl19.TabIndex = 26;
+            // 
+            // lblTT19
+            // 
+            this.lblTT19.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT19.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT19.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT19.Location = new System.Drawing.Point(2, 106);
+            this.lblTT19.Name = "lblTT19";
+            this.lblTT19.Size = new System.Drawing.Size(252, 55);
+            this.lblTT19.TabIndex = 0;
+            this.lblTT19.Text = "Sẵn sàng";
+            this.lblTT19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl19
+            // 
+            this.lbl19.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl19.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl19.Location = new System.Drawing.Point(2, 2);
+            this.lbl19.Name = "lbl19";
+            this.lbl19.Size = new System.Drawing.Size(252, 159);
+            this.lbl19.TabIndex = 0;
+            this.lbl19.Text = "Phòng 1";
+            this.lbl19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pnl20
+            // 
+            this.pnl20.Appearance.BackColor = System.Drawing.Color.Red;
+            this.pnl20.Appearance.Options.UseBackColor = true;
+            this.pnl20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.pnl20.Controls.Add(this.lblTT20);
+            this.pnl20.Controls.Add(this.lbl20);
+            this.pnl20.Location = new System.Drawing.Point(1051, 510);
+            this.pnl20.Name = "pnl20";
+            this.pnl20.Size = new System.Drawing.Size(256, 163);
+            this.pnl20.TabIndex = 27;
+            // 
+            // lblTT20
+            // 
+            this.lblTT20.BackColor = System.Drawing.Color.Red;
+            this.lblTT20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT20.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT20.Location = new System.Drawing.Point(2, 106);
+            this.lblTT20.Name = "lblTT20";
+            this.lblTT20.Size = new System.Drawing.Size(252, 55);
+            this.lblTT20.TabIndex = 0;
+            this.lblTT20.Text = "Sẵn sàng";
+            this.lblTT20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl20
+            // 
+            this.lbl20.BackColor = System.Drawing.Color.Red;
+            this.lbl20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl20.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl20.Location = new System.Drawing.Point(2, 2);
+            this.lbl20.Name = "lbl20";
+            this.lbl20.Size = new System.Drawing.Size(252, 159);
+            this.lbl20.TabIndex = 0;
+            this.lbl20.Text = "Phòng 1";
+            this.lbl20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pnl21
+            // 
+            this.pnl21.Appearance.BackColor = System.Drawing.Color.Red;
+            this.pnl21.Appearance.Options.UseBackColor = true;
+            this.pnl21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.pnl21.Controls.Add(this.lblTT21);
+            this.pnl21.Controls.Add(this.lbl21);
+            this.pnl21.Location = new System.Drawing.Point(3, 679);
+            this.pnl21.Name = "pnl21";
+            this.pnl21.Size = new System.Drawing.Size(256, 163);
+            this.pnl21.TabIndex = 28;
+            // 
+            // lblTT21
+            // 
+            this.lblTT21.BackColor = System.Drawing.Color.Red;
+            this.lblTT21.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT21.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT21.Location = new System.Drawing.Point(2, 106);
+            this.lblTT21.Name = "lblTT21";
+            this.lblTT21.Size = new System.Drawing.Size(252, 55);
+            this.lblTT21.TabIndex = 0;
+            this.lblTT21.Text = "Sẵn sàng";
+            this.lblTT21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl21
+            // 
+            this.lbl21.BackColor = System.Drawing.Color.Red;
+            this.lbl21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl21.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl21.Location = new System.Drawing.Point(2, 2);
+            this.lbl21.Name = "lbl21";
+            this.lbl21.Size = new System.Drawing.Size(252, 159);
+            this.lbl21.TabIndex = 0;
+            this.lbl21.Text = "Phòng 1";
+            this.lbl21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pnl22
+            // 
+            this.pnl22.Appearance.BackColor = System.Drawing.Color.LawnGreen;
+            this.pnl22.Appearance.Options.UseBackColor = true;
+            this.pnl22.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.pnl22.Controls.Add(this.lblTT22);
+            this.pnl22.Controls.Add(this.lbl22);
+            this.pnl22.Location = new System.Drawing.Point(265, 679);
+            this.pnl22.Name = "pnl22";
+            this.pnl22.Size = new System.Drawing.Size(256, 163);
+            this.pnl22.TabIndex = 30;
+            // 
+            // lblTT22
+            // 
+            this.lblTT22.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT22.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT22.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT22.Location = new System.Drawing.Point(2, 106);
+            this.lblTT22.Name = "lblTT22";
+            this.lblTT22.Size = new System.Drawing.Size(252, 55);
+            this.lblTT22.TabIndex = 0;
+            this.lblTT22.Text = "Sẵn sàng";
+            this.lblTT22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl22
+            // 
+            this.lbl22.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl22.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl22.Location = new System.Drawing.Point(2, 2);
+            this.lbl22.Name = "lbl22";
+            this.lbl22.Size = new System.Drawing.Size(252, 159);
+            this.lbl22.TabIndex = 0;
+            this.lbl22.Text = "Phòng 1";
+            this.lbl22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pnl23
+            // 
+            this.pnl23.Appearance.BackColor = System.Drawing.Color.LawnGreen;
+            this.pnl23.Appearance.Options.UseBackColor = true;
+            this.pnl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.pnl23.Controls.Add(this.lblTT23);
+            this.pnl23.Controls.Add(this.lbl23);
+            this.pnl23.Location = new System.Drawing.Point(527, 679);
+            this.pnl23.Name = "pnl23";
+            this.pnl23.Size = new System.Drawing.Size(256, 163);
+            this.pnl23.TabIndex = 31;
             // 
             // lblTT23
             // 
@@ -1222,269 +1366,125 @@
             this.lblTT23.Text = "Sẵn sàng";
             this.lblTT23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblP23
+            // lbl23
             // 
-            this.lblP23.BackColor = System.Drawing.Color.LawnGreen;
-            this.lblP23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblP23.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblP23.Location = new System.Drawing.Point(2, 2);
-            this.lblP23.Name = "lblP23";
-            this.lblP23.Size = new System.Drawing.Size(252, 159);
-            this.lblP23.TabIndex = 0;
-            this.lblP23.Text = "Phòng 1";
-            this.lblP23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pnl20
-            // 
-            this.pnl20.Appearance.BackColor = System.Drawing.Color.Red;
-            this.pnl20.Appearance.Options.UseBackColor = true;
-            this.pnl20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl20.Controls.Add(this.label47);
-            this.pnl20.Controls.Add(this.label48);
-            this.pnl20.Location = new System.Drawing.Point(1051, 510);
-            this.pnl20.Name = "pnl20";
-            this.pnl20.Size = new System.Drawing.Size(256, 163);
-            this.pnl20.TabIndex = 27;
-            // 
-            // label47
-            // 
-            this.label47.BackColor = System.Drawing.Color.Red;
-            this.label47.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label47.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label47.Location = new System.Drawing.Point(2, 106);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(252, 55);
-            this.label47.TabIndex = 0;
-            this.label47.Text = "Sẵn sàng";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label48
-            // 
-            this.label48.BackColor = System.Drawing.Color.Red;
-            this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label48.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label48.Location = new System.Drawing.Point(2, 2);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(252, 159);
-            this.label48.TabIndex = 0;
-            this.label48.Text = "Phòng 1";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pnl21
-            // 
-            this.pnl21.Appearance.BackColor = System.Drawing.Color.Red;
-            this.pnl21.Appearance.Options.UseBackColor = true;
-            this.pnl21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl21.Controls.Add(this.label49);
-            this.pnl21.Controls.Add(this.label50);
-            this.pnl21.Location = new System.Drawing.Point(3, 679);
-            this.pnl21.Name = "pnl21";
-            this.pnl21.Size = new System.Drawing.Size(256, 163);
-            this.pnl21.TabIndex = 28;
-            // 
-            // label49
-            // 
-            this.label49.BackColor = System.Drawing.Color.Red;
-            this.label49.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label49.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label49.Location = new System.Drawing.Point(2, 106);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(252, 55);
-            this.label49.TabIndex = 0;
-            this.label49.Text = "Sẵn sàng";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label50
-            // 
-            this.label50.BackColor = System.Drawing.Color.Red;
-            this.label50.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label50.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label50.Location = new System.Drawing.Point(2, 2);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(252, 159);
-            this.label50.TabIndex = 0;
-            this.label50.Text = "Phòng 1";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pnl22
-            // 
-            this.pnl22.Appearance.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnl22.Appearance.Options.UseBackColor = true;
-            this.pnl22.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl22.Controls.Add(this.label53);
-            this.pnl22.Controls.Add(this.label54);
-            this.pnl22.Location = new System.Drawing.Point(265, 679);
-            this.pnl22.Name = "pnl22";
-            this.pnl22.Size = new System.Drawing.Size(256, 163);
-            this.pnl22.TabIndex = 30;
-            // 
-            // label53
-            // 
-            this.label53.BackColor = System.Drawing.Color.LawnGreen;
-            this.label53.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label53.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label53.Location = new System.Drawing.Point(2, 106);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(252, 55);
-            this.label53.TabIndex = 0;
-            this.label53.Text = "Sẵn sàng";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label54
-            // 
-            this.label54.BackColor = System.Drawing.Color.LawnGreen;
-            this.label54.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label54.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label54.Location = new System.Drawing.Point(2, 2);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(252, 159);
-            this.label54.TabIndex = 0;
-            this.label54.Text = "Phòng 1";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pnl23
-            // 
-            this.pnl23.Appearance.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnl23.Appearance.Options.UseBackColor = true;
-            this.pnl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl23.Controls.Add(this.label2);
-            this.pnl23.Controls.Add(this.label4);
-            this.pnl23.Location = new System.Drawing.Point(527, 679);
-            this.pnl23.Name = "pnl23";
-            this.pnl23.Size = new System.Drawing.Size(256, 163);
-            this.pnl23.TabIndex = 31;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.LawnGreen;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(2, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 55);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Sẵn sàng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.LawnGreen;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label4.Location = new System.Drawing.Point(2, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(252, 159);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Phòng 1";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl23.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl23.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl23.Location = new System.Drawing.Point(2, 2);
+            this.lbl23.Name = "lbl23";
+            this.lbl23.Size = new System.Drawing.Size(252, 159);
+            this.lbl23.TabIndex = 0;
+            this.lbl23.Text = "Phòng 1";
+            this.lbl23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl24
             // 
             this.pnl24.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl24.Appearance.Options.UseBackColor = true;
             this.pnl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl24.Controls.Add(this.label6);
-            this.pnl24.Controls.Add(this.label8);
+            this.pnl24.Controls.Add(this.lblTT24);
+            this.pnl24.Controls.Add(this.lbl24);
             this.pnl24.Location = new System.Drawing.Point(789, 679);
             this.pnl24.Name = "pnl24";
             this.pnl24.Size = new System.Drawing.Size(256, 163);
             this.pnl24.TabIndex = 32;
             // 
-            // label6
+            // lblTT24
             // 
-            this.label6.BackColor = System.Drawing.Color.Red;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label6.Location = new System.Drawing.Point(2, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(252, 55);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Sẵn sàng";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT24.BackColor = System.Drawing.Color.Red;
+            this.lblTT24.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT24.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT24.Location = new System.Drawing.Point(2, 106);
+            this.lblTT24.Name = "lblTT24";
+            this.lblTT24.Size = new System.Drawing.Size(252, 55);
+            this.lblTT24.TabIndex = 0;
+            this.lblTT24.Text = "Sẵn sàng";
+            this.lblTT24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // lbl24
             // 
-            this.label8.BackColor = System.Drawing.Color.Red;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label8.Location = new System.Drawing.Point(2, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(252, 159);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Phòng 1";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl24.BackColor = System.Drawing.Color.Red;
+            this.lbl24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl24.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl24.Location = new System.Drawing.Point(2, 2);
+            this.lbl24.Name = "lbl24";
+            this.lbl24.Size = new System.Drawing.Size(252, 159);
+            this.lbl24.TabIndex = 0;
+            this.lbl24.Text = "Phòng 1";
+            this.lbl24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl25
             // 
             this.pnl25.Appearance.BackColor = System.Drawing.Color.LawnGreen;
             this.pnl25.Appearance.Options.UseBackColor = true;
             this.pnl25.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl25.Controls.Add(this.label1);
-            this.pnl25.Controls.Add(this.label3);
+            this.pnl25.Controls.Add(this.lblTT25);
+            this.pnl25.Controls.Add(this.lbl25);
             this.pnl25.Location = new System.Drawing.Point(1051, 679);
             this.pnl25.Name = "pnl25";
             this.pnl25.Size = new System.Drawing.Size(256, 163);
             this.pnl25.TabIndex = 33;
             // 
-            // label1
+            // lblTT25
             // 
-            this.label1.BackColor = System.Drawing.Color.LawnGreen;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(2, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sẵn sàng";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT25.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT25.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT25.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT25.Location = new System.Drawing.Point(2, 106);
+            this.lblTT25.Name = "lblTT25";
+            this.lblTT25.Size = new System.Drawing.Size(252, 55);
+            this.lblTT25.TabIndex = 0;
+            this.lblTT25.Text = "Sẵn sàng";
+            this.lblTT25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lbl25
             // 
-            this.label3.BackColor = System.Drawing.Color.LawnGreen;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label3.Location = new System.Drawing.Point(2, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 159);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Phòng 1";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl25.BackColor = System.Drawing.Color.LawnGreen;
+            this.lbl25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl25.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl25.Location = new System.Drawing.Point(2, 2);
+            this.lbl25.Name = "lbl25";
+            this.lbl25.Size = new System.Drawing.Size(252, 159);
+            this.lbl25.TabIndex = 0;
+            this.lbl25.Text = "Phòng 1";
+            this.lbl25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl26
             // 
             this.pnl26.Appearance.BackColor = System.Drawing.Color.Red;
             this.pnl26.Appearance.Options.UseBackColor = true;
             this.pnl26.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl26.Controls.Add(this.label10);
-            this.pnl26.Controls.Add(this.label45);
+            this.pnl26.Controls.Add(this.lblTT26);
+            this.pnl26.Controls.Add(this.lbl26);
             this.pnl26.Location = new System.Drawing.Point(3, 848);
             this.pnl26.Name = "pnl26";
             this.pnl26.Size = new System.Drawing.Size(256, 163);
             this.pnl26.TabIndex = 34;
             // 
-            // label10
+            // lblTT26
             // 
-            this.label10.BackColor = System.Drawing.Color.Red;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label10.Location = new System.Drawing.Point(2, 106);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(252, 55);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Sẵn sàng";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTT26.BackColor = System.Drawing.Color.Red;
+            this.lblTT26.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTT26.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTT26.Location = new System.Drawing.Point(2, 106);
+            this.lblTT26.Name = "lblTT26";
+            this.lblTT26.Size = new System.Drawing.Size(252, 55);
+            this.lblTT26.TabIndex = 0;
+            this.lblTT26.Text = "Sẵn sàng";
+            this.lblTT26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label45
+            // lbl26
             // 
-            this.label45.BackColor = System.Drawing.Color.Red;
-            this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label45.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label45.Location = new System.Drawing.Point(2, 2);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(252, 159);
-            this.label45.TabIndex = 0;
-            this.label45.Text = "Phòng 1";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl26.BackColor = System.Drawing.Color.Red;
+            this.lbl26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl26.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbl26.Location = new System.Drawing.Point(2, 2);
+            this.lbl26.Name = "lbl26";
+            this.lbl26.Size = new System.Drawing.Size(252, 159);
+            this.lbl26.TabIndex = 0;
+            this.lbl26.Text = "Phòng 1";
+            this.lbl26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblTime
             // 
@@ -1669,80 +1669,80 @@
         private DevExpress.XtraEditors.PanelControl pnl2;
         private DevExpress.XtraEditors.PanelControl pnl3;
         private DevExpress.XtraEditors.PanelControl pnl4;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblTT4;
+        private System.Windows.Forms.Label lbl4;
         private DevExpress.XtraEditors.PanelControl pnl5;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblTT5;
+        private System.Windows.Forms.Label lbl5;
         private DevExpress.XtraEditors.PanelControl pnl6;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblTT6;
+        private System.Windows.Forms.Label lnl6;
         private DevExpress.XtraEditors.PanelControl pnl7;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblTT7;
+        private System.Windows.Forms.Label lbl7;
         private DevExpress.XtraEditors.PanelControl pnl8;
         private DevExpress.XtraEditors.PanelControl pnl9;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblTT9;
+        private System.Windows.Forms.Label lbl9;
         private DevExpress.XtraEditors.PanelControl pnl10;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblTT10;
+        private System.Windows.Forms.Label lbl10;
         private DevExpress.XtraEditors.PanelControl pnl12;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblTT12;
+        private System.Windows.Forms.Label lbl12;
         private DevExpress.XtraEditors.PanelControl pnl11;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblTT11;
+        private System.Windows.Forms.Label lbl11;
         private DevExpress.XtraEditors.PanelControl pnl13;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblTT13;
+        private System.Windows.Forms.Label lbl13;
         private DevExpress.XtraEditors.PanelControl pnl14;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblTT14;
+        private System.Windows.Forms.Label lbl14;
         private DevExpress.XtraEditors.PanelControl pnl15;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lblTT15;
+        private System.Windows.Forms.Label lbl15;
         private DevExpress.XtraEditors.PanelControl pnl16;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label lblTT16;
+        private System.Windows.Forms.Label lbl16;
         private DevExpress.XtraEditors.PanelControl pnl17;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label lblTT17;
+        private System.Windows.Forms.Label lbl17;
         private DevExpress.XtraEditors.PanelControl pnl18;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label lblTT18;
+        private System.Windows.Forms.Label lbl18;
         private DevExpress.XtraEditors.PanelControl pnl19;
-        private System.Windows.Forms.Label lblTT23;
-        private System.Windows.Forms.Label lblP23;
+        private System.Windows.Forms.Label lblTT19;
+        private System.Windows.Forms.Label lbl19;
         private DevExpress.XtraEditors.PanelControl pnl20;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label lblTT20;
+        private System.Windows.Forms.Label lbl20;
+        private System.Windows.Forms.Label lblTT21;
+        private System.Windows.Forms.Label lbl21;
         private DevExpress.XtraEditors.PanelControl pnl22;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label lblTT22;
+        private System.Windows.Forms.Label lbl22;
         private DevExpress.XtraEditors.PanelControl pnl21;
         private DevExpress.XtraEditors.PanelControl pnl23;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTT23;
+        private System.Windows.Forms.Label lbl23;
         private DevExpress.XtraEditors.PanelControl pnl24;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTT24;
+        private System.Windows.Forms.Label lbl24;
         private DevExpress.XtraEditors.PanelControl pnl25;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTT25;
+        private System.Windows.Forms.Label lbl25;
         private DevExpress.XtraEditors.PanelControl pnl26;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTT26;
+        private System.Windows.Forms.Label lbl26;
+        private System.Windows.Forms.Label lblTT1;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lblTT2;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lblTT3;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lblTT8;
+        private System.Windows.Forms.Label lbl8;
         private DevExpress.XtraEditors.LabelControl lblTime;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitchCK;

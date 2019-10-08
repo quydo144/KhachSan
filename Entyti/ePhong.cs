@@ -8,17 +8,18 @@ namespace Entyti
 {
     public class ePhong
     {
-        private string maPhong, tenPhong, ghiChu;
-        private eLoaiPhong loaiPhong;
+        private string maPhong, tenPhong, ghiChu, maLoaiPhong;
         private int tang;
+        private bool tinhTrang;
 
-        public ePhong(string maPhong, string tenPhong, string ghiChu, eLoaiPhong loaiPhong, int tang)
+        public ePhong(string maPhong, string tenPhong, string ghiChu, string maLoaiPhong, int tang, bool tinhTrang)
         {
             this.maPhong = maPhong;
             this.tenPhong = tenPhong;
             this.ghiChu = ghiChu;
-            this.loaiPhong = loaiPhong;
+            this.maLoaiPhong = maLoaiPhong;
             this.tang = tang;
+            this.tinhTrang = tinhTrang;
         }
 
         public ePhong()
@@ -26,8 +27,35 @@ namespace Entyti
             this.maPhong = "";
             this.tenPhong = "";
             this.ghiChu = "";
-            this.loaiPhong = null;
+            this.maLoaiPhong = "";
             this.tang = 0;
+            this.tinhTrang = true;
+        }
+
+        public string GhiChu
+        {
+            get
+            {
+                return ghiChu;
+            }
+
+            set
+            {
+                ghiChu = value;
+            }
+        }
+
+        public string MaLoaiPhong
+        {
+            get
+            {
+                return maLoaiPhong;
+            }
+
+            set
+            {
+                maLoaiPhong = value;
+            }
         }
 
         public string MaPhong
@@ -40,6 +68,19 @@ namespace Entyti
             set
             {
                 maPhong = value;
+            }
+        }
+
+        public int Tang
+        {
+            get
+            {
+                return tang;
+            }
+
+            set
+            {
+                tang = value;
             }
         }
 
@@ -56,42 +97,16 @@ namespace Entyti
             }
         }
 
-        public string GhiChu
+        public bool TinhTrang
         {
             get
             {
-                return ghiChu;
+                return tinhTrang;
             }
 
             set
             {
-                ghiChu = value;
-            }
-        }
-
-        public eLoaiPhong LoaiPhong
-        {
-            get
-            {
-                return loaiPhong;
-            }
-
-            set
-            {
-                loaiPhong = value;
-            }
-        }
-
-        public int Tang
-        {
-            get
-            {
-                return tang;
-            }
-
-            set
-            {
-                tang = value;
+                tinhTrang = value;
             }
         }
     }

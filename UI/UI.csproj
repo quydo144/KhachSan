@@ -119,6 +119,16 @@
   <ItemGroup>
     <None Include="Resources\text-plus-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{70497d2d-b8f5-487a-97eb-6a4fa6157528}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entyti\Entyti.csproj">
+      <Project>{03aea294-b2b4-416c-9abd-9a4584110a19}</Project>
+      <Name>Entyti</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

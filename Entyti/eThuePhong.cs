@@ -8,21 +8,17 @@ namespace Entyti
 {
     public class eThuePhong
     {
-        private string maThuePhong;
-        private ePhong p;
-        private eKhachHang kh;
-        private eNhanVien nv;
-        private eSuDungDichVu sddv;
+        private string maThuePhong, maPhong, maKH, maNV, maSddv;
         private DateTime ngayVao, ngayRa;
         private float datCoc;
 
-        public eThuePhong(string maThuePhong, ePhong p, eKhachHang kh, eNhanVien nv, eSuDungDichVu sddv, DateTime ngayVao, DateTime ngayRa, float datCoc)
+        public eThuePhong(string maThuePhong, string maPhong, string maKH, string maNV, string maSddv, DateTime ngayVao, DateTime ngayRa, float datCoc)
         {
             this.maThuePhong = maThuePhong;
-            this.p = p;
-            this.kh = kh;
-            this.nv = nv;
-            this.sddv = sddv;
+            this.maPhong = maPhong;
+            this.maKH = maKH;
+            this.maNV = maNV;
+            this.maSddv = maSddv;
             this.ngayVao = ngayVao;
             this.ngayRa = ngayRa;
             this.datCoc = datCoc;
@@ -31,10 +27,10 @@ namespace Entyti
         public eThuePhong()
         {
             this.maThuePhong = "";
-            this.p = null;
-            this.kh = null;
-            this.nv = null;
-            this.sddv = null;
+            this.maPhong = "";
+            this.maKH = "";
+            this.maNV = "";
+            this.maSddv = "";
             this.ngayVao = Convert.ToDateTime(0);
             this.ngayRa = Convert.ToDateTime(0);
             this.datCoc = 0;
@@ -53,55 +49,55 @@ namespace Entyti
             }
         }
 
-        public ePhong P
+        public string MaPhong
         {
             get
             {
-                return p;
+                return maPhong;
             }
 
             set
             {
-                p = value;
+                maPhong = value;
             }
         }
 
-        public eKhachHang Kh
+        public string MaKH
         {
             get
             {
-                return kh;
+                return maKH;
             }
 
             set
             {
-                kh = value;
+                maKH = value;
             }
         }
 
-        public eNhanVien Nv
+        public string MaNV
         {
             get
             {
-                return nv;
+                return maNV;
             }
 
             set
             {
-                nv = value;
+                maNV = value;
             }
         }
 
-        public eSuDungDichVu Sddv
+        public string MaSddv
         {
             get
             {
-                return sddv;
+                return maSddv;
             }
 
             set
             {
-                sddv = value;
+                maSddv = value;
             }
         }
 

@@ -8,15 +8,14 @@ namespace Entyti
 {
     public class eThanhToan
     {
-        private string maHD;
-        private eThuePhong thuePhong;
+        private string maHD, maThuePhong;
         private DateTime ngayLap;
         private float thueVAT, giamGia;
 
-        public eThanhToan(string maHD, eThuePhong thuePhong, DateTime ngayLap, float thueVAT, float giamGia)
+        public eThanhToan(string maHD, string maThuePhong, DateTime ngayLap, float thueVAT, float giamGia)
         {
             this.maHD = maHD;
-            this.thuePhong = thuePhong;
+            this.maThuePhong = maThuePhong;
             this.ngayLap = ngayLap;
             this.thueVAT = thueVAT;
             this.giamGia = giamGia;
@@ -25,8 +24,8 @@ namespace Entyti
         public eThanhToan()
         {
             this.maHD = "";
-            this.thuePhong = null;
-            this.ngayLap = Convert.ToDateTime(0); ;
+            this.maThuePhong = "";
+            this.ngayLap = Convert.ToDateTime(0);
             this.thueVAT = 0;
             this.giamGia = 0;
         }
@@ -44,16 +43,29 @@ namespace Entyti
             }
         }
 
-        public eThuePhong ThuePhong
+        public float GiamGia
         {
             get
             {
-                return thuePhong;
+                return giamGia;
             }
 
             set
             {
-                thuePhong = value;
+                giamGia = value;
+            }
+        }
+
+        public string MaThuePhong
+        {
+            get
+            {
+                return maThuePhong;
+            }
+
+            set
+            {
+                maThuePhong = value;
             }
         }
 
@@ -80,19 +92,6 @@ namespace Entyti
             set
             {
                 thueVAT = value;
-            }
-        }
-
-        public float GiamGia
-        {
-            get
-            {
-                return giamGia;
-            }
-
-            set
-            {
-                giamGia = value;
             }
         }
     }
