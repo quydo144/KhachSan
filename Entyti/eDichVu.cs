@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Entyti
 {
-    public class DichVu
+    public class eDichVu
     {
         private string maDV, tenDV;
         private decimal donGia;
 
-        public DichVu(string maDV, string tenDV, decimal donGia)
+        public eDichVu(string maDV, string tenDV, decimal donGia)
         {
             this.maDV = maDV;
             this.tenDV = tenDV;
             this.donGia = donGia;
         }
 
-        public DichVu()
+        public eDichVu()
         {
             this.maDV = "";
             this.tenDV = "";

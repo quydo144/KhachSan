@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DichVuDAL.cs" />
     <Compile Include="PhongDAL.cs" />
     <Compile Include="dbQLKhachSan.designer.cs">
       <AutoGen>True</AutoGen>

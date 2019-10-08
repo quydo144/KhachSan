@@ -28,6 +28,7 @@ namespace Home
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+
             listp = pbus.gettinhtrangp(true);
             foreach (var item in listp)
             {
@@ -36,53 +37,30 @@ namespace Home
                     if (pnl.Name.Equals(item.MaPhong.Trim()))
                     {
                         pnl.BackColor = Color.Red;
-                        MessageBox.Show(pnl.Name);
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
                             lbl.Text = item.TenPhong;
-                            break;
-                        }
-                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                        {
-                            lbl.BackColor = Color.Red;
-                            lbl.Text = "Có khách";
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        pnl.BackColor = Color.LawnGreen;
-                        MessageBox.Show(pnl.Name);
-                        foreach (var lbl in pnl.Controls.OfType<Label>())
-                        {
-                            lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = item.TenPhong;
-                            break;
-                        }
-                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                        {
-                            lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = "Sẵn sàng";
-                            break;
                         }
                     }
                 }
             }
-            //int s = 0, c = 0;
-            //foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-            //{
-            //    if (pnl.BackColor == Color.LawnGreen)
-            //    {
-            //        s++;
-            //    }
-            //    else
-            //    {
-            //        c++;
-            //    }
-            //}
-            //this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
-            //this.toggleSwitchCK.Properties.OffText = "Có khách " + c.ToString();
+
+            foreach (var item in pbus.gettinhtrangp(false))
+            {
+                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                {
+                    if (pnl.Name.Equals(item.MaPhong.Trim()))
+                    {
+                        pnl.BackColor = Color.LawnGreen;
+                        foreach (var lbl in pnl.Controls.OfType<Label>())
+                        {
+                            lbl.BackColor = Color.LawnGreen;
+                            lbl.Text = item.TenPhong;
+                        }
+                    }
+                }
+            }
         }
 
         private void toggleSwitchSS_Toggled(object sender, EventArgs e)
@@ -99,6 +77,36 @@ namespace Home
                     pnl.Show();
                 }
                 this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
+            }
+            else
+            {
+                int s = 0;
+                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                {
+                    if (pnl.BackColor != Color.LawnGreen)
+                    {
+                        pnl.Hide();
+                    }
+                    else
+                    {
+                        s++;
+                    }
+                }
+                this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
+            }
+
+            if (toggleSwitchCK.IsOn != true)
+            {
+                int s = 0;
+                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                {
+                    if (pnl.BackColor == Color.Red)
+                    {
+                        s++;
+                    }
+                    pnl.Show();
+                }
+                this.toggleSwitchCK.Properties.OffText = "Sẵn sàng " + s.ToString();
             }
             else
             {

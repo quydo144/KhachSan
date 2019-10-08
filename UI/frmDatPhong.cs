@@ -8,19 +8,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Entyti;
+using BUS;
 
 namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
+        DichVuBUS listdv = new DichVuBUS();
+
         public frmDatPhong()
         {
             InitializeComponent();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("aaa");
         }
 
         private void btnLuu_MouseHover(object sender, EventArgs e)
@@ -35,13 +34,23 @@ namespace Home
 
         private void btnThoat_MouseLeave(object sender, EventArgs e)
         {
-            btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
+            btnThoat.BackColor = Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
         }
 
         private void btnThoat_MouseHover(object sender, EventArgs e)
         {
-            btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(217)))), ((int)(((byte)(89)))));
+            btnThoat.BackColor = Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(217)))), ((int)(((byte)(89)))));
         }
 
+        private void frmDatPhong_Load(object sender, EventArgs e)
+        {
+            dgvDichVu.DataSource = listdv.getdv();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+            
+        }
     }
 }

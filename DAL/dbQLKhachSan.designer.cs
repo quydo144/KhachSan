@@ -853,7 +853,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passWord", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passWord", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string passWord
 		{
 			get

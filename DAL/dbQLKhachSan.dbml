@@ -37,7 +37,7 @@
       <Column Name="ngaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="soDT" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="chucVu" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="passWord" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="passWord" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="NhanVien_ThuePhong" Member="ThuePhongs" ThisKey="maNV" OtherKey="maNV" Type="ThuePhong" />
     </Type>
   </Table>
