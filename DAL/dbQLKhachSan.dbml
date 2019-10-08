@@ -41,6 +41,18 @@
       <Association Name="NhanVien_ThuePhong" Member="ThuePhongs" ThisKey="maNV" OtherKey="maNV" Type="ThuePhong" />
     </Type>
   </Table>
+  <Table Name="dbo.Phong" Member="Phongs">
+    <Type Name="Phong">
+      <Column Name="maPhong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maLoaiPhong" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tenPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tinhTrang" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Phong_ThuePhong" Member="ThuePhongs" ThisKey="maPhong" OtherKey="maPhong" Type="ThuePhong" />
+      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="maLoaiPhong" OtherKey="maLoaiPhong" Type="LoaiPhong" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.SuDungDichVu" Member="SuDungDichVus">
     <Type Name="SuDungDichVu">
       <Column Name="maSDDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -75,20 +87,8 @@
       <Association Name="ThuePhong_ThanhToan" Member="ThanhToans" ThisKey="maThuePhong" OtherKey="maThuePhong" Type="ThanhToan" />
       <Association Name="KhachHang_ThuePhong" Member="KhachHang" ThisKey="maKhach" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NhanVien_ThuePhong" Member="NhanVien" ThisKey="maNV" OtherKey="maNV" Type="NhanVien" IsForeignKey="true" />
-      <Association Name="SuDungDichVu_ThuePhong" Member="SuDungDichVu" ThisKey="maSDDV" OtherKey="maSDDV" Type="SuDungDichVu" IsForeignKey="true" />
       <Association Name="Phong_ThuePhong" Member="Phong" ThisKey="maPhong" OtherKey="maPhong" Type="Phong" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Phong" Member="Phongs">
-    <Type Name="Phong">
-      <Column Name="maPhong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maLoaiPhong" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tenPhong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="tang" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="tinhTrang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="ghiChu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Phong_ThuePhong" Member="ThuePhongs" ThisKey="maPhong" OtherKey="maPhong" Type="ThuePhong" />
-      <Association Name="LoaiPhong_Phong" Member="LoaiPhong" ThisKey="maLoaiPhong" OtherKey="maLoaiPhong" Type="LoaiPhong" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SuDungDichVu_ThuePhong" Member="SuDungDichVu" ThisKey="maSDDV" OtherKey="maSDDV" Type="SuDungDichVu" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

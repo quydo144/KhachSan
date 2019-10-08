@@ -67,22 +67,22 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.timerDateSystem = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl1 = new DevExpress.XtraEditors.PanelControl();
+            this.P0001 = new DevExpress.XtraEditors.PanelControl();
             this.lblTT1 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.pnl2 = new DevExpress.XtraEditors.PanelControl();
-            this.lblTT2 = new System.Windows.Forms.Label();
+            this.P0002 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lbl2 = new System.Windows.Forms.Label();
-            this.pnl3 = new DevExpress.XtraEditors.PanelControl();
+            this.P0003 = new DevExpress.XtraEditors.PanelControl();
             this.lblTT3 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
-            this.pnl4 = new DevExpress.XtraEditors.PanelControl();
+            this.P0004 = new DevExpress.XtraEditors.PanelControl();
             this.lblTT4 = new System.Windows.Forms.Label();
             this.lbl4 = new System.Windows.Forms.Label();
-            this.pnl5 = new DevExpress.XtraEditors.PanelControl();
+            this.P0005 = new DevExpress.XtraEditors.PanelControl();
             this.lblTT5 = new System.Windows.Forms.Label();
             this.lbl5 = new System.Windows.Forms.Label();
-            this.pnl6 = new DevExpress.XtraEditors.PanelControl();
+            this.P0006 = new DevExpress.XtraEditors.PanelControl();
             this.lblTT6 = new System.Windows.Forms.Label();
             this.lnl6 = new System.Windows.Forms.Label();
             this.pnl7 = new DevExpress.XtraEditors.PanelControl();
@@ -152,18 +152,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl1)).BeginInit();
-            this.pnl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl2)).BeginInit();
-            this.pnl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl3)).BeginInit();
-            this.pnl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl4)).BeginInit();
-            this.pnl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl5)).BeginInit();
-            this.pnl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnl6)).BeginInit();
-            this.pnl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P0001)).BeginInit();
+            this.P0001.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P0002)).BeginInit();
+            this.P0002.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P0003)).BeginInit();
+            this.P0003.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P0004)).BeginInit();
+            this.P0004.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P0005)).BeginInit();
+            this.P0005.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.P0006)).BeginInit();
+            this.P0006.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnl7)).BeginInit();
             this.pnl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnl8)).BeginInit();
@@ -518,12 +518,12 @@
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
-            this.flowLayoutPanel1.Controls.Add(this.pnl1);
-            this.flowLayoutPanel1.Controls.Add(this.pnl2);
-            this.flowLayoutPanel1.Controls.Add(this.pnl3);
-            this.flowLayoutPanel1.Controls.Add(this.pnl4);
-            this.flowLayoutPanel1.Controls.Add(this.pnl5);
-            this.flowLayoutPanel1.Controls.Add(this.pnl6);
+            this.flowLayoutPanel1.Controls.Add(this.P0001);
+            this.flowLayoutPanel1.Controls.Add(this.P0002);
+            this.flowLayoutPanel1.Controls.Add(this.P0003);
+            this.flowLayoutPanel1.Controls.Add(this.P0004);
+            this.flowLayoutPanel1.Controls.Add(this.P0005);
+            this.flowLayoutPanel1.Controls.Add(this.P0006);
             this.flowLayoutPanel1.Controls.Add(this.pnl7);
             this.flowLayoutPanel1.Controls.Add(this.pnl8);
             this.flowLayoutPanel1.Controls.Add(this.pnl9);
@@ -550,17 +550,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
-            // pnl1
+            // P0001
             // 
-            this.pnl1.Appearance.BackColor = System.Drawing.Color.Red;
-            this.pnl1.Appearance.Options.UseBackColor = true;
-            this.pnl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl1.Controls.Add(this.lblTT1);
-            this.pnl1.Controls.Add(this.lbl1);
-            this.pnl1.Location = new System.Drawing.Point(3, 3);
-            this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(256, 163);
-            this.pnl1.TabIndex = 9;
+            this.P0001.Appearance.BackColor = System.Drawing.Color.Red;
+            this.P0001.Appearance.Options.UseBackColor = true;
+            this.P0001.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.P0001.Controls.Add(this.lblTT1);
+            this.P0001.Controls.Add(this.lbl1);
+            this.P0001.Location = new System.Drawing.Point(3, 3);
+            this.P0001.Name = "P0001";
+            this.P0001.Size = new System.Drawing.Size(256, 163);
+            this.P0001.TabIndex = 9;
             // 
             // lblTT1
             // 
@@ -577,66 +577,67 @@
             // lbl1
             // 
             this.lbl1.BackColor = System.Drawing.Color.Red;
-            this.lbl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbl1.Location = new System.Drawing.Point(2, 2);
+            this.lbl1.Location = new System.Drawing.Point(2, 38);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(252, 159);
+            this.lbl1.Size = new System.Drawing.Size(252, 123);
             this.lbl1.TabIndex = 2;
             this.lbl1.Text = "Phòng 1";
             this.lbl1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnl2
+            // P0002
             // 
-            this.pnl2.Appearance.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnl2.Appearance.Options.UseBackColor = true;
-            this.pnl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl2.Controls.Add(this.lblTT2);
-            this.pnl2.Controls.Add(this.lbl2);
-            this.pnl2.Location = new System.Drawing.Point(265, 3);
-            this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(256, 163);
-            this.pnl2.TabIndex = 10;
+            this.P0002.Appearance.BackColor = System.Drawing.Color.LawnGreen;
+            this.P0002.Appearance.Options.UseBackColor = true;
+            this.P0002.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.P0002.Controls.Add(this.labelControl1);
+            this.P0002.Controls.Add(this.lbl2);
+            this.P0002.Location = new System.Drawing.Point(265, 3);
+            this.P0002.Name = "P0002";
+            this.P0002.Size = new System.Drawing.Size(256, 163);
+            this.P0002.TabIndex = 10;
             // 
-            // lblTT2
+            // labelControl1
             // 
-            this.lblTT2.BackColor = System.Drawing.Color.LawnGreen;
-            this.lblTT2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblTT2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblTT2.Location = new System.Drawing.Point(2, 106);
-            this.lblTT2.Name = "lblTT2";
-            this.lblTT2.Size = new System.Drawing.Size(252, 55);
-            this.lblTT2.TabIndex = 1;
-            this.lblTT2.Text = "Sẵn sàng";
-            this.lblTT2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl1.Appearance.Options.UseBackColor = true;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(50, 56);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(179, 55);
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "Sẵn sàng";
             // 
             // lbl2
             // 
-            this.lbl2.BackColor = System.Drawing.Color.LawnGreen;
-            this.lbl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl2.BackColor = System.Drawing.Color.Red;
             this.lbl2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbl2.Location = new System.Drawing.Point(2, 2);
+            this.lbl2.Location = new System.Drawing.Point(2, 38);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(252, 159);
+            this.lbl2.Size = new System.Drawing.Size(252, 123);
             this.lbl2.TabIndex = 2;
             this.lbl2.Text = "Phòng 1";
             this.lbl2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnl3
+            // P0003
             // 
-            this.pnl3.Appearance.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnl3.Appearance.Options.UseBackColor = true;
-            this.pnl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl3.Controls.Add(this.lblTT3);
-            this.pnl3.Controls.Add(this.lbl3);
-            this.pnl3.Location = new System.Drawing.Point(527, 3);
-            this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(256, 163);
-            this.pnl3.TabIndex = 11;
+            this.P0003.Appearance.BackColor = System.Drawing.Color.LawnGreen;
+            this.P0003.Appearance.Options.UseBackColor = true;
+            this.P0003.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.P0003.Controls.Add(this.lblTT3);
+            this.P0003.Controls.Add(this.lbl3);
+            this.P0003.Location = new System.Drawing.Point(527, 3);
+            this.P0003.Name = "P0003";
+            this.P0003.Size = new System.Drawing.Size(256, 163);
+            this.P0003.TabIndex = 11;
             // 
             // lblTT3
             // 
-            this.lblTT3.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT3.BackColor = System.Drawing.Color.Red;
             this.lblTT3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblTT3.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblTT3.Location = new System.Drawing.Point(2, 106);
@@ -648,31 +649,30 @@
             // 
             // lbl3
             // 
-            this.lbl3.BackColor = System.Drawing.Color.LawnGreen;
-            this.lbl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl3.BackColor = System.Drawing.Color.Red;
             this.lbl3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbl3.Location = new System.Drawing.Point(2, 2);
+            this.lbl3.Location = new System.Drawing.Point(2, 56);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(252, 159);
+            this.lbl3.Size = new System.Drawing.Size(252, 105);
             this.lbl3.TabIndex = 2;
             this.lbl3.Text = "Phòng 1";
             this.lbl3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnl4
+            // P0004
             // 
-            this.pnl4.Appearance.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnl4.Appearance.Options.UseBackColor = true;
-            this.pnl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl4.Controls.Add(this.lblTT4);
-            this.pnl4.Controls.Add(this.lbl4);
-            this.pnl4.Location = new System.Drawing.Point(789, 3);
-            this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(256, 163);
-            this.pnl4.TabIndex = 12;
+            this.P0004.Appearance.BackColor = System.Drawing.Color.LawnGreen;
+            this.P0004.Appearance.Options.UseBackColor = true;
+            this.P0004.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.P0004.Controls.Add(this.lblTT4);
+            this.P0004.Controls.Add(this.lbl4);
+            this.P0004.Location = new System.Drawing.Point(789, 3);
+            this.P0004.Name = "P0004";
+            this.P0004.Size = new System.Drawing.Size(256, 163);
+            this.P0004.TabIndex = 12;
             // 
             // lblTT4
             // 
-            this.lblTT4.BackColor = System.Drawing.Color.LawnGreen;
+            this.lblTT4.BackColor = System.Drawing.Color.Red;
             this.lblTT4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblTT4.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblTT4.Location = new System.Drawing.Point(2, 106);
@@ -684,27 +684,26 @@
             // 
             // lbl4
             // 
-            this.lbl4.BackColor = System.Drawing.Color.LawnGreen;
-            this.lbl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl4.BackColor = System.Drawing.Color.Red;
             this.lbl4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbl4.Location = new System.Drawing.Point(2, 2);
+            this.lbl4.Location = new System.Drawing.Point(2, 38);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(252, 159);
+            this.lbl4.Size = new System.Drawing.Size(252, 123);
             this.lbl4.TabIndex = 0;
             this.lbl4.Text = "Phòng 1";
             this.lbl4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnl5
+            // P0005
             // 
-            this.pnl5.Appearance.BackColor = System.Drawing.Color.Red;
-            this.pnl5.Appearance.Options.UseBackColor = true;
-            this.pnl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl5.Controls.Add(this.lblTT5);
-            this.pnl5.Controls.Add(this.lbl5);
-            this.pnl5.Location = new System.Drawing.Point(1051, 3);
-            this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(256, 163);
-            this.pnl5.TabIndex = 13;
+            this.P0005.Appearance.BackColor = System.Drawing.Color.Red;
+            this.P0005.Appearance.Options.UseBackColor = true;
+            this.P0005.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.P0005.Controls.Add(this.lblTT5);
+            this.P0005.Controls.Add(this.lbl5);
+            this.P0005.Location = new System.Drawing.Point(1051, 3);
+            this.P0005.Name = "P0005";
+            this.P0005.Size = new System.Drawing.Size(256, 163);
+            this.P0005.TabIndex = 13;
             // 
             // lblTT5
             // 
@@ -721,26 +720,25 @@
             // lbl5
             // 
             this.lbl5.BackColor = System.Drawing.Color.Red;
-            this.lbl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbl5.Location = new System.Drawing.Point(2, 2);
+            this.lbl5.Location = new System.Drawing.Point(2, 56);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(252, 159);
+            this.lbl5.Size = new System.Drawing.Size(252, 105);
             this.lbl5.TabIndex = 0;
             this.lbl5.Text = "Phòng 1";
             this.lbl5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnl6
+            // P0006
             // 
-            this.pnl6.Appearance.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnl6.Appearance.Options.UseBackColor = true;
-            this.pnl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.pnl6.Controls.Add(this.lblTT6);
-            this.pnl6.Controls.Add(this.lnl6);
-            this.pnl6.Location = new System.Drawing.Point(3, 172);
-            this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(256, 163);
-            this.pnl6.TabIndex = 14;
+            this.P0006.Appearance.BackColor = System.Drawing.Color.LawnGreen;
+            this.P0006.Appearance.Options.UseBackColor = true;
+            this.P0006.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.P0006.Controls.Add(this.lblTT6);
+            this.P0006.Controls.Add(this.lnl6);
+            this.P0006.Location = new System.Drawing.Point(3, 172);
+            this.P0006.Name = "P0006";
+            this.P0006.Size = new System.Drawing.Size(256, 163);
+            this.P0006.TabIndex = 14;
             // 
             // lblTT6
             // 
@@ -757,11 +755,10 @@
             // lnl6
             // 
             this.lnl6.BackColor = System.Drawing.Color.LawnGreen;
-            this.lnl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lnl6.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lnl6.Location = new System.Drawing.Point(2, 2);
+            this.lnl6.Location = new System.Drawing.Point(2, 55);
             this.lnl6.Name = "lnl6";
-            this.lnl6.Size = new System.Drawing.Size(252, 159);
+            this.lnl6.Size = new System.Drawing.Size(252, 106);
             this.lnl6.TabIndex = 0;
             this.lnl6.Text = "Phòng 1";
             this.lnl6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1565,18 +1562,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl1)).EndInit();
-            this.pnl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl2)).EndInit();
-            this.pnl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl3)).EndInit();
-            this.pnl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl4)).EndInit();
-            this.pnl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl5)).EndInit();
-            this.pnl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnl6)).EndInit();
-            this.pnl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.P0001)).EndInit();
+            this.P0001.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.P0002)).EndInit();
+            this.P0002.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.P0003)).EndInit();
+            this.P0003.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.P0004)).EndInit();
+            this.P0004.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.P0005)).EndInit();
+            this.P0005.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.P0006)).EndInit();
+            this.P0006.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pnl7)).EndInit();
             this.pnl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pnl8)).EndInit();
@@ -1665,16 +1662,16 @@
         private System.Windows.Forms.Timer timerDateSystem;
         private System.Windows.Forms.Label lblTinhTrang;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private DevExpress.XtraEditors.PanelControl pnl1;
-        private DevExpress.XtraEditors.PanelControl pnl2;
-        private DevExpress.XtraEditors.PanelControl pnl3;
-        private DevExpress.XtraEditors.PanelControl pnl4;
+        private DevExpress.XtraEditors.PanelControl P0001;
+        private DevExpress.XtraEditors.PanelControl P0002;
+        private DevExpress.XtraEditors.PanelControl P0003;
+        private DevExpress.XtraEditors.PanelControl P0004;
         private System.Windows.Forms.Label lblTT4;
         private System.Windows.Forms.Label lbl4;
-        private DevExpress.XtraEditors.PanelControl pnl5;
+        private DevExpress.XtraEditors.PanelControl P0005;
         private System.Windows.Forms.Label lblTT5;
         private System.Windows.Forms.Label lbl5;
-        private DevExpress.XtraEditors.PanelControl pnl6;
+        private DevExpress.XtraEditors.PanelControl P0006;
         private System.Windows.Forms.Label lblTT6;
         private System.Windows.Forms.Label lnl6;
         private DevExpress.XtraEditors.PanelControl pnl7;
@@ -1737,8 +1734,6 @@
         private System.Windows.Forms.Label lbl26;
         private System.Windows.Forms.Label lblTT1;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lblTT2;
-        private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lblTT3;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Label lblTT8;
@@ -1751,6 +1746,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Label lbl2;
     }
 }
 

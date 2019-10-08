@@ -19,7 +19,7 @@ namespace Home
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frmDatPhong());
+            Application.Run(new frmHome());
         }
     }
 }

@@ -31,22 +31,58 @@ namespace Home
             listp = pbus.gettinhtrangp(true);
             foreach (var item in listp)
             {
-                
-            }
-            int s = 0, c = 0;
-            foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-            {
-                if (pnl.BackColor == Color.LawnGreen)
+                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                 {
-                    s++;
-                }
-                else
-                {
-                    c++;
+                    if (pnl.Name.Equals(item.MaPhong.Trim()))
+                    {
+                        pnl.BackColor = Color.Red;
+                        MessageBox.Show(pnl.Name);
+                        foreach (var lbl in pnl.Controls.OfType<Label>())
+                        {
+                            lbl.BackColor = Color.Red;
+                            lbl.Text = item.TenPhong;
+                            break;
+                        }
+                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                        {
+                            lbl.BackColor = Color.Red;
+                            lbl.Text = "Có khách";
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        pnl.BackColor = Color.LawnGreen;
+                        MessageBox.Show(pnl.Name);
+                        foreach (var lbl in pnl.Controls.OfType<Label>())
+                        {
+                            lbl.BackColor = Color.LawnGreen;
+                            lbl.Text = item.TenPhong;
+                            break;
+                        }
+                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                        {
+                            lbl.BackColor = Color.LawnGreen;
+                            lbl.Text = "Sẵn sàng";
+                            break;
+                        }
+                    }
                 }
             }
-            this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
-            this.toggleSwitchCK.Properties.OffText = "Có khách " + c.ToString();
+            //int s = 0, c = 0;
+            //foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+            //{
+            //    if (pnl.BackColor == Color.LawnGreen)
+            //    {
+            //        s++;
+            //    }
+            //    else
+            //    {
+            //        c++;
+            //    }
+            //}
+            //this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
+            //this.toggleSwitchCK.Properties.OffText = "Có khách " + c.ToString();
         }
 
         private void toggleSwitchSS_Toggled(object sender, EventArgs e)
