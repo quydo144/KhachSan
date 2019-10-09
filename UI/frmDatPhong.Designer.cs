@@ -284,6 +284,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // labelControl4
             // 
@@ -427,12 +428,12 @@
             // 
             this.dgvDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDichVu.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.dgvDichVu.Location = new System.Drawing.Point(0, 79);
+            this.dgvDichVu.Location = new System.Drawing.Point(0, 77);
             this.dgvDichVu.MainView = this.gridViewDV;
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnThem});
-            this.dgvDichVu.Size = new System.Drawing.Size(364, 581);
+            this.dgvDichVu.Size = new System.Drawing.Size(364, 583);
             this.dgvDichVu.TabIndex = 12;
             this.dgvDichVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDV});
@@ -504,12 +505,13 @@
             this.txtSeachDV.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSeachDV.Location = new System.Drawing.Point(0, 41);
             this.txtSeachDV.Name = "txtSeachDV";
-            this.txtSeachDV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.5F);
+            this.txtSeachDV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtSeachDV.Properties.Appearance.Options.UseFont = true;
             this.txtSeachDV.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtSeachDV.Properties.ContextImageOptions.Image")));
-            this.txtSeachDV.Size = new System.Drawing.Size(364, 38);
+            this.txtSeachDV.Size = new System.Drawing.Size(364, 36);
             this.txtSeachDV.TabIndex = 11;
             this.toolTipDV.SetToolTip(this.txtSeachDV, "Tìm kiếm dịch vụ");
+            this.txtSeachDV.TextChanged += new System.EventHandler(this.txtSeachDV_TextChanged);
             // 
             // panel6
             // 

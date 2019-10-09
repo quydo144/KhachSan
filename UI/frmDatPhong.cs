@@ -47,6 +47,7 @@ namespace Home
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
             dgvDichVu.DataSource = listdv.getdv();
+            //gridViewDV.ShowFindPanel();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -60,6 +61,26 @@ namespace Home
             dv.ThanhTien = dv.DonGia * dv.SoLuong;
             ls.Add(dv);
             dgvCTDV.DataSource = ls.ToList();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int index = gridViewCTDV.FocusedRowHandle;
+            ls.RemoveAt(index);
+            dgvCTDV.DataSource = ls.ToList();
+
+        }
+
+        private void txtSeachDV_Leave(object sender, EventArgs e)
+        {
+            string s = txtSeachDV.Text;
+            if (!String.IsNullOrEmpty(s))
+                gridViewDV.Columns[1].Equals(s);
+        }
+
+        private void txtSeachDV_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
