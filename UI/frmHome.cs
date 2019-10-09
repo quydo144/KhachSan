@@ -41,6 +41,13 @@ namespace Home
                         {
                             lbl.BackColor = Color.Red;
                             lbl.Text = item.TenPhong;
+                            lbl.Click += new EventHandler(lbl_Click);
+                        }
+                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
+                        {
+                            lbl.BackColor = Color.Red;
+                            lbl.Text = "Có khách";
+                            lbl.Click += new EventHandler(lbl_Click);
                         }
                     }
                 }
@@ -57,9 +64,26 @@ namespace Home
                         {
                             lbl.BackColor = Color.LawnGreen;
                             lbl.Text = item.TenPhong;
+                            lbl.Click += new EventHandler(lbl_Click);
+                        }
+                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
+                        {
+                            lbl.BackColor = Color.LawnGreen;
+                            lbl.Text = "Sẵn sàng";
+                            lbl.Click += new EventHandler(lbl_Click);
                         }
                     }
                 }
+            }
+        }
+
+        public void lbl_Click(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            DevExpress.XtraEditors.LabelControl lbld = sender as DevExpress.XtraEditors.LabelControl;
+            if ( lbl!=null || lbld!=null)
+            {
+                MessageBox.Show("a");
             }
         }
 
@@ -93,37 +117,7 @@ namespace Home
                     }
                 }
                 this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
-            }
-
-            if (toggleSwitchCK.IsOn != true)
-            {
-                int s = 0;
-                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                {
-                    if (pnl.BackColor == Color.Red)
-                    {
-                        s++;
-                    }
-                    pnl.Show();
-                }
-                this.toggleSwitchCK.Properties.OffText = "Sẵn sàng " + s.ToString();
-            }
-            else
-            {
-                int s = 0;
-                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                {
-                    if (pnl.BackColor != Color.LawnGreen)
-                    {
-                        pnl.Hide();
-                    }
-                    else
-                    {
-                        s++;
-                    }
-                }
-                this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
-            }
+            }      
         }
 
         private void toggleSwitchCK_Toggled(object sender, EventArgs e)
