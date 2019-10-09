@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eCTDV.cs" />
     <Compile Include="eThuePhong.cs" />
     <Compile Include="eSuDungDichVu.cs" />
     <Compile Include="eDichVu.cs" />

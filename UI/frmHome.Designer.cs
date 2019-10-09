@@ -68,87 +68,87 @@
             this.timerDateSystem = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.P0001 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lbl1 = new System.Windows.Forms.Label();
             this.P0002 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lbl2 = new System.Windows.Forms.Label();
             this.P0003 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lbl3 = new System.Windows.Forms.Label();
             this.P0004 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lbl4 = new System.Windows.Forms.Label();
             this.P0005 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.lbl5 = new System.Windows.Forms.Label();
             this.P0006 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.lnl6 = new System.Windows.Forms.Label();
             this.P0007 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.lbl7 = new System.Windows.Forms.Label();
             this.P0008 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.lbl8 = new System.Windows.Forms.Label();
             this.P0009 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.lbl9 = new System.Windows.Forms.Label();
             this.P0010 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.lbl10 = new System.Windows.Forms.Label();
             this.P0011 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.lbl11 = new System.Windows.Forms.Label();
             this.P0012 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.lbl12 = new System.Windows.Forms.Label();
             this.P0013 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lbl13 = new System.Windows.Forms.Label();
             this.P0014 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.lbl14 = new System.Windows.Forms.Label();
             this.P0015 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.lbl15 = new System.Windows.Forms.Label();
             this.P0016 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.lbl16 = new System.Windows.Forms.Label();
             this.P0017 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.lbl17 = new System.Windows.Forms.Label();
             this.P0018 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.lbl18 = new System.Windows.Forms.Label();
             this.P0019 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.lbl19 = new System.Windows.Forms.Label();
             this.P0020 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.lbl20 = new System.Windows.Forms.Label();
             this.P0021 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.lbl21 = new System.Windows.Forms.Label();
             this.P0022 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.lbl22 = new System.Windows.Forms.Label();
             this.P0023 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.lbl23 = new System.Windows.Forms.Label();
             this.P0024 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.lbl24 = new System.Windows.Forms.Label();
             this.P0025 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.lbl25 = new System.Windows.Forms.Label();
             this.P0026 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toggleSwitchCK = new DevExpress.XtraEditors.ToggleSwitch();
             this.toggleSwitchSS = new DevExpress.XtraEditors.ToggleSwitch();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -562,6 +562,22 @@
             this.P0001.Size = new System.Drawing.Size(256, 163);
             this.P0001.TabIndex = 9;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl2.Appearance.Options.UseBackColor = true;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl2.Location = new System.Drawing.Point(2, 106);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(252, 55);
+            this.labelControl2.TabIndex = 12;
+            this.labelControl2.Text = "Sẵn sàng";
+            // 
             // lbl1
             // 
             this.lbl1.BackColor = System.Drawing.Color.LawnGreen;
@@ -626,6 +642,22 @@
             this.P0003.Size = new System.Drawing.Size(256, 163);
             this.P0003.TabIndex = 11;
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl3.Appearance.Options.UseBackColor = true;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl3.Location = new System.Drawing.Point(2, 106);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(252, 55);
+            this.labelControl3.TabIndex = 12;
+            this.labelControl3.Text = "Sẵn sàng";
+            // 
             // lbl3
             // 
             this.lbl3.BackColor = System.Drawing.Color.LawnGreen;
@@ -649,6 +681,22 @@
             this.P0004.Name = "P0004";
             this.P0004.Size = new System.Drawing.Size(256, 163);
             this.P0004.TabIndex = 12;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl4.Appearance.Options.UseBackColor = true;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl4.Location = new System.Drawing.Point(2, 106);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(252, 55);
+            this.labelControl4.TabIndex = 12;
+            this.labelControl4.Text = "Sẵn sàng";
             // 
             // lbl4
             // 
@@ -674,6 +722,22 @@
             this.P0005.Size = new System.Drawing.Size(256, 163);
             this.P0005.TabIndex = 13;
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl5.Appearance.Options.UseBackColor = true;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl5.Location = new System.Drawing.Point(2, 106);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(252, 55);
+            this.labelControl5.TabIndex = 12;
+            this.labelControl5.Text = "Sẵn sàng";
+            // 
             // lbl5
             // 
             this.lbl5.BackColor = System.Drawing.Color.LawnGreen;
@@ -697,6 +761,22 @@
             this.P0006.Name = "P0006";
             this.P0006.Size = new System.Drawing.Size(256, 163);
             this.P0006.TabIndex = 14;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl10.Appearance.Options.UseBackColor = true;
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl10.Location = new System.Drawing.Point(2, 106);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(252, 55);
+            this.labelControl10.TabIndex = 12;
+            this.labelControl10.Text = "Sẵn sàng";
             // 
             // lnl6
             // 
@@ -722,6 +802,22 @@
             this.P0007.Size = new System.Drawing.Size(256, 163);
             this.P0007.TabIndex = 15;
             // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl9.Appearance.Options.UseBackColor = true;
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
+            this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl9.Location = new System.Drawing.Point(2, 106);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(252, 55);
+            this.labelControl9.TabIndex = 12;
+            this.labelControl9.Text = "Sẵn sàng";
+            // 
             // lbl7
             // 
             this.lbl7.BackColor = System.Drawing.Color.LawnGreen;
@@ -745,6 +841,22 @@
             this.P0008.Name = "P0008";
             this.P0008.Size = new System.Drawing.Size(256, 163);
             this.P0008.TabIndex = 16;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl8.Appearance.Options.UseBackColor = true;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
+            this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl8.Location = new System.Drawing.Point(2, 106);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(252, 55);
+            this.labelControl8.TabIndex = 12;
+            this.labelControl8.Text = "Sẵn sàng";
             // 
             // lbl8
             // 
@@ -770,6 +882,22 @@
             this.P0009.Size = new System.Drawing.Size(256, 163);
             this.P0009.TabIndex = 17;
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl7.Appearance.Options.UseBackColor = true;
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl7.Location = new System.Drawing.Point(2, 106);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(252, 55);
+            this.labelControl7.TabIndex = 12;
+            this.labelControl7.Text = "Sẵn sàng";
+            // 
             // lbl9
             // 
             this.lbl9.BackColor = System.Drawing.Color.LawnGreen;
@@ -793,6 +921,22 @@
             this.P0010.Name = "P0010";
             this.P0010.Size = new System.Drawing.Size(256, 163);
             this.P0010.TabIndex = 18;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl6.Appearance.Options.UseBackColor = true;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl6.Location = new System.Drawing.Point(2, 106);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(252, 55);
+            this.labelControl6.TabIndex = 12;
+            this.labelControl6.Text = "Sẵn sàng";
             // 
             // lbl10
             // 
@@ -818,6 +962,22 @@
             this.P0011.Size = new System.Drawing.Size(256, 163);
             this.P0011.TabIndex = 20;
             // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl11.Appearance.Options.UseBackColor = true;
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseTextOptions = true;
+            this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl11.Location = new System.Drawing.Point(2, 106);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(252, 55);
+            this.labelControl11.TabIndex = 12;
+            this.labelControl11.Text = "Sẵn sàng";
+            // 
             // lbl11
             // 
             this.lbl11.BackColor = System.Drawing.Color.LawnGreen;
@@ -841,6 +1001,22 @@
             this.P0012.Name = "P0012";
             this.P0012.Size = new System.Drawing.Size(256, 163);
             this.P0012.TabIndex = 19;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl12.Appearance.Options.UseBackColor = true;
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseTextOptions = true;
+            this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl12.Location = new System.Drawing.Point(2, 106);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(252, 55);
+            this.labelControl12.TabIndex = 12;
+            this.labelControl12.Text = "Sẵn sàng";
             // 
             // lbl12
             // 
@@ -866,6 +1042,22 @@
             this.P0013.Size = new System.Drawing.Size(256, 163);
             this.P0013.TabIndex = 21;
             // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl13.Appearance.Options.UseBackColor = true;
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl13.Location = new System.Drawing.Point(2, 106);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(252, 55);
+            this.labelControl13.TabIndex = 12;
+            this.labelControl13.Text = "Sẵn sàng";
+            // 
             // lbl13
             // 
             this.lbl13.BackColor = System.Drawing.Color.LawnGreen;
@@ -889,6 +1081,22 @@
             this.P0014.Name = "P0014";
             this.P0014.Size = new System.Drawing.Size(256, 163);
             this.P0014.TabIndex = 22;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl14.Appearance.Options.UseBackColor = true;
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl14.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl14.Location = new System.Drawing.Point(2, 106);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(252, 55);
+            this.labelControl14.TabIndex = 12;
+            this.labelControl14.Text = "Sẵn sàng";
             // 
             // lbl14
             // 
@@ -914,6 +1122,22 @@
             this.P0015.Size = new System.Drawing.Size(256, 163);
             this.P0015.TabIndex = 23;
             // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl15.Appearance.Options.UseBackColor = true;
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseTextOptions = true;
+            this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl15.Location = new System.Drawing.Point(2, 106);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(252, 55);
+            this.labelControl15.TabIndex = 12;
+            this.labelControl15.Text = "Sẵn sàng";
+            // 
             // lbl15
             // 
             this.lbl15.BackColor = System.Drawing.Color.LawnGreen;
@@ -937,6 +1161,22 @@
             this.P0016.Name = "P0016";
             this.P0016.Size = new System.Drawing.Size(256, 163);
             this.P0016.TabIndex = 20;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl20.Appearance.Options.UseBackColor = true;
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Appearance.Options.UseTextOptions = true;
+            this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl20.Location = new System.Drawing.Point(2, 106);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(252, 55);
+            this.labelControl20.TabIndex = 12;
+            this.labelControl20.Text = "Sẵn sàng";
             // 
             // lbl16
             // 
@@ -962,6 +1202,22 @@
             this.P0017.Size = new System.Drawing.Size(256, 163);
             this.P0017.TabIndex = 24;
             // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl19.Appearance.Options.UseBackColor = true;
+            this.labelControl19.Appearance.Options.UseFont = true;
+            this.labelControl19.Appearance.Options.UseTextOptions = true;
+            this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl19.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl19.Location = new System.Drawing.Point(2, 106);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(252, 55);
+            this.labelControl19.TabIndex = 12;
+            this.labelControl19.Text = "Sẵn sàng";
+            // 
             // lbl17
             // 
             this.lbl17.BackColor = System.Drawing.Color.LawnGreen;
@@ -985,6 +1241,22 @@
             this.P0018.Name = "P0018";
             this.P0018.Size = new System.Drawing.Size(256, 163);
             this.P0018.TabIndex = 25;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl18.Appearance.Options.UseBackColor = true;
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseTextOptions = true;
+            this.labelControl18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl18.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl18.Location = new System.Drawing.Point(2, 106);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(252, 55);
+            this.labelControl18.TabIndex = 12;
+            this.labelControl18.Text = "Sẵn sàng";
             // 
             // lbl18
             // 
@@ -1010,6 +1282,22 @@
             this.P0019.Size = new System.Drawing.Size(256, 163);
             this.P0019.TabIndex = 26;
             // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl17.Appearance.Options.UseBackColor = true;
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseTextOptions = true;
+            this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl17.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl17.Location = new System.Drawing.Point(2, 106);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(252, 55);
+            this.labelControl17.TabIndex = 12;
+            this.labelControl17.Text = "Sẵn sàng";
+            // 
             // lbl19
             // 
             this.lbl19.BackColor = System.Drawing.Color.LawnGreen;
@@ -1033,6 +1321,22 @@
             this.P0020.Name = "P0020";
             this.P0020.Size = new System.Drawing.Size(256, 163);
             this.P0020.TabIndex = 27;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl16.Appearance.Options.UseBackColor = true;
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Appearance.Options.UseTextOptions = true;
+            this.labelControl16.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl16.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl16.Location = new System.Drawing.Point(2, 106);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(252, 55);
+            this.labelControl16.TabIndex = 12;
+            this.labelControl16.Text = "Sẵn sàng";
             // 
             // lbl20
             // 
@@ -1058,6 +1362,22 @@
             this.P0021.Size = new System.Drawing.Size(256, 163);
             this.P0021.TabIndex = 28;
             // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl21.Appearance.Options.UseBackColor = true;
+            this.labelControl21.Appearance.Options.UseFont = true;
+            this.labelControl21.Appearance.Options.UseTextOptions = true;
+            this.labelControl21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl21.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl21.Location = new System.Drawing.Point(2, 106);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(252, 55);
+            this.labelControl21.TabIndex = 12;
+            this.labelControl21.Text = "Sẵn sàng";
+            // 
             // lbl21
             // 
             this.lbl21.BackColor = System.Drawing.Color.LawnGreen;
@@ -1081,6 +1401,22 @@
             this.P0022.Name = "P0022";
             this.P0022.Size = new System.Drawing.Size(256, 163);
             this.P0022.TabIndex = 30;
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl22.Appearance.Options.UseBackColor = true;
+            this.labelControl22.Appearance.Options.UseFont = true;
+            this.labelControl22.Appearance.Options.UseTextOptions = true;
+            this.labelControl22.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl22.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl22.Location = new System.Drawing.Point(2, 106);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(252, 55);
+            this.labelControl22.TabIndex = 12;
+            this.labelControl22.Text = "Sẵn sàng";
             // 
             // lbl22
             // 
@@ -1106,6 +1442,22 @@
             this.P0023.Size = new System.Drawing.Size(256, 163);
             this.P0023.TabIndex = 31;
             // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl23.Appearance.Options.UseBackColor = true;
+            this.labelControl23.Appearance.Options.UseFont = true;
+            this.labelControl23.Appearance.Options.UseTextOptions = true;
+            this.labelControl23.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl23.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl23.Location = new System.Drawing.Point(2, 106);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(252, 55);
+            this.labelControl23.TabIndex = 12;
+            this.labelControl23.Text = "Sẵn sàng";
+            // 
             // lbl23
             // 
             this.lbl23.BackColor = System.Drawing.Color.LawnGreen;
@@ -1129,6 +1481,22 @@
             this.P0024.Name = "P0024";
             this.P0024.Size = new System.Drawing.Size(256, 163);
             this.P0024.TabIndex = 32;
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl24.Appearance.Options.UseBackColor = true;
+            this.labelControl24.Appearance.Options.UseFont = true;
+            this.labelControl24.Appearance.Options.UseTextOptions = true;
+            this.labelControl24.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl24.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl24.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl24.Location = new System.Drawing.Point(2, 106);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(252, 55);
+            this.labelControl24.TabIndex = 12;
+            this.labelControl24.Text = "Sẵn sàng";
             // 
             // lbl24
             // 
@@ -1154,6 +1522,22 @@
             this.P0025.Size = new System.Drawing.Size(256, 163);
             this.P0025.TabIndex = 33;
             // 
+            // labelControl25
+            // 
+            this.labelControl25.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl25.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl25.Appearance.Options.UseBackColor = true;
+            this.labelControl25.Appearance.Options.UseFont = true;
+            this.labelControl25.Appearance.Options.UseTextOptions = true;
+            this.labelControl25.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl25.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl25.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl25.Location = new System.Drawing.Point(2, 106);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(252, 55);
+            this.labelControl25.TabIndex = 12;
+            this.labelControl25.Text = "Sẵn sàng";
+            // 
             // lbl25
             // 
             this.lbl25.BackColor = System.Drawing.Color.LawnGreen;
@@ -1177,6 +1561,34 @@
             this.P0026.Name = "P0026";
             this.P0026.Size = new System.Drawing.Size(256, 163);
             this.P0026.TabIndex = 34;
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl26.Appearance.Options.UseBackColor = true;
+            this.labelControl26.Appearance.Options.UseFont = true;
+            this.labelControl26.Appearance.Options.UseTextOptions = true;
+            this.labelControl26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl26.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl26.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl26.Location = new System.Drawing.Point(2, 106);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(252, 55);
+            this.labelControl26.TabIndex = 12;
+            this.labelControl26.Text = "Sẵn sàng";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.LawnGreen;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label1.Location = new System.Drawing.Point(2, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(252, 159);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Phòng 1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblTime
             // 
@@ -1237,418 +1649,6 @@
             this.toggleSwitchSS.Size = new System.Drawing.Size(405, 46);
             this.toggleSwitchSS.TabIndex = 9;
             this.toggleSwitchSS.Toggled += new System.EventHandler(this.toggleSwitchSS_Toggled);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.LawnGreen;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(2, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 159);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Phòng 1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Appearance.Options.UseBackColor = true;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl2.Location = new System.Drawing.Point(2, 106);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(252, 55);
-            this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Sẵn sàng";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl3.Appearance.Options.UseBackColor = true;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl3.Location = new System.Drawing.Point(2, 106);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(252, 55);
-            this.labelControl3.TabIndex = 12;
-            this.labelControl3.Text = "Sẵn sàng";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl4.Appearance.Options.UseBackColor = true;
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseTextOptions = true;
-            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl4.Location = new System.Drawing.Point(2, 106);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(252, 55);
-            this.labelControl4.TabIndex = 12;
-            this.labelControl4.Text = "Sẵn sàng";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl5.Appearance.Options.UseBackColor = true;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseTextOptions = true;
-            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl5.Location = new System.Drawing.Point(2, 106);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(252, 55);
-            this.labelControl5.TabIndex = 12;
-            this.labelControl5.Text = "Sẵn sàng";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl6.Appearance.Options.UseBackColor = true;
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseTextOptions = true;
-            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl6.Location = new System.Drawing.Point(2, 106);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(252, 55);
-            this.labelControl6.TabIndex = 12;
-            this.labelControl6.Text = "Sẵn sàng";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl7.Appearance.Options.UseBackColor = true;
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Appearance.Options.UseTextOptions = true;
-            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl7.Location = new System.Drawing.Point(2, 106);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(252, 55);
-            this.labelControl7.TabIndex = 12;
-            this.labelControl7.Text = "Sẵn sàng";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl8.Appearance.Options.UseBackColor = true;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseTextOptions = true;
-            this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl8.Location = new System.Drawing.Point(2, 106);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(252, 55);
-            this.labelControl8.TabIndex = 12;
-            this.labelControl8.Text = "Sẵn sàng";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl9.Appearance.Options.UseBackColor = true;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseTextOptions = true;
-            this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl9.Location = new System.Drawing.Point(2, 106);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(252, 55);
-            this.labelControl9.TabIndex = 12;
-            this.labelControl9.Text = "Sẵn sàng";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl10.Appearance.Options.UseBackColor = true;
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseTextOptions = true;
-            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl10.Location = new System.Drawing.Point(2, 106);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(252, 55);
-            this.labelControl10.TabIndex = 12;
-            this.labelControl10.Text = "Sẵn sàng";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl11.Appearance.Options.UseBackColor = true;
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Appearance.Options.UseTextOptions = true;
-            this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl11.Location = new System.Drawing.Point(2, 106);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(252, 55);
-            this.labelControl11.TabIndex = 12;
-            this.labelControl11.Text = "Sẵn sàng";
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl12.Appearance.Options.UseBackColor = true;
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Appearance.Options.UseTextOptions = true;
-            this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl12.Location = new System.Drawing.Point(2, 106);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(252, 55);
-            this.labelControl12.TabIndex = 12;
-            this.labelControl12.Text = "Sẵn sàng";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl13.Appearance.Options.UseBackColor = true;
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl13.Location = new System.Drawing.Point(2, 106);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(252, 55);
-            this.labelControl13.TabIndex = 12;
-            this.labelControl13.Text = "Sẵn sàng";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl14.Appearance.Options.UseBackColor = true;
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Appearance.Options.UseTextOptions = true;
-            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl14.Location = new System.Drawing.Point(2, 106);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(252, 55);
-            this.labelControl14.TabIndex = 12;
-            this.labelControl14.Text = "Sẵn sàng";
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl15.Appearance.Options.UseBackColor = true;
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Appearance.Options.UseTextOptions = true;
-            this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl15.Location = new System.Drawing.Point(2, 106);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(252, 55);
-            this.labelControl15.TabIndex = 12;
-            this.labelControl15.Text = "Sẵn sàng";
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl16.Appearance.Options.UseBackColor = true;
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Appearance.Options.UseTextOptions = true;
-            this.labelControl16.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl16.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl16.Location = new System.Drawing.Point(2, 106);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(252, 55);
-            this.labelControl16.TabIndex = 12;
-            this.labelControl16.Text = "Sẵn sàng";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl17.Appearance.Options.UseBackColor = true;
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Appearance.Options.UseTextOptions = true;
-            this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl17.Location = new System.Drawing.Point(2, 106);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(252, 55);
-            this.labelControl17.TabIndex = 12;
-            this.labelControl17.Text = "Sẵn sàng";
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl18.Appearance.Options.UseBackColor = true;
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Appearance.Options.UseTextOptions = true;
-            this.labelControl18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl18.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl18.Location = new System.Drawing.Point(2, 106);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(252, 55);
-            this.labelControl18.TabIndex = 12;
-            this.labelControl18.Text = "Sẵn sàng";
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl19.Appearance.Options.UseBackColor = true;
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Appearance.Options.UseTextOptions = true;
-            this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl19.Location = new System.Drawing.Point(2, 106);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(252, 55);
-            this.labelControl19.TabIndex = 12;
-            this.labelControl19.Text = "Sẵn sàng";
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl20.Appearance.Options.UseBackColor = true;
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Appearance.Options.UseTextOptions = true;
-            this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl20.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl20.Location = new System.Drawing.Point(2, 106);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(252, 55);
-            this.labelControl20.TabIndex = 12;
-            this.labelControl20.Text = "Sẵn sàng";
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl21.Appearance.Options.UseBackColor = true;
-            this.labelControl21.Appearance.Options.UseFont = true;
-            this.labelControl21.Appearance.Options.UseTextOptions = true;
-            this.labelControl21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl21.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl21.Location = new System.Drawing.Point(2, 106);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(252, 55);
-            this.labelControl21.TabIndex = 12;
-            this.labelControl21.Text = "Sẵn sàng";
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl22.Appearance.Options.UseBackColor = true;
-            this.labelControl22.Appearance.Options.UseFont = true;
-            this.labelControl22.Appearance.Options.UseTextOptions = true;
-            this.labelControl22.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl22.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl22.Location = new System.Drawing.Point(2, 106);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(252, 55);
-            this.labelControl22.TabIndex = 12;
-            this.labelControl22.Text = "Sẵn sàng";
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl23.Appearance.Options.UseBackColor = true;
-            this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.Appearance.Options.UseTextOptions = true;
-            this.labelControl23.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl23.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl23.Location = new System.Drawing.Point(2, 106);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(252, 55);
-            this.labelControl23.TabIndex = 12;
-            this.labelControl23.Text = "Sẵn sàng";
-            // 
-            // labelControl24
-            // 
-            this.labelControl24.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl24.Appearance.Options.UseBackColor = true;
-            this.labelControl24.Appearance.Options.UseFont = true;
-            this.labelControl24.Appearance.Options.UseTextOptions = true;
-            this.labelControl24.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl24.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl24.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl24.Location = new System.Drawing.Point(2, 106);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(252, 55);
-            this.labelControl24.TabIndex = 12;
-            this.labelControl24.Text = "Sẵn sàng";
-            // 
-            // labelControl25
-            // 
-            this.labelControl25.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl25.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl25.Appearance.Options.UseBackColor = true;
-            this.labelControl25.Appearance.Options.UseFont = true;
-            this.labelControl25.Appearance.Options.UseTextOptions = true;
-            this.labelControl25.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl25.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl25.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl25.Location = new System.Drawing.Point(2, 106);
-            this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(252, 55);
-            this.labelControl25.TabIndex = 12;
-            this.labelControl25.Text = "Sẵn sàng";
-            // 
-            // labelControl26
-            // 
-            this.labelControl26.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl26.Appearance.Options.UseBackColor = true;
-            this.labelControl26.Appearance.Options.UseFont = true;
-            this.labelControl26.Appearance.Options.UseTextOptions = true;
-            this.labelControl26.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl26.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl26.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl26.Location = new System.Drawing.Point(2, 106);
-            this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(252, 55);
-            this.labelControl26.TabIndex = 12;
-            this.labelControl26.Text = "Sẵn sàng";
             // 
             // frmHome
             // 

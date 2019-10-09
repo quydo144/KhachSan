@@ -15,6 +15,8 @@ namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
+        int i = 1;
+        List<eCTDV> ls = new List<eCTDV>();
         DichVuBUS listdv = new DichVuBUS();
 
         public frmDatPhong()
@@ -49,7 +51,15 @@ namespace Home
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hello");
+            eCTDV dv = new eCTDV();
+            string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
+            string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
+            dv.TenDV = tenDV;
+            dv.SoLuong = i++;
+            dv.DonGia = Convert.ToDecimal(donGia);
+            dv.ThanhTien = dv.DonGia * dv.SoLuong;
+            ls.Add(dv);
+            dgvCTDV.DataSource = ls.ToList();
         }
     }
 }

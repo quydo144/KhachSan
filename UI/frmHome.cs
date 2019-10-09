@@ -157,6 +157,13 @@ namespace Home
         {
             frmDatPhong frm = new frmDatPhong();
             frm.Show();
+
+
+            //frmDatPhong frm = new frmDatPhong();
+            //frm.TopLevel = false;
+            //frm.FormBorderStyle = FormBorderStyle.None;
+            //frm.Dock = DockStyle.Fill;
+            //flowLayoutPanel1.Controls.Add(frm);
         }
     }
 }
