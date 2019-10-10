@@ -15,7 +15,6 @@ namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
-        int i = 1;
         List<eCTDV> ls = new List<eCTDV>();
         DichVuBUS listdv = new DichVuBUS();
 
@@ -52,12 +51,25 @@ namespace Home
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            int i = 1;
             eCTDV dv = new eCTDV();
             string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
             string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
             dv.TenDV = tenDV;
-            dv.SoLuong = i++;
             dv.DonGia = Convert.ToDecimal(donGia);
+            foreach (var item in ls.ToList())
+            {
+                if (item.TenDV.Equals(tenDV) && item.SoLuong < i++)
+                {
+                    //ls.Remove(item);
+                    dv.SoLuong = i++;
+                }
+                else
+                {
+                    ls.Remove(item);
+                    dv.SoLuong = i;
+                }
+            }
             dv.ThanhTien = dv.DonGia * dv.SoLuong;
             ls.Add(dv);
             dgvCTDV.DataSource = ls.ToList();
@@ -68,14 +80,6 @@ namespace Home
             int index = gridViewCTDV.FocusedRowHandle;
             ls.RemoveAt(index);
             dgvCTDV.DataSource = ls.ToList();
-
-        }
-
-        private void txtSeachDV_Leave(object sender, EventArgs e)
-        {
-            string s = txtSeachDV.Text;
-            if (!String.IsNullOrEmpty(s))
-                gridViewDV.Columns[1].Equals(s);
         }
 
         private void txtSeachDV_TextChanged(object sender, EventArgs e)
