@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace Home
 {
-    public partial class frmLapHoaDon : DevExpress.XtraEditors.XtraForm
+    public partial class frmThanhToan : DevExpress.XtraEditors.XtraForm
     {
-        public frmLapHoaDon()
+        public frmThanhToan()
         {
             InitializeComponent();
         }

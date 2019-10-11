@@ -41,7 +41,7 @@ namespace Home
                         {
                             lbl.BackColor = Color.Red;
                             lbl.Text = item.TenPhong;
-                            lbl.Click += new EventHandler(lbl_Click);
+                            lbl.DoubleClick += new EventHandler(lbl_Click);
                         }
                         foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
                         {
@@ -83,7 +83,8 @@ namespace Home
             DevExpress.XtraEditors.LabelControl lbld = sender as DevExpress.XtraEditors.LabelControl;
             if ( lbl!=null || lbld!=null)
             {
-                MessageBox.Show("a");
+                frmThanhToan frm = new frmThanhToan();
+                frm.Show();
             }
         }
 
@@ -157,13 +158,6 @@ namespace Home
         {
             frmDatPhong frm = new frmDatPhong();
             frm.Show();
-
-
-            //frmDatPhong frm = new frmDatPhong();
-            //frm.TopLevel = false;
-            //frm.FormBorderStyle = FormBorderStyle.None;
-            //frm.Dock = DockStyle.Fill;
-            //flowLayoutPanel1.Controls.Add(frm);
         }
     }
 }

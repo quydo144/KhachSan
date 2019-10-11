@@ -75,11 +75,11 @@
     <Compile Include="frmDatPhong.Designer.cs">
       <DependentUpon>frmDatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLapHoaDon.cs">
+    <Compile Include="frmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLapHoaDon.Designer.cs">
-      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    <Compile Include="frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,8 +89,8 @@
     <EmbeddedResource Include="frmDatPhong.resx">
       <DependentUpon>frmDatPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLapHoaDon.resx">
-      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

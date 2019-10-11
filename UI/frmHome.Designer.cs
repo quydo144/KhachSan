@@ -240,11 +240,11 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDatPhong);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Đặt phòng";
+            this.ribbonPageGroup2.Text = "Phòng";
             // 
             // btnDatPhong
             // 
-            this.btnDatPhong.Caption = "                                                       ";
+            this.btnDatPhong.Caption = "Đặt phòng";
             this.btnDatPhong.Id = 2;
             this.btnDatPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.ImageOptions.Image")));
             this.btnDatPhong.Name = "btnDatPhong";
@@ -292,7 +292,7 @@
             this.barButtonItem16});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 22;
+            this.ribbonControl1.MaxItemId = 23;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnHome,
