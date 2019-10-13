@@ -77,8 +77,16 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThemKH = new System.Windows.Forms.Button();
             this.txtSeachKH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -103,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachDV.Properties)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -288,7 +297,9 @@
             // 
             // labelControl4
             // 
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.labelControl4.Appearance.Options.UseBackColor = true;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseTextOptions = true;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -433,7 +444,7 @@
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnThem});
-            this.dgvDichVu.Size = new System.Drawing.Size(364, 583);
+            this.dgvDichVu.Size = new System.Drawing.Size(364, 600);
             this.dgvDichVu.TabIndex = 12;
             this.dgvDichVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDV});
@@ -515,16 +526,19 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 660);
+            this.panel6.Location = new System.Drawing.Point(0, 677);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(364, 72);
+            this.panel6.Size = new System.Drawing.Size(364, 55);
             this.panel6.TabIndex = 8;
             // 
             // labelControl1
             // 
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -543,7 +557,6 @@
             this.panel4.Controls.Add(this.panel14);
             this.panel4.Controls.Add(this.panel13);
             this.panel4.Controls.Add(this.labelControl5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(366, 298);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(899, 436);
@@ -551,15 +564,97 @@
             // 
             // panel14
             // 
-            this.panel14.Location = new System.Drawing.Point(0, 84);
+            this.panel14.AutoScroll = true;
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.panel14.Controls.Add(this.textBox4);
+            this.panel14.Controls.Add(this.textBox3);
+            this.panel14.Controls.Add(this.textBox2);
+            this.panel14.Controls.Add(this.textBox1);
+            this.panel14.Controls.Add(this.label4);
+            this.panel14.Controls.Add(this.label3);
+            this.panel14.Controls.Add(this.label2);
+            this.panel14.Controls.Add(this.label1);
+            this.panel14.Location = new System.Drawing.Point(0, 88);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(899, 352);
+            this.panel14.Size = new System.Drawing.Size(899, 292);
             this.panel14.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(321, 219);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(474, 30);
+            this.textBox4.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(321, 158);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(474, 30);
+            this.textBox3.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(321, 90);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(474, 30);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(321, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(474, 30);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label4.Location = new System.Drawing.Point(106, 219);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 40);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Số điện thoại";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label3.Location = new System.Drawing.Point(139, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Giới tính";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label2.Location = new System.Drawing.Point(139, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Số CMND";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label1.Location = new System.Drawing.Point(139, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Họ tên";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel13
             // 
             this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.btnThemKH);
             this.panel13.Controls.Add(this.txtSeachKH);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 44);
@@ -567,19 +662,20 @@
             this.panel13.Size = new System.Drawing.Size(899, 40);
             this.panel13.TabIndex = 12;
             // 
-            // button1
+            // btnThemKH
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(827, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 40);
-            this.button1.TabIndex = 13;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTipKH.SetToolTip(this.button1, "Thêm khách hàng");
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnThemKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.btnThemKH.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnThemKH.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKH.Image")));
+            this.btnThemKH.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThemKH.Location = new System.Drawing.Point(827, 0);
+            this.btnThemKH.Name = "btnThemKH";
+            this.btnThemKH.Size = new System.Drawing.Size(72, 40);
+            this.btnThemKH.TabIndex = 13;
+            this.btnThemKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTipKH.SetToolTip(this.btnThemKH, "Thêm khách hàng");
+            this.btnThemKH.UseVisualStyleBackColor = false;
+            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
             // txtSeachKH
             // 
@@ -595,7 +691,9 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.labelControl5.Appearance.Options.UseBackColor = true;
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -612,8 +710,7 @@
             // frmDatPhong
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1265, 734);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -647,6 +744,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachDV.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
@@ -689,7 +788,7 @@
         private DevExpress.XtraEditors.TextEdit txtSeachKH;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThemKH;
         private System.Windows.Forms.ToolTip toolTipKH;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ToolTip toolTipDV;
@@ -701,5 +800,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn them;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnThem;
         private DevExpress.XtraGrid.Columns.GridColumn maDV;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

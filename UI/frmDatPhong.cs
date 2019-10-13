@@ -86,5 +86,11 @@ namespace Home
         {
 
         }
+
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            frm.Show();
+        }
     }
 }

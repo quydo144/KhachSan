@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -49,7 +50,6 @@
             this.tang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tinhTrang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.loaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -75,12 +75,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1055, 305);
+            this.panel1.Size = new System.Drawing.Size(1027, 305);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(735, 52);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(265, 30);
+            this.comboBox2.TabIndex = 5;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(720, 162);
+            this.button2.Location = new System.Drawing.Point(698, 162);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 54);
             this.button2.TabIndex = 3;
@@ -89,7 +97,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(262, 162);
+            this.button1.Location = new System.Drawing.Point(289, 162);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 54);
             this.button1.TabIndex = 3;
@@ -201,7 +209,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 305);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1055, 429);
+            this.gridControl1.Size = new System.Drawing.Size(1027, 303);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -263,19 +271,11 @@
             this.loaiPhong.VisibleIndex = 4;
             this.loaiPhong.Width = 94;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(735, 52);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(265, 30);
-            this.comboBox2.TabIndex = 5;
-            // 
             // frmPhong
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1055, 734);
+            this.ClientSize = new System.Drawing.Size(1027, 608);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F);
