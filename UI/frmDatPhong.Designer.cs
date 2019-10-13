@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatPhong));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatPhong));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -40,6 +40,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -93,13 +93,13 @@
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipDV = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipTKH = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTDV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -116,6 +116,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // panel5
             // 
@@ -196,8 +205,6 @@
             this.dgvCTDV.Location = new System.Drawing.Point(0, 41);
             this.dgvCTDV.MainView = this.gridViewCTDV;
             this.dgvCTDV.Name = "dgvCTDV";
-            this.dgvCTDV.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnXoa});
             this.dgvCTDV.Size = new System.Drawing.Size(899, 196);
             this.dgvCTDV.TabIndex = 8;
             this.dgvCTDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -285,16 +292,6 @@
             this.gridColumn14.VisibleIndex = 4;
             this.gridColumn14.Width = 78;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -346,9 +343,9 @@
             this.lblLoaiPhong.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblLoaiPhong.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblLoaiPhong.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.lblLoaiPhong.Location = new System.Drawing.Point(1, 12);
+            this.lblLoaiPhong.Location = new System.Drawing.Point(-8, 3);
             this.lblLoaiPhong.Name = "lblLoaiPhong";
-            this.lblLoaiPhong.Size = new System.Drawing.Size(258, 59);
+            this.lblLoaiPhong.Size = new System.Drawing.Size(258, 56);
             this.lblLoaiPhong.TabIndex = 0;
             this.lblLoaiPhong.Text = "Phòng vip";
             // 
@@ -368,9 +365,9 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(0, 4);
+            this.labelControl3.Location = new System.Drawing.Point(24, -2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(186, 69);
+            this.labelControl3.Size = new System.Drawing.Size(148, 69);
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Loại phòng";
             // 
@@ -393,9 +390,9 @@
             this.lblTenPhong.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTenPhong.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTenPhong.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.lblTenPhong.Location = new System.Drawing.Point(0, 12);
+            this.lblTenPhong.Location = new System.Drawing.Point(-3, 3);
             this.lblTenPhong.Name = "lblTenPhong";
-            this.lblTenPhong.Size = new System.Drawing.Size(258, 59);
+            this.lblTenPhong.Size = new System.Drawing.Size(258, 52);
             this.lblTenPhong.TabIndex = 0;
             this.lblTenPhong.Text = "Phòng 01";
             // 
@@ -415,9 +412,9 @@
             this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(6, 15);
+            this.labelControl2.Location = new System.Drawing.Point(5, 5);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(186, 53);
+            this.labelControl2.Size = new System.Drawing.Size(151, 53);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Tên phòng";
             // 
@@ -574,9 +571,9 @@
             this.panel14.Controls.Add(this.label3);
             this.panel14.Controls.Add(this.label2);
             this.panel14.Controls.Add(this.label1);
-            this.panel14.Location = new System.Drawing.Point(0, 88);
+            this.panel14.Location = new System.Drawing.Point(0, 83);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(899, 292);
+            this.panel14.Size = new System.Drawing.Size(899, 297);
             this.panel14.TabIndex = 13;
             // 
             // textBox4
@@ -726,13 +723,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đặt phòng";
             this.Load += new System.EventHandler(this.frmDatPhong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTDV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -783,7 +780,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private DevExpress.XtraEditors.TextEdit txtSeachDV;
         private DevExpress.XtraEditors.TextEdit txtSeachKH;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
@@ -808,5 +804,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
     }
 }

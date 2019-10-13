@@ -81,12 +81,10 @@ namespace Home
         {
             Label lbl = sender as Label;
             DevExpress.XtraEditors.LabelControl lbld = sender as DevExpress.XtraEditors.LabelControl;
-            if ( lbl!=null || lbld!=null)
+            if (lbl != null || lbld != null && lbl.BackColor==Color.Red || lbld.BackColor==Color.Red)
             {
-
-                    frmThanhToan frm = new frmThanhToan();
-                    frm.Show();
-
+                frmThanhToan frm = new frmThanhToan();
+                frm.ShowDialog();
             }
         }
 
@@ -120,7 +118,7 @@ namespace Home
                     }
                 }
                 this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
-            }      
+            }
         }
 
         private void toggleSwitchCK_Toggled(object sender, EventArgs e)
@@ -159,7 +157,7 @@ namespace Home
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDatPhong frm = new frmDatPhong();
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -182,7 +180,7 @@ namespace Home
             P.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             P.Appearance.BackColor = Color.Red;
             P.Appearance.Options.UseBackColor = true;
-           // P.Controls.Add(lc);
+            // P.Controls.Add(lc);
             P.Controls.Add(l);
             P.Location = new Point(527, 341);
             P.Name = "P0013";
@@ -202,6 +200,24 @@ namespace Home
         private void btndmk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDoiMK frm = new frmDoiMK();
+            frm.ShowDialog();
+        }
+
+        private void btndv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDichVu frm = new frmDichVu();
+            frm.ShowDialog();
+        }
+
+        private void btnphong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPhong frm = new frmPhong();
+            frm.ShowDialog();
+        }
+
+        private void btnKH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
             frm.ShowDialog();
         }
     }
