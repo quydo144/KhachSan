@@ -26,14 +26,7 @@ namespace Entyti
 
         public eNhanVien()
         {
-            this.maNV = "";
-            this.hoTen = "";
-            this.soCMND = "";
-            this.soDT = "";
-            this.passWord = "";
-            this.gioiTinh = true;
-            this.chucVu = true;
-            this.ngaySinh = Convert.ToDateTime(0);
+ 
         }
 
         public string MaNV

@@ -58,7 +58,7 @@
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.btnphong = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNV = new DevExpress.XtraBars.BarButtonItem();
             this.btndv = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -274,8 +274,8 @@
             // 
             this.btnKH.Caption = "Quản lý khách hàng                ";
             this.btnKH.Id = 21;
-            this.btnKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.btnKH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
+            this.btnKH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKH.ImageOptions.Image")));
+            this.btnKH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKH.ImageOptions.LargeImage")));
             this.btnKH.Name = "btnKH";
             this.btnKH.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -353,7 +353,7 @@
             this.barButtonItem12,
             this.barButtonItem13,
             this.btnphong,
-            this.barButtonItem15,
+            this.btnNV,
             this.btnKH,
             this.barButtonItem2,
             this.btndmk,
@@ -477,13 +477,14 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnphong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnphong_ItemClick);
             // 
-            // barButtonItem15
+            // btnNV
             // 
-            this.barButtonItem15.Caption = "Quản lý nhân viên                ";
-            this.barButtonItem15.Id = 20;
-            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.btnNV.Caption = "Quản lý nhân viên                ";
+            this.btnNV.Id = 20;
+            this.btnNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.btnNV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.btnNV.Name = "btnNV";
+            this.btnNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNV_ItemClick);
             // 
             // btndv
             // 
@@ -531,7 +532,7 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnNV);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Nhân viên";
             // 
@@ -1870,7 +1871,7 @@
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitchCK;
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitchSS;
         private DevExpress.XtraBars.BarButtonItem btnphong;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem btnNV;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnKH;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;

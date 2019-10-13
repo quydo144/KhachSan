@@ -220,5 +220,11 @@ namespace Home
             frmKhachHang frm = new frmKhachHang();
             frm.ShowDialog();
         }
+
+        private void btnNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhanVien frm = new frmNhanVien();
+            frm.ShowDialog();
+        }
     }
 }
