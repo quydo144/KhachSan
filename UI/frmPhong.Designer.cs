@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -42,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,88 +47,56 @@
             this.tang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tinhTrang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.loaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboListTim = new System.Windows.Forms.ComboBox();
+            this.txtTim = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 285);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.buttonEdit1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(936, 196);
-            this.panel2.TabIndex = 4;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(624, 72);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(265, 30);
-            this.comboBox2.TabIndex = 41;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(624, 26);
+            this.comboBox1.Location = new System.Drawing.Point(197, 198);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 30);
+            this.comboBox1.Size = new System.Drawing.Size(385, 30);
             this.comboBox1.TabIndex = 39;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(177, 72);
+            this.textBox2.Location = new System.Drawing.Point(197, 102);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 30);
+            this.textBox2.Size = new System.Drawing.Size(385, 30);
             this.textBox2.TabIndex = 36;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(624, 118);
+            this.textBox5.Location = new System.Drawing.Point(197, 298);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 67);
+            this.textBox5.Size = new System.Drawing.Size(385, 107);
             this.textBox5.TabIndex = 37;
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(177, 26);
+            this.textBox1.Location = new System.Drawing.Point(197, 56);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 30);
+            this.textBox1.Size = new System.Drawing.Size(385, 30);
             this.textBox1.TabIndex = 38;
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(495, 67);
+            this.label6.Location = new System.Drawing.Point(15, 242);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 38);
             this.label6.TabIndex = 30;
@@ -141,7 +105,7 @@
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(495, 21);
+            this.label5.Location = new System.Drawing.Point(15, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 38);
             this.label5.TabIndex = 31;
@@ -150,7 +114,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(495, 132);
+            this.label4.Location = new System.Drawing.Point(15, 307);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 38);
             this.label4.TabIndex = 32;
@@ -159,7 +123,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(48, 113);
+            this.label3.Location = new System.Drawing.Point(25, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 38);
             this.label3.TabIndex = 33;
@@ -168,7 +132,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(48, 67);
+            this.label2.Location = new System.Drawing.Point(25, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 38);
             this.label2.TabIndex = 34;
@@ -177,7 +141,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(48, 21);
+            this.label1.Location = new System.Drawing.Point(25, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 38);
             this.label1.TabIndex = 35;
@@ -192,31 +156,23 @@
             0,
             0,
             0});
-            this.buttonEdit1.Location = new System.Drawing.Point(177, 118);
+            this.buttonEdit1.Location = new System.Drawing.Point(197, 148);
             this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
             this.buttonEdit1.Properties.AutoHeight = false;
             this.buttonEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.buttonEdit1.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.buttonEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.buttonEdit1.Size = new System.Drawing.Size(265, 30);
+            this.buttonEdit1.Size = new System.Drawing.Size(385, 30);
             this.buttonEdit1.TabIndex = 40;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
-            this.button2.Location = new System.Drawing.Point(587, 213);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 54);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
-            this.button1.Location = new System.Drawing.Point(211, 213);
+            this.button1.Location = new System.Drawing.Point(350, 569);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 54);
             this.button1.TabIndex = 3;
@@ -225,10 +181,13 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(0, 284);
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Location = new System.Drawing.Point(656, 182);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(937, 281);
+            this.gridControl1.Size = new System.Drawing.Size(889, 565);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -290,35 +249,115 @@
             this.loaiPhong.VisibleIndex = 4;
             this.loaiPhong.Width = 94;
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(-1, -2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(1546, 55);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Quản lý phòng";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.buttonEdit1);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(638, 446);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin phòng";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
+            this.button3.Location = new System.Drawing.Point(120, 569);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(144, 54);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Thêm";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cboListTim);
+            this.groupBox2.Controls.Add(this.txtTim);
+            this.groupBox2.Location = new System.Drawing.Point(656, 67);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(873, 109);
+            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // cboListTim
+            // 
+            this.cboListTim.FormattingEnabled = true;
+            this.cboListTim.Location = new System.Drawing.Point(565, 40);
+            this.cboListTim.Name = "cboListTim";
+            this.cboListTim.Size = new System.Drawing.Size(238, 30);
+            this.cboListTim.TabIndex = 0;
+            // 
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(111, 40);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(272, 30);
+            this.txtTim.TabIndex = 0;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(197, 247);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(385, 30);
+            this.textBox3.TabIndex = 41;
+            // 
             // frmPhong
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(936, 565);
+            this.ClientSize = new System.Drawing.Size(1541, 744);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phòng";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -327,8 +366,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn tang;
         private DevExpress.XtraGrid.Columns.GridColumn tinhTrang;
         private DevExpress.XtraGrid.Columns.GridColumn loaiPhong;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox5;
@@ -340,5 +377,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SpinEdit buttonEdit1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cboListTim;
+        private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

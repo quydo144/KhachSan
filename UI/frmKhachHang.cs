@@ -27,5 +27,11 @@ namespace Home
             cboTKKH.Items.Add("Số CMND");
             cboTKKH.SelectedIndex = 4;
         }
+
+        private void txtTK_Enter(object sender, EventArgs e)
+        {
+            txtTK.ForeColor = Color.Black;
+            txtTK.Clear();
+        }
     }
 }

@@ -17,13 +17,13 @@ namespace DAL
             foreach (NhanVien item in listnv)
             {
                 eNhanVien nv = new eNhanVien();
-                nv.MaNV = item.maNV;
+                nv.MaNV = item.maNV.Trim();
                 nv.HoTen = item.tenNV;
                 nv.GioiTinh = Convert.ToBoolean(item.gioiTinh);
                 nv.NgaySinh = Convert.ToDateTime(item.ngaySinh);
-                nv.SoCMND = item.soCMND;
-                nv.SoDT = item.soDT;
-                nv.PassWord = item.passWord;
+                nv.SoCMND = item.soCMND.Trim();
+                nv.SoDT = item.soDT.Trim();
+                nv.PassWord = item.passWord.Trim();
                 nv.ChucVu = Convert.ToBoolean(item.chucVu); 
                 ls.Add(nv);
             }
