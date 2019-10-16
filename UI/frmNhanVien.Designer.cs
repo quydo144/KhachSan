@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewNV = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gclDSNV = new DevExpress.XtraGrid.GridControl();
             this.cboListTim = new System.Windows.Forms.ComboBox();
             this.txtTim = new System.Windows.Forms.TextBox();
@@ -39,6 +39,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.radNam = new System.Windows.Forms.RadioButton();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.dtpNS = new System.Windows.Forms.DateTimePicker();
@@ -54,18 +55,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gclDSNV)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gridView1
+            // gridViewNV
             // 
-            this.gridView1.GridControl = this.gclDSNV;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridViewNV.GridControl = this.gclDSNV;
+            this.gridViewNV.Name = "gridViewNV";
+            this.gridViewNV.OptionsView.ShowGroupPanel = false;
+            this.gridViewNV.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewNV_RowClick);
             // 
             // gclDSNV
             // 
@@ -74,12 +75,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gclDSNV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gclDSNV.Location = new System.Drawing.Point(697, 181);
-            this.gclDSNV.MainView = this.gridView1;
+            this.gclDSNV.MainView = this.gridViewNV;
             this.gclDSNV.Name = "gclDSNV";
             this.gclDSNV.Size = new System.Drawing.Size(751, 518);
             this.gclDSNV.TabIndex = 33;
             this.gclDSNV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridViewNV});
             // 
             // cboListTim
             // 
@@ -96,6 +97,7 @@
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(272, 30);
             this.txtTim.TabIndex = 0;
+            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
             // 
             // txtSdt
             // 
@@ -116,6 +118,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -129,6 +132,7 @@
             this.btnSua.Text = "Cập nhật";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -142,6 +146,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtPass
             // 
@@ -161,6 +166,19 @@
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(322, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 55);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // radNam
             // 
@@ -316,19 +334,6 @@
             this.label1.Text = "Mã nhân viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(322, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 55);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // frmNhanVien
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -351,7 +356,7 @@
             this.Text = "Nhân viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gclDSNV)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -363,7 +368,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewNV;
         private DevExpress.XtraGrid.GridControl gclDSNV;
         private System.Windows.Forms.ComboBox cboListTim;
         private System.Windows.Forms.TextBox txtTim;

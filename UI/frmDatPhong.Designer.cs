@@ -8,7 +8,7 @@
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Clean up any resources being used.1
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -51,9 +51,12 @@
             this.gridViewCTDV = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.soLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cboSL = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cboSoLuong = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.txtSL = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -89,7 +92,6 @@
             this.btnThemKH = new System.Windows.Forms.Button();
             this.txtSeachKH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipDV = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipTKH = new System.Windows.Forms.ToolTip(this.components);
@@ -100,6 +102,9 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSL)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -114,7 +119,6 @@
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -205,6 +209,10 @@
             this.dgvCTDV.Location = new System.Drawing.Point(0, 41);
             this.dgvCTDV.MainView = this.gridViewCTDV;
             this.dgvCTDV.Name = "dgvCTDV";
+            this.dgvCTDV.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cboSoLuong,
+            this.txtSL,
+            this.cboSL});
             this.dgvCTDV.Size = new System.Drawing.Size(899, 196);
             this.dgvCTDV.TabIndex = 8;
             this.dgvCTDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -218,8 +226,10 @@
             this.gridColumn12,
             this.gridColumn13,
             this.gridColumn14});
+            this.gridViewCTDV.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.gridViewCTDV.GridControl = this.dgvCTDV;
             this.gridViewCTDV.Name = "gridViewCTDV";
+            this.gridViewCTDV.OptionsView.ColumnAutoWidth = false;
             this.gridViewCTDV.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn10
@@ -232,6 +242,8 @@
             this.gridColumn10.FieldName = "TenDV";
             this.gridColumn10.MinWidth = 25;
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.OptionsColumn.AllowFocus = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 0;
             this.gridColumn10.Width = 241;
@@ -242,13 +254,24 @@
             this.soLuong.AppearanceCell.Options.UseFont = true;
             this.soLuong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
             this.soLuong.AppearanceHeader.Options.UseFont = true;
+            this.soLuong.AppearanceHeader.Options.UseTextOptions = true;
+            this.soLuong.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.Word;
             this.soLuong.Caption = "Số lượng";
+            this.soLuong.ColumnEdit = this.cboSL;
             this.soLuong.FieldName = "SoLuong";
             this.soLuong.MinWidth = 25;
             this.soLuong.Name = "soLuong";
+            this.soLuong.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.soLuong.Visible = true;
             this.soLuong.VisibleIndex = 1;
             this.soLuong.Width = 157;
+            // 
+            // cboSL
+            // 
+            this.cboSL.AutoHeight = false;
+            this.cboSL.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboSL.Name = "cboSL";
             // 
             // gridColumn12
             // 
@@ -260,6 +283,8 @@
             this.gridColumn12.FieldName = "DonGia";
             this.gridColumn12.MinWidth = 25;
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
+            this.gridColumn12.OptionsColumn.AllowFocus = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 2;
             this.gridColumn12.Width = 195;
@@ -274,6 +299,8 @@
             this.gridColumn13.FieldName = "ThanhTien";
             this.gridColumn13.MinWidth = 25;
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
+            this.gridColumn13.OptionsColumn.AllowFocus = false;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 3;
             this.gridColumn13.Width = 208;
@@ -291,6 +318,37 @@
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 4;
             this.gridColumn14.Width = 78;
+            // 
+            // cboSoLuong
+            // 
+            this.cboSoLuong.AutoHeight = false;
+            this.cboSoLuong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboSoLuong.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.cboSoLuong.Name = "cboSoLuong";
+            this.cboSoLuong.Leave += new System.EventHandler(this.cboSoLuong_Leave);
+            // 
+            // txtSL
+            // 
+            this.txtSL.AutoHeight = false;
+            this.txtSL.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSL.Name = "txtSL";
             // 
             // labelControl4
             // 
@@ -730,6 +788,9 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSL)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -745,7 +806,6 @@
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -782,7 +842,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.TextEdit txtSeachDV;
         private DevExpress.XtraEditors.TextEdit txtSeachKH;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnThemKH;
         private System.Windows.Forms.ToolTip toolTipKH;
@@ -805,5 +864,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSoLuong;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit txtSL;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSL;
     }
 }

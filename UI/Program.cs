@@ -18,7 +18,7 @@ namespace Home
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
-            Application.Run(new frmHome());
+            Application.Run(new frmDatPhong());
         }
     }
 }

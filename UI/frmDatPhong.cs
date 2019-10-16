@@ -46,40 +46,38 @@ namespace Home
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
             dgvDichVu.DataSource = listdv.getdv();
-            //gridViewDV.ShowFindPanel();
+            gridViewDV.ShowFindPanel();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int i = 1;
-            eCTDV dv = new eCTDV();
+            for (int i = 1; i < 31; i++)
+            {
+                cboSL.Items.Add(i);
+            }
             string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
             string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
+            eCTDV dv = new eCTDV();
             dv.TenDV = tenDV;
             dv.DonGia = Convert.ToDecimal(donGia);
+            dv.SoLuong = 1;
+            dv.ThanhTien = dv.DonGia;
             foreach (var item in ls.ToList())
             {
-                if (item.TenDV.Equals(tenDV) && item.SoLuong < i++)
-                {
-                    //ls.Remove(item);
-                    dv.SoLuong = i++;
-                }
-                else
-                {
+                if (item.TenDV.Equals(tenDV))
+                {                   
                     ls.Remove(item);
-                    dv.SoLuong = i;
                 }
             }
-            dv.ThanhTien = dv.DonGia * dv.SoLuong;
             ls.Add(dv);
             dgvCTDV.DataSource = ls.ToList();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int index = gridViewCTDV.FocusedRowHandle;
-            ls.RemoveAt(index);
-            dgvCTDV.DataSource = ls.ToList();
+            //int index = gridViewCTDV.FocusedRowHandle;
+            //ls.RemoveAt(index);
+            //dgvCTDV.DataSource = ls;
         }
 
         private void txtSeachDV_TextChanged(object sender, EventArgs e)
@@ -91,6 +89,15 @@ namespace Home
         {
             frmKhachHang frm = new frmKhachHang();
             frm.Show();
+        }
+
+        private void cboSoLuong_Leave(object sender, EventArgs e)
+        {
+            string s;
+            s = gridViewCTDV.Columns[1].ColumnEdit.IsLoading.ToString();
+            
+            MessageBox.Show(s);
+            gridViewCTDV.SetFocusedRowCellValue(gridViewCTDV.Columns[3], 5);
         }
     }
 }

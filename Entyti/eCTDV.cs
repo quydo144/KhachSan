@@ -12,7 +12,7 @@ namespace Entyti
         private int soLuong;
         private decimal donGia, thanhTien;
 
-        public eCTDV(string tenDV, int soLuong, decimal donGia, decimal thanhTien)
+        public eCTDV(string tenDV, decimal donGia,int soLuong, decimal thanhTien)
         {
             this.tenDV = tenDV;
             this.soLuong = soLuong;
@@ -38,19 +38,6 @@ namespace Entyti
             }
         }
 
-        public int SoLuong
-        {
-            get
-            {
-                return soLuong;
-            }
-
-            set
-            {
-                soLuong = value;
-            }
-        }
-
         public decimal DonGia
         {
             get
@@ -61,6 +48,19 @@ namespace Entyti
             set
             {
                 donGia = value;
+            }
+        }
+
+        public int SoLuong
+        {
+            get
+            {
+                return soLuong;
+            }
+
+            set
+            {
+                soLuong = value;
             }
         }
 

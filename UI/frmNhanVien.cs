@@ -77,31 +77,6 @@ namespace Home
             gclDSNV.DataSource = listNhanVien;
         }
 
-        private void gridView1_RowCellClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
-        {
-            MessageBox.Show("a");
-            txtMa.Text = gridView1.GetFocusedRowCellValue("MaNV").ToString();
-            txtTen.Text = gridView1.GetFocusedRowCellValue("HoTen").ToString();
-            txtCmnd.Text = gridView1.GetFocusedRowCellValue("SoCMND").ToString();
-            txtSdt.Text = gridView1.GetFocusedRowCellValue("SoDT").ToString();
-            dtpNS.Text = gridView1.GetFocusedRowCellValue("NgaySinh").ToString();
-            txtPass.Text = gridView1.GetFocusedRowCellValue("PassWord").ToString();
-            if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("GioiTinh").ToString()) == true) radNam.Checked = true;
-            else radNu.Checked = true;
-        }
-
-        private void gridView1_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            txtMa.Text = gridView1.GetFocusedRowCellValue("MaNV").ToString();
-            txtTen.Text = gridView1.GetFocusedRowCellValue("HoTen").ToString();
-            txtCmnd.Text = gridView1.GetFocusedRowCellValue("SoCMND").ToString();
-            txtSdt.Text = gridView1.GetFocusedRowCellValue("SoDT").ToString();
-            dtpNS.Text = gridView1.GetFocusedRowCellValue("NgaySinh").ToString();
-            txtPass.Text = gridView1.GetFocusedRowCellValue("PassWord").ToString();
-            if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("GioiTinh").ToString()) == true) radNam.Checked = true;
-            else radNu.Checked = true;
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             eNhanVien newnv = new eNhanVien();
@@ -179,16 +154,28 @@ namespace Home
             //}
         }
 
-        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void gridViewNV_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             MessageBox.Show("a");
-            txtMa.Text = gridView1.GetFocusedRowCellValue("MaNV").ToString();
-            txtTen.Text = gridView1.GetFocusedRowCellValue("HoTen").ToString();
-            txtCmnd.Text = gridView1.GetFocusedRowCellValue("SoCMND").ToString();
-            txtSdt.Text = gridView1.GetFocusedRowCellValue("SoDT").ToString();
-            dtpNS.Text = gridView1.GetFocusedRowCellValue("NgaySinh").ToString();
-            txtPass.Text = gridView1.GetFocusedRowCellValue("PassWord").ToString();
-            if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("GioiTinh").ToString()) == true) radNam.Checked = true;
+            txtMa.Text = gridViewNV.GetFocusedRowCellValue("MaNV").ToString();
+            txtTen.Text = gridViewNV.GetFocusedRowCellValue("HoTen").ToString();
+            txtCmnd.Text = gridViewNV.GetFocusedRowCellValue("SoCMND").ToString();
+            txtSdt.Text = gridViewNV.GetFocusedRowCellValue("SoDT").ToString();
+            dtpNS.Text = gridViewNV.GetFocusedRowCellValue("NgaySinh").ToString();
+            txtPass.Text = gridViewNV.GetFocusedRowCellValue("PassWord").ToString();
+            if (Convert.ToBoolean(gridViewNV.GetFocusedRowCellValue("GioiTinh").ToString()) == true) radNam.Checked = true;
+            else radNu.Checked = true;
+        }
+
+        private void gridViewNV_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            txtMa.Text = gridViewNV.GetFocusedRowCellValue("MaNV").ToString();
+            txtTen.Text = gridViewNV.GetFocusedRowCellValue("HoTen").ToString();
+            txtCmnd.Text = gridViewNV.GetFocusedRowCellValue("SoCMND").ToString();
+            txtSdt.Text = gridViewNV.GetFocusedRowCellValue("SoDT").ToString();
+            dtpNS.Text = gridViewNV.GetFocusedRowCellValue("NgaySinh").ToString();
+            txtPass.Text = gridViewNV.GetFocusedRowCellValue("PassWord").ToString();
+            if (Convert.ToBoolean(gridViewNV.GetFocusedRowCellValue("GioiTinh").ToString()) == true) radNam.Checked = true;
             else radNu.Checked = true;
         }
     }
