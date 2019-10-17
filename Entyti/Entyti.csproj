@@ -41,10 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eCTDV.cs" />
+    <Compile Include="eDichVu.cs" />
     <Compile Include="eNhanVien.cs" />
     <Compile Include="eThuePhong.cs" />
     <Compile Include="eSuDungDichVu.cs" />
-    <Compile Include="eDichVu.cs" />
     <Compile Include="eThanhToan.cs" />
     <Compile Include="eKhachHang.cs" />
     <Compile Include="eLoaiPhong.cs" />

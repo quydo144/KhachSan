@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KhachSan" Class="dbQLKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=THANHQUY\THANHQUY;Initial Catalog=KhachSan;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="KhachSanConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.DichVu" Member="DichVus">
-    <Type Name="DichVu">
-      <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenDichVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DichVu_SuDungDichVu" Member="SuDungDichVus" ThisKey="maDV" OtherKey="maDV" Type="SuDungDichVu" />
-    </Type>
-  </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
       <Column Name="maKH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -89,6 +81,15 @@
       <Association Name="NhanVien_ThuePhong" Member="NhanVien" ThisKey="maNV" OtherKey="maNV" Type="NhanVien" IsForeignKey="true" />
       <Association Name="Phong_ThuePhong" Member="Phong" ThisKey="maPhong" OtherKey="maPhong" Type="Phong" IsForeignKey="true" />
       <Association Name="SuDungDichVu_ThuePhong" Member="SuDungDichVu" ThisKey="maSDDV" OtherKey="maSDDV" Type="SuDungDichVu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DichVu" Member="DichVus">
+    <Type Name="DichVu">
+      <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenDichVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="donGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="soLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DichVu_SuDungDichVu" Member="SuDungDichVus" ThisKey="maDV" OtherKey="maDV" Type="SuDungDichVu" />
     </Type>
   </Table>
 </Database>

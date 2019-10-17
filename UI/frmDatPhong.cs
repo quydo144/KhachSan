@@ -16,7 +16,9 @@ namespace Home
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
         List<eCTDV> ls = new List<eCTDV>();
+        List<eKhachHang> lskh;
         DichVuBUS listdv = new DichVuBUS();
+        KhachHangBUS khbus = new KhachHangBUS();
 
         public frmDatPhong()
         {
@@ -46,14 +48,26 @@ namespace Home
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
             dgvDichVu.DataSource = listdv.getdv();
-            gridViewDV.ShowFindPanel();
+            autoCompleteSource();
+        }
+
+        private void autoCompleteSource()
+        {
+            txtSeachKH.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSeachKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            KhachHangBUS khbus = new KhachHangBUS();
+            txtSeachKH.AutoCompleteCustomSource.Clear();
+            foreach (eKhachHang item in khbus.get())
+            {
+                txtSeachKH.AutoCompleteCustomSource.Add(item.SoCMND);
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             for (int i = 1; i < 31; i++)
             {
-                cboSL.Items.Add(i);
+                cboSoLuong.Items.Add(i);
             }
             string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
             string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
@@ -65,7 +79,7 @@ namespace Home
             foreach (var item in ls.ToList())
             {
                 if (item.TenDV.Equals(tenDV))
-                {                   
+                {
                     ls.Remove(item);
                 }
             }
@@ -75,9 +89,9 @@ namespace Home
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            //int index = gridViewCTDV.FocusedRowHandle;
-            //ls.RemoveAt(index);
-            //dgvCTDV.DataSource = ls;
+            int index = gridViewCTDV.FocusedRowHandle;
+            ls.RemoveAt(index);
+            dgvCTDV.DataSource = ls;
         }
 
         private void txtSeachDV_TextChanged(object sender, EventArgs e)
@@ -91,13 +105,14 @@ namespace Home
             frm.Show();
         }
 
-        private void cboSoLuong_Leave(object sender, EventArgs e)
+        private void txtSeachKH_MouseLeave(object sender, EventArgs e)
         {
-            string s;
-            s = gridViewCTDV.Columns[1].ColumnEdit.IsLoading.ToString();
-            
-            MessageBox.Show(s);
-            gridViewCTDV.SetFocusedRowCellValue(gridViewCTDV.Columns[3], 5);
+            string s = txtSeachKH.Text;
+            lskh = khbus.getcmnd(s);
+            foreach (var item in lskh)
+            {
+                txtHT.Text = item.TenKH;
+            }
         }
     }
 }

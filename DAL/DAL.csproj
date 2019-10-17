@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DichVuDAL.cs" />
+    <Compile Include="KhachHangDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhongDAL.cs" />
     <Compile Include="dbQLKhachSan.designer.cs">

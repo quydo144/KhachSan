@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatPhong));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -75,6 +75,7 @@
             this.donGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.them = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnThem = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.sl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtSeachDV = new DevExpress.XtraEditors.TextEdit();
             this.panel6 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -83,14 +84,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.txtSeachKH = new System.Windows.Forms.TextBox();
             this.btnThemKH = new System.Windows.Forms.Button();
-            this.txtSeachKH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipDV = new System.Windows.Forms.ToolTip(this.components);
@@ -118,17 +119,17 @@
             this.panel4.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXoa
             // 
             this.btnXoa.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions9.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions9.SvgImage")));
             this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // panel5
             // 
@@ -341,7 +342,6 @@
             "14",
             "15"});
             this.cboSoLuong.Name = "cboSoLuong";
-            this.cboSoLuong.Leave += new System.EventHandler(this.cboSoLuong_Leave);
             // 
             // txtSL
             // 
@@ -510,7 +510,8 @@
             this.maDV,
             this.tenDV,
             this.donGia,
-            this.them});
+            this.them,
+            this.sl});
             this.gridViewDV.GridControl = this.dgvDichVu;
             this.gridViewDV.Name = "gridViewDV";
             this.gridViewDV.OptionsView.ShowGroupPanel = false;
@@ -543,7 +544,7 @@
             this.donGia.Name = "donGia";
             this.donGia.OptionsColumn.ReadOnly = true;
             this.donGia.Visible = true;
-            this.donGia.VisibleIndex = 1;
+            this.donGia.VisibleIndex = 2;
             this.donGia.Width = 130;
             // 
             // them
@@ -553,18 +554,28 @@
             this.them.MinWidth = 25;
             this.them.Name = "them";
             this.them.Visible = true;
-            this.them.VisibleIndex = 2;
+            this.them.VisibleIndex = 3;
             this.them.Width = 66;
             // 
             // btnThem
             // 
             this.btnThem.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions10.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions10.SvgImage")));
             this.btnThem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnThem.Name = "btnThem";
             this.btnThem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // sl
+            // 
+            this.sl.Caption = "Số lượng";
+            this.sl.FieldName = "SoLuong";
+            this.sl.MinWidth = 25;
+            this.sl.Name = "sl";
+            this.sl.Visible = true;
+            this.sl.VisibleIndex = 1;
+            this.sl.Width = 94;
             // 
             // txtSeachDV
             // 
@@ -624,14 +635,14 @@
             this.panel14.Controls.Add(this.textBox4);
             this.panel14.Controls.Add(this.textBox3);
             this.panel14.Controls.Add(this.textBox2);
-            this.panel14.Controls.Add(this.textBox1);
+            this.panel14.Controls.Add(this.txtHT);
             this.panel14.Controls.Add(this.label4);
             this.panel14.Controls.Add(this.label3);
             this.panel14.Controls.Add(this.label2);
             this.panel14.Controls.Add(this.label1);
-            this.panel14.Location = new System.Drawing.Point(0, 83);
+            this.panel14.Location = new System.Drawing.Point(0, 80);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(899, 297);
+            this.panel14.Size = new System.Drawing.Size(899, 300);
             this.panel14.TabIndex = 13;
             // 
             // textBox4
@@ -658,13 +669,13 @@
             this.textBox2.Size = new System.Drawing.Size(474, 30);
             this.textBox2.TabIndex = 1;
             // 
-            // textBox1
+            // txtHT
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(321, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(474, 30);
-            this.textBox1.TabIndex = 1;
+            this.txtHT.Enabled = false;
+            this.txtHT.Location = new System.Drawing.Point(321, 32);
+            this.txtHT.Name = "txtHT";
+            this.txtHT.Size = new System.Drawing.Size(474, 30);
+            this.txtHT.TabIndex = 1;
             // 
             // label4
             // 
@@ -709,18 +720,25 @@
             // panel13
             // 
             this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel13.Controls.Add(this.btnThemKH);
             this.panel13.Controls.Add(this.txtSeachKH);
+            this.panel13.Controls.Add(this.btnThemKH);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 44);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(899, 40);
             this.panel13.TabIndex = 12;
             // 
+            // txtSeachKH
+            // 
+            this.txtSeachKH.Location = new System.Drawing.Point(0, 0);
+            this.txtSeachKH.Name = "txtSeachKH";
+            this.txtSeachKH.Size = new System.Drawing.Size(829, 30);
+            this.txtSeachKH.TabIndex = 14;
+            this.txtSeachKH.MouseLeave += new System.EventHandler(this.txtSeachKH_MouseLeave);
+            // 
             // btnThemKH
             // 
             this.btnThemKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
-            this.btnThemKH.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnThemKH.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKH.Image")));
             this.btnThemKH.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnThemKH.Location = new System.Drawing.Point(827, 0);
@@ -731,18 +749,6 @@
             this.toolTipKH.SetToolTip(this.btnThemKH, "Thêm khách hàng");
             this.btnThemKH.UseVisualStyleBackColor = false;
             this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
-            // 
-            // txtSeachKH
-            // 
-            this.txtSeachKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSeachKH.Location = new System.Drawing.Point(0, 0);
-            this.txtSeachKH.Name = "txtSeachKH";
-            this.txtSeachKH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.5F);
-            this.txtSeachKH.Properties.Appearance.Options.UseFont = true;
-            this.txtSeachKH.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtSeachKH.Properties.ContextImageOptions.Image")));
-            this.txtSeachKH.Size = new System.Drawing.Size(899, 38);
-            this.txtSeachKH.TabIndex = 10;
-            this.toolTipTKH.SetToolTip(this.txtSeachKH, "Tìm kiếm khách hàng");
             // 
             // labelControl5
             // 
@@ -805,7 +811,7 @@
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSeachKH.Properties)).EndInit();
+            this.panel13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -841,7 +847,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.TextEdit txtSeachDV;
-        private DevExpress.XtraEditors.TextEdit txtSeachKH;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button btnThemKH;
         private System.Windows.Forms.ToolTip toolTipKH;
@@ -858,7 +863,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -867,5 +872,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSoLuong;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit txtSL;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSL;
+        private System.Windows.Forms.TextBox txtSeachKH;
+        private DevExpress.XtraGrid.Columns.GridColumn sl;
     }
 }

@@ -20,6 +20,7 @@ namespace DAL
                 dv.MaDV = item.maDV;
                 dv.TenDV = item.tenDichVu;
                 dv.DonGia = Convert.ToDecimal(item.donGia);
+                dv.SoLuong = Convert.ToInt32(item.soLuongDV);
                 ls.Add(dv);
             }
             return ls;

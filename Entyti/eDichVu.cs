@@ -10,19 +10,19 @@ namespace Entyti
     {
         private string maDV, tenDV;
         private decimal donGia;
+        private int soLuong;
 
-        public eDichVu(string maDV, string tenDV, decimal donGia)
+        public eDichVu(string maDV, string tenDV, decimal donGia, int soLuong)
         {
             this.maDV = maDV;
             this.tenDV = tenDV;
             this.donGia = donGia;
+            this.soLuong = soLuong;
         }
 
         public eDichVu()
         {
-            this.maDV = "";
-            this.tenDV = "";
-            this.donGia = 0;
+
         }
 
         public string MaDV
@@ -61,6 +61,19 @@ namespace Entyti
             set
             {
                 donGia = value;
+            }
+        }
+
+        public int SoLuong
+        {
+            get
+            {
+                return soLuong;
+            }
+
+            set
+            {
+                soLuong = value;
             }
         }
     }
