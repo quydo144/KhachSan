@@ -41,13 +41,15 @@ namespace Home
                         {
                             lbl.BackColor = Color.Red;
                             lbl.Text = item.TenPhong;
-                            lbl.DoubleClick += new EventHandler(lbl_Click);
+                            lbl.DoubleClick += new EventHandler(lblred_Click);
+                            lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
                         foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
                         {
                             lbl.BackColor = Color.Red;
                             lbl.Text = "Có khách";
-                            lbl.Click += new EventHandler(lbl_Click);
+                            lbl.DoubleClick += new EventHandler(lblred_Click);
+                            lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
                     }
                 }
@@ -64,28 +66,23 @@ namespace Home
                         {
                             lbl.BackColor = Color.LawnGreen;
                             lbl.Text = item.TenPhong;
-                            lbl.Click += new EventHandler(lbl_Click);
+                            lbl.ContextMenuStrip = cmnstrpSanSang;
                         }
                         foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
                         {
                             lbl.BackColor = Color.LawnGreen;
                             lbl.Text = "Sẵn sàng";
-                            lbl.Click += new EventHandler(lbl_Click);
+                            lbl.ContextMenuStrip = cmnstrpSanSang;
                         }
                     }
                 }
             }
         }
 
-        public void lbl_Click(object sender, EventArgs e)
+        public void lblred_Click(object sender, EventArgs e)
         {
-            Label lbl = sender as Label;
-            DevExpress.XtraEditors.LabelControl lbld = sender as DevExpress.XtraEditors.LabelControl;
-            if (lbl != null || lbld != null && lbl.BackColor==Color.Red || lbld.BackColor==Color.Red)
-            {
-                frmThanhToan frm = new frmThanhToan();
-                frm.ShowDialog();
-            }
+            frmThanhToan frm = new frmThanhToan();
+            frm.ShowDialog();
         }
 
         private void toggleSwitchSS_Toggled(object sender, EventArgs e)

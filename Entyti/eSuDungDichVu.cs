@@ -9,23 +9,22 @@ namespace Entyti
     public class eSuDungDichVu
     {
         private string maSDDV, maDV;
+        private string maThue;
         private int soLuong;
         private DateTime thoiGianSd;
 
-        public eSuDungDichVu(string maSDDV, string maDV, int soLuong, DateTime thoiGianSd)
+        public eSuDungDichVu(string maSDDV, string maDV, string maThue, int soLuong, DateTime thoiGianSd)
         {
             this.maSDDV = maSDDV;
             this.maDV = maDV;
             this.soLuong = soLuong;
+            this.maThue = maThue;
             this.thoiGianSd = thoiGianSd;
         }
 
         public eSuDungDichVu()
         {
-            this.maSDDV = "";
-            this.maDV = "";
-            this.soLuong = 0;
-            this.thoiGianSd = Convert.ToDateTime(0);
+
         }
 
         public string MaDV
@@ -77,6 +76,19 @@ namespace Entyti
             set
             {
                 thoiGianSd = value;
+            }
+        }
+
+        public string MaThue
+        {
+            get
+            {
+                return maThue;
+            }
+
+            set
+            {
+                maThue = value;
             }
         }
     }

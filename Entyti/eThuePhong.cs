@@ -10,9 +10,9 @@ namespace Entyti
     {
         private string maThuePhong, maPhong, maKH, maNV, maSddv;
         private DateTime ngayVao, ngayRa;
-        private float datCoc;
+        private decimal datCoc;
 
-        public eThuePhong(string maThuePhong, string maPhong, string maKH, string maNV, string maSddv, DateTime ngayVao, DateTime ngayRa, float datCoc)
+        public eThuePhong(string maThuePhong, string maPhong, string maKH, string maNV, string maSddv, DateTime ngayVao, DateTime ngayRa, decimal datCoc)
         {
             this.maThuePhong = maThuePhong;
             this.maPhong = maPhong;
@@ -26,14 +26,7 @@ namespace Entyti
 
         public eThuePhong()
         {
-            this.maThuePhong = "";
-            this.maPhong = "";
-            this.maKH = "";
-            this.maNV = "";
-            this.maSddv = "";
-            this.ngayVao = Convert.ToDateTime(0);
-            this.ngayRa = Convert.ToDateTime(0);
-            this.datCoc = 0;
+
         }
 
         public string MaThuePhong
@@ -127,7 +120,7 @@ namespace Entyti
             }
         }
 
-        public float DatCoc
+        public decimal DatCoc
         {
             get
             {

@@ -158,6 +158,15 @@
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.cmnstrpSanSang = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.DatPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ThanhToanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CapNhatDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ThongTinKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnstrpCoKhach = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -217,6 +226,8 @@
             this.P0025.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P0026)).BeginInit();
             this.P0026.SuspendLayout();
+            this.cmnstrpSanSang.SuspendLayout();
+            this.cmnstrpCoKhach.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTinhTrang
@@ -1746,6 +1757,72 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Hệ thống";
             // 
+            // cmnstrpSanSang
+            // 
+            this.cmnstrpSanSang.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnstrpSanSang.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DatPhongToolStripMenuItem,
+            this.ThanhToanToolStripMenuItem,
+            this.CapNhatDichVuToolStripMenuItem,
+            this.ThongTinKhachHangToolStripMenuItem});
+            this.cmnstrpSanSang.Name = "cmnstrpThuePhong";
+            this.cmnstrpSanSang.Size = new System.Drawing.Size(221, 100);
+            // 
+            // DatPhongToolStripMenuItem
+            // 
+            this.DatPhongToolStripMenuItem.Name = "DatPhongToolStripMenuItem";
+            this.DatPhongToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.DatPhongToolStripMenuItem.Text = "Thuê phòng";
+            // 
+            // ThanhToanToolStripMenuItem
+            // 
+            this.ThanhToanToolStripMenuItem.Enabled = false;
+            this.ThanhToanToolStripMenuItem.Name = "ThanhToanToolStripMenuItem";
+            this.ThanhToanToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.ThanhToanToolStripMenuItem.Text = "Thanh toán";
+            // 
+            // CapNhatDichVuToolStripMenuItem
+            // 
+            this.CapNhatDichVuToolStripMenuItem.Enabled = false;
+            this.CapNhatDichVuToolStripMenuItem.Name = "CapNhatDichVuToolStripMenuItem";
+            this.CapNhatDichVuToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.CapNhatDichVuToolStripMenuItem.Text = "Cập nhật dịch vụ";
+            // 
+            // ThongTinKhachHangToolStripMenuItem
+            // 
+            this.ThongTinKhachHangToolStripMenuItem.Enabled = false;
+            this.ThongTinKhachHangToolStripMenuItem.Name = "ThongTinKhachHangToolStripMenuItem";
+            this.ThongTinKhachHangToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.ThongTinKhachHangToolStripMenuItem.Text = "Thông tin khách hàng";
+            // 
+            // cmnstrpCoKhach
+            // 
+            this.cmnstrpCoKhach.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnstrpCoKhach.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thuêPhòngToolStripMenuItem,
+            this.thanhToánToolStripMenuItem,
+            this.cậpNhậtDịchVụToolStripMenuItem});
+            this.cmnstrpCoKhach.Name = "cmnstrpCoKhach";
+            this.cmnstrpCoKhach.Size = new System.Drawing.Size(221, 104);
+            // 
+            // thuêPhòngToolStripMenuItem
+            // 
+            this.thuêPhòngToolStripMenuItem.Name = "thuêPhòngToolStripMenuItem";
+            this.thuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.thuêPhòngToolStripMenuItem.Text = "Trả phòng";
+            // 
+            // thanhToánToolStripMenuItem
+            // 
+            this.thanhToánToolStripMenuItem.Name = "thanhToánToolStripMenuItem";
+            this.thanhToánToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.thanhToánToolStripMenuItem.Text = "Thông tin khách hàng";
+            // 
+            // cậpNhậtDịchVụToolStripMenuItem
+            // 
+            this.cậpNhậtDịchVụToolStripMenuItem.Name = "cậpNhậtDịchVụToolStripMenuItem";
+            this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
+            // 
             // frmHome
             // 
             this.Appearance.Options.UseFont = true;
@@ -1823,6 +1900,8 @@
             this.P0025.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.P0026)).EndInit();
             this.P0026.ResumeLayout(false);
+            this.cmnstrpSanSang.ResumeLayout(false);
+            this.cmnstrpCoKhach.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1963,6 +2042,15 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btndv;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private System.Windows.Forms.ContextMenuStrip cmnstrpSanSang;
+        private System.Windows.Forms.ToolStripMenuItem DatPhongToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ThanhToanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CapNhatDichVuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ThongTinKhachHangToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip cmnstrpCoKhach;
+        private System.Windows.Forms.ToolStripMenuItem thuêPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cậpNhậtDịchVụToolStripMenuItem;
     }
 }
 
