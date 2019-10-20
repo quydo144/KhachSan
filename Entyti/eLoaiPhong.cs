@@ -10,24 +10,19 @@ namespace Entyti
     {
         private string maLoaiPhong, tenLoaiPhong;
         private decimal donGia;
-        private int soGiuong, soNguoi;
+        private int soNguoi;
 
-        public eLoaiPhong(string maLoaiPhong, string tenLoaiPhong, decimal donGia, int soGiuong, int soNguoi)
+        public eLoaiPhong(string maLoaiPhong, string tenLoaiPhong, decimal donGia, int soNguoi)
         {
             this.maLoaiPhong = maLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
             this.donGia = donGia;
-            this.soGiuong = soGiuong;
             this.soNguoi = soNguoi;
         }
 
         public eLoaiPhong()
         {
-            this.maLoaiPhong = "";
-            this.tenLoaiPhong = "";
-            this.donGia = 0;
-            this.soGiuong = 0;
-            this.soNguoi = 0;
+
         }
 
         public string MaLoaiPhong
@@ -66,19 +61,6 @@ namespace Entyti
             set
             {
                 donGia = value;
-            }
-        }
-
-        public int SoGiuong
-        {
-            get
-            {
-                return soGiuong;
-            }
-
-            set
-            {
-                soGiuong = value;
             }
         }
 

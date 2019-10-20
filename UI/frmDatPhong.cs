@@ -58,6 +58,7 @@ namespace Home
             dgvDichVu.DataSource = dvbus.getdv();
             autoCompleteSource();
             lblTenPhong.Text = TenPhong;
+            lblLoaiPhong.Text = TenLoaiPhong;
         }
 
         private void autoCompleteSource()
@@ -96,11 +97,48 @@ namespace Home
   
             dgvCTDV.DataSource = ls.ToList();
             eSuDungDichVu sddvnew = new eSuDungDichVu();
-            sddvnew.MaSDDV = maThuePhong();
+            sddvnew.MaSDDV = tangMaSDDV();
             sddvnew.MaDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[0]).ToString();
-            //sddvnew.MaThue = maThuePhong();
+            sddvnew.MaThue = maThuePhong();
             sddvnew.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(gridViewCTDV.FocusedRowHandle, gridViewCTDV.Columns[2]).ToString());
             sddvnew.ThoiGianSd = Convert.ToDateTime(DateTime.Now);
+
+        }
+
+        string tangMaSDDV()
+        {
+            string maSuDungDichVu;
+            sddv = new eSuDungDichVu();
+            sddv = sddvbus.tangma();
+            if (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) < 10000000 && Convert.ToInt32(sddv.MaSDDV.Substring(2, 7)) > 1000000)
+            {
+                maSuDungDichVu = "PDV" + (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) + 1).ToString();
+            }
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) < 1000000 && Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) > 100000)
+            {
+                maSuDungDichVu = "PDV0" + (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) + 1).ToString();
+            }
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) < 100000 && Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) > 10000)
+            {
+                maSuDungDichVu = "PDV00" + (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) + 1).ToString();
+            }
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) < 10000 && Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) > 1000)
+            {
+                maSuDungDichVu = "PDV000" + (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) + 1).ToString();
+            }
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) < 1000 && Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) > 100)
+            {
+                maSuDungDichVu = "PDV0000" + (Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) + 1).ToString();
+            }
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) < 100 && Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) > 10)
+            {
+                maSuDungDichVu = "PDV00000" + (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) + 1).ToString();
+            }
+            else
+            {
+                maSuDungDichVu = "PDV000000" + (Convert.ToInt32(sddv.MaSDDV.Substring(9, 1)) + 1).ToString();
+            }
+            return maSuDungDichVu;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

@@ -65,13 +65,18 @@ namespace Home
             newnv.SoDT = txtSdt.Text;
             newnv.PassWord = txtPass.Text;
             newnv.ChucVu = false;
-            if (radNam.Checked == true)
-                newnv.GioiTinh = true;
+            if (radNam.Checked == true)     newnv.GioiTinh = true;
             else newnv.GioiTinh = false;
             newnv.NgaySinh = Convert.ToDateTime(dtpNS.Text);
+
             int kq = nvBus.InsertNhanVien(newnv);
             if (kq == 1)
                 MessageBox.Show("Thêm thành công!!!");
+            else
+            {
+                MessageBox.Show("Bị trùng mã, nhập lại");
+                txtMa.Focus();
+            }
             //đưa lại gridview
             List<eNhanVien> listNhanVien = nvBus.getallnv();
             gclDSNV.DataSource = listNhanVien;

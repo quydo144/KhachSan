@@ -13,8 +13,13 @@ namespace Home
 {
     public partial class frmHome : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        string s;
+        decimal donGia;
+        int stt = 0;
         List<ePhong> listp = new List<ePhong>();
         PhongBUS pbus = new PhongBUS();
+        List<eLoaiPhong> listlp = new List<eLoaiPhong>();
+        LoaiPhongBUS lpbus = new LoaiPhongBUS();
         public frmHome()
         {
             InitializeComponent();
@@ -26,9 +31,80 @@ namespace Home
             this.lblTime.Text = time.ToString();
         }
 
-        private void frmHome_Load(object sender, EventArgs e)
+        public string tenloaiphong(string maLoaiPhong)
         {
 
+            foreach (var item in lpbus.getall())
+            {
+                if (item.MaLoaiPhong.Trim().Equals(maLoaiPhong))
+                {
+                    s = item.TenLoaiPhong;
+                }
+            }
+            return s;
+        }
+
+        public decimal donGiaphong(string maLoaiPhong)
+        {
+
+            foreach (var item in lpbus.getall())
+            {
+                if (item.MaLoaiPhong.Trim().Equals(maLoaiPhong))
+                {
+                    donGia = item.DonGia;
+                }
+            }
+            return donGia;
+        }
+
+        private void loaiphong()
+        {
+            foreach (var item in pbus.getallp())
+            {
+                stt++;
+                DevExpress.XtraEditors.PanelControl P0001 = new DevExpress.XtraEditors.PanelControl();
+                Label lbl = new Label();
+                ((ISupportInitialize)(P0001)).BeginInit();
+                P0001.SuspendLayout();
+                flowLayoutPanel1.Controls.Add(P0001);
+                // P0001
+                P0001.Appearance.BackColor = Color.LawnGreen;
+                P0001.Appearance.Options.UseBackColor = true;
+                P0001.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+                P0001.Controls.Add(lbl);
+                P0001.Location = new Point(3, 3);
+                if (stt < 10)
+                {
+                    P0001.Name = "P000" + stt;
+                }
+                else if (stt >=10 && stt <100)
+                {
+                    P0001.Name = "P00" + stt;
+                }
+                else if(stt >= 100 && stt < 1000)
+                {
+                    P0001.Name = "P0" + stt;
+                }
+                else
+                {
+                    P0001.Name = "P" + stt;
+                }
+                P0001.Size = new Size(256, 163);
+                // lbl2
+                lbl.BackColor = Color.LawnGreen;
+                lbl.Font = new Font("Tahoma", 10F);
+                lbl.Dock = DockStyle.Fill;
+                lbl.Size = new Size(252, 159);
+                lbl.Text = "Phòng " + stt;
+                lbl.TextAlign = ContentAlignment.TopCenter;
+                ((ISupportInitialize)(P0001)).EndInit();
+                P0001.ResumeLayout(false);
+            }
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            loaiphong();
             listp = pbus.gettinhtrangp(true);
             foreach (var item in listp)
             {
@@ -41,13 +117,6 @@ namespace Home
                         {
                             lbl.BackColor = Color.Red;
                             lbl.Text = item.TenPhong;
-                            lbl.DoubleClick += new EventHandler(lblred_Click);
-                            lbl.ContextMenuStrip = cmnstrpCoKhach;
-                        }
-                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
-                        {
-                            lbl.BackColor = Color.Red;
-                            lbl.Text = "Có khách";
                             lbl.DoubleClick += new EventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -65,17 +134,8 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = item.TenPhong;
-                            lbl.MouseDown += new MouseEventHandler(lbl_ClickTP2);
-                            lbl.ContextMenuStrip = cmnstrpSanSang;
-
-                        }
-                        foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
-                        {
-                            lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = item.TenPhong;
-                            lbl.Visible = false;
-                            lbl.MouseDown += new MouseEventHandler(lbl_ClickTP1);
+                            lbl.Text = item.TenPhong+ "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim())+ "\r\n\r\n" + donGiaphong(item.MaLoaiPhong.Trim());
+                            lbl.MouseDown += new MouseEventHandler(lbl_ClickTP);
                             lbl.ContextMenuStrip = cmnstrpSanSang;
                         }
                     }
@@ -89,50 +149,14 @@ namespace Home
             frm.ShowDialog();
         }
 
-        //private void lbl_ClickTLP(object sender, MouseEventArgs e)
-        //{
-        //    DevExpress.XtraEditors.LabelControl lbl = sender as DevExpress.XtraEditors.LabelControl;
-        //    if (lbl.Text == "1")
-        //    {
-        //        frmDatPhong.TenLoaiPhong = "Phòng Normal";
-        //    }
-        //    else if (lbl.Text == "2")
-        //    {
-        //        frmDatPhong.TenLoaiPhong = "Phòng Double";
-        //    }
-        //    else if (lbl.Text == "3")
-        //    {
-        //        frmDatPhong.TenLoaiPhong = "Phòng Triple";
-        //    }
-        //    else if (lbl.Text == "4")
-        //    {
-        //        frmDatPhong.TenLoaiPhong = "Phòng Family";
-        //    }
-        //    else if (lbl.Text == "5")
-        //    {
-        //        frmDatPhong.TenLoaiPhong = "Phòng Vip";
-        //    }
-        //    else
-        //    {
-        //        frmDatPhong.TenLoaiPhong = "Phòng Deluxe";
-        //    }
-        //}
-
-        private void lbl_ClickTP1(object sender, MouseEventArgs e)
-        {
-            DevExpress.XtraEditors.LabelControl lbl = sender as DevExpress.XtraEditors.LabelControl;
-            if (e.Button==MouseButtons.Right)
-            {
-                frmDatPhong.TenPhong = lbl.Text;
-            }
-        }
-
-        private void lbl_ClickTP2(object sender, MouseEventArgs e)
+        private void lbl_ClickTP(object sender, MouseEventArgs e)
         {
             Label lbl = sender as Label;
             if (e.Button == MouseButtons.Right)
             {
-                frmDatPhong.TenPhong = lbl.Text;
+                string[] list = lbl.Text.Split('\r');
+                frmDatPhong.TenPhong = list[0];
+                frmDatPhong.TenLoaiPhong = list[2].Substring(12, 13);
             }
         }
 
@@ -210,39 +234,39 @@ namespace Home
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FlowLayoutPanel flowLayoutPanel2 = new FlowLayoutPanel();
-            DevExpress.XtraEditors.PanelControl P = new DevExpress.XtraEditors.PanelControl();
-            Label l = new Label();
-            panel.Controls.Add(flowLayoutPanel2);
-            panel.Controls.Add(flowLayoutPanel1);
-            panel.AutoScroll = true;
-            flowLayoutPanel2.SuspendLayout();
-            flowLayoutPanel2.Controls.Add(P);
-            flowLayoutPanel2.SuspendLayout();
-            flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowOnly;
-            flowLayoutPanel2.BackColor = Color.Gray;
+            //FlowLayoutPanel flowLayoutPanel2 = new FlowLayoutPanel();
+            //DevExpress.XtraEditors.PanelControl P = new DevExpress.XtraEditors.PanelControl();
+            //Label l = new Label();
+            //panel.Controls.Add(flowLayoutPanel2);
+            //panel.Controls.Add(flowLayoutPanel1);
+            //panel.AutoScroll = true;
+            //flowLayoutPanel2.SuspendLayout();
+            //flowLayoutPanel2.Controls.Add(P);
+            //flowLayoutPanel2.SuspendLayout();
+            //flowLayoutPanel2.AutoScroll = true;
+            //flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowOnly;
+            //flowLayoutPanel2.BackColor = Color.Gray;
 
-            P.Appearance.BackColor = Color.Red;
-            P.Appearance.Options.UseBackColor = true;
-            P.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            P.Appearance.BackColor = Color.Red;
-            P.Appearance.Options.UseBackColor = true;
-            // P.Controls.Add(lc);
-            P.Controls.Add(l);
-            P.Location = new Point(527, 341);
-            P.Name = "P0013";
-            P.Size = new Size(256, 163);
+            //P.Appearance.BackColor = Color.Red;
+            //P.Appearance.Options.UseBackColor = true;
+            //P.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            //P.Appearance.BackColor = Color.Red;
+            //P.Appearance.Options.UseBackColor = true;
+            //// P.Controls.Add(lc);
+            //P.Controls.Add(l);
+            //P.Location = new Point(527, 341);
+            //P.Name = "P0013";
+            //P.Size = new Size(256, 163);
 
-            P.Controls.Add(l);
-            P.Size = new Size(256, 163);
-            flowLayoutPanel2.Location = new Point(0, 800);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            P0001.Hide();
-            l.BackColor = Color.Red;
-            l.Dock = DockStyle.Fill;
-            l.Text = "123";
-            l.TextAlign = ContentAlignment.TopCenter;
+            //P.Controls.Add(l);
+            //P.Size = new Size(256, 163);
+            //flowLayoutPanel2.Location = new Point(0, 800);
+            //flowLayoutPanel2.Name = "flowLayoutPanel2";
+            ////P0001.Hide();
+            //l.BackColor = Color.Red;
+            //l.Dock = DockStyle.Fill;
+            //l.Text = "123";
+            //l.TextAlign = ContentAlignment.TopCenter;
         }
 
         private void btndmk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -285,6 +309,10 @@ namespace Home
         {       
             frmDatPhong frm = new frmDatPhong();
             frm.ShowDialog();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }
