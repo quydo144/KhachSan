@@ -42,6 +42,8 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtmNgayRa = new System.Windows.Forms.DateTimePicker();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnLuu = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -56,14 +58,9 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.lblLoaiPhong = new DevExpress.XtraEditors.LabelControl();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.lblTenPhong = new DevExpress.XtraEditors.LabelControl();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDichVu = new DevExpress.XtraGrid.GridControl();
@@ -95,6 +92,7 @@
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipDV = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipTKH = new System.Windows.Forms.ToolTip(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -103,11 +101,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSL)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDV)).BeginInit();
@@ -116,6 +109,7 @@
             this.panel4.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -132,6 +126,8 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.dtmNgayRa);
             this.panel5.Controls.Add(this.panel12);
             this.panel5.Controls.Add(this.panel11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -139,6 +135,25 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(899, 56);
             this.panel5.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label5.Location = new System.Drawing.Point(55, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 37);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Ngày trả phòng";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtmNgayRa
+            // 
+            this.dtmNgayRa.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dtmNgayRa.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgayRa.Location = new System.Drawing.Point(246, 13);
+            this.dtmNgayRa.Name = "dtmNgayRa";
+            this.dtmNgayRa.Size = new System.Drawing.Size(232, 30);
+            this.dtmNgayRa.TabIndex = 1;
             // 
             // panel12
             // 
@@ -334,29 +349,6 @@
             this.labelControl4.TabIndex = 7;
             this.labelControl4.Text = "Thông tin dịch vụ";
             // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
-            this.panel2.Controls.Add(this.panel10);
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(366, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(899, 61);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.lblLoaiPhong);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(637, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(262, 61);
-            this.panel10.TabIndex = 1;
-            // 
             // lblLoaiPhong
             // 
             this.lblLoaiPhong.Appearance.BackColor = System.Drawing.Color.Silver;
@@ -367,20 +359,10 @@
             this.lblLoaiPhong.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblLoaiPhong.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblLoaiPhong.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.lblLoaiPhong.Location = new System.Drawing.Point(-8, 3);
+            this.lblLoaiPhong.Location = new System.Drawing.Point(638, 4);
             this.lblLoaiPhong.Name = "lblLoaiPhong";
             this.lblLoaiPhong.Size = new System.Drawing.Size(258, 56);
             this.lblLoaiPhong.TabIndex = 0;
-            this.lblLoaiPhong.Text = "Phòng vip";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.labelControl3);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(451, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(186, 61);
-            this.panel9.TabIndex = 0;
             // 
             // labelControl3
             // 
@@ -389,20 +371,11 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(24, -2);
+            this.labelControl3.Location = new System.Drawing.Point(484, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(148, 69);
+            this.labelControl3.Size = new System.Drawing.Size(148, 55);
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Loại phòng";
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.lblTenPhong);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(193, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(258, 61);
-            this.panel8.TabIndex = 0;
             // 
             // lblTenPhong
             // 
@@ -414,20 +387,11 @@
             this.lblTenPhong.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTenPhong.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTenPhong.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.lblTenPhong.Location = new System.Drawing.Point(-3, 3);
+            this.lblTenPhong.Location = new System.Drawing.Point(176, 3);
             this.lblTenPhong.Name = "lblTenPhong";
             this.lblTenPhong.Size = new System.Drawing.Size(258, 52);
             this.lblTenPhong.TabIndex = 0;
             this.lblTenPhong.Text = "Phòng 01";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.labelControl2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(193, 61);
-            this.panel7.TabIndex = 0;
             // 
             // labelControl2
             // 
@@ -436,7 +400,7 @@
             this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(5, 5);
+            this.labelControl2.Location = new System.Drawing.Point(6, 3);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(151, 53);
             this.labelControl2.TabIndex = 0;
@@ -711,7 +675,7 @@
             // 
             // txtSeachKH
             // 
-            this.txtSeachKH.Location = new System.Drawing.Point(0, 0);
+            this.txtSeachKH.Location = new System.Drawing.Point(3, 3);
             this.txtSeachKH.Name = "txtSeachKH";
             this.txtSeachKH.Size = new System.Drawing.Size(829, 30);
             this.txtSeachKH.TabIndex = 14;
@@ -749,6 +713,20 @@
             this.labelControl5.TabIndex = 8;
             this.labelControl5.Text = "Thông tin khách thuê phòng";
             // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
+            this.panel2.Controls.Add(this.lblLoaiPhong);
+            this.panel2.Controls.Add(this.labelControl3);
+            this.panel2.Controls.Add(this.labelControl2);
+            this.panel2.Controls.Add(this.lblTenPhong);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(366, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(899, 61);
+            this.panel2.TabIndex = 2;
+            // 
             // frmDatPhong
             // 
             this.Appearance.Options.UseFont = true;
@@ -776,11 +754,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSL)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDV)).EndInit();
@@ -791,6 +764,7 @@
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -799,7 +773,6 @@
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
@@ -808,10 +781,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl lblLoaiPhong;
         private DevExpress.XtraEditors.LabelControl lblTenPhong;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panel12;
@@ -852,5 +821,8 @@
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radNam;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSL;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtmNgayRa;
+        private System.Windows.Forms.Panel panel2;
     }
 }

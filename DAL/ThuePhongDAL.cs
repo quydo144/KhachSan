@@ -11,6 +11,22 @@ namespace DAL
     {
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
 
+        public int insertThuePhong(eThuePhong newtp)
+        {
+            ThuePhong temp = new ThuePhong();
+            temp.maThuePhong = newtp.MaThuePhong;
+            temp.maKhach = newtp.MaKH;
+            temp.maNV = newtp.MaNV;
+            temp.maPhong = newtp.MaPhong;
+            temp.maSDDV = newtp.MaSddv;
+            temp.ngayVao = newtp.NgayVao;
+            temp.ngayRa = newtp.NgayRa;
+            temp.datCoc = newtp.DatCoc;
+            db.ThuePhongs.InsertOnSubmit(temp);
+            db.SubmitChanges();
+            return 1;
+        }
+
         public eThuePhong maTangTuDong()
         {
             eThuePhong thuephong = new eThuePhong();

@@ -80,7 +80,6 @@
             this.panel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.P0001 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lbl1 = new System.Windows.Forms.Label();
             this.P0002 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -164,9 +163,10 @@
             this.CapNhatDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongTinKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnstrpCoKhach = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thuêPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -721,30 +721,13 @@
             this.P0001.Size = new System.Drawing.Size(256, 163);
             this.P0001.TabIndex = 9;
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Red;
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl2.Appearance.Options.UseBackColor = true;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelControl2.Location = new System.Drawing.Point(2, 106);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(252, 55);
-            this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Sẵn sàng";
-            // 
             // lbl1
             // 
             this.lbl1.BackColor = System.Drawing.Color.LawnGreen;
-            this.lbl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbl1.Location = new System.Drawing.Point(2, 2);
+            this.lbl1.Location = new System.Drawing.Point(2, 0);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(252, 159);
+            this.lbl1.Size = new System.Drawing.Size(252, 161);
             this.lbl1.TabIndex = 2;
             this.lbl1.Text = "Phòng 1";
             this.lbl1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1773,6 +1756,7 @@
             this.DatPhongToolStripMenuItem.Name = "DatPhongToolStripMenuItem";
             this.DatPhongToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.DatPhongToolStripMenuItem.Text = "Thuê phòng";
+            this.DatPhongToolStripMenuItem.Click += new System.EventHandler(this.DatPhongToolStripMenuItem_Click);
             // 
             // ThanhToanToolStripMenuItem
             // 
@@ -1799,17 +1783,18 @@
             // 
             this.cmnstrpCoKhach.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmnstrpCoKhach.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thuêPhòngToolStripMenuItem,
+            this.thuePhongToolStripMenuItem,
             this.thanhToánToolStripMenuItem,
             this.cậpNhậtDịchVụToolStripMenuItem});
             this.cmnstrpCoKhach.Name = "cmnstrpCoKhach";
-            this.cmnstrpCoKhach.Size = new System.Drawing.Size(221, 104);
+            this.cmnstrpCoKhach.Size = new System.Drawing.Size(221, 76);
             // 
-            // thuêPhòngToolStripMenuItem
+            // thuePhongToolStripMenuItem
             // 
-            this.thuêPhòngToolStripMenuItem.Name = "thuêPhòngToolStripMenuItem";
-            this.thuêPhòngToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
-            this.thuêPhòngToolStripMenuItem.Text = "Trả phòng";
+            this.thuePhongToolStripMenuItem.Name = "thuePhongToolStripMenuItem";
+            this.thuePhongToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.thuePhongToolStripMenuItem.Text = "Trả phòng";
+            this.thuePhongToolStripMenuItem.Click += new System.EventHandler(this.thuePhongToolStripMenuItem_Click);
             // 
             // thanhToánToolStripMenuItem
             // 
@@ -1822,6 +1807,22 @@
             this.cậpNhậtDịchVụToolStripMenuItem.Name = "cậpNhậtDịchVụToolStripMenuItem";
             this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Red;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.labelControl2.Appearance.Options.UseBackColor = true;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelControl2.Location = new System.Drawing.Point(2, 106);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(252, 55);
+            this.labelControl2.TabIndex = 12;
+            this.labelControl2.Text = "Sẵn sàng";
             // 
             // frmHome
             // 
@@ -1958,7 +1959,6 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.PanelControl P0001;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.Label lbl1;
         private DevExpress.XtraEditors.PanelControl P0002;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -2048,9 +2048,10 @@
         private System.Windows.Forms.ToolStripMenuItem CapNhatDichVuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ThongTinKhachHangToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cmnstrpCoKhach;
-        private System.Windows.Forms.ToolStripMenuItem thuêPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thuePhongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtDịchVụToolStripMenuItem;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
 

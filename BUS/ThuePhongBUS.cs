@@ -16,5 +16,10 @@ namespace BUS
         {
             return tpdal.maTangTuDong();
         }
+
+        public int insertThuePhong(eThuePhong tp)
+        {
+            return tpdal.insertThuePhong(tp);
+        }
     }
 }

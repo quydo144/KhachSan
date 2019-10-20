@@ -15,6 +15,7 @@ namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
+        string maKH;
         List<eCTDV> ls = new List<eCTDV>();
         List<eKhachHang> lskh;
         eSuDungDichVu sddv;
@@ -23,6 +24,9 @@ namespace Home
         ThuePhongBUS tpbus = new ThuePhongBUS();
         DichVuBUS dvbus = new DichVuBUS();
         KhachHangBUS khbus = new KhachHangBUS();
+
+        public static string TenPhong = string.Empty;
+        public static string TenLoaiPhong = string.Empty;
 
         public frmDatPhong()
         {
@@ -53,6 +57,7 @@ namespace Home
         {
             dgvDichVu.DataSource = dvbus.getdv();
             autoCompleteSource();
+            lblTenPhong.Text = TenPhong;
         }
 
         private void autoCompleteSource()
@@ -125,6 +130,7 @@ namespace Home
                 txtHT.Text = item.TenKH;
                 txtCMND.Text = item.SoCMND;
                 txtSDT.Text = item.SoDT;
+                maKH = item.MaKH;
                 if (item.GioiTinh)
                 {
                     radNam.Checked = true;
@@ -176,6 +182,9 @@ namespace Home
         {
             eThuePhong tp = new eThuePhong();
             tp.MaThuePhong = maThuePhong();
+            tp.MaKH = maKH;
+            tp.NgayVao = DateTime.Now;
+            tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
 
         }
     }

@@ -66,12 +66,16 @@ namespace Home
                         {
                             lbl.BackColor = Color.LawnGreen;
                             lbl.Text = item.TenPhong;
+                            lbl.MouseDown += new MouseEventHandler(lbl_ClickTP2);
                             lbl.ContextMenuStrip = cmnstrpSanSang;
+
                         }
                         foreach (var lbl in pnl.Controls.OfType<DevExpress.XtraEditors.LabelControl>())
                         {
                             lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = "Sẵn sàng";
+                            lbl.Text = item.TenPhong;
+                            lbl.Visible = false;
+                            lbl.MouseDown += new MouseEventHandler(lbl_ClickTP1);
                             lbl.ContextMenuStrip = cmnstrpSanSang;
                         }
                     }
@@ -83,6 +87,53 @@ namespace Home
         {
             frmThanhToan frm = new frmThanhToan();
             frm.ShowDialog();
+        }
+
+        //private void lbl_ClickTLP(object sender, MouseEventArgs e)
+        //{
+        //    DevExpress.XtraEditors.LabelControl lbl = sender as DevExpress.XtraEditors.LabelControl;
+        //    if (lbl.Text == "1")
+        //    {
+        //        frmDatPhong.TenLoaiPhong = "Phòng Normal";
+        //    }
+        //    else if (lbl.Text == "2")
+        //    {
+        //        frmDatPhong.TenLoaiPhong = "Phòng Double";
+        //    }
+        //    else if (lbl.Text == "3")
+        //    {
+        //        frmDatPhong.TenLoaiPhong = "Phòng Triple";
+        //    }
+        //    else if (lbl.Text == "4")
+        //    {
+        //        frmDatPhong.TenLoaiPhong = "Phòng Family";
+        //    }
+        //    else if (lbl.Text == "5")
+        //    {
+        //        frmDatPhong.TenLoaiPhong = "Phòng Vip";
+        //    }
+        //    else
+        //    {
+        //        frmDatPhong.TenLoaiPhong = "Phòng Deluxe";
+        //    }
+        //}
+
+        private void lbl_ClickTP1(object sender, MouseEventArgs e)
+        {
+            DevExpress.XtraEditors.LabelControl lbl = sender as DevExpress.XtraEditors.LabelControl;
+            if (e.Button==MouseButtons.Right)
+            {
+                frmDatPhong.TenPhong = lbl.Text;
+            }
+        }
+
+        private void lbl_ClickTP2(object sender, MouseEventArgs e)
+        {
+            Label lbl = sender as Label;
+            if (e.Button == MouseButtons.Right)
+            {
+                frmDatPhong.TenPhong = lbl.Text;
+            }
         }
 
         private void toggleSwitchSS_Toggled(object sender, EventArgs e)
@@ -221,6 +272,18 @@ namespace Home
         private void btnNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNhanVien frm = new frmNhanVien();
+            frm.ShowDialog();
+        }
+
+        private void thuePhongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThanhToan frm = new frmThanhToan();
+            frm.ShowDialog();
+        }
+
+        private void DatPhongToolStripMenuItem_Click(object sender, EventArgs e)
+        {       
+            frmDatPhong frm = new frmDatPhong();
             frm.ShowDialog();
         }
     }
