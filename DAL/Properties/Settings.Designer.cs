@@ -32,5 +32,16 @@ namespace DAL.Properties {
                 return ((string)(this["KhachSanConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THANHQUY\\SQLEXPRESS;Initial Catalog=KhachSan;Integrated Security=True" +
+            "")]
+        public string KhachSanConnectionString1 {
+            get {
+                return ((string)(this["KhachSanConnectionString1"]));
+            }
+        }
     }
 }

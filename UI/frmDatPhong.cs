@@ -15,10 +15,12 @@ namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
+
         string maKH;
         List<eCTDV> ls = new List<eCTDV>();
         List<eKhachHang> lskh;
         eSuDungDichVu sddv;
+        List<eSuDungDichVu> lssddv = new List<eSuDungDichVu>();
         eThuePhong tp;
         SuDungDichVuBUS sddvbus;
         ThuePhongBUS tpbus = new ThuePhongBUS();
@@ -58,7 +60,7 @@ namespace Home
             dgvDichVu.DataSource = dvbus.getdv();
             autoCompleteSource();
             lblTenPhong.Text = TenPhong;
-            lblLoaiPhong.Text = TenLoaiPhong;
+            lblLoaiPhong.Text = TenLoaiPhong;         
         }
 
         private void autoCompleteSource()
@@ -71,8 +73,7 @@ namespace Home
             {
                 txtSeachKH.AutoCompleteCustomSource.Add(item.SoCMND);
             }
-        }
-
+        }      
         private void btnThem_Click(object sender, EventArgs e)
         {
             for (int i = 1; i < 31; i++)
@@ -94,20 +95,15 @@ namespace Home
                 }
             }
             ls.Add(dv);
-  
+            int index = gridViewCTDV.FocusedRowHandle;
+            gridViewDV.DeleteRow(index);
             dgvCTDV.DataSource = ls.ToList();
-            eSuDungDichVu sddvnew = new eSuDungDichVu();
-            sddvnew.MaSDDV = tangMaSDDV();
-            sddvnew.MaDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[0]).ToString();
-            sddvnew.MaThue = maThuePhong();
-            sddvnew.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(gridViewCTDV.FocusedRowHandle, gridViewCTDV.Columns[2]).ToString());
-            sddvnew.ThoiGianSd = Convert.ToDateTime(DateTime.Now);
-
         }
 
         string tangMaSDDV()
         {
             string maSuDungDichVu;
+            sddvbus = new SuDungDichVuBUS();
             sddv = new eSuDungDichVu();
             sddv = sddvbus.tangma();
             if (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) < 10000000 && Convert.ToInt32(sddv.MaSDDV.Substring(2, 7)) > 1000000)
@@ -145,7 +141,7 @@ namespace Home
         {
             int index = gridViewCTDV.FocusedRowHandle;
             ls.RemoveAt(index);
-            dgvCTDV.DataSource = ls;
+            gridViewCTDV.DeleteRow(index);
         }
 
         private void txtSeachDV_TextChanged(object sender, EventArgs e)

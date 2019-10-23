@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KhachSan" Class="dbQLKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=THANHQUY\THANHQUY;Initial Catalog=KhachSan;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="KhachSanConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=THANHQUY\SQLEXPRESS;Initial Catalog=KhachSan;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="KhachSanConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DichVu" Member="DichVus">
+    <Type Name="DichVu">
+      <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenDichVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="donGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="soLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DichVu_SuDungDichVu" Member="SuDungDichVus" ThisKey="maDV" OtherKey="maDV" Type="SuDungDichVu" />
+    </Type>
+  </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
       <Column Name="maKH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenKh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="soCMND" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="gioiTinh" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="soDT" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="soDT" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
       <Column Name="maDoan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="KhachHang_ThuePhong" Member="ThuePhongs" ThisKey="maKH" OtherKey="maKhach" Type="ThuePhong" />
     </Type>
@@ -72,7 +81,7 @@
       <Column Name="maPhong" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="maKhach" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="maNV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="maSDDV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="maSDDV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="ngayVao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="ngayRa" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="datCoc" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
@@ -81,15 +90,6 @@
       <Association Name="NhanVien_ThuePhong" Member="NhanVien" ThisKey="maNV" OtherKey="maNV" Type="NhanVien" IsForeignKey="true" />
       <Association Name="Phong_ThuePhong" Member="Phong" ThisKey="maPhong" OtherKey="maPhong" Type="Phong" IsForeignKey="true" />
       <Association Name="SuDungDichVu_ThuePhong" Member="SuDungDichVu" ThisKey="maSDDV" OtherKey="maSDDV" Type="SuDungDichVu" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DichVu" Member="DichVus">
-    <Type Name="DichVu">
-      <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenDichVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="soLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DichVu_SuDungDichVu" Member="SuDungDichVus" ThisKey="maDV" OtherKey="maDV" Type="SuDungDichVu" />
     </Type>
   </Table>
 </Database>
