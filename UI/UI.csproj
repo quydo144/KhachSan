@@ -111,6 +111,12 @@
     <Compile Include="frmThanhToan.Designer.cs">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTTKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTTKhachHang.Designer.cs">
+      <DependentUpon>frmTTKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDichVu.resx">
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTTKhachHang.resx">
+      <DependentUpon>frmTTKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

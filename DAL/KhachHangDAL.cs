@@ -28,7 +28,19 @@ namespace DAL
             }
             return ls;
         }
-
+        public int insertKH(eKhachHang khmoi)
+        {
+            KhachHang khtemp = new KhachHang();
+            khtemp.maKH = khmoi.MaKH;
+            khtemp.soCMND = khmoi.SoCMND;
+            khtemp.soDT = khmoi.SoDT;
+            khtemp.tenKh = khmoi.TenKH;
+            khtemp.maDoan = khmoi.MaDoan;
+            khtemp.gioiTinh = Convert.ToByte(khmoi.GioiTinh);
+            db.KhachHangs.InsertOnSubmit(khtemp);
+            db.SubmitChanges();
+            return 1;
+        }
         public List<eKhachHang> getcmnd(string s)
         {
             var listkh = (from x in db.KhachHangs where x.soCMND.Contains(s) select x).ToList();
@@ -45,6 +57,19 @@ namespace DAL
                 ls.Add(kh);
             }
             return ls;
+        }
+
+        public eKhachHang maTangTuDong()
+        {
+            eKhachHang kh = new eKhachHang();
+            KhachHang item = (from x in db.KhachHangs orderby x.maKH descending select x).FirstOrDefault();
+            kh.MaKH = item.maKH.Trim();
+            kh.TenKH = item.tenKh.Trim();
+            kh.SoCMND = item.soCMND.Trim();
+            kh.SoDT = item.soDT.Trim();
+            kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
+            kh.MaDoan = item.maDoan;
+            return kh;
         }
     }
 }

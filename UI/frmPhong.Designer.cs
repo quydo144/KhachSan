@@ -49,11 +49,11 @@
             this.loaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboListTim = new System.Windows.Forms.ComboBox();
             this.txtTim = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -187,7 +187,7 @@
             this.gridControl1.Location = new System.Drawing.Point(656, 182);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(889, 565);
+            this.gridControl1.Size = new System.Drawing.Size(627, 565);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -207,6 +207,7 @@
             // maPhong
             // 
             this.maPhong.Caption = "Mã phòng";
+            this.maPhong.FieldName = "MaPhong";
             this.maPhong.MinWidth = 25;
             this.maPhong.Name = "maPhong";
             this.maPhong.Visible = true;
@@ -216,6 +217,7 @@
             // tenPhong
             // 
             this.tenPhong.Caption = "Tên phòng";
+            this.tenPhong.FieldName = "TenPhong";
             this.tenPhong.MinWidth = 25;
             this.tenPhong.Name = "tenPhong";
             this.tenPhong.Visible = true;
@@ -225,6 +227,7 @@
             // tang
             // 
             this.tang.Caption = "Tầng";
+            this.tang.FieldName = "Tang";
             this.tang.MinWidth = 25;
             this.tang.Name = "tang";
             this.tang.Visible = true;
@@ -234,6 +237,7 @@
             // tinhTrang
             // 
             this.tinhTrang.Caption = "Tình trạng";
+            this.tinhTrang.FieldName = "TinhTrang";
             this.tinhTrang.MinWidth = 25;
             this.tinhTrang.Name = "tinhTrang";
             this.tinhTrang.Visible = true;
@@ -243,6 +247,7 @@
             // loaiPhong
             // 
             this.loaiPhong.Caption = "Loại phòng";
+            this.loaiPhong.FieldName = "LoaiPhong";
             this.loaiPhong.MinWidth = 25;
             this.loaiPhong.Name = "loaiPhong";
             this.loaiPhong.Visible = true;
@@ -256,7 +261,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(-1, -2);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1546, 55);
+            this.label7.Size = new System.Drawing.Size(1284, 55);
             this.label7.TabIndex = 42;
             this.label7.Text = "Quản lý phòng";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,6 +286,14 @@
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phòng";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(197, 247);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(385, 30);
+            this.textBox3.TabIndex = 41;
             // 
             // button3
             // 
@@ -318,21 +331,13 @@
             this.txtTim.Size = new System.Drawing.Size(272, 30);
             this.txtTim.TabIndex = 0;
             // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(197, 247);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(385, 30);
-            this.textBox3.TabIndex = 41;
-            // 
             // frmPhong
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1541, 744);
+            this.ClientSize = new System.Drawing.Size(1279, 744);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);

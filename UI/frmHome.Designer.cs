@@ -89,6 +89,7 @@
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -97,6 +98,7 @@
             this.panel.SuspendLayout();
             this.cmnstrpSanSang.SuspendLayout();
             this.cmnstrpCoKhach.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTinhTrang
@@ -628,6 +630,10 @@
             this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // frmHome
             // 
             this.Appearance.Options.UseFont = true;
@@ -654,6 +660,7 @@
             this.panel.ResumeLayout(false);
             this.cmnstrpSanSang.ResumeLayout(false);
             this.cmnstrpCoKhach.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -725,6 +732,7 @@
         private System.Windows.Forms.ToolStripMenuItem thuePhongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtDịchVụToolStripMenuItem;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 

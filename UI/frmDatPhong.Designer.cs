@@ -40,11 +40,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,6 +51,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvCTDV = new DevExpress.XtraGrid.GridControl();
             this.gridViewCTDV = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.soLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboSL = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -144,7 +140,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.label5.Location = new System.Drawing.Point(55, 10);
+            this.label5.Location = new System.Drawing.Point(91, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(176, 37);
             this.label5.TabIndex = 2;
@@ -153,11 +149,11 @@
             // 
             // dtmNgayRa
             // 
-            this.dtmNgayRa.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dtmNgayRa.CustomFormat = "dd/MM/yyyy hh:mm";
             this.dtmNgayRa.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgayRa.Location = new System.Drawing.Point(246, 13);
+            this.dtmNgayRa.Location = new System.Drawing.Point(288, 13);
             this.dtmNgayRa.Name = "dtmNgayRa";
-            this.dtmNgayRa.Size = new System.Drawing.Size(232, 30);
+            this.dtmNgayRa.Size = new System.Drawing.Size(190, 30);
             this.dtmNgayRa.TabIndex = 1;
             // 
             // panel12
@@ -238,6 +234,7 @@
             // gridViewCTDV
             // 
             this.gridViewCTDV.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
             this.gridColumn10,
             this.soLuong,
             this.gridColumn12,
@@ -250,6 +247,14 @@
             this.gridViewCTDV.OptionsView.ShowGroupPanel = false;
             this.gridViewCTDV.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewCTDV.OptionsView.ShowPreviewRowLines = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã dịch vụ";
+            this.gridColumn1.FieldName = "MaDV";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 94;
             // 
             // gridColumn10
             // 
@@ -289,10 +294,8 @@
             // 
             this.cboSL.AutoHeight = false;
             this.cboSL.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "123", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cboSL.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboSL.Name = "cboSL";
-            this.cboSL.SuppressMouseEventOnOuterMouseClick = true;
             // 
             // gridColumn12
             // 
@@ -471,7 +474,7 @@
             this.tenDV.OptionsColumn.ReadOnly = true;
             this.tenDV.Visible = true;
             this.tenDV.VisibleIndex = 0;
-            this.tenDV.Width = 148;
+            this.tenDV.Width = 132;
             // 
             // donGia
             // 
@@ -483,7 +486,7 @@
             this.donGia.OptionsColumn.ReadOnly = true;
             this.donGia.Visible = true;
             this.donGia.VisibleIndex = 2;
-            this.donGia.Width = 130;
+            this.donGia.Width = 85;
             // 
             // them
             // 
@@ -493,14 +496,14 @@
             this.them.Name = "them";
             this.them.Visible = true;
             this.them.VisibleIndex = 3;
-            this.them.Width = 66;
+            this.them.Width = 46;
             // 
             // btnThem
             // 
             this.btnThem.AutoHeight = false;
-            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.btnThem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnThem.Name = "btnThem";
             this.btnThem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -513,7 +516,7 @@
             this.sl.Name = "sl";
             this.sl.Visible = true;
             this.sl.VisibleIndex = 1;
-            this.sl.Width = 94;
+            this.sl.Width = 81;
             // 
             // txtSeachDV
             // 
@@ -828,9 +831,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn sl;
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radNam;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSL;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtmNgayRa;
         private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cboSL;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

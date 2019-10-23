@@ -14,11 +14,10 @@ namespace DAL
         public int insertThuePhong(eThuePhong newtp)
         {
             ThuePhong temp = new ThuePhong();
-            temp.maThuePhong = newtp.MaThuePhong;
+            temp.maThue = newtp.MaThuePhong;
             temp.maKhach = newtp.MaKH;
             temp.maNV = newtp.MaNV;
             temp.maPhong = newtp.MaPhong;
-            temp.maSDDV = newtp.MaSddv;
             temp.ngayVao = newtp.NgayVao;
             temp.ngayRa = newtp.NgayRa;
             temp.datCoc = newtp.DatCoc;
@@ -30,12 +29,11 @@ namespace DAL
         public eThuePhong maTangTuDong()
         {
             eThuePhong thuephong = new eThuePhong();
-            ThuePhong item = (from x in db.ThuePhongs orderby x.maThuePhong descending select x).FirstOrDefault();
-            thuephong.MaThuePhong = item.maThuePhong;
+            ThuePhong item = (from x in db.ThuePhongs orderby x.maThue descending select x).FirstOrDefault();
+            thuephong.MaThuePhong = item.maThue;
             thuephong.MaPhong = item.maPhong;
             thuephong.MaKH = item.maKhach;
             thuephong.MaNV = item.maNV;
-            thuephong.MaSddv = item.maSDDV;
             thuephong.NgayVao = item.ngayVao;
             thuephong.NgayRa = item.ngayRa;
             thuephong.DatCoc = item.datCoc;

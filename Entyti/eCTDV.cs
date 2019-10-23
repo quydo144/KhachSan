@@ -8,12 +8,14 @@ namespace Entyti
 {
     public class eCTDV
     {
+        private string maDV;
         private string tenDV;
         private int soLuong;
         private decimal donGia, thanhTien;
 
-        public eCTDV(string tenDV, decimal donGia,int soLuong, decimal thanhTien)
+        public eCTDV(string maDV,string tenDV, decimal donGia,int soLuong, decimal thanhTien)
         {
+            this.maDV = maDV;
             this.tenDV = tenDV;
             this.soLuong = soLuong;
             this.donGia = donGia;
@@ -74,6 +76,19 @@ namespace Entyti
             set
             {
                 thanhTien = value;
+            }
+        }
+
+        public string MaDV
+        {
+            get
+            {
+                return maDV;
+            }
+
+            set
+            {
+                maDV = value;
             }
         }
     }

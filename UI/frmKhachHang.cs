@@ -33,5 +33,7 @@ namespace Home
             txtTK.ForeColor = Color.Black;
             txtTK.Clear();
         }
+
+      
     }
 }

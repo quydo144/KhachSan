@@ -229,6 +229,8 @@ namespace Home
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDatPhong frm = new frmDatPhong();
+            //frm.MdiParent = this;
+            //frm.Show();
             frm.ShowDialog();
         }
 

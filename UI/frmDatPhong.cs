@@ -22,13 +22,14 @@ namespace Home
         eSuDungDichVu sddv;
         List<eSuDungDichVu> lssddv = new List<eSuDungDichVu>();
         eThuePhong tp;
-        SuDungDichVuBUS sddvbus;
+        SuDungDichVuBUS sddvbus = new SuDungDichVuBUS();
         ThuePhongBUS tpbus = new ThuePhongBUS();
         DichVuBUS dvbus = new DichVuBUS();
         KhachHangBUS khbus = new KhachHangBUS();
 
         public static string TenPhong = string.Empty;
         public static string TenLoaiPhong = string.Empty;
+        public static string CMND = string.Empty;
 
         public frmDatPhong()
         {
@@ -57,10 +58,10 @@ namespace Home
 
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
-            dgvDichVu.DataSource = dvbus.getdv();
+            dgvDichVu.DataSource = dvbus.getalldv();
             autoCompleteSource();
             lblTenPhong.Text = TenPhong;
-            lblLoaiPhong.Text = TenLoaiPhong;         
+            lblLoaiPhong.Text = TenLoaiPhong;
         }
 
         private void autoCompleteSource()
@@ -73,16 +74,18 @@ namespace Home
             {
                 txtSeachKH.AutoCompleteCustomSource.Add(item.SoCMND);
             }
-        }      
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             for (int i = 1; i < 31; i++)
             {
                 cboSL.Items.Add(i);
             }
+            string maDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[0]).ToString();
             string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
             string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
             eCTDV dv = new eCTDV();
+            dv.MaDV = maDV;
             dv.TenDV = tenDV;
             dv.DonGia = Convert.ToDecimal(donGia);
             dv.SoLuong = 1;
@@ -95,7 +98,7 @@ namespace Home
                 }
             }
             ls.Add(dv);
-            int index = gridViewCTDV.FocusedRowHandle;
+            int index = gridViewDV.FocusedRowHandle;
             gridViewDV.DeleteRow(index);
             dgvCTDV.DataSource = ls.ToList();
         }
@@ -106,27 +109,27 @@ namespace Home
             sddvbus = new SuDungDichVuBUS();
             sddv = new eSuDungDichVu();
             sddv = sddvbus.tangma();
-            if (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) < 10000000 && Convert.ToInt32(sddv.MaSDDV.Substring(2, 7)) > 1000000)
+            if (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) < 10000000 && Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) >= 1000000)
             {
                 maSuDungDichVu = "PDV" + (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) + 1).ToString();
             }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) < 1000000 && Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) > 100000)
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) < 1000000 && Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) >= 100000)
             {
                 maSuDungDichVu = "PDV0" + (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) + 1).ToString();
             }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) < 100000 && Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) > 10000)
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) < 100000 && Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) >= 10000)
             {
                 maSuDungDichVu = "PDV00" + (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) + 1).ToString();
             }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) < 10000 && Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) > 1000)
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) < 10000 && Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) >= 1000)
             {
                 maSuDungDichVu = "PDV000" + (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) + 1).ToString();
             }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) < 1000 && Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) > 100)
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) < 1000 && Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) >= 100)
             {
-                maSuDungDichVu = "PDV0000" + (Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) + 1).ToString();
+                maSuDungDichVu = "PDV0000" + (Convert.ToInt32(sddv.MaSDDV.Substring(7, 2)) + 1).ToString();
             }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) < 100 && Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) > 10)
+            else if (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) < 100 && Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) >= 10)
             {
                 maSuDungDichVu = "PDV00000" + (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) + 1).ToString();
             }
@@ -151,8 +154,9 @@ namespace Home
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            frmKhachHang frm = new frmKhachHang();
-            frm.Show();
+            frmTTKhachHang frm = new frmTTKhachHang();
+            frm.ShowDialog();
+            txtSeachKH.Text = CMND;
         }
 
         private void txtSeachKH_TextChanged(object sender, EventArgs e)
@@ -214,12 +218,23 @@ namespace Home
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            //Thêm mã thuê phòng
             eThuePhong tp = new eThuePhong();
             tp.MaThuePhong = maThuePhong();
             tp.MaKH = maKH;
             tp.NgayVao = DateTime.Now;
             tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
-
+            //Thêm chi tiết dịch vụ
+            eSuDungDichVu sddv = new eSuDungDichVu();
+            for (int i = 0; i < gridViewCTDV.RowCount; i++)
+            {
+                sddv.MaThue = maThuePhong();
+                sddv.MaSDDV = tangMaSDDV();
+                sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
+                sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
+                sddv.ThoiGianSd = DateTime.Now;
+                int s = sddvbus.InsertSDDV(sddv);
+            }
         }
     }
 }

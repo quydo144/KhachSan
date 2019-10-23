@@ -33,7 +33,7 @@
             this.grdMaDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdDonGiaDV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlDV = new DevExpress.XtraGrid.GridControl();
             this.btnSuaDV = new System.Windows.Forms.Button();
             this.btnThemDV = new System.Windows.Forms.Button();
             this.btnXoaDV = new System.Windows.Forms.Button();
@@ -47,9 +47,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboTKDV = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             // grdTenDV
             // 
             this.grdTenDV.Caption = "Tên dịch vụ";
-            this.grdTenDV.FieldName = "ten dich vu";
+            this.grdTenDV.FieldName = "TenDV";
             this.grdTenDV.MinWidth = 31;
             this.grdTenDV.Name = "grdTenDV";
             this.grdTenDV.OptionsColumn.FixedWidth = true;
@@ -68,7 +68,7 @@
             // grdMaDV
             // 
             this.grdMaDV.Caption = "Mã dịch vụ";
-            this.grdMaDV.FieldName = "ma dich vu";
+            this.grdMaDV.FieldName = "MaDV";
             this.grdMaDV.MinWidth = 31;
             this.grdMaDV.Name = "grdMaDV";
             this.grdMaDV.OptionsColumn.FixedWidth = true;
@@ -84,14 +84,14 @@
             this.grdDonGiaDV});
             this.gridView1.DetailHeight = 481;
             this.gridView1.FixedLineWidth = 3;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridControlDV;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // grdDonGiaDV
             // 
             this.grdDonGiaDV.Caption = "Đơn giá";
-            this.grdDonGiaDV.FieldName = "don gia";
+            this.grdDonGiaDV.FieldName = "DonGia";
             this.grdDonGiaDV.MinWidth = 31;
             this.grdDonGiaDV.Name = "grdDonGiaDV";
             this.grdDonGiaDV.OptionsColumn.FixedWidth = true;
@@ -99,19 +99,19 @@
             this.grdDonGiaDV.VisibleIndex = 2;
             this.grdDonGiaDV.Width = 118;
             // 
-            // gridControl1
+            // gridControlDV
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridControlDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gridControl1.Location = new System.Drawing.Point(617, 190);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(816, 544);
-            this.gridControl1.TabIndex = 50;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlDV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gridControlDV.Location = new System.Drawing.Point(617, 190);
+            this.gridControlDV.MainView = this.gridView1;
+            this.gridControlDV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gridControlDV.Name = "gridControlDV";
+            this.gridControlDV.Size = new System.Drawing.Size(785, 544);
+            this.gridControlDV.TabIndex = 50;
+            this.gridControlDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // btnSuaDV
@@ -141,6 +141,7 @@
             this.btnThemDV.Text = "Thêm";
             this.btnThemDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemDV.UseVisualStyleBackColor = false;
+            this.btnThemDV.Click += new System.EventHandler(this.btnThemDV_Click);
             // 
             // btnXoaDV
             // 
@@ -257,7 +258,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cboTKDV);
             this.groupBox2.Controls.Add(this.txtTimKiem);
             this.groupBox2.Location = new System.Drawing.Point(636, 74);
             this.groupBox2.Name = "groupBox2";
@@ -266,13 +267,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
-            // comboBox1
+            // cboTKDV
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(509, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(230, 30);
-            this.comboBox1.TabIndex = 54;
+            this.cboTKDV.FormattingEnabled = true;
+            this.cboTKDV.Location = new System.Drawing.Point(509, 48);
+            this.cboTKDV.Name = "cboTKDV";
+            this.cboTKDV.Size = new System.Drawing.Size(230, 30);
+            this.cboTKDV.TabIndex = 54;
             // 
             // frmDichVu
             // 
@@ -284,7 +285,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gridControlDV);
             this.Controls.Add(this.btnSuaDV);
             this.Controls.Add(this.btnThemDV);
             this.Controls.Add(this.btnXoaDV);
@@ -295,8 +296,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dịch vụ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -310,7 +312,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn grdMaDV;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn grdDonGiaDV;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlDV;
         private System.Windows.Forms.Button btnSuaDV;
         private System.Windows.Forms.Button btnThemDV;
         private System.Windows.Forms.Button btnXoaDV;
@@ -324,6 +326,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTKDV;
     }
 }

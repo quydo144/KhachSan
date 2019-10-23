@@ -20,5 +20,14 @@ namespace BUS
         {
             return khdal.getcmnd(s);
         }
+
+        public int InsertKH(eKhachHang p)
+        {
+            return khdal.insertKH(p);
+        }
+        public eKhachHang maTangTD()
+        {
+            return khdal.maTangTuDong();
+        }
     }
 }
