@@ -48,6 +48,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboTKDV = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.grdSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -63,7 +66,7 @@
             this.grdTenDV.OptionsColumn.FixedWidth = true;
             this.grdTenDV.Visible = true;
             this.grdTenDV.VisibleIndex = 1;
-            this.grdTenDV.Width = 118;
+            this.grdTenDV.Width = 215;
             // 
             // grdMaDV
             // 
@@ -74,14 +77,15 @@
             this.grdMaDV.OptionsColumn.FixedWidth = true;
             this.grdMaDV.Visible = true;
             this.grdMaDV.VisibleIndex = 0;
-            this.grdMaDV.Width = 118;
+            this.grdMaDV.Width = 126;
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdMaDV,
             this.grdTenDV,
-            this.grdDonGiaDV});
+            this.grdDonGiaDV,
+            this.grdSoLuong});
             this.gridView1.DetailHeight = 481;
             this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControlDV;
@@ -96,8 +100,8 @@
             this.grdDonGiaDV.Name = "grdDonGiaDV";
             this.grdDonGiaDV.OptionsColumn.FixedWidth = true;
             this.grdDonGiaDV.Visible = true;
-            this.grdDonGiaDV.VisibleIndex = 2;
-            this.grdDonGiaDV.Width = 118;
+            this.grdDonGiaDV.VisibleIndex = 3;
+            this.grdDonGiaDV.Width = 181;
             // 
             // gridControlDV
             // 
@@ -109,7 +113,7 @@
             this.gridControlDV.MainView = this.gridView1;
             this.gridControlDV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.gridControlDV.Name = "gridControlDV";
-            this.gridControlDV.Size = new System.Drawing.Size(785, 544);
+            this.gridControlDV.Size = new System.Drawing.Size(805, 544);
             this.gridControlDV.TabIndex = 50;
             this.gridControlDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -119,7 +123,7 @@
             this.btnSuaDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
             this.btnSuaDV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDV.Image")));
             this.btnSuaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDV.Location = new System.Drawing.Point(242, 410);
+            this.btnSuaDV.Location = new System.Drawing.Point(247, 485);
             this.btnSuaDV.Margin = new System.Windows.Forms.Padding(6);
             this.btnSuaDV.Name = "btnSuaDV";
             this.btnSuaDV.Size = new System.Drawing.Size(128, 62);
@@ -133,7 +137,7 @@
             this.btnThemDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
             this.btnThemDV.Image = global::Home.Properties.Resources.add_icon;
             this.btnThemDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDV.Location = new System.Drawing.Point(55, 410);
+            this.btnThemDV.Location = new System.Drawing.Point(60, 485);
             this.btnThemDV.Margin = new System.Windows.Forms.Padding(6);
             this.btnThemDV.Name = "btnThemDV";
             this.btnThemDV.Size = new System.Drawing.Size(128, 62);
@@ -148,7 +152,7 @@
             this.btnXoaDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
             this.btnXoaDV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDV.Image")));
             this.btnXoaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDV.Location = new System.Drawing.Point(430, 410);
+            this.btnXoaDV.Location = new System.Drawing.Point(435, 485);
             this.btnXoaDV.Margin = new System.Windows.Forms.Padding(6);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(128, 62);
@@ -167,7 +171,7 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(173, 190);
+            this.txtDonGia.Location = new System.Drawing.Point(173, 250);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(6);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(392, 30);
@@ -187,7 +191,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 198);
+            this.label3.Location = new System.Drawing.Point(65, 258);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 22);
@@ -245,13 +249,15 @@
             // 
             this.groupBox1.Controls.Add(this.txtMaDV);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtSL);
             this.groupBox1.Controls.Add(this.txtDonGia);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTenDV);
             this.groupBox1.Location = new System.Drawing.Point(12, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(597, 283);
+            this.groupBox1.Size = new System.Drawing.Size(597, 348);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "thông tin dịch vụ";
@@ -274,6 +280,37 @@
             this.cboTKDV.Name = "cboTKDV";
             this.cboTKDV.Size = new System.Drawing.Size(230, 30);
             this.cboTKDV.TabIndex = 54;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 197);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 22);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Số lượng";
+            // 
+            // txtSL
+            // 
+            this.txtSL.Location = new System.Drawing.Point(173, 189);
+            this.txtSL.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(392, 30);
+            this.txtSL.TabIndex = 49;
+            this.txtSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // grdSoLuong
+            // 
+            this.grdSoLuong.Caption = "Số lượng";
+            this.grdSoLuong.FieldName = "SoLuong";
+            this.grdSoLuong.MinWidth = 25;
+            this.grdSoLuong.Name = "grdSoLuong";
+            this.grdSoLuong.Visible = true;
+            this.grdSoLuong.VisibleIndex = 2;
+            this.grdSoLuong.Width = 241;
             // 
             // frmDichVu
             // 
@@ -327,5 +364,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cboTKDV;
+        private System.Windows.Forms.TextBox txtSL;
+        private System.Windows.Forms.Label label4;
+        private DevExpress.XtraGrid.Columns.GridColumn grdSoLuong;
     }
 }

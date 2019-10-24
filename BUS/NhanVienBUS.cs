@@ -48,5 +48,13 @@ namespace BUS
         {
             return ndal.getAllSoDT(s);
         }
+        public bool GetTKQL(string id, string pass)
+        {
+            return ndal.GetTKQL(id, pass);
+        }
+        public bool GetTKNV(string id, string pass)
+        {
+            return ndal.GetTKNV(id, pass);
+        }
     }
 }

@@ -158,7 +158,26 @@ namespace DAL
             }
             return ls;
         }
+        
+        public bool GetTKQL(string id, string pass)
+        {
+            var q = from x in db.NhanViens where x.chucVu == 0 && x.maNV.Equals(id) && x.passWord.Equals(pass) select x;
+            if (q.Any())
+            {
+                return true;
+            }
+            else return false;
+        }
 
+        public bool GetTKNV(string id, string pass)
+        {
+            var q = from x in db.NhanViens where x.chucVu == 1 && x.maNV.Equals(id) && x.passWord.Equals(pass) select x;
+            if (q.Any())
+            {
+                return true;
+            }
+            else return false;
+        }
 
     }
 }

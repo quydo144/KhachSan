@@ -56,7 +56,6 @@
             this.soLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboSL = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lblLoaiPhong = new DevExpress.XtraEditors.LabelControl();
@@ -238,7 +237,6 @@
             this.gridColumn10,
             this.soLuong,
             this.gridColumn12,
-            this.gridColumn13,
             this.gridColumn14});
             this.gridViewCTDV.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.gridViewCTDV.GridControl = this.dgvCTDV;
@@ -270,7 +268,7 @@
             this.gridColumn10.OptionsColumn.AllowFocus = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 0;
-            this.gridColumn10.Width = 247;
+            this.gridColumn10.Width = 276;
             // 
             // soLuong
             // 
@@ -288,7 +286,7 @@
             this.soLuong.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.soLuong.Visible = true;
             this.soLuong.VisibleIndex = 1;
-            this.soLuong.Width = 165;
+            this.soLuong.Width = 253;
             // 
             // cboSL
             // 
@@ -311,23 +309,7 @@
             this.gridColumn12.OptionsColumn.AllowFocus = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 2;
-            this.gridColumn12.Width = 183;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gridColumn13.AppearanceCell.Options.UseFont = true;
-            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gridColumn13.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn13.Caption = "Thành tiền";
-            this.gridColumn13.FieldName = "ThanhTien";
-            this.gridColumn13.MinWidth = 25;
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.OptionsColumn.AllowFocus = false;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 3;
-            this.gridColumn13.Width = 199;
+            this.gridColumn12.Width = 227;
             // 
             // gridColumn14
             // 
@@ -340,8 +322,8 @@
             this.gridColumn14.MinWidth = 25;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 4;
-            this.gridColumn14.Width = 63;
+            this.gridColumn14.VisibleIndex = 3;
+            this.gridColumn14.Width = 87;
             // 
             // labelControl4
             // 
@@ -803,7 +785,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn soLuong;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.TextEdit txtSeachDV;
         private System.Windows.Forms.Panel panel13;

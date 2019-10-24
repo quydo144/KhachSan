@@ -31,7 +31,8 @@ namespace DAL
             DichVu dvtemp = new DichVu();
             dvtemp.maDV = dvmoi.MaDV;
             dvtemp.tenDichVu = dvmoi.TenDV;
-            dvtemp.donGia = Convert.ToInt32(dvmoi.DonGia); // Sua lai kieu money
+            dvtemp.donGia = Convert.ToDecimal(dvmoi.DonGia); // Sua lai kieu money
+            dvtemp.soLuongDV = Convert.ToInt32(dvmoi.SoLuong);
             db.DichVus.InsertOnSubmit(dvtemp);
             db.SubmitChanges();
             return 1;
@@ -40,10 +41,10 @@ namespace DAL
         public void updateDichVu(eDichVu dvupdate)
         {
             IQueryable<DichVu> dv = db.DichVus.Where(x => x.maDV.Equals(dvupdate.MaDV));
-
             dv.First().tenDichVu = dvupdate.TenDV;
             dv.First().maDV = dvupdate.MaDV;
-            dv.First().donGia = Convert.ToInt32(dvupdate.DonGia);///Sua lai kieu money
+            dv.First().donGia = Convert.ToDecimal(dvupdate.DonGia);///Sua lai kieu money
+            dv.First().soLuongDV = Convert.ToInt32(dvupdate.SoLuong);
             db.SubmitChanges();
         }
 
@@ -64,8 +65,6 @@ namespace DAL
             eDichVu dv = new eDichVu();
             DichVu item = (from x in db.DichVus orderby x.maDV descending select x).FirstOrDefault();
             dv.MaDV = item.maDV;
-            dv.TenDV = item.tenDichVu;
-            dv.DonGia = Convert.ToInt32(item.donGia);//Sua lai kieu money
             return dv;
         }
 
@@ -78,7 +77,8 @@ namespace DAL
                 eDichVu dv = new eDichVu();
                 dv.MaDV = item.maDV;
                 dv.TenDV = item.tenDichVu;
-                dv.DonGia = Convert.ToInt32(item.donGia);//Sua lai kiue money
+                dv.DonGia = Convert.ToDecimal(item.donGia);//Sua lai kiue money
+                dv.SoLuong = Convert.ToInt32(item.soLuongDV);
                 ls.Add(dv);
             }
             return ls;
@@ -93,7 +93,8 @@ namespace DAL
                 eDichVu dv = new eDichVu();
                 dv.MaDV = item.maDV;
                 dv.TenDV = item.tenDichVu;
-                dv.DonGia = Convert.ToInt32(item.donGia); // Sua lai keu money
+                dv.DonGia = Convert.ToDecimal(item.donGia); // Sua lai keu money
+                dv.SoLuong = Convert.ToInt32(item.soLuongDV);
                 ls.Add(dv);
             }
             return ls;

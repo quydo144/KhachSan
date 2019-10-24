@@ -4,7 +4,7 @@
     <Type Name="DichVu">
       <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenDichVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="donGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="soLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DichVu_SuDungDichVu" Member="SuDungDichVus" ThisKey="maDV" OtherKey="maDV" Type="SuDungDichVu" />
     </Type>

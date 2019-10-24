@@ -161,7 +161,7 @@ namespace DAL
 		
 		private string _tenDichVu;
 		
-		private System.Nullable<int> _donGia;
+		private System.Nullable<decimal> _donGia;
 		
 		private System.Nullable<int> _soLuongDV;
 		
@@ -175,7 +175,7 @@ namespace DAL
     partial void OnmaDVChanged();
     partial void OntenDichVuChanging(string value);
     partial void OntenDichVuChanged();
-    partial void OndonGiaChanging(System.Nullable<int> value);
+    partial void OndonGiaChanging(System.Nullable<decimal> value);
     partial void OndonGiaChanged();
     partial void OnsoLuongDVChanging(System.Nullable<int> value);
     partial void OnsoLuongDVChanged();
@@ -227,8 +227,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donGia", DbType="Int")]
-		public System.Nullable<int> donGia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donGia", DbType="Money")]
+		public System.Nullable<decimal> donGia
 		{
 			get
 			{

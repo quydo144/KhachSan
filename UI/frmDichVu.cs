@@ -57,6 +57,7 @@ namespace Home
             newdv.MaDV = txtMaDV.Text.Trim();
             newdv.TenDV = txtTenDV.Text;
             newdv.DonGia = Convert.ToInt32(txtDonGia.Text);
+            newdv.SoLuong = Convert.ToInt32(txtSL.Text);
             int kq = dvBUS.InsertDichVu(newdv);
             if (kq == 1)
                 MessageBox.Show("Thêm thành công!!!");

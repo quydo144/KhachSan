@@ -8,11 +8,13 @@ using System.Text;
 using System.Windows.Forms;
 using BUS;
 using Entyti;
+using System.Threading;
 
 namespace Home
 {
     public partial class frmHome : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
         string s;
         decimal donGia;
         int stt = 0;
@@ -312,9 +314,29 @@ namespace Home
             frmDatPhong frm = new frmDatPhong();
             frm.ShowDialog();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+            this.Close();
+            foreach (Form item in Application.OpenForms)
+            {
+                if (item.Name.Equals("frmDangNhap"))
+                {
+                    item.Show();
+                }
+            }           
+        }
+
+        private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.Close();
+            //foreach (Form item in Application.OpenForms)
+            //{
+            //    if (item.Name.Equals("frmDangNhap"))
+            //    {
+            //        item.Close();
+            //    }
+            //}
         }
     }
 }

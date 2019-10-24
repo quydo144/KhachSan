@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
@@ -18,7 +19,7 @@ namespace Home
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
-            Application.Run(new frmDatPhong());
+            Application.Run(new frmDangNhap());
         }
     }
 }

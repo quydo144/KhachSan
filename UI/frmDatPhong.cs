@@ -89,7 +89,6 @@ namespace Home
             dv.TenDV = tenDV;
             dv.DonGia = Convert.ToDecimal(donGia);
             dv.SoLuong = 1;
-            dv.ThanhTien = dv.DonGia;
             foreach (var item in ls.ToList())
             {
                 if (item.TenDV.Equals(tenDV))
@@ -149,7 +148,14 @@ namespace Home
 
         private void txtSeachDV_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtSeachDV.Text=="")
+            {
+                dgvDichVu.DataSource = dvbus.getalldv();
+            }
+            else
+            {
+                dgvDichVu.DataSource = dvbus.getallTenDV(txtSeachDV.Text);
+            }
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
@@ -165,6 +171,7 @@ namespace Home
             lskh = khbus.getcmnd(s);
             foreach (var item in lskh)
             {
+                maKH = item.MaKH;
                 txtHT.Text = item.TenKH;
                 txtCMND.Text = item.SoCMND;
                 txtSDT.Text = item.SoDT;
@@ -225,15 +232,18 @@ namespace Home
             tp.NgayVao = DateTime.Now;
             tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
             //Thêm chi tiết dịch vụ
-            eSuDungDichVu sddv = new eSuDungDichVu();
-            for (int i = 0; i < gridViewCTDV.RowCount; i++)
+            if (gridViewCTDV.RowCount > 0)
             {
-                sddv.MaThue = maThuePhong();
-                sddv.MaSDDV = tangMaSDDV();
-                sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
-                sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
-                sddv.ThoiGianSd = DateTime.Now;
-                int s = sddvbus.InsertSDDV(sddv);
+                eSuDungDichVu sddv = new eSuDungDichVu();
+                for (int i = 0; i < gridViewCTDV.RowCount; i++)
+                {
+                    sddv.MaThue = maThuePhong();
+                    sddv.MaSDDV = tangMaSDDV();
+                    sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
+                    sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
+                    sddv.ThoiGianSd = DateTime.Now;
+                    int s = sddvbus.InsertSDDV(sddv);
+                }
             }
         }
     }
