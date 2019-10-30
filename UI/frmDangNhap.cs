@@ -25,6 +25,7 @@ namespace Home
 
         private void button1_Click(object sender, EventArgs e)
         {
+            frmDatPhong.maNV = txtID.Text;
             NhanVienBUS nvbus = new NhanVienBUS();
             if (nvbus.GetTKQL(txtID.Text.Trim(),txtPass.Text.Trim()))
             {              

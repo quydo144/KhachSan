@@ -14,7 +14,6 @@ namespace Home
 {
     public partial class frmHome : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-
         string s;
         decimal donGia;
         int stt = 0;
@@ -104,7 +103,7 @@ namespace Home
             }
         }
 
-        private void frmHome_Load(object sender, EventArgs e)
+        public void frmHome_Load(object sender, EventArgs e)
         {
             loaiphong();
             listp = pbus.gettinhtrangp(true);

@@ -15,7 +15,7 @@ namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
-
+        frmHome frmHome;
         string maKH;
         List<eCTDV> ls = new List<eCTDV>();
         List<eKhachHang> lskh;
@@ -27,13 +27,21 @@ namespace Home
         DichVuBUS dvbus = new DichVuBUS();
         KhachHangBUS khbus = new KhachHangBUS();
 
+
         public static string TenPhong = string.Empty;
         public static string TenLoaiPhong = string.Empty;
         public static string CMND = string.Empty;
+        public static string maNV = string.Empty;
 
         public frmDatPhong()
         {
             InitializeComponent();
+        }
+
+        public frmDatPhong(frmHome sql)
+        {
+            InitializeComponent();
+            frmHome = sql;
         }
 
         private void btnLuu_MouseHover(object sender, EventArgs e)
@@ -58,6 +66,7 @@ namespace Home
 
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
             dgvDichVu.DataSource = dvbus.getalldv();
             autoCompleteSource();
             lblTenPhong.Text = TenPhong;
@@ -175,7 +184,6 @@ namespace Home
                 txtHT.Text = item.TenKH;
                 txtCMND.Text = item.SoCMND;
                 txtSDT.Text = item.SoDT;
-                maKH = item.MaKH;
                 if (item.GioiTinh)
                 {
                     radNam.Checked = true;
@@ -227,10 +235,28 @@ namespace Home
         {
             //Thêm mã thuê phòng
             eThuePhong tp = new eThuePhong();
+            PhongBUS pbus = new PhongBUS();
+            tp.MaPhong = pbus.maPhong(TenPhong);
             tp.MaThuePhong = maThuePhong();
             tp.MaKH = maKH;
             tp.NgayVao = DateTime.Now;
             tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
+            tp.MaNV = maNV;
+            int a = tpbus.insertThuePhong(tp);
+            if (a==1)
+            {
+                //Đổi tình trạng phòng
+                ePhong p = new ePhong();
+                p.MaPhong = pbus.maPhong(TenPhong);
+                p.TinhTrang = true;
+                pbus.updateTinhTrangPhong(p);
+                MessageBox.Show("Đặt phòng thành công");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Không thành công");
+            }          
             //Thêm chi tiết dịch vụ
             if (gridViewCTDV.RowCount > 0)
             {
@@ -245,6 +271,24 @@ namespace Home
                     int s = sddvbus.InsertSDDV(sddv);
                 }
             }
+        }
+
+        private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
+        {
+            TimeSpan date = dtmNgayRa.Value - DateTime.Now.Date;
+            if (date.Days <= 0)
+            {
+                MessageBox.Show("Nhập ngày lớn hơn ngày hiện tại");
+                dtmNgayRa.Focus();
+            }
+        }
+
+        private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
+        {         
+            PhongBUS pbus = new PhongBUS();
+            frmHome.Load += new EventHandler(frmHome.frmHome_Load);
+            //frm.Loading_DSNhanVien(frmQLNV.DataTable_DSNhanVien(nv_wcf.GetNhanViens().ToList()));
+            //frmQLNV.Custom_DataGridView(frmQLNV.dgv_DSNhanVien);
         }
     }
 }

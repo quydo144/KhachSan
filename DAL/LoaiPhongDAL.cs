@@ -26,5 +26,11 @@ namespace DAL
             }
             return list;
         }
+
+        public decimal donGia(string maLoaiPhong)
+        {
+            LoaiPhong lp = db.LoaiPhongs.Where(n => n.maLoaiPhong.Trim().Equals(maLoaiPhong)).SingleOrDefault();
+            return Convert.ToDecimal(lp.donGia);
+        }
     }
 }

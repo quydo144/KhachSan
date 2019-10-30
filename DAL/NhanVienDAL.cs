@@ -47,7 +47,6 @@ namespace DAL
         public void updateNhanVien(eNhanVien nvupdate)
         {
             IQueryable<NhanVien> nv = db.NhanViens.Where(x => x.maNV.Equals(nvupdate.MaNV));
-
             nv.First().tenNV = nvupdate.HoTen;
             nv.First().ngaySinh = nvupdate.NgaySinh;
             nv.First().passWord = nvupdate.PassWord;

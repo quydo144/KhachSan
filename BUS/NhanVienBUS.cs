@@ -21,7 +21,6 @@ namespace BUS
         }
         public void SuaNV(eNhanVien p)
         {
-
             ndal.updateNhanVien(p);
         }
         public bool XoaNV(string maNV)

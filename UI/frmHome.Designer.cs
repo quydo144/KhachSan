@@ -89,7 +89,10 @@
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,7 +101,6 @@
             this.panel.SuspendLayout();
             this.cmnstrpSanSang.SuspendLayout();
             this.cmnstrpCoKhach.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTinhTrang
@@ -485,9 +487,9 @@
             this.lblTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTime.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblTime.Location = new System.Drawing.Point(992, 0);
+            this.lblTime.Location = new System.Drawing.Point(1787, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(340, 52);
+            this.lblTime.Size = new System.Drawing.Size(340, 49);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
             // 
@@ -495,6 +497,10 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.toggleSwitchCK);
             this.panel1.Controls.Add(this.toggleSwitchSS);
             this.panel1.Controls.Add(this.lblTime);
@@ -506,14 +512,14 @@
             // 
             // toggleSwitchCK
             // 
-            this.toggleSwitchCK.Location = new System.Drawing.Point(452, 3);
+            this.toggleSwitchCK.Location = new System.Drawing.Point(663, 3);
             this.toggleSwitchCK.Name = "toggleSwitchCK";
             this.toggleSwitchCK.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.toggleSwitchCK.Properties.Appearance.Options.UseFont = true;
             this.toggleSwitchCK.Properties.AutoHeight = false;
             this.toggleSwitchCK.Properties.OffText = "Có khách";
             this.toggleSwitchCK.Properties.OnText = "On";
-            this.toggleSwitchCK.Size = new System.Drawing.Size(478, 46);
+            this.toggleSwitchCK.Size = new System.Drawing.Size(457, 46);
             this.toggleSwitchCK.TabIndex = 9;
             this.toggleSwitchCK.Toggled += new System.EventHandler(this.toggleSwitchCK_Toggled);
             // 
@@ -530,7 +536,7 @@
             this.toggleSwitchSS.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.toggleSwitchSS.Properties.OffText = "Sẵn sàng";
             this.toggleSwitchSS.Properties.OnText = "On";
-            this.toggleSwitchSS.Size = new System.Drawing.Size(405, 46);
+            this.toggleSwitchSS.Size = new System.Drawing.Size(568, 46);
             this.toggleSwitchSS.TabIndex = 9;
             this.toggleSwitchSS.Toggled += new System.EventHandler(this.toggleSwitchSS_Toggled);
             // 
@@ -631,9 +637,42 @@
             this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
             // 
-            // xtraTabbedMdiManager1
+            // panel2
             // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
+            this.panel2.BackColor = System.Drawing.Color.LawnGreen;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.ForeColor = System.Drawing.Color.LawnGreen;
+            this.panel2.Location = new System.Drawing.Point(1126, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(75, 41);
+            this.panel2.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(1557, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(75, 41);
+            this.panel3.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1207, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 24);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Phòng sẵn sàng";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1638, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 24);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Phòng có khách";
             // 
             // frmHome
             // 
@@ -657,12 +696,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchCK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchSS.Properties)).EndInit();
             this.panel.ResumeLayout(false);
             this.cmnstrpSanSang.ResumeLayout(false);
             this.cmnstrpCoKhach.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -734,7 +773,10 @@
         private System.Windows.Forms.ToolStripMenuItem thuePhongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtDịchVụToolStripMenuItem;
-        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

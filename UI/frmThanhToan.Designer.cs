@@ -239,7 +239,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(198, 32);
             this.label19.TabIndex = 14;
-            this.label19.Text = "Thời gian nhận phòng";
+            this.label19.Text = "Thời gian trả phòng";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label18
@@ -640,7 +640,7 @@
             this.label7.Text = "Họ tên";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // frmLapHoaDon
+            // frmThanhToan
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -653,7 +653,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmLapHoaDon";
+            this.Name = "frmThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";
             this.panel1.ResumeLayout(false);

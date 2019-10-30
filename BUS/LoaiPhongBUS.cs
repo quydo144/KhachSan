@@ -15,5 +15,9 @@ namespace BUS
         {
             return lpdal.getalllp();
         }
+        public decimal donGia(string maLoaiPhong)
+        {
+            return lpdal.donGia(maLoaiPhong);
+        }
     }
 }

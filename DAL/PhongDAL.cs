@@ -45,5 +45,18 @@ namespace DAL
             }
             return ls;
         }
+
+        public string maPhong(string tenPhong)
+        {
+            Phong p = db.Phongs.Where(n => n.tenPhong.Trim().Equals(tenPhong)).SingleOrDefault();
+            return p.maPhong;
+        }
+
+        public void updateTinhTrangPhong(ePhong pupdate)
+        {
+            IQueryable<Phong> nv = db.Phongs.Where(x => x.maPhong.Equals(pupdate.MaPhong));
+            nv.First().tinhTrang = pupdate.TinhTrang;
+            db.SubmitChanges();
+        }
     }
 }
