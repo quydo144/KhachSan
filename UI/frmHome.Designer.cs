@@ -75,6 +75,10 @@
             this.timerDateSystem = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.toggleSwitchCK = new DevExpress.XtraEditors.ToggleSwitch();
             this.toggleSwitchSS = new DevExpress.XtraEditors.ToggleSwitch();
             this.panel = new System.Windows.Forms.Panel();
@@ -89,10 +93,6 @@
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -510,6 +510,43 @@
             this.panel1.Size = new System.Drawing.Size(1332, 52);
             this.panel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1638, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 24);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Phòng có khách";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1207, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 24);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Phòng sẵn sàng";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(1557, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(75, 41);
+            this.panel3.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LawnGreen;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.ForeColor = System.Drawing.Color.LawnGreen;
+            this.panel2.Location = new System.Drawing.Point(1126, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(75, 41);
+            this.panel2.TabIndex = 10;
+            // 
             // toggleSwitchCK
             // 
             this.toggleSwitchCK.Location = new System.Drawing.Point(663, 3);
@@ -636,43 +673,6 @@
             this.cậpNhậtDịchVụToolStripMenuItem.Name = "cậpNhậtDịchVụToolStripMenuItem";
             this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LawnGreen;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.panel2.Location = new System.Drawing.Point(1126, 8);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(75, 41);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(1557, 8);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(75, 41);
-            this.panel3.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1207, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 24);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Phòng sẵn sàng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1638, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 24);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Phòng có khách";
             // 
             // frmHome
             // 

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DichVuBUS.cs" />
+    <Compile Include="JoinTable_BUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="LoaiPhongBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DichVuDAL.cs" />
+    <Compile Include="JoinTable_DAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />

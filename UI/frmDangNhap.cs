@@ -18,6 +18,7 @@ namespace Home
     {
 
 
+
         public frmDangNhap()
         {
             InitializeComponent();
@@ -28,9 +29,9 @@ namespace Home
             frmDatPhong.maNV = txtID.Text;
             NhanVienBUS nvbus = new NhanVienBUS();
             if (nvbus.GetTKQL(txtID.Text.Trim(),txtPass.Text.Trim()))
-            {              
-                frmHome frm = new frmHome();
-                frm.Show();               
+            {
+                frmHome frm = new frmHome(this);
+                frm.ShowDialog();               
             }
             this.Visible = false;
         }

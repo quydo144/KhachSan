@@ -20,6 +20,7 @@ namespace DAL
             temp.maPhong = newtp.MaPhong;
             temp.ngayVao = newtp.NgayVao;
             temp.ngayRa = newtp.NgayRa;
+            temp.trangThai = Convert.ToByte(newtp.TrangThai);
             db.ThuePhongs.InsertOnSubmit(temp);
             db.SubmitChanges();
             return 1;
@@ -35,6 +36,7 @@ namespace DAL
             thuephong.MaNV = item.maNV;
             thuephong.NgayVao = item.ngayVao;
             thuephong.NgayRa = item.ngayRa;
+            thuephong.TrangThai = item.trangThai;
             return thuephong;
         }
     }

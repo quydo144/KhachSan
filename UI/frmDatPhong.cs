@@ -32,6 +32,7 @@ namespace Home
         public static string TenLoaiPhong = string.Empty;
         public static string CMND = string.Empty;
         public static string maNV = string.Empty;
+        public static string maThue = string.Empty;
 
         public frmDatPhong()
         {
@@ -242,6 +243,7 @@ namespace Home
             tp.NgayVao = DateTime.Now;
             tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
             tp.MaNV = maNV;
+            tp.TrangThai = 0;
             int a = tpbus.insertThuePhong(tp);
             if (a==1)
             {
@@ -271,6 +273,8 @@ namespace Home
                     int s = sddvbus.InsertSDDV(sddv);
                 }
             }
+
+            maThue = maThuePhong();
         }
 
         private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
@@ -284,11 +288,10 @@ namespace Home
         }
 
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
-        {         
+        {
+            JoinTable_BUS joinbus = new JoinTable_BUS();      
             PhongBUS pbus = new PhongBUS();
-            frmHome.Load += new EventHandler(frmHome.frmHome_Load);
-            //frm.Loading_DSNhanVien(frmQLNV.DataTable_DSNhanVien(nv_wcf.GetNhanViens().ToList()));
-            //frmQLNV.Custom_DataGridView(frmQLNV.dgv_DSNhanVien);
+            frmHome.textPhong(joinbus.GetPhong_ThuePhong(true,0));
         }
     }
 }
