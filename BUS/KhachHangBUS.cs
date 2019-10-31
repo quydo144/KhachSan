@@ -29,5 +29,10 @@ namespace BUS
         {
             return khdal.maTangTuDong();
         }
+
+        public List<eKhachHang> getmaKH(string s)
+        {
+            return khdal.getmaKH(s);
+        }
     }
 }

@@ -21,5 +21,10 @@ namespace BUS
         {
             return tpdal.insertThuePhong(tp);
         }
+
+        public List<eThuePhong> getMaThuePhong(string s)
+        {
+            return tpdal.getMaThuePhong(s);
+        }
     }
 }

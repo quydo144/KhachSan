@@ -122,7 +122,7 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\n" + item.MaThue;       
+                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " +item.NgayTra.Date;       
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -184,7 +184,15 @@ namespace Home
             {
                 string[] list = lbl.Text.Split('\r');
                 frmThanhToan.TenPhong = list[0];
-
+                if (list[2].Substring(12, 10).Equals(" Phòng Vip"))
+                {
+                    frmThanhToan.LoaiPhong = list[2].Substring(12, 10);
+                }
+                else
+                {
+                    frmThanhToan.LoaiPhong = list[2].Substring(12, 13);
+                }
+                frmThanhToan.MaThue = list[4].Substring(15, 11);
             }
         }
 
@@ -373,7 +381,7 @@ namespace Home
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmDangNhap.Close();
+            //frmDangNhap.Close();
         }
     }
 }

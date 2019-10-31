@@ -39,5 +39,24 @@ namespace DAL
             thuephong.TrangThai = item.trangThai;
             return thuephong;
         }
+
+        public List<eThuePhong> getMaThuePhong(string s)
+        {
+            var list = (from x in db.ThuePhongs where x.maThue.Trim().Equals(s.Trim()) select x).ToList();
+            List<eThuePhong> ls = new List<eThuePhong>();
+            foreach (ThuePhong item in list)
+            {
+                eThuePhong tp = new eThuePhong();
+                tp.MaThuePhong = item.maThue.Trim();
+                tp.MaNV = item.maNV.Trim();
+                tp.MaPhong = item.maPhong.Trim();
+                tp.NgayRa = item.ngayRa;
+                tp.MaKH = item.maKhach.Trim();
+                tp.TrangThai = item.trangThai;
+                tp.NgayVao = item.ngayVao;
+                ls.Add(tp);
+            }
+            return ls;
+        }
     }
 }

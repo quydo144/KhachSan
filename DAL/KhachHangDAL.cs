@@ -59,6 +59,24 @@ namespace DAL
             return ls;
         }
 
+        public List<eKhachHang> getmaKH(string s)
+        {
+            var listkh = (from x in db.KhachHangs where x.maKH.Trim().Equals(s) select x).ToList();
+            List<eKhachHang> ls = new List<eKhachHang>();
+            foreach (KhachHang item in listkh)
+            {
+                eKhachHang kh = new eKhachHang();
+                kh.MaKH = item.maKH.Trim();
+                kh.TenKH = item.tenKh.Trim();
+                kh.SoCMND = item.soCMND.Trim();
+                kh.SoDT = item.soDT.Trim();
+                kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
+                kh.MaDoan = item.maDoan;
+                ls.Add(kh);
+            }
+            return ls;
+        }
+
         public eKhachHang maTangTuDong()
         {
             eKhachHang kh = new eKhachHang();

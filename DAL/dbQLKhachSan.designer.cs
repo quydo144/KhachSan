@@ -57,7 +57,7 @@ namespace DAL
     #endregion
 		
 		public dbQLKhachSanDataContext() : 
-				base(global::DAL.Properties.Settings.Default.KhachSanConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.KhachSanConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}

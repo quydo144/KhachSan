@@ -10,8 +10,9 @@ namespace Entyti
     {
         string maThue, maPhong, maKhach, maNV, maLoaiPhong, tenPhong;
         bool tinhTrang;
+        DateTime ngayTra;
 
-        public eHonLoan(string maThue, string maPhong, string maKhach, string maNV, string maLoaiPhong, string tenPhong, bool tinhTrang)
+        public eHonLoan(string maThue, string maPhong, string maKhach, string maNV, string maLoaiPhong, string tenPhong, bool tinhTrang, DateTime ngayTra)
         {
             this.maThue = maThue;
             this.maPhong = maPhong;
@@ -20,6 +21,7 @@ namespace Entyti
             this.maLoaiPhong = maLoaiPhong;
             this.tenPhong = tenPhong;
             this.tinhTrang = tinhTrang;
+            this.ngayTra = ngayTra;
         }
 
         public eHonLoan()
@@ -115,6 +117,19 @@ namespace Entyti
             set
             {
                 tinhTrang = value;
+            }
+        }
+
+        public DateTime NgayTra
+        {
+            get
+            {
+                return ngayTra;
+            }
+
+            set
+            {
+                ngayTra = value;
             }
         }
     }

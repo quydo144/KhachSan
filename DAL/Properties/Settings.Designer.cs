@@ -43,5 +43,15 @@ namespace DAL.Properties {
                 return ((string)(this["KhachSanConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BAOTRAM\\SQLEXPRESS;Initial Catalog=KhachSan;Integrated Security=True")]
+        public string KhachSanConnectionString2 {
+            get {
+                return ((string)(this["KhachSanConnectionString2"]));
+            }
+        }
     }
 }
