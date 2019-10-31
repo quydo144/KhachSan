@@ -289,39 +289,7 @@ namespace Home
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //FlowLayoutPanel flowLayoutPanel2 = new FlowLayoutPanel();
-            //DevExpress.XtraEditors.PanelControl P = new DevExpress.XtraEditors.PanelControl();
-            //Label l = new Label();
-            //panel.Controls.Add(flowLayoutPanel2);
-            //panel.Controls.Add(flowLayoutPanel1);
-            //panel.AutoScroll = true;
-            //flowLayoutPanel2.SuspendLayout();
-            //flowLayoutPanel2.Controls.Add(P);
-            //flowLayoutPanel2.SuspendLayout();
-            //flowLayoutPanel2.AutoScroll = true;
-            //flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowOnly;
-            //flowLayoutPanel2.BackColor = Color.Gray;
-
-            //P.Appearance.BackColor = Color.Red;
-            //P.Appearance.Options.UseBackColor = true;
-            //P.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            //P.Appearance.BackColor = Color.Red;
-            //P.Appearance.Options.UseBackColor = true;
-            //// P.Controls.Add(lc);
-            //P.Controls.Add(l);
-            //P.Location = new Point(527, 341);
-            //P.Name = "P0013";
-            //P.Size = new Size(256, 163);
-
-            //P.Controls.Add(l);
-            //P.Size = new Size(256, 163);
-            //flowLayoutPanel2.Location = new Point(0, 800);
-            //flowLayoutPanel2.Name = "flowLayoutPanel2";
-            ////P0001.Hide();
-            //l.BackColor = Color.Red;
-            //l.Dock = DockStyle.Fill;
-            //l.Text = "123";
-            //l.TextAlign = ContentAlignment.TopCenter;
+            
         }
 
         private void btndmk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

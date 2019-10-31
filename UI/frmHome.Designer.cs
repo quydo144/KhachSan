@@ -93,6 +93,8 @@
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -487,9 +489,9 @@
             this.lblTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTime.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblTime.Location = new System.Drawing.Point(1787, 0);
+            this.lblTime.Location = new System.Drawing.Point(2526, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(340, 49);
+            this.lblTime.Size = new System.Drawing.Size(340, 52);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
             // 
@@ -497,6 +499,8 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
@@ -513,7 +517,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1638, 19);
+            this.label2.Location = new System.Drawing.Point(2377, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 24);
             this.label2.TabIndex = 11;
@@ -522,7 +526,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1207, 19);
+            this.label1.Location = new System.Drawing.Point(1969, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 24);
             this.label1.TabIndex = 11;
@@ -532,7 +536,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(1557, 8);
+            this.panel3.Location = new System.Drawing.Point(2280, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(75, 41);
             this.panel3.TabIndex = 10;
@@ -542,21 +546,21 @@
             this.panel2.BackColor = System.Drawing.Color.LawnGreen;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.panel2.Location = new System.Drawing.Point(1126, 8);
+            this.panel2.Location = new System.Drawing.Point(1888, 10);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(75, 41);
             this.panel2.TabIndex = 10;
             // 
             // toggleSwitchCK
             // 
-            this.toggleSwitchCK.Location = new System.Drawing.Point(663, 3);
+            this.toggleSwitchCK.Location = new System.Drawing.Point(437, 6);
             this.toggleSwitchCK.Name = "toggleSwitchCK";
             this.toggleSwitchCK.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.toggleSwitchCK.Properties.Appearance.Options.UseFont = true;
             this.toggleSwitchCK.Properties.AutoHeight = false;
             this.toggleSwitchCK.Properties.OffText = "Có khách";
             this.toggleSwitchCK.Properties.OnText = "On";
-            this.toggleSwitchCK.Size = new System.Drawing.Size(457, 46);
+            this.toggleSwitchCK.Size = new System.Drawing.Size(476, 46);
             this.toggleSwitchCK.TabIndex = 9;
             this.toggleSwitchCK.Toggled += new System.EventHandler(this.toggleSwitchCK_Toggled);
             // 
@@ -573,7 +577,7 @@
             this.toggleSwitchSS.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.toggleSwitchSS.Properties.OffText = "Sẵn sàng";
             this.toggleSwitchSS.Properties.OnText = "On";
-            this.toggleSwitchSS.Size = new System.Drawing.Size(568, 46);
+            this.toggleSwitchSS.Size = new System.Drawing.Size(500, 46);
             this.toggleSwitchSS.TabIndex = 9;
             this.toggleSwitchSS.Toggled += new System.EventHandler(this.toggleSwitchSS_Toggled);
             // 
@@ -673,6 +677,24 @@
             this.cậpNhậtDịchVụToolStripMenuItem.Name = "cậpNhậtDịchVụToolStripMenuItem";
             this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(873, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(372, 24);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Lọc những phòng có khách trả vào ngày:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(1481, 14);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(290, 32);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // frmHome
             // 
@@ -777,6 +799,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
