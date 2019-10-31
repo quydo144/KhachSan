@@ -66,7 +66,7 @@ namespace Home
                 {
                     if (item.NgayRa.DayOfYear == DateTime.Now.DayOfYear)
                     {
-                        int gio = item.NgayVao.Hour - DateTime.Now.Hour;;
+                        int gio = item.NgayVao.Hour - DateTime.Now.Hour;
                     }
                     dtpTraPhong.Text = DateTime.Now.ToString();
                     TimeSpan date = DateTime.Now - item.NgayVao;
@@ -80,8 +80,21 @@ namespace Home
                     int s = date.Days + 1;
                     lblGhiChu.Text = "Ghi chú \n\n\n " + dtpNhanPhong.Text + " đến " + dtpTraPhong.Text + " là " + s + " ngày";
                 }
-            }           
-            
+            }                     
+        }
+
+        public decimal tienPhong(string maLoaiPhong)
+        {
+            decimal tienPhong = 0;
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            foreach (var item in lpbus.getall())
+            {
+                if (item.MaLoaiPhong.Trim().Equals(maLoaiPhong))
+                {
+                    tienPhong = item.DonGia;
+                }
+            }
+            return tienPhong;
         }
     }
 }

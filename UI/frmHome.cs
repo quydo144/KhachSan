@@ -58,7 +58,6 @@ namespace Home
 
         public decimal donGiaphong(string maLoaiPhong)
         {
-
             foreach (var item in lpbus.getall())
             {
                 if (item.MaLoaiPhong.Trim().Equals(maLoaiPhong))
@@ -110,7 +109,7 @@ namespace Home
                 ((ISupportInitialize)(P0001)).EndInit();
                 P0001.ResumeLayout(false);
             }
-            string[] s;
+
             foreach (var item in joinbus.GetPhong_ThuePhong(true,0))           
             {
                 foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
