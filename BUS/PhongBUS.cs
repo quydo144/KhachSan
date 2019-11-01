@@ -27,5 +27,9 @@ namespace BUS
         {
            pdal.updateTinhTrangPhong(pupdate);
         }
+        public string getLoaiPhong_ByID(string id)
+        {
+            return pdal.getLoaiPhong_ByID(id);
+        }
     }
 }

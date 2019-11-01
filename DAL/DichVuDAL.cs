@@ -99,6 +99,18 @@ namespace DAL
             }
             return ls;
         }
+
+        public string getTenDV_byID(string id)
+        {
+            DichVu dv = db.DichVus.Where(x => x.maDV.Equals(id)).SingleOrDefault();
+            return dv.tenDichVu;
+        }
+
+        public decimal getDonGia_byID(string id)
+        {
+            DichVu dv = db.DichVus.Where(x => x.maDV.Equals(id)).SingleOrDefault();
+            return Convert.ToDecimal(dv.donGia);
+        }
     }
 }
 

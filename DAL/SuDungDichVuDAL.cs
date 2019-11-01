@@ -37,5 +37,24 @@ namespace DAL
             db.SubmitChanges();
             return 1;
         }
+
+        public List<eSuDungDichVu> getctdv(string mathue)
+        {
+            var listdv = db.SuDungDichVus.Where(x=>x.maThue.Trim().Equals(mathue)).ToList();
+            List<eSuDungDichVu> ls = new List<eSuDungDichVu>();
+            foreach (SuDungDichVu item in listdv)
+            {
+                eSuDungDichVu dv = new eSuDungDichVu();
+                dv.MaSDDV = item.maSDDV.Trim();
+                dv.MaDV = item.maDV.Trim();
+                dv.MaThue = item.maThue.Trim();
+                dv.SoLuong = Convert.ToInt32(item.soLuong);
+                dv.NgaySD = item.ngaySuDung;
+                dv.GioSD = item.gioSuDung;
+                ls.Add(dv);
+            }
+            return ls;
+        }
+
     }
 }

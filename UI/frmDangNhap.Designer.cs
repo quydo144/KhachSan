@@ -40,7 +40,6 @@
             this.txtID.Size = new System.Drawing.Size(298, 23);
             this.txtID.TabIndex = 0;
             this.txtID.Text = "NV0001";
-//        this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // txtPass
             // 
@@ -48,8 +47,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(298, 23);
             this.txtPass.TabIndex = 0;
-           this.txtPass.Text = "123456@";
-        //  this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            this.txtPass.Text = "123456@";
             // 
             // button1
             // 

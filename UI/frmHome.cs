@@ -344,7 +344,7 @@ namespace Home
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //frmDangNhap.Close();
+            frmDangNhap.Close();
         }
     }
 }

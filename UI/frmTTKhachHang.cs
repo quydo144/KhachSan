@@ -17,7 +17,8 @@ namespace Home
     public partial class frmTTKhachHang : DevExpress.XtraEditors.XtraForm
     {
         KhachHangBUS khBus;
-        eKhachHang kh = new eKhachHang();       
+        eKhachHang kh = new eKhachHang();
+        string cmnd;
 
         public frmTTKhachHang()
         {
@@ -27,7 +28,6 @@ namespace Home
         private void btnThem_Click(object sender, EventArgs e)
         {
             eKhachHang newkh = new eKhachHang();
-            newkh.MaKH = txtMaKhach.Text.Trim();
             newkh.TenKH = txtTenKhach.Text;
             newkh.SoCMND = txtCMND.Text;
             newkh.SoDT = txtSDT.Text;           
@@ -38,23 +38,18 @@ namespace Home
             if (kq == 1)
             {
                 MessageBox.Show("Thêm thành công!!!");
+                cmnd = txtCMND.Text;
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Bị trùng mã, nhập lại");
-                txtMaKhach.Focus();
             }          
         }
 
         private void frmTTKhachHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmDatPhong.CMND = txtCMND.Text;
-        }
-
-        private void frmTTKhachHang_Load(object sender, EventArgs e)
-        {
-                 
+            frmDatPhong.CMND = cmnd;
         }
     }
 }

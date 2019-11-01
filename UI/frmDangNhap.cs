@@ -17,8 +17,6 @@ namespace Home
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
 
-
-
         public frmDangNhap()
         {
             InitializeComponent();

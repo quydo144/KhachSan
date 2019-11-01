@@ -34,6 +34,32 @@ namespace Home
             lblTenPhong.Text = TenPhong;
             loadKhachHang();
             thoiGianThuePhong();
+            load_list_dichvu();
+            tienPhuThu();
+        }
+
+        public DataTable DataTable_DSDV(List<eSuDungDichVu> ds)
+        {
+            string tienDichVu;
+            DichVuBUS dvbus = new DichVuBUS();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Tên dịch vụ", typeof(string));
+            dt.Columns.Add("Số lượng", typeof(int));
+            dt.Columns.Add("Đơn giá", typeof(decimal));
+            dt.Columns.Add("Thành tiền", typeof(decimal));
+            foreach (eSuDungDichVu sddv in ds)
+            {
+                dt.Rows.Add(dvbus.getTenDV_byID(sddv.MaDV), sddv.SoLuong, dvbus.getDonGia_byID(sddv.MaDV), sddv.SoLuong * dvbus.getDonGia_byID(sddv.MaDV));
+                tienDichVu = (sddv.SoLuong * dvbus.getDonGia_byID(sddv.MaDV)).ToString();
+                txtDichVu.Text = tienDichVu;
+            }
+            return dt;
+        }
+
+        public void load_list_dichvu()
+        {
+            SuDungDichVuBUS sddvbus = new SuDungDichVuBUS();
+            dgvCTDV.DataSource = DataTable_DSDV(sddvbus.getctdv(MaThue.Trim()));
         }
 
         public void loadKhachHang()
@@ -71,14 +97,14 @@ namespace Home
                     dtpTraPhong.Text = DateTime.Now.ToString();
                     TimeSpan date = DateTime.Now - item.NgayVao;
                     int s = date.Days + 1;
-                    lblGhiChu.Text = "Ghi chú " + s;
+                    lblGhiChu.Text = "\n\n " + dtpNhanPhong.Text + " đến " + dtpTraPhong.Text + " là " + s + " ngày";
                 }
                 else
                 {
                     dtpTraPhong.Text = item.NgayRa.ToString();
                     TimeSpan date = item.NgayRa - item.NgayVao;
                     int s = date.Days + 1;
-                    lblGhiChu.Text = "Ghi chú \n\n\n " + dtpNhanPhong.Text + " đến " + dtpTraPhong.Text + " là " + s + " ngày";
+                    lblGhiChu.Text = "\n\n " + dtpNhanPhong.Text + " đến " + dtpTraPhong.Text + " là " + s + " ngày";
                 }
             }                     
         }
@@ -94,7 +120,32 @@ namespace Home
                     tienPhong = item.DonGia;
                 }
             }
-            return tienPhong;
+            return tienPhong;           
+        }
+
+        public void tienPhuThu()
+        {
+            TimeSpan nhan13h = new TimeSpan(13, 00, 00);
+            TimeSpan nhan11h = new TimeSpan(11, 00, 00);
+            TimeSpan nhan8h = new TimeSpan(8, 00, 00);
+            TimeSpan nhan6h = new TimeSpan(6, 00, 00);
+            ThuePhongBUS tpbus = new ThuePhongBUS();
+            PhongBUS pbus = new PhongBUS();
+            foreach (var item in tpbus.getMaThuePhong(MaThue.Trim()))
+            {
+                if (item.GioVao <= nhan13h && item.GioVao > nhan11h)
+                {
+                    txtPhuThu.Text = (0.3 * Convert.ToDouble(tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)))).ToString();
+                }
+                else if (item.GioVao <= nhan11h && item.GioVao > nhan8h)
+                {
+                    txtPhuThu.Text = (0.5 * Convert.ToDouble(tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)))).ToString();
+                }
+                else if (item.GioVao >= nhan13h)
+                {
+                    txtPhuThu.Text = "0";
+                }
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ namespace DAL
             }
             return ls;
         }
+
         public int insertNhanVien(eNhanVien nvmoi)
         {
             NhanVien nvtemp = new NhanVien();
@@ -44,6 +45,7 @@ namespace DAL
             db.SubmitChanges();
             return 1;
         }
+
         public void updateNhanVien(eNhanVien nvupdate)
         {
             IQueryable<NhanVien> nv = db.NhanViens.Where(x => x.maNV.Equals(nvupdate.MaNV));
@@ -56,6 +58,7 @@ namespace DAL
             nv.First().gioiTinh =Convert.ToByte(nvupdate.GioiTinh);
             db.SubmitChanges();
         }
+
         public bool deleteNhanVien(string maNV)
         {
             NhanVien nvtemp = db.NhanViens.Where(x => x.maNV == maNV).FirstOrDefault();
@@ -67,6 +70,7 @@ namespace DAL
             }
             return false;
         }
+
         public eNhanVien maTangTuDong()
         {
             eNhanVien nv = new eNhanVien();
@@ -81,6 +85,7 @@ namespace DAL
             nv.ChucVu = Convert.ToBoolean(item.chucVu);
             return nv;
         }
+
         public List<eNhanVien> getAllMa(string s)
         {
             var listnv = (from x in db.NhanViens where x.maNV.Contains(s) select x).ToList();
@@ -100,6 +105,7 @@ namespace DAL
             }
             return ls;
         }
+
         public List<eNhanVien> getAllTen(string s)
         {
             var listnv = (from x in db.NhanViens where x.tenNV.Contains(s) select x).ToList();
@@ -119,6 +125,7 @@ namespace DAL
             }
             return ls;
         }
+
         public List<eNhanVien> getAllCMND(string s)
         {
             var listnv = (from x in db.NhanViens where x.soCMND.Contains(s) select x).ToList();
@@ -138,6 +145,7 @@ namespace DAL
             }
             return ls;
         }
+
         public List<eNhanVien> getAllSoDT(string s)
         {
             var listnv = (from x in db.NhanViens where x.soDT.Contains(s) select x).ToList();

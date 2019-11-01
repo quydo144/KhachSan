@@ -46,5 +46,15 @@ namespace BUS
         {
             return dvdal.getAllten(s);
         }
+
+        public string getTenDV_byID(string id)
+        {
+            return dvdal.getTenDV_byID(id);
+        }
+
+        public decimal getDonGia_byID(string id)
+        {
+            return dvdal.getDonGia_byID(id);
+        }
     }
 }

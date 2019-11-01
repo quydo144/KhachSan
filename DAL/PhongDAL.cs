@@ -58,5 +58,11 @@ namespace DAL
             nv.First().tinhTrang = pupdate.TinhTrang;
             db.SubmitChanges();
         }
+
+        public string getLoaiPhong_ByID(string id)
+        {
+            Phong p = db.Phongs.Where(n => n.maPhong.Trim().Equals(id)).SingleOrDefault();
+            return p.maLoaiPhong.Trim();
+        }
     }
 }

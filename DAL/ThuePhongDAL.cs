@@ -56,6 +56,8 @@ namespace DAL
                 tp.MaKH = item.maKhach.Trim();
                 tp.TrangThai = item.trangThai;
                 tp.NgayVao = item.ngayVao;
+                tp.GioVao = item.gioVao;
+                tp.GioRa = item.gioRa;
                 ls.Add(tp);
             }
             return ls;
