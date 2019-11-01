@@ -1208,7 +1208,9 @@ namespace DAL
 		
 		private int _soLuong;
 		
-		private System.DateTime _thoiGian;
+		private System.DateTime _ngaySuDung;
+		
+		private System.TimeSpan _gioSuDung;
 		
 		private EntityRef<DichVu> _DichVu;
 		
@@ -1226,8 +1228,10 @@ namespace DAL
     partial void OnmaThueChanged();
     partial void OnsoLuongChanging(int value);
     partial void OnsoLuongChanged();
-    partial void OnthoiGianChanging(System.DateTime value);
-    partial void OnthoiGianChanged();
+    partial void OnngaySuDungChanging(System.DateTime value);
+    partial void OnngaySuDungChanged();
+    partial void OngioSuDungChanging(System.TimeSpan value);
+    partial void OngioSuDungChanged();
     #endregion
 		
 		public SuDungDichVu()
@@ -1325,22 +1329,42 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thoiGian", DbType="DateTime NOT NULL")]
-		public System.DateTime thoiGian
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaySuDung", DbType="DateTime NOT NULL")]
+		public System.DateTime ngaySuDung
 		{
 			get
 			{
-				return this._thoiGian;
+				return this._ngaySuDung;
 			}
 			set
 			{
-				if ((this._thoiGian != value))
+				if ((this._ngaySuDung != value))
 				{
-					this.OnthoiGianChanging(value);
+					this.OnngaySuDungChanging(value);
 					this.SendPropertyChanging();
-					this._thoiGian = value;
-					this.SendPropertyChanged("thoiGian");
-					this.OnthoiGianChanged();
+					this._ngaySuDung = value;
+					this.SendPropertyChanged("ngaySuDung");
+					this.OnngaySuDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioSuDung", DbType="Time NOT NULL")]
+		public System.TimeSpan gioSuDung
+		{
+			get
+			{
+				return this._gioSuDung;
+			}
+			set
+			{
+				if ((this._gioSuDung != value))
+				{
+					this.OngioSuDungChanging(value);
+					this.SendPropertyChanging();
+					this._gioSuDung = value;
+					this.SendPropertyChanged("gioSuDung");
+					this.OngioSuDungChanged();
 				}
 			}
 		}
@@ -1653,6 +1677,10 @@ namespace DAL
 		
 		private byte _trangThai;
 		
+		private System.TimeSpan _gioVao;
+		
+		private System.TimeSpan _gioRa;
+		
 		private EntitySet<SuDungDichVu> _SuDungDichVus;
 		
 		private EntitySet<ThanhToan> _ThanhToans;
@@ -1681,6 +1709,10 @@ namespace DAL
     partial void OnngayRaChanged();
     partial void OntrangThaiChanging(byte value);
     partial void OntrangThaiChanged();
+    partial void OngioVaoChanging(System.TimeSpan value);
+    partial void OngioVaoChanged();
+    partial void OngioRaChanging(System.TimeSpan value);
+    partial void OngioRaChanged();
     #endregion
 		
 		public ThuePhong()
@@ -1841,6 +1873,46 @@ namespace DAL
 					this._trangThai = value;
 					this.SendPropertyChanged("trangThai");
 					this.OntrangThaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioVao", DbType="Time NOT NULL")]
+		public System.TimeSpan gioVao
+		{
+			get
+			{
+				return this._gioVao;
+			}
+			set
+			{
+				if ((this._gioVao != value))
+				{
+					this.OngioVaoChanging(value);
+					this.SendPropertyChanging();
+					this._gioVao = value;
+					this.SendPropertyChanged("gioVao");
+					this.OngioVaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioRa", DbType="Time NOT NULL")]
+		public System.TimeSpan gioRa
+		{
+			get
+			{
+				return this._gioRa;
+			}
+			set
+			{
+				if ((this._gioRa != value))
+				{
+					this.OngioRaChanging(value);
+					this.SendPropertyChanging();
+					this._gioRa = value;
+					this.SendPropertyChanged("gioRa");
+					this.OngioRaChanged();
 				}
 			}
 		}

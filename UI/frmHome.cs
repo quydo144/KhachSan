@@ -116,7 +116,6 @@ namespace Home
                 {
                     if (pnl.Name.Equals(item.MaPhong.Trim()))
                     {
-
                         pnl.BackColor = Color.Red;
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
@@ -125,7 +124,6 @@ namespace Home
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
-
                     }
                 }
             }
@@ -162,7 +160,7 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
-                            lbl.Text = item.TenPhong;
+                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date;
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -282,8 +280,6 @@ namespace Home
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDatPhong frm = new frmDatPhong();
-            //frm.MdiParent = this;
-            //frm.Show();
             frm.ShowDialog();
         }
 

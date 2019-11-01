@@ -11,15 +11,17 @@ namespace Entyti
         private string maSDDV, maDV;
         private string maThue;
         private int soLuong;
-        private DateTime thoiGianSd;
+        private DateTime ngaySD;
+        private TimeSpan gioSD;
 
-        public eSuDungDichVu(string maSDDV, string maDV, string maThue, int soLuong, DateTime thoiGianSd)
+        public eSuDungDichVu(string maSDDV, string maDV, string maThue, int soLuong, DateTime ngaySD, TimeSpan gioSD)
         {
             this.maSDDV = maSDDV;
             this.maDV = maDV;
             this.soLuong = soLuong;
             this.maThue = maThue;
-            this.thoiGianSd = thoiGianSd;
+            this.ngaySD = ngaySD;
+            this.gioSD = gioSD;
         }
 
         public eSuDungDichVu()
@@ -66,16 +68,16 @@ namespace Entyti
             }
         }
 
-        public DateTime ThoiGianSd
+        public DateTime NgaySD
         {
             get
             {
-                return thoiGianSd;
+                return ngaySD;
             }
 
             set
             {
-                thoiGianSd = value;
+                ngaySD = value;
             }
         }
 
@@ -89,6 +91,19 @@ namespace Entyti
             set
             {
                 maThue = value;
+            }
+        }
+
+        public TimeSpan GioSD
+        {
+            get
+            {
+                return gioSD;
+            }
+
+            set
+            {
+                gioSD = value;
             }
         }
     }

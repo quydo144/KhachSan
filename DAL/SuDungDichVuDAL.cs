@@ -19,7 +19,8 @@ namespace DAL
             sddv.MaDV = item.maDV;
             sddv.MaThue = item.maThue;
             sddv.SoLuong = item.soLuong;
-            sddv.ThoiGianSd = item.thoiGian;
+            sddv.NgaySD = item.ngaySuDung;
+            sddv.GioSD = item.gioSuDung;
             return sddv;
         }
 
@@ -30,7 +31,8 @@ namespace DAL
             ctdvtemp.maDV = ctdvnew.MaDV;
             ctdvtemp.maThue = ctdvnew.MaThue;
             ctdvtemp.soLuong = ctdvnew.SoLuong;
-            ctdvtemp.thoiGian = ctdvnew.ThoiGianSd;
+            ctdvtemp.ngaySuDung = ctdvnew.NgaySD;
+            ctdvtemp.gioSuDung = ctdvnew.GioSD;
             db.SuDungDichVus.InsertOnSubmit(ctdvtemp);
             db.SubmitChanges();
             return 1;

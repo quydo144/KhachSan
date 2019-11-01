@@ -60,7 +60,8 @@
       <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="maThue" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="thoiGian" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ngaySuDung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="gioSuDung" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Association Name="DichVu_SuDungDichVu" Member="DichVu" ThisKey="maDV" OtherKey="maDV" Type="DichVu" IsForeignKey="true" />
       <Association Name="ThuePhong_SuDungDichVu" Member="ThuePhong" ThisKey="maThue" OtherKey="maThue" Type="ThuePhong" IsForeignKey="true" />
     </Type>
@@ -84,6 +85,8 @@
       <Column Name="ngayVao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="ngayRa" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="trangThai" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="gioVao" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="gioRa" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Association Name="ThuePhong_SuDungDichVu" Member="SuDungDichVus" ThisKey="maThue" OtherKey="maThue" Type="SuDungDichVu" />
       <Association Name="ThuePhong_ThanhToan" Member="ThanhToans" ThisKey="maThue" OtherKey="maThuePhong" Type="ThanhToan" />
       <Association Name="KhachHang_ThuePhong" Member="KhachHang" ThisKey="maKhach" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" />

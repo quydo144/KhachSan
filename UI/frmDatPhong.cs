@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Collections;
 using Entyti;
 using BUS;
 
@@ -15,6 +16,7 @@ namespace Home
 {
     public partial class frmDatPhong : DevExpress.XtraEditors.XtraForm
     {
+
         frmHome frmHome;
         string maKH;
         List<eCTDV> ls = new List<eCTDV>();
@@ -26,7 +28,7 @@ namespace Home
         ThuePhongBUS tpbus = new ThuePhongBUS();
         DichVuBUS dvbus = new DichVuBUS();
         KhachHangBUS khbus = new KhachHangBUS();
-
+        ArrayList mangDichVu = new ArrayList();
 
         public static string TenPhong = string.Empty;
         public static string TenLoaiPhong = string.Empty;
@@ -94,6 +96,9 @@ namespace Home
             string maDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[0]).ToString();
             string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
             string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
+            string soLuongDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[4]).ToString();
+            eDichVu dvtemp = new eDichVu(maDV, tenDV, Convert.ToDecimal(donGia), Convert.ToInt32(soLuongDV));
+            mangDichVu.Add(dvtemp);
             eCTDV dv = new eCTDV();
             dv.MaDV = maDV;
             dv.TenDV = tenDV;
@@ -158,7 +163,7 @@ namespace Home
 
         private void txtSeachDV_TextChanged(object sender, EventArgs e)
         {
-            if (txtSeachDV.Text=="")
+            if (txtSeachDV.Text == "")
             {
                 dgvDichVu.DataSource = dvbus.getalldv();
             }
@@ -240,12 +245,16 @@ namespace Home
             tp.MaPhong = pbus.maPhong(TenPhong);
             tp.MaThuePhong = maThuePhong();
             tp.MaKH = maKH;
-            tp.NgayVao = DateTime.Now;
+            tp.NgayVao = DateTime.Now.Date;
             tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
             tp.MaNV = maNV;
             tp.TrangThai = 0;
+            TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            tp.GioVao = gioVao;
+            TimeSpan gioRa = new TimeSpan(12, 00, 00);
+            tp.GioRa = gioRa;
             int a = tpbus.insertThuePhong(tp);
-            if (a==1)
+            if (a == 1)
             {
                 //Đổi tình trạng phòng
                 ePhong p = new ePhong();
@@ -258,22 +267,40 @@ namespace Home
             else
             {
                 MessageBox.Show("Không thành công");
-            }          
+            }
+
+            DichVuBUS dvbus = new DichVuBUS();
+            eDichVu dv = new eDichVu();
+
             //Thêm chi tiết dịch vụ
             if (gridViewCTDV.RowCount > 0)
             {
                 eSuDungDichVu sddv = new eSuDungDichVu();
                 for (int i = 0; i < gridViewCTDV.RowCount; i++)
                 {
-                    sddv.MaThue = maThuePhong();
+                    sddv.MaThue = tp.MaThuePhong;
                     sddv.MaSDDV = tangMaSDDV();
                     sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
                     sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
-                    sddv.ThoiGianSd = DateTime.Now;
+
+                    foreach (eDichVu item in mangDichVu)
+                    {
+                        //Cập nhật số lượng trong bảng dịch vụ
+                        if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV)
+                        {
+                            dv.MaDV = item.MaDV;
+                            dv.TenDV = item.TenDV;
+                            dv.DonGia = item.DonGia;
+                            dv.SoLuong = (item.SoLuong - Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])));
+                            dvbus.SuaDV(dv);
+                        }
+                    }
+
+                    sddv.NgaySD = DateTime.Now.Date;
+                    sddv.GioSD = gioVao;
                     int s = sddvbus.InsertSDDV(sddv);
                 }
             }
-
             maThue = maThuePhong();
         }
 
@@ -289,9 +316,24 @@ namespace Home
 
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JoinTable_BUS joinbus = new JoinTable_BUS();      
+            JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
-            frmHome.textPhong(joinbus.GetPhong_ThuePhong(true,0));
+            frmHome.textPhong(joinbus.GetPhong_ThuePhong(true, 0));
+        }
+
+        private void gridViewCTDV_Click(object sender, EventArgs e)
+        {
+            eDichVu dv = new eDichVu();
+            for (int i = 0; i < gridViewCTDV.RowCount; i++)
+            {
+                foreach (eDichVu item in mangDichVu)
+                {
+                    if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV && item.SoLuong < Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])))
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " +item.TenDV+  " đã hết");
+                    }
+                }
+            }
         }
     }
 }

@@ -11,8 +11,9 @@ namespace Entyti
         private string maThuePhong, maPhong, maKH, maNV, maSddv;
         private DateTime ngayVao, ngayRa;
         private int trangThai;
+        private TimeSpan gioVao, gioRa;
 
-        public eThuePhong(string maThuePhong, string maPhong, string maKH, string maNV, string maSddv, DateTime ngayVao, DateTime ngayRa, int trangThai)
+        public eThuePhong(TimeSpan gioVao, TimeSpan gioRa, string maThuePhong, string maPhong, string maKH, string maNV, string maSddv, DateTime ngayVao, DateTime ngayRa, int trangThai)
         {
             this.maThuePhong = maThuePhong;
             this.maPhong = maPhong;
@@ -22,6 +23,8 @@ namespace Entyti
             this.ngayVao = ngayVao;
             this.ngayRa = ngayRa;
             this.trangThai = trangThai;
+            this.gioVao = gioVao;
+            this.gioRa = gioRa;
         }
 
         public eThuePhong()
@@ -130,6 +133,32 @@ namespace Entyti
             set
             {
                 trangThai = value;
+            }
+        }
+
+        public TimeSpan GioVao
+        {
+            get
+            {
+                return gioVao;
+            }
+
+            set
+            {
+                gioVao = value;
+            }
+        }
+
+        public TimeSpan GioRa
+        {
+            get
+            {
+                return gioRa;
+            }
+
+            set
+            {
+                gioRa = value;
             }
         }
     }

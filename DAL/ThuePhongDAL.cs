@@ -20,6 +20,8 @@ namespace DAL
             temp.maPhong = newtp.MaPhong;
             temp.ngayVao = newtp.NgayVao;
             temp.ngayRa = newtp.NgayRa;
+            temp.gioRa = newtp.GioRa;
+            temp.gioVao = newtp.GioVao;
             temp.trangThai = Convert.ToByte(newtp.TrangThai);
             db.ThuePhongs.InsertOnSubmit(temp);
             db.SubmitChanges();
