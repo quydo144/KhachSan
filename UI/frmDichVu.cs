@@ -36,23 +36,6 @@ namespace Home
 
         private void btnThemDV_Click(object sender, EventArgs e)
         {
-            //dv = dvBUS.tangma();
-            //if (Convert.ToInt32(dv.MaDV.Substring(5)) > 10)
-            //{
-            //    txtMaDV.Text = "DV000" + (Convert.ToInt32(dv.MaDV.Substring(5)) + 1).ToString();
-            //}
-            //else if (Convert.ToInt32(dv.MaDV.Substring(4, 5)) < 100)
-            //{
-            //    txtMaDV.Text = "DV00" + (Convert.ToInt32(dv.MaDV.Substring(4, 5)) + 1).ToString();
-            //}
-            //else if (Convert.ToInt32(dv.MaDV.Substring(3, 4)) < 1000)
-            //{
-            //    txtMaDV.Text = "DV0" + (Convert.ToInt32(dv.MaDV.Substring(3, 5)) + 1).ToString();
-            //}
-            //else
-            //{
-            //    txtMaDV.Text = "DV" + (Convert.ToInt32(dv.MaDV.Substring(2, 5)) + 1).ToString();
-            //}
             eDichVu newdv = new eDichVu();
             newdv.MaDV = txtMaDV.Text.Trim();
             newdv.TenDV = txtTenDV.Text;

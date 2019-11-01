@@ -11,7 +11,7 @@
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
-      <Column Name="maKH" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maKH" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenKh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="soCMND" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="gioiTinh" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
@@ -80,7 +80,7 @@
     <Type Name="ThuePhong">
       <Column Name="maThue" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maPhong" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="maKhach" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="maKhach" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="maNV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="ngayVao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="ngayRa" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />

@@ -18,7 +18,7 @@ namespace DAL
             foreach (KhachHang item in listkh)
             {
                 eKhachHang kh = new eKhachHang();
-                kh.MaKH = item.maKH.Trim();
+                //kh.MaKH = item.maKH.Trim();
                 kh.TenKH = item.tenKh.Trim();
                 kh.SoCMND = item.soCMND.Trim();
                 kh.SoDT = item.soDT.Trim();
@@ -31,11 +31,18 @@ namespace DAL
         public int insertKH(eKhachHang khmoi)
         {
             KhachHang khtemp = new KhachHang();
-            khtemp.maKH = khmoi.MaKH;
+            //khtemp.maKH = khmoi.MaKH;
             khtemp.soCMND = khmoi.SoCMND;
             khtemp.soDT = khmoi.SoDT;
             khtemp.tenKh = khmoi.TenKH;
-            khtemp.maDoan = khmoi.MaDoan;
+            if (khmoi.MaDoan == "")
+            {
+                khtemp.maDoan = null;
+            }
+            else
+            {
+                khtemp.maDoan = khmoi.MaDoan;
+            }
             khtemp.gioiTinh = Convert.ToByte(khmoi.GioiTinh);
             db.KhachHangs.InsertOnSubmit(khtemp);
             db.SubmitChanges();
@@ -48,7 +55,7 @@ namespace DAL
             foreach (KhachHang item in listkh)
             {
                 eKhachHang kh = new eKhachHang();
-                kh.MaKH = item.maKH.Trim();
+                //kh.MaKH = item.maKH.Trim();
                 kh.TenKH = item.tenKh.Trim();
                 kh.SoCMND = item.soCMND.Trim();
                 kh.SoDT = item.soDT.Trim();
@@ -66,7 +73,7 @@ namespace DAL
             foreach (KhachHang item in listkh)
             {
                 eKhachHang kh = new eKhachHang();
-                kh.MaKH = item.maKH.Trim();
+                //kh.MaKH = item.maKH.Trim();
                 kh.TenKH = item.tenKh.Trim();
                 kh.SoCMND = item.soCMND.Trim();
                 kh.SoDT = item.soDT.Trim();
@@ -75,19 +82,6 @@ namespace DAL
                 ls.Add(kh);
             }
             return ls;
-        }
-
-        public eKhachHang maTangTuDong()
-        {
-            eKhachHang kh = new eKhachHang();
-            KhachHang item = (from x in db.KhachHangs orderby x.maKH descending select x).FirstOrDefault();
-            kh.MaKH = item.maKH.Trim();
-            kh.TenKH = item.tenKh.Trim();
-            kh.SoCMND = item.soCMND.Trim();
-            kh.SoDT = item.soDT.Trim();
-            kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
-            kh.MaDoan = item.maDoan;
-            return kh;
         }
     }
 }

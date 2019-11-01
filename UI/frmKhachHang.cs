@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Entyti;
+using BUS;
 
 namespace Home
 {
@@ -34,6 +36,17 @@ namespace Home
             txtTK.Clear();
         }
 
-      
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            KhachHangBUS khbus = new KhachHangBUS();
+            eKhachHang newkh = new eKhachHang();
+            newkh.TenKH = txtTenKH.Text;
+            newkh.SoCMND = txtCMND.Text;
+            newkh.SoDT = txtSDT.Text;
+            if (radNam.Checked == true) newkh.GioiTinh = true;
+            else newkh.GioiTinh = false;
+            newkh.MaDoan = "";
+            int kq = khbus.InsertKH(newkh);
+        }
     }
 }

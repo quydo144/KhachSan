@@ -357,7 +357,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKH", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKH", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maKH
 		{
 			get
@@ -1769,7 +1769,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhach", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKhach", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
 		public string maKhach
 		{
 			get

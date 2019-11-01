@@ -68,7 +68,6 @@ namespace Home
             if (radNam.Checked == true)     newnv.GioiTinh = true;
             else newnv.GioiTinh = false;
             newnv.NgaySinh = Convert.ToDateTime(dtpNS.Text);
-
             int kq = nvBus.InsertNhanVien(newnv);
             if (kq == 1)
                 MessageBox.Show("Thêm thành công!!!");

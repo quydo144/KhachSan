@@ -25,10 +25,6 @@ namespace BUS
         {
             return khdal.insertKH(p);
         }
-        public eKhachHang maTangTD()
-        {
-            return khdal.maTangTuDong();
-        }
 
         public List<eKhachHang> getmaKH(string s)
         {
