@@ -24,12 +24,7 @@ namespace Entyti
 
         public ePhong()
         {
-            this.maPhong = "";
-            this.tenPhong = "";
-            this.ghiChu = "";
-            this.maLoaiPhong = "";
-            this.tang = 0;
-            this.tinhTrang = true;
+
         }
 
         public string GhiChu

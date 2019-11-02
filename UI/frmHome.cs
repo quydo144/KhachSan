@@ -14,17 +14,17 @@ namespace Home
 {
     public partial class frmHome : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public bool isDead = false;
+        bool isDangXuat = false;
         frmDangNhap frmDangNhap;
         string s;
-        decimal donGia;
+        double donGia;
         int stt = 0;
         List<ePhong> listp = new List<ePhong>();
         PhongBUS pbus = new PhongBUS();
         List<eLoaiPhong> listlp = new List<eLoaiPhong>();
         LoaiPhongBUS lpbus = new LoaiPhongBUS();
         JoinTable_BUS joinbus = new JoinTable_BUS();
-
-
 
         public frmHome()
         {
@@ -56,7 +56,7 @@ namespace Home
             return s;
         }
 
-        public decimal donGiaphong(string maLoaiPhong)
+        public double donGiaphong(string maLoaiPhong)
         {
             foreach (var item in lpbus.getall())
             {
@@ -85,15 +85,23 @@ namespace Home
                 P0001.Location = new Point(3, 3);
                 if (stt < 10)
                 {
-                    P0001.Name = "P000" + stt;
+                    P0001.Name = "PH00000" + stt;
                 }
                 else if (stt >=10 && stt <100)
                 {
-                    P0001.Name = "P00" + stt;
+                    P0001.Name = "PH0000" + stt;
                 }
                 else if(stt >= 100 && stt < 1000)
                 {
-                    P0001.Name = "P0" + stt;
+                    P0001.Name = "PH000" + stt;
+                }
+                else if (stt >= 1000 && stt < 10000)
+                {
+                    P0001.Name = "PH00" + stt;
+                }
+                else if (stt >= 10000 && stt < 100000)
+                {
+                    P0001.Name = "PH0" + stt;
                 }
                 else
                 {
@@ -120,7 +128,7 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " +item.NgayTra.Date;       
+                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " +item.NgayTra.Date.ToShortDateString();       
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -138,7 +146,7 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\n" + donGiaphong(item.MaLoaiPhong.Trim());
+                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nGiá phòng: " + donGiaphong(item.MaLoaiPhong.Trim());
                             lbl.MouseDown += new MouseEventHandler(lbl_ClickTP);
                             lbl.ContextMenuStrip = cmnstrpSanSang;
                         }
@@ -160,7 +168,7 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date;
+                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -189,7 +197,7 @@ namespace Home
                 {
                     frmThanhToan.LoaiPhong = list[2].Substring(12, 13);
                 }
-                frmThanhToan.MaThue = list[4].Substring(15, 11);
+                frmThanhToan.MaThue = list[4].Substring(15, 9);
             }
         }
 
@@ -330,21 +338,49 @@ namespace Home
             frm.ShowDialog();
         }
 
+        private void back_login()
+        {
+            Application.Run(new frmDangNhap());
+        }
+
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
-            foreach (Form item in Application.OpenForms)
+            isDangXuat = true;
+            DialogResult ds = MessageBox.Show("Bạn Có Muốn Đăng Xuất ?", "QUAY VỀ ĐĂNG NHẬP", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (ds == DialogResult.Yes)
             {
-                if (item.Name.Equals("frmDangNhap"))
-                {
-                    item.Show();
-                }
-            }           
+                Thread th = new Thread(back_login);
+#pragma warning disable CS0618 // Type or member is obsolete
+                th.ApartmentState = ApartmentState.STA;
+#pragma warning restore CS0618 // Type or member is obsolete
+
+                th.Start();
+
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmDangNhap.Close();
+            //if (isDead == false)
+            //{
+            //    if (!isDangXuat)
+            //    {
+            //        DialogResult ds = MessageBox.Show("Bạn Có Muốn Thoát ?", "THOÁT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            //        if (ds == DialogResult.Yes)
+            //        {
+            //            Environment.Exit(0);
+            //        }
+            //        else
+            //        {
+            //            e.Cancel = true;
+            //        }
+            //    }
+            //}
         }
     }
 }

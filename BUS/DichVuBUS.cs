@@ -52,9 +52,9 @@ namespace BUS
             return dvdal.getTenDV_byID(id);
         }
 
-        public decimal getDonGia_byID(string id)
+        public double getDonGia_byID(string id)
         {
             return dvdal.getDonGia_byID(id);
-        }
+        }       
     }
 }

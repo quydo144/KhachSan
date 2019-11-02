@@ -19,7 +19,7 @@ namespace DAL
                 eDichVu dv = new eDichVu();
                 dv.MaDV = item.maDV;
                 dv.TenDV = item.tenDichVu;
-                dv.DonGia = Convert.ToDecimal(item.donGia);
+                dv.DonGia = Convert.ToDouble(item.donGia);
                 dv.SoLuong = Convert.ToInt32(item.soLuongDV);
                 ls.Add(dv);
             }
@@ -77,7 +77,7 @@ namespace DAL
                 eDichVu dv = new eDichVu();
                 dv.MaDV = item.maDV;
                 dv.TenDV = item.tenDichVu;
-                dv.DonGia = Convert.ToDecimal(item.donGia);//Sua lai kiue money
+                dv.DonGia = Convert.ToDouble(item.donGia);//Sua lai kiue money
                 dv.SoLuong = Convert.ToInt32(item.soLuongDV);
                 ls.Add(dv);
             }
@@ -93,7 +93,7 @@ namespace DAL
                 eDichVu dv = new eDichVu();
                 dv.MaDV = item.maDV;
                 dv.TenDV = item.tenDichVu;
-                dv.DonGia = Convert.ToDecimal(item.donGia); // Sua lai keu money
+                dv.DonGia = Convert.ToDouble(item.donGia); // Sua lai keu money
                 dv.SoLuong = Convert.ToInt32(item.soLuongDV);
                 ls.Add(dv);
             }
@@ -106,10 +106,10 @@ namespace DAL
             return dv.tenDichVu;
         }
 
-        public decimal getDonGia_byID(string id)
+        public double getDonGia_byID(string id)
         {
             DichVu dv = db.DichVus.Where(x => x.maDV.Equals(id)).SingleOrDefault();
-            return Convert.ToDecimal(dv.donGia);
+            return Convert.ToDouble(dv.donGia);
         }
     }
 }

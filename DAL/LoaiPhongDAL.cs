@@ -20,17 +20,17 @@ namespace DAL
                 eLoaiPhong lp = new eLoaiPhong();
                 lp.MaLoaiPhong = item.maLoaiPhong.Trim();
                 lp.TenLoaiPhong = item.tenLoaiPhong.Trim();
-                lp.DonGia = Convert.ToDecimal(item.donGia);
+                lp.DonGia = Convert.ToDouble(item.donGia);
                 lp.SoNguoi = Convert.ToInt32(item.soNguoiToiDa);
                 list.Add(lp);
             }
             return list;
         }
 
-        public decimal donGia(string maLoaiPhong)
+        public double donGia(string maLoaiPhong)
         {
             LoaiPhong lp = db.LoaiPhongs.Where(n => n.maLoaiPhong.Trim().Equals(maLoaiPhong)).SingleOrDefault();
-            return Convert.ToDecimal(lp.donGia);
+            return Convert.ToDouble(lp.donGia);
         }
     }
 }

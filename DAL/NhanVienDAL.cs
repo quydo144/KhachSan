@@ -166,9 +166,9 @@ namespace DAL
             return ls;
         }
         
-        public bool GetTKQL(string id, string pass)
+        public bool GetTKQL(string email, string pass)
         {
-            var q = from x in db.NhanViens where x.chucVu == 0 && x.maNV.Equals(id) && x.passWord.Equals(pass) select x;
+            var q = from x in db.NhanViens where x.chucVu == 0 && x.email.Equals(email) && x.passWord.Equals(pass) select x;
             if (q.Any())
             {
                 return true;
@@ -176,14 +176,20 @@ namespace DAL
             else return false;
         }
 
-        public bool GetTKNV(string id, string pass)
+        public bool GetTKNV(string email, string pass)
         {
-            var q = from x in db.NhanViens where x.chucVu == 1 && x.maNV.Equals(id) && x.passWord.Equals(pass) select x;
+            var q = from x in db.NhanViens where x.chucVu == 1 && x.email.Equals(email) && x.passWord.Equals(pass) select x;
             if (q.Any())
             {
                 return true;
             }
             else return false;
+        }
+
+        public string getmaNV_byEmail(string email)
+        {
+            NhanVien nv = db.NhanViens.Where(x => x.email.Equals(email)).SingleOrDefault();
+            return nv.maNV;
         }
 
     }

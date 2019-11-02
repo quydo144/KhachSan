@@ -22,16 +22,21 @@ namespace Home
             InitializeComponent();
         }
 
+        private void open_frmMain()
+        {
+            Application.Run(new frmHome());
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            frmDatPhong.maNV = txtID.Text;
+            frmDatPhong.emailNV = txtEmail.Text;
             NhanVienBUS nvbus = new NhanVienBUS();
-            if (nvbus.GetTKQL(txtID.Text.Trim(),txtPass.Text.Trim()))
+            if (nvbus.GetTKQL(txtEmail.Text.Trim(),txtPass.Text.Trim()))
             {
-                frmHome frm = new frmHome(this);
-                frm.ShowDialog();               
+                Thread th = new Thread(open_frmMain);
+                th.Start();
+                this.Close();
             }
-            this.Visible = false;
         }
     }
 }

@@ -47,13 +47,17 @@ namespace BUS
         {
             return ndal.getAllSoDT(s);
         }
-        public bool GetTKQL(string id, string pass)
+        public bool GetTKQL(string email, string pass)
         {
-            return ndal.GetTKQL(id, pass);
+            return ndal.GetTKQL(email, pass);
         }
-        public bool GetTKNV(string id, string pass)
+        public bool GetTKNV(string email, string pass)
         {
-            return ndal.GetTKNV(id, pass);
+            return ndal.GetTKNV(email, pass);
+        }
+        public string getmaNV_byEmail(string email)
+        {
+            return ndal.getmaNV_byEmail(email);
         }
     }
 }

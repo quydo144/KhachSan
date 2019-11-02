@@ -9,10 +9,10 @@ namespace Entyti
     public class eLoaiPhong
     {
         private string maLoaiPhong, tenLoaiPhong;
-        private decimal donGia;
+        private double donGia;
         private int soNguoi;
 
-        public eLoaiPhong(string maLoaiPhong, string tenLoaiPhong, decimal donGia, int soNguoi)
+        public eLoaiPhong(string maLoaiPhong, string tenLoaiPhong, double donGia, int soNguoi)
         {
             this.maLoaiPhong = maLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
@@ -51,7 +51,7 @@ namespace Entyti
             }
         }
 
-        public decimal DonGia
+        public double DonGia
         {
             get
             {

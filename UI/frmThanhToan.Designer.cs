@@ -38,10 +38,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblGhiChu = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpTraPhong = new System.Windows.Forms.DateTimePicker();
-            this.dtpNhanPhong = new System.Windows.Forms.DateTimePicker();
+            this.lblTraPhong = new System.Windows.Forms.Label();
+            this.lblNhanPhong = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -85,7 +86,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -194,18 +194,27 @@
             this.panel5.Size = new System.Drawing.Size(578, 303);
             this.panel5.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(69, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Ghi chú:";
+            // 
             // lblGhiChu
             // 
-            this.lblGhiChu.Location = new System.Drawing.Point(158, 170);
+            this.lblGhiChu.Location = new System.Drawing.Point(86, 199);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(406, 118);
+            this.lblGhiChu.Size = new System.Drawing.Size(478, 89);
             this.lblGhiChu.TabIndex = 15;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(247)))));
-            this.groupBox1.Controls.Add(this.dtpTraPhong);
-            this.groupBox1.Controls.Add(this.dtpNhanPhong);
+            this.groupBox1.Controls.Add(this.lblTraPhong);
+            this.groupBox1.Controls.Add(this.lblNhanPhong);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Location = new System.Drawing.Point(0, -1);
@@ -215,27 +224,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời gian thuê phòng";
             // 
-            // dtpTraPhong
+            // lblTraPhong
             // 
-            this.dtpTraPhong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpTraPhong.CustomFormat = "dd/MM/yyyy";
-            this.dtpTraPhong.Enabled = false;
-            this.dtpTraPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTraPhong.Location = new System.Drawing.Point(278, 107);
-            this.dtpTraPhong.Name = "dtpTraPhong";
-            this.dtpTraPhong.Size = new System.Drawing.Size(289, 30);
-            this.dtpTraPhong.TabIndex = 16;
+            this.lblTraPhong.AutoSize = true;
+            this.lblTraPhong.Location = new System.Drawing.Point(271, 113);
+            this.lblTraPhong.Name = "lblTraPhong";
+            this.lblTraPhong.Size = new System.Drawing.Size(60, 22);
+            this.lblTraPhong.TabIndex = 15;
+            this.lblTraPhong.Text = "label6";
             // 
-            // dtpNhanPhong
+            // lblNhanPhong
             // 
-            this.dtpNhanPhong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpNhanPhong.CustomFormat = "dd/MM/yyyy";
-            this.dtpNhanPhong.Enabled = false;
-            this.dtpNhanPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNhanPhong.Location = new System.Drawing.Point(278, 52);
-            this.dtpNhanPhong.Name = "dtpNhanPhong";
-            this.dtpNhanPhong.Size = new System.Drawing.Size(289, 30);
-            this.dtpNhanPhong.TabIndex = 15;
+            this.lblNhanPhong.AutoSize = true;
+            this.lblNhanPhong.Location = new System.Drawing.Point(271, 58);
+            this.lblNhanPhong.Name = "lblNhanPhong";
+            this.lblNhanPhong.Size = new System.Drawing.Size(60, 22);
+            this.lblNhanPhong.TabIndex = 15;
+            this.lblNhanPhong.Text = "label6";
             // 
             // label19
             // 
@@ -533,6 +538,7 @@
             this.txtVAT.Name = "txtVAT";
             this.txtVAT.Size = new System.Drawing.Size(358, 30);
             this.txtVAT.TabIndex = 14;
+            this.txtVAT.Text = "10%";
             // 
             // txtDichVu
             // 
@@ -693,15 +699,6 @@
             this.label7.Text = "Họ tên";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 22);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Ghi chú:";
-            // 
             // frmThanhToan
             // 
             this.Appearance.Options.UseFont = true;
@@ -724,6 +721,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -779,8 +777,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dtpTraPhong;
-        private System.Windows.Forms.DateTimePicker dtpNhanPhong;
         private System.Windows.Forms.Label lblGhiChu;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtSDT;
@@ -796,5 +792,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTraPhong;
+        private System.Windows.Forms.Label lblNhanPhong;
     }
 }

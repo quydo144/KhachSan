@@ -9,10 +9,10 @@ namespace Entyti
     public class eDichVu
     {
         private string maDV, tenDV;
-        private decimal donGia;
+        private double donGia;
         private int soLuong;
 
-        public eDichVu(string maDV, string tenDV, decimal donGia, int soLuong)
+        public eDichVu(string maDV, string tenDV, double donGia, int soLuong)
         {
             this.maDV = maDV;
             this.tenDV = tenDV;
@@ -51,7 +51,7 @@ namespace Entyti
             }
         }
 
-        public decimal DonGia
+        public double DonGia
         {
             get
             {

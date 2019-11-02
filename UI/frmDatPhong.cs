@@ -21,7 +21,6 @@ namespace Home
         string maKH;
         List<eCTDV> ls = new List<eCTDV>();
         List<eKhachHang> lskh;
-        eSuDungDichVu sddv;
         List<eSuDungDichVu> lssddv = new List<eSuDungDichVu>();
         eThuePhong tp;
         SuDungDichVuBUS sddvbus = new SuDungDichVuBUS();
@@ -33,7 +32,10 @@ namespace Home
         public static string TenPhong = string.Empty;
         public static string TenLoaiPhong = string.Empty;
         public static string CMND = string.Empty;
-        public static string maNV = string.Empty;
+        public static string TenKH = string.Empty;
+        public static string SDT = string.Empty;
+        public static string GioiTinh = string.Empty;
+        public static string emailNV = string.Empty;
         public static string maThue = string.Empty;
 
         public frmDatPhong()
@@ -71,22 +73,10 @@ namespace Home
         {
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             dgvDichVu.DataSource = dvbus.getalldv();
-            autoCompleteSource();
             lblTenPhong.Text = TenPhong;
             lblLoaiPhong.Text = TenLoaiPhong;
         }
 
-        private void autoCompleteSource()
-        {
-            txtSeachKH.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtSeachKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            KhachHangBUS khbus = new KhachHangBUS();
-            txtSeachKH.AutoCompleteCustomSource.Clear();
-            foreach (eKhachHang item in khbus.get())
-            {
-                txtSeachKH.AutoCompleteCustomSource.Add(item.SoCMND);
-            }
-        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             for (int i = 1; i < 31; i++)
@@ -97,12 +87,12 @@ namespace Home
             string tenDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[1]).ToString();
             string donGia = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[2]).ToString();
             string soLuongDV = gridViewDV.GetRowCellValue(gridViewDV.FocusedRowHandle, gridViewDV.Columns[4]).ToString();
-            eDichVu dvtemp = new eDichVu(maDV, tenDV, Convert.ToDecimal(donGia), Convert.ToInt32(soLuongDV));
+            eDichVu dvtemp = new eDichVu(maDV, tenDV, Convert.ToDouble(donGia), Convert.ToInt32(soLuongDV));
             mangDichVu.Add(dvtemp);
             eCTDV dv = new eCTDV();
             dv.MaDV = maDV;
             dv.TenDV = tenDV;
-            dv.DonGia = Convert.ToDecimal(donGia);
+            dv.DonGia = Convert.ToDouble(donGia);
             dv.SoLuong = 1;
             foreach (var item in ls.ToList())
             {
@@ -115,43 +105,6 @@ namespace Home
             int index = gridViewDV.FocusedRowHandle;
             gridViewDV.DeleteRow(index);
             dgvCTDV.DataSource = ls.ToList();
-        }
-
-        string tangMaSDDV()
-        {
-            string maSuDungDichVu;
-            sddvbus = new SuDungDichVuBUS();
-            sddv = new eSuDungDichVu();
-            sddv = sddvbus.tangma();
-            if (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) < 10000000 && Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) >= 1000000)
-            {
-                maSuDungDichVu = "PDV" + (Convert.ToInt32(sddv.MaSDDV.Substring(3, 7)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) < 1000000 && Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) >= 100000)
-            {
-                maSuDungDichVu = "PDV0" + (Convert.ToInt32(sddv.MaSDDV.Substring(4, 6)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) < 100000 && Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) >= 10000)
-            {
-                maSuDungDichVu = "PDV00" + (Convert.ToInt32(sddv.MaSDDV.Substring(5, 5)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) < 10000 && Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) >= 1000)
-            {
-                maSuDungDichVu = "PDV000" + (Convert.ToInt32(sddv.MaSDDV.Substring(6, 4)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) < 1000 && Convert.ToInt32(sddv.MaSDDV.Substring(7, 3)) >= 100)
-            {
-                maSuDungDichVu = "PDV0000" + (Convert.ToInt32(sddv.MaSDDV.Substring(7, 2)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) < 100 && Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) >= 10)
-            {
-                maSuDungDichVu = "PDV00000" + (Convert.ToInt32(sddv.MaSDDV.Substring(8, 2)) + 1).ToString();
-            }
-            else
-            {
-                maSuDungDichVu = "PDV000000" + (Convert.ToInt32(sddv.MaSDDV.Substring(9, 1)) + 1).ToString();
-            }
-            return maSuDungDichVu;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -175,66 +128,47 @@ namespace Home
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            frmTTKhachHang frm = new frmTTKhachHang();
-            frm.ShowDialog();
-            txtSeachKH.Text = CMND;
-        }
-
-        private void txtSeachKH_TextChanged(object sender, EventArgs e)
-        {
-            string s = txtSeachKH.Text;
+            lskh = new List<eKhachHang>();
+            string s = txtSeachKH.Text.Trim();
             lskh = khbus.getcmnd(s);
-            foreach (var item in lskh)
+            if (lskh.Count == 0)
             {
-                maKH = item.MaKH;
-                txtHT.Text = item.TenKH;
-                txtCMND.Text = item.SoCMND;
-                txtSDT.Text = item.SoDT;
-                if (item.GioiTinh)
+                DialogResult ds = MessageBox.Show("Không có khách hàng. Hãy nhập thông tin khách hàng", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (ds == DialogResult.OK)
                 {
-                    radNam.Checked = true;
+                    frmTTKhachHang frm = new frmTTKhachHang();
+                    frm.ShowDialog();
+                    txtCMND.Text = CMND;
+                    txtSDT.Text = SDT;
+                    txtHT.Text = TenKH;
+                    if (GioiTinh.Equals("Nam"))
+                    {
+                        radNam.Checked = true;
+                    }
+                    else
+                    {
+                        radNu.Checked = true;
+                    }
                 }
-                else
-                {
-                    radNu.Checked = true;
-                }
-            }
-        }
-
-        string maThuePhong()
-        {
-            string maDatPhong;
-            tp = new eThuePhong();
-            tp = tpbus.tangma();
-            if (Convert.ToInt32(tp.MaThuePhong.Substring(2, 7)) < 10000000 && Convert.ToInt32(tp.MaThuePhong.Substring(2, 7)) > 1000000)
-            {
-                maDatPhong = "TP" + (Convert.ToInt32(tp.MaThuePhong.Substring(2, 7)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(tp.MaThuePhong.Substring(3, 6)) < 1000000 && Convert.ToInt32(tp.MaThuePhong.Substring(3, 6)) > 100000)
-            {
-                maDatPhong = "TP0" + (Convert.ToInt32(tp.MaThuePhong.Substring(3, 6)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(tp.MaThuePhong.Substring(4, 5)) < 100000 && Convert.ToInt32(tp.MaThuePhong.Substring(4, 5)) > 10000)
-            {
-                maDatPhong = "TP00" + (Convert.ToInt32(tp.MaThuePhong.Substring(4, 5)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(tp.MaThuePhong.Substring(5, 4)) < 10000 && Convert.ToInt32(tp.MaThuePhong.Substring(5, 4)) > 1000)
-            {
-                maDatPhong = "TP000" + (Convert.ToInt32(tp.MaThuePhong.Substring(5, 4)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(tp.MaThuePhong.Substring(6, 3)) < 1000 && Convert.ToInt32(tp.MaThuePhong.Substring(6, 3)) > 100)
-            {
-                maDatPhong = "TP0000" + (Convert.ToInt32(tp.MaThuePhong.Substring(6, 3)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(tp.MaThuePhong.Substring(7, 2)) < 100 && Convert.ToInt32(tp.MaThuePhong.Substring(7, 2)) > 10)
-            {
-                maDatPhong = "TP00000" + (Convert.ToInt32(tp.MaThuePhong.Substring(7, 2)) + 1).ToString();
             }
             else
             {
-                maDatPhong = "TP000000" + (Convert.ToInt32(tp.MaThuePhong.Substring(8, 1)) + 1).ToString();
+                foreach (var item in lskh)
+                {
+                    maKH = item.MaKH;
+                    txtHT.Text = item.TenKH;
+                    txtCMND.Text = item.SoCMND;
+                    txtSDT.Text = item.SoDT;
+                    if (item.GioiTinh)
+                    {
+                        radNam.Checked = true;
+                    }
+                    else
+                    {
+                        radNu.Checked = true;
+                    }
+                }
             }
-            return maDatPhong;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -242,16 +176,16 @@ namespace Home
             //Thêm mã thuê phòng
             eThuePhong tp = new eThuePhong();
             PhongBUS pbus = new PhongBUS();
+            NhanVienBUS nvbus = new NhanVienBUS();
             tp.MaPhong = pbus.maPhong(TenPhong);
-            tp.MaThuePhong = maThuePhong();
             tp.MaKH = maKH;
             tp.NgayVao = DateTime.Now.Date;
             tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
-            tp.MaNV = maNV;
+            tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
             tp.TrangThai = 0;
             TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             tp.GioVao = gioVao;
-            TimeSpan gioRa = new TimeSpan(12, 00, 00);
+            TimeSpan gioRa = new TimeSpan(14, 00, 00);
             tp.GioRa = gioRa;
             int a = tpbus.insertThuePhong(tp);
             if (a == 1)
@@ -278,11 +212,12 @@ namespace Home
                 eSuDungDichVu sddv = new eSuDungDichVu();
                 for (int i = 0; i < gridViewCTDV.RowCount; i++)
                 {
-                    sddv.MaThue = tp.MaThuePhong;
-                    sddv.MaSDDV = tangMaSDDV();
+                    sddv.MaThue = tpbus.getMaThue_ByMaPhongTrangThai(tp.MaPhong, 0);
                     sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
                     sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
-
+                    sddv.NgaySD = DateTime.Now.Date;
+                    sddv.GioSD = gioVao;
+                    int s = sddvbus.InsertSDDV(sddv);
                     foreach (eDichVu item in mangDichVu)
                     {
                         //Cập nhật số lượng trong bảng dịch vụ
@@ -295,19 +230,14 @@ namespace Home
                             dvbus.SuaDV(dv);
                         }
                     }
-
-                    sddv.NgaySD = DateTime.Now.Date;
-                    sddv.GioSD = gioVao;
-                    int s = sddvbus.InsertSDDV(sddv);
                 }
             }
-            maThue = maThuePhong();
         }
 
         private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
         {
             TimeSpan date = dtmNgayRa.Value - DateTime.Now.Date;
-            if (date.Days <= 0)
+            if (date.Days < 0)
             {
                 MessageBox.Show("Nhập ngày lớn hơn ngày hiện tại");
                 dtmNgayRa.Focus();

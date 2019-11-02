@@ -8,15 +8,14 @@ namespace Entyti
 {
     public class eSuDungDichVu
     {
-        private string maSDDV, maDV;
+        private string maDV;
         private string maThue;
         private int soLuong;
         private DateTime ngaySD;
         private TimeSpan gioSD;
 
-        public eSuDungDichVu(string maSDDV, string maDV, string maThue, int soLuong, DateTime ngaySD, TimeSpan gioSD)
+        public eSuDungDichVu(string maDV, string maThue, int soLuong, DateTime ngaySD, TimeSpan gioSD)
         {
-            this.maSDDV = maSDDV;
             this.maDV = maDV;
             this.soLuong = soLuong;
             this.maThue = maThue;
@@ -39,19 +38,6 @@ namespace Entyti
             set
             {
                 maDV = value;
-            }
-        }
-
-        public string MaSDDV
-        {
-            get
-            {
-                return maSDDV;
-            }
-
-            set
-            {
-                maSDDV = value;
             }
         }
 

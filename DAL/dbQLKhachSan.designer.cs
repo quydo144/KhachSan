@@ -187,7 +187,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maDV
 		{
 			get
@@ -559,7 +559,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLoaiPhong", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLoaiPhong", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maLoaiPhong
 		{
 			get
@@ -707,6 +707,8 @@ namespace DAL
 		
 		private string _passWord;
 		
+		private string _email;
+		
 		private EntitySet<ThuePhong> _ThuePhongs;
 		
     #region Extensibility Method Definitions
@@ -729,6 +731,8 @@ namespace DAL
     partial void OnchucVuChanged();
     partial void OnpassWordChanging(string value);
     partial void OnpassWordChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
     #endregion
 		
 		public NhanVien()
@@ -737,7 +741,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNV", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNV", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maNV
 		{
 			get
@@ -897,6 +901,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ThuePhong", Storage="_ThuePhongs", ThisKey="maNV", OtherKey="maNV")]
 		public EntitySet<ThuePhong> ThuePhongs
 		{
@@ -990,7 +1014,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maPhong
 		{
 			get
@@ -1010,7 +1034,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLoaiPhong", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maLoaiPhong", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
 		public string maLoaiPhong
 		{
 			get
@@ -1200,11 +1224,9 @@ namespace DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _maSDDV;
+		private string _maThue;
 		
 		private string _maDV;
-		
-		private string _maThue;
 		
 		private int _soLuong;
 		
@@ -1220,12 +1242,10 @@ namespace DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnmaSDDVChanging(string value);
-    partial void OnmaSDDVChanged();
-    partial void OnmaDVChanging(string value);
-    partial void OnmaDVChanged();
     partial void OnmaThueChanging(string value);
     partial void OnmaThueChanged();
+    partial void OnmaDVChanging(string value);
+    partial void OnmaDVChanged();
     partial void OnsoLuongChanging(int value);
     partial void OnsoLuongChanged();
     partial void OnngaySuDungChanging(System.DateTime value);
@@ -1241,51 +1261,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSDDV", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string maSDDV
-		{
-			get
-			{
-				return this._maSDDV;
-			}
-			set
-			{
-				if ((this._maSDDV != value))
-				{
-					this.OnmaSDDVChanging(value);
-					this.SendPropertyChanging();
-					this._maSDDV = value;
-					this.SendPropertyChanged("maSDDV");
-					this.OnmaSDDVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string maDV
-		{
-			get
-			{
-				return this._maDV;
-			}
-			set
-			{
-				if ((this._maDV != value))
-				{
-					if (this._DichVu.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmaDVChanging(value);
-					this.SendPropertyChanging();
-					this._maDV = value;
-					this.SendPropertyChanged("maDV");
-					this.OnmaDVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maThue", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maThue", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maThue
 		{
 			get
@@ -1305,6 +1281,30 @@ namespace DAL
 					this._maThue = value;
 					this.SendPropertyChanged("maThue");
 					this.OnmaThueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string maDV
+		{
+			get
+			{
+				return this._maDV;
+			}
+			set
+			{
+				if ((this._maDV != value))
+				{
+					if (this._DichVu.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnmaDVChanging(value);
+					this.SendPropertyChanging();
+					this._maDV = value;
+					this.SendPropertyChanged("maDV");
+					this.OnmaDVChanged();
 				}
 			}
 		}
@@ -1498,7 +1498,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maHD
 		{
 			get
@@ -1518,7 +1518,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maThuePhong", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maThuePhong", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
 		public string maThuePhong
 		{
 			get
@@ -1725,7 +1725,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maThue", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maThue", DbType="NVarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maThue
 		{
 			get
@@ -1745,7 +1745,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maPhong", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
 		public string maPhong
 		{
 			get
@@ -1793,7 +1793,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNV", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maNV", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
 		public string maNV
 		{
 			get

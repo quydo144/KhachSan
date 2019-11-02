@@ -17,11 +17,6 @@ namespace BUS
             return sddvdal.insertCTDV(p);
         }
 
-        public eSuDungDichVu tangma()
-        {
-            return sddvdal.maTangTuDong();
-        }
-
         public List<eSuDungDichVu> getctdv(string mathue)
         {
             return sddvdal.getctdv(mathue);

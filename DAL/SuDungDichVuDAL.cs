@@ -11,23 +11,9 @@ namespace DAL
     {
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
 
-        public eSuDungDichVu maTangTuDong()
-        {
-            eSuDungDichVu sddv = new eSuDungDichVu();
-            SuDungDichVu item = (from x in db.SuDungDichVus orderby x.maSDDV descending select x).FirstOrDefault();
-            sddv.MaSDDV = item.maSDDV;
-            sddv.MaDV = item.maDV;
-            sddv.MaThue = item.maThue;
-            sddv.SoLuong = item.soLuong;
-            sddv.NgaySD = item.ngaySuDung;
-            sddv.GioSD = item.gioSuDung;
-            return sddv;
-        }
-
         public int insertCTDV(eSuDungDichVu ctdvnew)
         {
             SuDungDichVu ctdvtemp = new SuDungDichVu();
-            ctdvtemp.maSDDV = ctdvnew.MaSDDV;
             ctdvtemp.maDV = ctdvnew.MaDV;
             ctdvtemp.maThue = ctdvnew.MaThue;
             ctdvtemp.soLuong = ctdvnew.SoLuong;
@@ -45,7 +31,6 @@ namespace DAL
             foreach (SuDungDichVu item in listdv)
             {
                 eSuDungDichVu dv = new eSuDungDichVu();
-                dv.MaSDDV = item.maSDDV.Trim();
                 dv.MaDV = item.maDV.Trim();
                 dv.MaThue = item.maThue.Trim();
                 dv.SoLuong = Convert.ToInt32(item.soLuong);

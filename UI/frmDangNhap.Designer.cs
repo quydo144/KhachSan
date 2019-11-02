@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtID
+            // txtEmail
             // 
-            this.txtID.Location = new System.Drawing.Point(127, 26);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(298, 23);
-            this.txtID.TabIndex = 0;
-            this.txtID.Text = "NV0001";
+            this.txtEmail.Location = new System.Drawing.Point(127, 26);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(298, 23);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "admin@gmail.com";
             // 
             // txtPass
             // 
@@ -66,7 +66,7 @@
             this.ClientSize = new System.Drawing.Size(524, 207);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtEmail);
             this.Name = "frmDangNhap";
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);
@@ -76,7 +76,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button button1;
     }

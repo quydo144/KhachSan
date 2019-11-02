@@ -12,9 +12,9 @@ namespace BUS
     {
         ThuePhongDAL tpdal = new ThuePhongDAL();
 
-        public eThuePhong tangma()
+        public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
         {
-            return tpdal.maTangTuDong();
+            return tpdal.getMaThue_ByMaPhongTrangThai(maPhong, trangThai);
         }
 
         public int insertThuePhong(eThuePhong tp)
