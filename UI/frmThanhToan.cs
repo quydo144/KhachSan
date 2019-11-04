@@ -15,7 +15,7 @@ namespace Home
 {
     public partial class frmThanhToan : DevExpress.XtraEditors.XtraForm
     {
-        frmHome frmHome;
+        frmHome home;
         public static string MaThue = string.Empty;
         public static string TenPhong = string.Empty;
         public static string LoaiPhong = string.Empty;
@@ -31,7 +31,7 @@ namespace Home
         public frmThanhToan(frmHome sql)
         {
             InitializeComponent();
-            frmHome = sql;
+            home = sql;
         }
 
         private void frmThanhToan_Load(object sender, EventArgs e)
@@ -95,13 +95,6 @@ namespace Home
             double tienPhong = 0;
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             tienPhong = lpbus.donGia(maLoaiPhong);
-            //foreach (var item in lpbus.getall())
-            //{
-            //    if (item.MaLoaiPhong.Trim().Equals(maLoaiPhong))
-            //    {
-            //        tienPhong = item.DonGia;
-            //    }
-            //}
             return tienPhong;
         }
 
@@ -193,11 +186,10 @@ namespace Home
         }
 
         private void frmThanhToan_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        {         
             JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
-            frmHome.textPhongCoKhach(joinbus.GetPhong_ThuePhong(true, 0));
-            //frmHome.loadphong(pbus.getallp());
+            home.textPhongTrong(pbus.gettinhtrangp(false));
         }
     }
 }

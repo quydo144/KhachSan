@@ -117,33 +117,11 @@ namespace Home
                 ((ISupportInitialize)(P0001)).EndInit();
                 P0001.ResumeLayout(false);
             }
+        }
 
-            foreach (var item in joinbus.GetPhong_ThuePhong(true,0))           
-            {
-                foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                {
-                    if (pnl.Name.Equals(item.MaPhong.Trim()))
-                    {
-                        pnl.BackColor = Color.Red;
-                        foreach (var lbl in pnl.Controls.OfType<Label>())
-                        {
-                            lbl.BackColor = Color.Red;
-                            if (item.NgayTra < DateTime.Now)
-                            {
-                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
-                            }
-                            else
-                            {
-                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " +  item.NgayTra.Date.ToShortDateString();
-                            }
-                            lbl.MouseDown += new MouseEventHandler(lblred_Click);
-                            lbl.ContextMenuStrip = cmnstrpCoKhach;
-                        }
-                    }
-                }
-            }
-
-            foreach (var item in pbus.gettinhtrangp(false))
+        public void textPhongTrong(List<ePhong> lsTrue)
+        {
+            foreach (var item in lsTrue)
             {
                 foreach (var pnl in flowLayoutPanel1.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                 {
@@ -161,8 +139,6 @@ namespace Home
                 }
             }
         }
-
-
 
         public void textPhongCoKhach(List<eHonLoan> lsTrue)
         {
@@ -195,7 +171,11 @@ namespace Home
 
         public void frmHome_Load(object sender, EventArgs e)
         {
+            JoinTable_BUS joinbus = new JoinTable_BUS();
+            PhongBUS pbus = new PhongBUS();
             loadphong(pbus.getallp());
+            textPhongCoKhach(joinbus.GetPhong_ThuePhong(true, 0));
+            textPhongTrong(pbus.gettinhtrangp(false));
         }
 
         public void lblred_Click(object sender, MouseEventArgs e)
@@ -303,7 +283,7 @@ namespace Home
 
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDatPhong frm = new frmDatPhong();
+            frmDatPhong frm = new frmDatPhong(this);
             frm.ShowDialog();
         }
 
@@ -344,7 +324,7 @@ namespace Home
 
         private void thuePhongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmThanhToan frm = new frmThanhToan();
+            frmThanhToan frm = new frmThanhToan(this);
             frm.ShowDialog();
         }
 
