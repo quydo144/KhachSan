@@ -22,7 +22,6 @@ namespace Home
         List<eCTDV> ls = new List<eCTDV>();
         List<eKhachHang> lskh;
         List<eSuDungDichVu> lssddv = new List<eSuDungDichVu>();
-        eThuePhong tp;
         SuDungDichVuBUS sddvbus = new SuDungDichVuBUS();
         ThuePhongBUS tpbus = new ThuePhongBUS();
         DichVuBUS dvbus = new DichVuBUS();
@@ -248,7 +247,7 @@ namespace Home
         {
             JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
-            frmHome.textPhong(joinbus.GetPhong_ThuePhong(true, 0));
+            frmHome.textPhongCoKhach(joinbus.GetPhong_ThuePhong(true, 0));
         }
 
         private void gridViewCTDV_Click(object sender, EventArgs e)
@@ -260,7 +259,26 @@ namespace Home
                 {
                     if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV && item.SoLuong < Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])))
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " +item.TenDV+  " đã hết");
+                        ls.RemoveAt(i);
+                        gridViewCTDV.DeleteRow(i);
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
+                    }
+                }
+            }
+        }
+
+        private void gridViewCTDV_MouseMove(object sender, MouseEventArgs e)
+        {
+            eDichVu dv = new eDichVu();
+            for (int i = 0; i < gridViewCTDV.RowCount; i++)
+            {
+                foreach (eDichVu item in mangDichVu)
+                {
+                    if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV && item.SoLuong < Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])))
+                    {
+                        ls.RemoveAt(i);
+                        gridViewCTDV.DeleteRow(i);
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
                     }
                 }
             }

@@ -128,7 +128,14 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " +item.NgayTra.Date.ToShortDateString();       
+                            if (item.NgayTra < DateTime.Now)
+                            {
+                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
+                            }
+                            else
+                            {
+                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " +  item.NgayTra.Date.ToShortDateString();
+                            }
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -155,7 +162,9 @@ namespace Home
             }
         }
 
-        public void textPhong(List<eHonLoan> lsTrue)
+
+
+        public void textPhongCoKhach(List<eHonLoan> lsTrue)
         {
             foreach (var item in lsTrue)
             {
@@ -168,7 +177,14 @@ namespace Home
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.Red;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
+                            if (item.NgayTra < DateTime.Now)
+                            {
+                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
+                            }
+                            else
+                            {
+                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
+                            }
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }

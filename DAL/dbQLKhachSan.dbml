@@ -71,6 +71,7 @@
       <Column Name="maHD" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maThuePhong" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="ngayLap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="gioLap" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="thueVAT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="giamGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="ThuePhong_ThanhToan" Member="ThuePhong" ThisKey="maThuePhong" OtherKey="maThue" Type="ThuePhong" IsForeignKey="true" />

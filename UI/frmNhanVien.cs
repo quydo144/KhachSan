@@ -84,6 +84,7 @@ namespace Home
         private void btnSua_Click(object sender, EventArgs e)
         {
             eNhanVien newnv = new eNhanVien();
+            //Đối tượng lấy ra từ text
             newnv.MaNV = txtMa.Text;
             newnv.HoTen = txtTen.Text;
             if (radNam.Checked)
@@ -99,7 +100,19 @@ namespace Home
             newnv.SoDT = txtSdt.Text;
             newnv.PassWord = txtPass.Text;
             newnv.NgaySinh = Convert.ToDateTime(dtpNS.Text);
+            ////Đối tượng lấy ra từ gridcontrols
+            //eNhanVien nvgrid = new eNhanVien();
+            //nvgrid.MaNV= gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[0]).ToString();
+            //nvgrid.HoTen= gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[1]).ToString();
+            
+            //nvgrid.ChucVu = false;
+            //nvgrid.SoCMND = gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[2]).ToString();
+            //nvgrid.SoDT = gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[3]).ToString();
+            //nvgrid.PassWord = gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[4]).ToString();
+            //nvgrid.NgaySinh = Convert.ToDateTime(gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[7]).ToString());
+
             nvBus.SuaNV(newnv);
+            //nvBus.SuaNV(nvgrid);
             //đưa lại datagridview
             List<eNhanVien> listNhanVien = nvBus.getallnv();
             gclDSNV.DataSource = listNhanVien;

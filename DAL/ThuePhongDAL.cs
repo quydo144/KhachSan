@@ -14,7 +14,6 @@ namespace DAL
         public int insertThuePhong(eThuePhong newtp)
         {
             ThuePhong temp = new ThuePhong();
-            //temp.maThue = newtp.MaThuePhong;
             temp.maKhach = newtp.MaKH;
             temp.maNV = newtp.MaNV;
             temp.maPhong = newtp.MaPhong;
@@ -53,6 +52,21 @@ namespace DAL
         {
             ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).SingleOrDefault();
             return tp.maThue;
+        }
+
+        public void updateThuePhong(eThuePhong tp)
+        {
+            IQueryable<ThuePhong> tphong = db.ThuePhongs.Where(x => x.maThue.Equals(tp.MaThuePhong));
+            tphong.First().gioRa = tp.GioRa;
+            tphong.First().ngayRa = tp.NgayRa;
+            tphong.First().trangThai = Convert.ToByte(tp.TrangThai);
+            db.SubmitChanges();
+        }
+
+        public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
+        {
+            ThuePhong tp = db.ThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).SingleOrDefault();
+            return tp.maPhong;
         }
     }
 }

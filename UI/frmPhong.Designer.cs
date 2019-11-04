@@ -50,7 +50,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboListTim = new System.Windows.Forms.ComboBox();
             this.txtTim = new System.Windows.Forms.TextBox();
@@ -295,15 +295,16 @@
             this.textBox3.Size = new System.Drawing.Size(385, 30);
             this.textBox3.TabIndex = 41;
             // 
-            // button3
+            // btnThem
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
-            this.button3.Location = new System.Drawing.Point(120, 569);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 54);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
+            this.btnThem.Location = new System.Drawing.Point(120, 569);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(144, 54);
+            this.btnThem.TabIndex = 3;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox2
             // 
@@ -342,7 +343,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -384,7 +385,7 @@
         private DevExpress.XtraEditors.SpinEdit buttonEdit1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cboListTim;
         private System.Windows.Forms.TextBox txtTim;

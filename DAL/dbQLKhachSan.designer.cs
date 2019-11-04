@@ -1470,6 +1470,8 @@ namespace DAL
 		
 		private System.DateTime _ngayLap;
 		
+		private System.TimeSpan _gioLap;
+		
 		private double _thueVAT;
 		
 		private System.Nullable<double> _giamGia;
@@ -1486,6 +1488,8 @@ namespace DAL
     partial void OnmaThuePhongChanged();
     partial void OnngayLapChanging(System.DateTime value);
     partial void OnngayLapChanged();
+    partial void OngioLapChanging(System.TimeSpan value);
+    partial void OngioLapChanged();
     partial void OnthueVATChanging(double value);
     partial void OnthueVATChanged();
     partial void OngiamGiaChanging(System.Nullable<double> value);
@@ -1558,6 +1562,26 @@ namespace DAL
 					this._ngayLap = value;
 					this.SendPropertyChanged("ngayLap");
 					this.OnngayLapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioLap", DbType="Time NOT NULL")]
+		public System.TimeSpan gioLap
+		{
+			get
+			{
+				return this._gioLap;
+			}
+			set
+			{
+				if ((this._gioLap != value))
+				{
+					this.OngioLapChanging(value);
+					this.SendPropertyChanging();
+					this._gioLap = value;
+					this.SendPropertyChanged("gioLap");
+					this.OngioLapChanged();
 				}
 			}
 		}

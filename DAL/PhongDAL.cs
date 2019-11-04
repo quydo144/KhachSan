@@ -54,8 +54,8 @@ namespace DAL
 
         public void updateTinhTrangPhong(ePhong pupdate)
         {
-            IQueryable<Phong> nv = db.Phongs.Where(x => x.maPhong.Equals(pupdate.MaPhong));
-            nv.First().tinhTrang = pupdate.TinhTrang;
+            IQueryable<Phong> p = db.Phongs.Where(x => x.maPhong.Equals(pupdate.MaPhong));
+            p.First().tinhTrang = Convert.ToBoolean(pupdate.TinhTrang);
             db.SubmitChanges();
         }
 

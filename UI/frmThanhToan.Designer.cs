@@ -55,8 +55,9 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -95,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -371,8 +373,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(247)))));
-            this.panel7.Controls.Add(this.simpleButton2);
-            this.panel7.Controls.Add(this.simpleButton1);
+            this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label15);
             this.panel7.Controls.Add(this.txtTongTien);
             this.panel7.Controls.Add(this.label14);
@@ -395,31 +396,42 @@
             this.panel7.Size = new System.Drawing.Size(578, 377);
             this.panel7.TabIndex = 0;
             // 
-            // simpleButton2
+            // panel8
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(445, 321);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(119, 50);
-            this.simpleButton2.TabIndex = 16;
-            this.simpleButton2.Text = "Thoát";
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btnThoat);
+            this.panel8.Controls.Add(this.btnLuu);
+            this.panel8.Location = new System.Drawing.Point(0, 331);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(579, 46);
+            this.panel8.TabIndex = 16;
             // 
-            // simpleButton1
+            // btnThoat
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(228, 321);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(188, 50);
-            this.simpleButton1.TabIndex = 16;
-            this.simpleButton1.Text = "Thanh toán";
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(442, -2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(95, 47);
+            this.btnThoat.TabIndex = 16;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(261, -1);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(142, 47);
+            this.btnLuu.TabIndex = 17;
+            this.btnLuu.Text = "Thanh toán";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label15
             // 
@@ -437,6 +449,7 @@
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(358, 30);
             this.txtTongTien.TabIndex = 14;
+            this.txtTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
             // 
@@ -453,6 +466,7 @@
             this.txtKhachThanhToan.Name = "txtKhachThanhToan";
             this.txtKhachThanhToan.Size = new System.Drawing.Size(358, 30);
             this.txtKhachThanhToan.TabIndex = 14;
+            this.txtKhachThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPhuThu
             // 
@@ -461,6 +475,7 @@
             this.txtPhuThu.Name = "txtPhuThu";
             this.txtPhuThu.Size = new System.Drawing.Size(150, 30);
             this.txtPhuThu.TabIndex = 14;
+            this.txtPhuThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtGiamTru
             // 
@@ -468,6 +483,8 @@
             this.txtGiamTru.Name = "txtGiamTru";
             this.txtGiamTru.Size = new System.Drawing.Size(87, 30);
             this.txtGiamTru.TabIndex = 14;
+            this.txtGiamTru.Text = "0";
+            this.txtGiamTru.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label17
             // 
@@ -530,6 +547,7 @@
             this.txtTienThua.Name = "txtTienThua";
             this.txtTienThua.Size = new System.Drawing.Size(358, 30);
             this.txtTienThua.TabIndex = 14;
+            this.txtTienThua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtVAT
             // 
@@ -538,7 +556,7 @@
             this.txtVAT.Name = "txtVAT";
             this.txtVAT.Size = new System.Drawing.Size(358, 30);
             this.txtVAT.TabIndex = 14;
-            this.txtVAT.Text = "10%";
+            this.txtVAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDichVu
             // 
@@ -547,6 +565,7 @@
             this.txtDichVu.Name = "txtDichVu";
             this.txtDichVu.Size = new System.Drawing.Size(358, 30);
             this.txtDichVu.TabIndex = 14;
+            this.txtDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTienPhong
             // 
@@ -555,6 +574,8 @@
             this.txtTienPhong.Name = "txtTienPhong";
             this.txtTienPhong.Size = new System.Drawing.Size(358, 30);
             this.txtTienPhong.TabIndex = 14;
+            this.txtTienPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTienPhong.TextChanged += new System.EventHandler(this.txtTienPhong_TextChanged);
             // 
             // panel6
             // 
@@ -715,6 +736,7 @@
             this.Name = "frmThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThanhToan_FormClosing);
             this.Load += new System.EventHandler(this.frmThanhToan_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -728,6 +750,7 @@
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
@@ -752,8 +775,6 @@
         private System.Windows.Forms.Label lblLoaiPhong;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTenPhong;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label14;
@@ -794,5 +815,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTraPhong;
         private System.Windows.Forms.Label lblNhanPhong;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

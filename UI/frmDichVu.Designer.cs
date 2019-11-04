@@ -33,6 +33,7 @@
             this.grdMaDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdDonGiaDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlDV = new DevExpress.XtraGrid.GridControl();
             this.btnSuaDV = new System.Windows.Forms.Button();
             this.btnThemDV = new System.Windows.Forms.Button();
@@ -46,11 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboTKDV = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSL = new System.Windows.Forms.TextBox();
-            this.grdSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -102,6 +102,16 @@
             this.grdDonGiaDV.Visible = true;
             this.grdDonGiaDV.VisibleIndex = 3;
             this.grdDonGiaDV.Width = 181;
+            // 
+            // grdSoLuong
+            // 
+            this.grdSoLuong.Caption = "Số lượng";
+            this.grdSoLuong.FieldName = "SoLuong";
+            this.grdSoLuong.MinWidth = 25;
+            this.grdSoLuong.Name = "grdSoLuong";
+            this.grdSoLuong.Visible = true;
+            this.grdSoLuong.VisibleIndex = 2;
+            this.grdSoLuong.Width = 241;
             // 
             // gridControlDV
             // 
@@ -260,7 +270,28 @@
             this.groupBox1.Size = new System.Drawing.Size(597, 348);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "thông tin dịch vụ";
+            this.groupBox1.Text = "Thông tin dịch vụ";
+            // 
+            // txtSL
+            // 
+            this.txtSL.Location = new System.Drawing.Point(173, 189);
+            this.txtSL.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(392, 30);
+            this.txtSL.TabIndex = 49;
+            this.txtSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 197);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 22);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Số lượng";
             // 
             // groupBox2
             // 
@@ -280,37 +311,6 @@
             this.cboTKDV.Name = "cboTKDV";
             this.cboTKDV.Size = new System.Drawing.Size(230, 30);
             this.cboTKDV.TabIndex = 54;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 197);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 22);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Số lượng";
-            // 
-            // txtSL
-            // 
-            this.txtSL.Location = new System.Drawing.Point(173, 189);
-            this.txtSL.Margin = new System.Windows.Forms.Padding(6);
-            this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(392, 30);
-            this.txtSL.TabIndex = 49;
-            this.txtSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // grdSoLuong
-            // 
-            this.grdSoLuong.Caption = "Số lượng";
-            this.grdSoLuong.FieldName = "SoLuong";
-            this.grdSoLuong.MinWidth = 25;
-            this.grdSoLuong.Name = "grdSoLuong";
-            this.grdSoLuong.Visible = true;
-            this.grdSoLuong.VisibleIndex = 2;
-            this.grdSoLuong.Width = 241;
             // 
             // frmDichVu
             // 
