@@ -84,5 +84,10 @@ namespace DAL
             }
             return ls;
         }
+        public string getenKH_ByID(string id)
+        {
+            KhachHang nv = db.KhachHangs.Where(x => x.maKH.Equals(id)).SingleOrDefault();
+            return nv.tenKh;
+        }
     }
 }

@@ -68,34 +68,6 @@ namespace Home
             return donGia;
         }
 
-        public void loadphong(List<ePhong> ls)
-        {
-            int stt = 0;
-            foreach (var item in ls)
-            {
-                stt++;
-                DevExpress.XtraEditors.PanelControl P0001 = new DevExpress.XtraEditors.PanelControl();
-                Label lbl = new Label();
-                ((ISupportInitialize)(P0001)).BeginInit();
-                P0001.SuspendLayout();
-                flowLayoutPanel2.Controls.Add(P0001);
-                // P0001
-                P0001.Appearance.Options.UseBackColor = true;
-                P0001.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-                P0001.Controls.Add(lbl);
-                P0001.Location = new Point(3, 3);
-                P0001.Name = item.MaPhong;
-                // lbl2
-                lbl.Font = new Font("Tahoma", 10F);
-                lbl.Dock = DockStyle.Fill;
-                lbl.Size = new Size(252, 159);
-                lbl.Text = item.TenPhong;
-                lbl.TextAlign = ContentAlignment.TopCenter;
-                ((ISupportInitialize)(P0001)).EndInit();
-                P0001.ResumeLayout(false);
-            }
-        }
-
         public void textPhongTrong(List<ePhong> lsTrue)
         {
             foreach (var item in lsTrue)
@@ -148,13 +120,9 @@ namespace Home
 
         public void frmHome_Load(object sender, EventArgs e)
         {
-            JoinTable_BUS joinbus = new JoinTable_BUS();
+            cleanGiaoDien();
             PhongBUS pbus = new PhongBUS();
-            //loadphong(pbus.getallp());
-            //flowLayoutPanel2.Hide();
-            TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0));
-            //textPhongCoKhach(joinbus.GetPhong_ThuePhong(true, 0));
-            //textPhongTrong(pbus.gettinhtrangp(false));
+            TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");            
         }
 
         public void lblred_Click(object sender, MouseEventArgs e)
@@ -194,28 +162,23 @@ namespace Home
             }
         }
 
-        public void TaoGiaoDienPhong(List<ePhong> soPhong, List<ePhong> phongTrong, List<eHonLoan> coKhach)
-        {
-            
-
-            JoinTable_BUS joinbus = new JoinTable_BUS();
+        //Load giao diện các phòng trống và phòng có chứa khách hàng
+        public void TaoGiaoDienPhong(List<ePhong> soPhong, List<ePhong> phongTrong, List<eHonLoan> coKhach, string title)
+        {                              
             PhongBUS pbus = new PhongBUS();
             FlowLayoutPanel flowLayoutPanel3 = new FlowLayoutPanel();
             flowLayoutPanel3.AutoSize = true;
             flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(flowLayoutPanel3);
             Label text = new Label();
-            text.Size = new Size(1850, 40);
-            text.TextAlign = ContentAlignment.MiddleCenter;
-            text.Text = "ABC";
+            text.Size = new Size(1850, 30);
+            text.TextAlign = ContentAlignment.TopCenter;
+            text.Text = title;
             flowLayoutPanel3.Controls.Add(text);
-
             foreach (var item in soPhong)
             {
                 DevExpress.XtraEditors.PanelControl P0001 = new DevExpress.XtraEditors.PanelControl();
                 Label lbl = new Label();
-                ((ISupportInitialize)(P0001)).BeginInit();
-                P0001.SuspendLayout();
                 flowLayoutPanel3.Controls.Add(P0001);
                 P0001.Appearance.Options.UseBackColor = true;
                 P0001.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
@@ -228,8 +191,6 @@ namespace Home
                 lbl.Size = new Size(252, 159);
                 lbl.Text = item.TenPhong;
                 lbl.TextAlign = ContentAlignment.TopCenter;
-                ((ISupportInitialize)(P0001)).EndInit();
-                P0001.ResumeLayout(false);
             }
 
             foreach (var item in phongTrong)
@@ -261,14 +222,16 @@ namespace Home
                         pnl.BackColor = Color.Red;
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
+                            lbl.Image = imgPhong.Images[0];
+                            lbl.ImageAlign = ContentAlignment.BottomCenter;
                             lbl.BackColor = Color.Red;
                             if (item.NgayTra < DateTime.Now)
                             {
-                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
+                                lbl.Text = item.TenPhong + "\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\nMã thuê phòng: " + item.MaThue + "\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
                             }
                             else
                             {
-                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
+                                lbl.Text = item.TenPhong + "\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\nMã thuê phòng: " + item.MaThue + "\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
                             }
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
@@ -277,73 +240,79 @@ namespace Home
                 }
             }
 
-
         }
 
         private void toggleSwitchSS_Toggled(object sender, EventArgs e)
         {
-            if (toggleSwitchSS.IsOn != true)
+            foreach (var item in flowLayoutPanel1.Controls.OfType<FlowLayoutPanel>())
             {
-                int s = 0;
-                foreach (var pnl in this.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                if (toggleSwitchSS.IsOn != true)
                 {
-                    if (pnl.BackColor == Color.LawnGreen)
+                    int s = 0;
+                    foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        s++;
+                        if (pnl.BackColor == Color.LawnGreen)
+                        {
+                            s++;
+                        }
+                        pnl.Show();
                     }
-                    pnl.Show();
+                    this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
                 }
-                this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
-            }
-            else
-            {
-                int s = 0;
-                foreach (var pnl in this.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                else
                 {
-                    if (pnl.BackColor != Color.LawnGreen)
+                    int s = 0;
+                    foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        pnl.Hide();
+                        if (pnl.BackColor != Color.LawnGreen)
+                        {
+                            pnl.Hide();
+                        }
+                        else
+                        {
+                            s++;
+                        }
                     }
-                    else
-                    {
-                        s++;
-                    }
+                    this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
                 }
-                this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
             }
+           
         }
 
         private void toggleSwitchCK_Toggled(object sender, EventArgs e)
         {
-            if (toggleSwitchCK.IsOn != true)
+            foreach (var item in flowLayoutPanel1.Controls.OfType<FlowLayoutPanel>())
             {
-                int s = 0;
-                foreach (var pnl in this.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                if (toggleSwitchCK.IsOn != true)
                 {
-                    if (pnl.BackColor == Color.Red)
+                    int s = 0;
+                    foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        s++;
+                        if (pnl.BackColor == Color.Red)
+                        {
+                            s++;
+                        }
+                        pnl.Show();
                     }
-                    pnl.Show();
+                    this.toggleSwitchCK.Properties.OffText = "Có khách " + s.ToString();
                 }
-                this.toggleSwitchCK.Properties.OffText = "Có khách " + s.ToString();
-            }
-            else
-            {
-                int s = 0;
-                foreach (var pnl in this.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
+                else
                 {
-                    if (pnl.BackColor != Color.Red)
+                    int s = 0;
+                    foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        pnl.Hide();
+                        if (pnl.BackColor != Color.Red)
+                        {
+                            pnl.Hide();
+                        }
+                        else
+                        {
+                            s++;
+                        }
                     }
-                    else
-                    {
-                        s++;
-                    }
+                    this.toggleSwitchCK.Properties.OnText = "Có khách " + s.ToString();
                 }
-                this.toggleSwitchCK.Properties.OnText = "Có khách " + s.ToString();
-            }
+            }          
         }
 
         private void btnDatPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -444,15 +413,66 @@ namespace Home
             List<eHonLoan> ls = new List<eHonLoan>();
             List<ePhong> phRong = new List<ePhong>();       //Phòng rỗng
             List<ePhong> phKhach = new List<ePhong>();       //Phòng có khách
-            JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
             foreach (var item in joinbus.GetPhong_ThuePhong(true, 0))
             {
                 pbus.getEPhong_byID(item.MaPhong);
                 phKhach.Add(pbus.getEPhong_byID(item.MaPhong));
             }
-            TaoGiaoDienPhong(pbus.gettinhtrangp(false), pbus.gettinhtrangp(false), ls);     //Phòng trống
-            TaoGiaoDienPhong(phKhach, phRong, joinbus.GetPhong_ThuePhong(true, 0));      //Phòng có khách
+            TaoGiaoDienPhong(pbus.gettinhtrangp(false), pbus.gettinhtrangp(false), ls, "Phòng trống");
+            TaoGiaoDienPhong(phKhach, phRong, joinbus.GetPhong_ThuePhong(true, 0), "Phòng có khách");
+        }
+
+        public void cleanGiaoDien()
+        {
+            foreach (var item in flowLayoutPanel1.Controls.OfType<FlowLayoutPanel>())
+            {
+                item.Hide();
+            }
+            FlowLayoutPanel flowLayoutPanel3 = new FlowLayoutPanel();
+            flowLayoutPanel3.AutoSize = true;
+            flowLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.Controls.Add(flowLayoutPanel3);
+        }
+
+        private void dtpNgayTra_ValueChanged(object sender, EventArgs e)
+        {
+            cleanGiaoDien();
+            List<ePhong> phRong = new List<ePhong>();
+            List<ePhong> phKhach = new List<ePhong>();
+            PhongBUS pbus = new PhongBUS();
+            foreach (var item in joinbus.GetPhog_TraVaoNgay(true, 0,Convert.ToDateTime(dtpNgayTra.Text)))
+            {
+                pbus.getEPhong_byID(item.MaPhong);
+                phKhach.Add(pbus.getEPhong_byID(item.MaPhong));
+            }
+            TaoGiaoDienPhong(phKhach, phRong, joinbus.GetPhog_TraVaoNgay(true, 0, Convert.ToDateTime(dtpNgayTra.Text)), "Phòng trả trong ngày: "+dtpNgayTra.Text );
+        }
+
+        private void btn500_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+
+        }
+
+        private void btnTheoPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+            PhongBUS pbus = new PhongBUS();
+            TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+        }
+
+        private void btnTheoLoaiPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Normal")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Normal"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Normal");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Double")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Double"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Double");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Triple")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Triple"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Triple");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Family")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Family"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Family");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Vip")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Vip"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Vip");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Deluxe")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Deluxe"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Deluxe");
         }
     }
 }

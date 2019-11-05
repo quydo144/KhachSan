@@ -31,6 +31,7 @@ namespace Home
         {
             frmDatPhong.emailNV = txtEmail.Text;
             NhanVienBUS nvbus = new NhanVienBUS();
+            frmThanhToan.maNVThanhToan = nvbus.getmaNV_byEmail(txtEmail.Text.Trim());
             if (nvbus.GetTKQL(txtEmail.Text.Trim(),txtPass.Text.Trim()))
             {
                 Thread th = new Thread(open_frmMain);

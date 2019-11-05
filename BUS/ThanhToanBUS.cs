@@ -16,5 +16,9 @@ namespace BUS
         {
             return ttdal.insertThanhToan(tt);
         }
+        public string gemaHD_BymaThue(string id)
+        {
+            return ttdal.gemaHD_BymaThue(id);
+        }
     }
 }

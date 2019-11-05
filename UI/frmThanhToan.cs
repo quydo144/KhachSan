@@ -16,9 +16,11 @@ namespace Home
     public partial class frmThanhToan : DevExpress.XtraEditors.XtraForm
     {
         frmHome home;
+        double tienphong = 0, phuthu = 0, tiendv = 0, tienvat = 0;
         public static string MaThue = string.Empty;
         public static string TenPhong = string.Empty;
         public static string LoaiPhong = string.Empty;
+        public static string maNVThanhToan = string.Empty;
         SuDungDichVuBUS sddvbus = new SuDungDichVuBUS();
         KhachHangBUS khbus = new KhachHangBUS();
         ThuePhongBUS tpbus = new ThuePhongBUS();
@@ -43,10 +45,11 @@ namespace Home
             tinhTienPhong();
             load_list_dichvu();
             tienPhuThu();
+            txtTongTien.Text = (tienvat + tienphong + tiendv + phuthu).ToString();
         }
 
         public DataTable DataTable_DSDV(List<eSuDungDichVu> ds)
-        {
+        {           
             string tienDichVu;
             DichVuBUS dvbus = new DichVuBUS();
             DataTable dt = new DataTable();
@@ -56,10 +59,12 @@ namespace Home
             dt.Columns.Add("Thành tiền", typeof(double));
             foreach (eSuDungDichVu sddv in ds)
             {
+                tiendv += sddv.SoLuong * dvbus.getDonGia_byID(sddv.MaDV);
                 tienDichVu = (sddv.SoLuong * dvbus.getDonGia_byID(sddv.MaDV)).ToString();
-                dt.Rows.Add(dvbus.getTenDV_byID(sddv.MaDV), sddv.SoLuong, dvbus.getDonGia_byID(sddv.MaDV), tienDichVu);
-                txtDichVu.Text = tienDichVu;
+                dt.Rows.Add(dvbus.getTenDV_byID(sddv.MaDV), sddv.SoLuong, dvbus.getDonGia_byID(sddv.MaDV), tienDichVu);                
             }
+
+            txtDichVu.Text = tiendv.ToString();
             return dt;
         }
 
@@ -114,13 +119,15 @@ namespace Home
                 int h = date.Hours;
                 int m = date.Minutes;
                 lblGhiChu.Text = "\nThời gian sử dụng phòng là: " + ngay + " ngày " + h + " giờ " + m + " phút ";
-                if (item.GioVao < nhan13h)
+                if (item.NgayVao == DateTime.Now.Date && item.GioVao > nhan13h)
                 {
-                    txtTienPhong.Text = (tt.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text))).ToString();
+                    tienphong = tt.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text));
+                    txtTienPhong.Text = (tienphong).ToString();
                 }
                 else
                 {
-                    txtTienPhong.Text = (tt.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(lblNhanPhong.Text), Convert.ToDateTime(lblTraPhong.Text))).ToString();
+                    tienphong = tt.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(lblNhanPhong.Text), Convert.ToDateTime(lblTraPhong.Text));
+                    txtTienPhong.Text = (tienphong).ToString();
                 }
             }
         }
@@ -137,12 +144,30 @@ namespace Home
             {
                 tienphong = tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong));
             }
-            double tienPhuThu = tt.tinhTienPhuThu(ls, tienphong);
-            txtPhuThu.Text = tienPhuThu.ToString();
+            phuthu = tt.tinhTienPhuThu(ls, tienphong);
+            txtPhuThu.Text = phuthu.ToString();
+        }
+
+        private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
+        {
+            if (txtKhachThanhToan.Text.Equals(""))
+            {
+                txtTienThua.Text = "";
+            }
+            else
+            {
+                txtTienThua.Text = ((Convert.ToDouble(txtKhachThanhToan.Text)) - (tienvat + tienphong + tiendv + phuthu)).ToString();
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (txtKhachThanhToan.Text.Equals(""))
+            {
+                MessageBox.Show("Xin hãy nhập số tiền khách thanh toán");
+                return;
+            }
+
             TimeSpan gioHienTai = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             ThanhToanBUS ttbus = new ThanhToanBUS();
             ThuePhongBUS tpbus = new ThuePhongBUS();
@@ -169,9 +194,40 @@ namespace Home
                 tp.TrangThai = 1;
                 tp.GioRa = gioHienTai;
                 tpbus.updateThuePhong(tp);
-
                 MessageBox.Show("Đã thanh toán thành công");
+
+                KhachHangBUS khbus = new KhachHangBUS();
+                NhanVienBUS nvbus = new NhanVienBUS();
+                BaoCao bc = new BaoCao();
+                List<CTDVBaoCao> listctdv = new List<CTDVBaoCao>();
+
+                SuDungDichVuBUS sddvbus = new SuDungDichVuBUS();
+                DichVuBUS dvbus = new DichVuBUS();
+                foreach (var item in sddvbus.getctdv(tt_ent.MaThuePhong))
+                {
+                    CTDVBaoCao ctdv = new CTDVBaoCao();
+                    ctdv.maDV = item.MaDV;
+                    ctdv.tenDV =dvbus.getTenDV_byID(item.MaDV);
+                    ctdv.soLuong = item.SoLuong;
+                    ctdv.donGia =dvbus.getDonGia_byID(item.MaDV);
+                    //ctdv.thanhTien = ctdv.soLuong * ctdv.donGia;
+                    listctdv.Add(ctdv);
+                }
+                foreach (var item in tpbus.getMaThuePhong(tt_ent.MaThuePhong))
+                {
+                    bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
+                    bc.tenKH = khbus.getenKH_ByID(item.MaKH);
+                    bc.soPhong = pbus.getTenPhong_ByID(item.MaPhong);
+                    bc.soHD = ttbus.gemaHD_BymaThue(tt_ent.MaThuePhong);         //Cần xem xét lại
+                    bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
+                    bc.ngayDen = item.NgayVao.Date;
+                    bc.ngayRa = item.NgayRa.Date;
+                    bc.tienPhong = tienphong + phuthu;
+                }            
                 this.Close();
+                frmPrint frmp = new frmPrint();
+                frmp.InHoaDonInTuReport(bc, listctdv.ToList());
+                frmp.ShowDialog();
             }
             else
             {
@@ -183,13 +239,15 @@ namespace Home
         private void txtTienPhong_TextChanged(object sender, EventArgs e)
         {
             txtVAT.Text = (Convert.ToDouble(txtTienPhong.Text) * 0.1).ToString();
+            tienvat = Convert.ToDouble(txtTienPhong.Text) * 0.1;
         }
 
         private void frmThanhToan_FormClosing(object sender, FormClosingEventArgs e)
         {         
             JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
-            home.textPhongTrong(pbus.gettinhtrangp(false));
+            home.cleanGiaoDien();
+            home.TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
         }
     }
 }

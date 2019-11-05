@@ -32,5 +32,11 @@ namespace DAL
             LoaiPhong lp = db.LoaiPhongs.Where(n => n.maLoaiPhong.Trim().Equals(maLoaiPhong)).SingleOrDefault();
             return Convert.ToDouble(lp.donGia);
         }
+
+        public string getma_ByTen(string tenLoaiPhong)
+        {
+            LoaiPhong lp = db.LoaiPhongs.Where(n => n.tenLoaiPhong.Trim().Equals(tenLoaiPhong.Trim())).SingleOrDefault();
+            return lp.maLoaiPhong;
+        }
     }
 }

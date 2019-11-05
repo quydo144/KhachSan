@@ -46,6 +46,42 @@ namespace DAL
             return ls;
         }
 
+        public List<ePhong> getLoaiPhong(string maLoaiPhong)
+        {
+            var litsphong = (from x in db.Phongs where x.maLoaiPhong.Equals(maLoaiPhong) select x).ToList();
+            List<ePhong> ls = new List<ePhong>();
+            foreach (Phong item in litsphong)
+            {
+                ePhong p = new ePhong();
+                p.MaPhong = item.maPhong;
+                p.TenPhong = item.tenPhong;
+                p.Tang = Convert.ToInt32(item.tang);
+                p.GhiChu = item.ghiChu;
+                p.MaLoaiPhong = item.maLoaiPhong;
+                p.TinhTrang = Convert.ToBoolean(item.tinhTrang);
+                ls.Add(p);
+            }
+            return ls;
+        }
+
+        public List<ePhong> getLoaiPhong_Trong(string maLoaiPhong, bool tinhTrang)
+        {
+            var litsphong = (from x in db.Phongs where x.maLoaiPhong.Equals(maLoaiPhong) && x.tinhTrang == tinhTrang select x).ToList();
+            List<ePhong> ls = new List<ePhong>();
+            foreach (Phong item in litsphong)
+            {
+                ePhong p = new ePhong();
+                p.MaPhong = item.maPhong;
+                p.TenPhong = item.tenPhong;
+                p.Tang = Convert.ToInt32(item.tang);
+                p.GhiChu = item.ghiChu;
+                p.MaLoaiPhong = item.maLoaiPhong;
+                p.TinhTrang = Convert.ToBoolean(item.tinhTrang);
+                ls.Add(p);
+            }
+            return ls;
+        }
+
         public ePhong getEPhong_byID(string ma)
         {
             ePhong p = new ePhong();
@@ -77,5 +113,12 @@ namespace DAL
             Phong p = db.Phongs.Where(n => n.maPhong.Trim().Equals(id)).SingleOrDefault();
             return p.maLoaiPhong.Trim();
         }
+
+        public string getTenPhong_ByID(string id)
+        {
+            Phong p = db.Phongs.Where(n => n.maPhong.Trim().Equals(id)).SingleOrDefault();
+            return p.tenPhong.Trim();
+        }
+
     }
 }

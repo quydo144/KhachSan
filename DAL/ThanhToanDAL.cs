@@ -23,5 +23,10 @@ namespace DAL
             db.SubmitChanges();
             return 1;
         }
+        public string gemaHD_BymaThue(string id)
+        {
+            ThanhToan nv = db.ThanhToans.Where(x => x.maThuePhong.Equals(id)).SingleOrDefault();
+            return nv.maHD;
+        }
     }
 }

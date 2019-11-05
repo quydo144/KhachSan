@@ -19,5 +19,9 @@ namespace BUS
         {
             return lpdal.donGia(maLoaiPhong);
         }
+        public string getma_ByTen(string tenLoaiPhong)
+        {
+            return lpdal.getma_ByTen(tenLoaiPhong);
+        }
     }
 }

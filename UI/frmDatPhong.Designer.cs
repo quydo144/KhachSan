@@ -248,7 +248,7 @@
             this.gridViewCTDV.OptionsView.ShowGroupPanel = false;
             this.gridViewCTDV.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewCTDV.OptionsView.ShowPreviewRowLines = DevExpress.Utils.DefaultBoolean.False;
-            this.gridViewCTDV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridViewCTDV_MouseMove);
+ 
             this.gridViewCTDV.Click += new System.EventHandler(this.gridViewCTDV_Click);
             // 
             // gridColumn1

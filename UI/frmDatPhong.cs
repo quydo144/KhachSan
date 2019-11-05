@@ -28,6 +28,7 @@ namespace Home
         KhachHangBUS khbus = new KhachHangBUS();
         ArrayList mangDichVu = new ArrayList();
 
+        //Truyền dữ liệu từ form này sáng form khác
         public static string TenPhong = string.Empty;
         public static string TenLoaiPhong = string.Empty;
         public static string CMND = string.Empty;
@@ -75,7 +76,7 @@ namespace Home
             lblTenPhong.Text = TenPhong;
             lblLoaiPhong.Text = TenLoaiPhong;
         }
-
+        //Lựa chọn dịch vụ để mua bán
         private void btnThem_Click(object sender, EventArgs e)
         {
             for (int i = 1; i < 31; i++)
@@ -105,7 +106,7 @@ namespace Home
             gridViewDV.DeleteRow(index);
             dgvCTDV.DataSource = ls.ToList();
         }
-
+        //Xoá những dịch vụ không cần thiết
         private void btnXoa_Click(object sender, EventArgs e)
         {
             int index = gridViewCTDV.FocusedRowHandle;
@@ -124,7 +125,7 @@ namespace Home
                 dgvDichVu.DataSource = dvbus.getallTenDV(txtSeachDV.Text);
             }
         }
-
+        //Kiểm trả khách hàng có tồn tại. Nếu không tồn tại thì tự mở form thêm khách hàng để thêm
         private void btnThemKH_Click(object sender, EventArgs e)
         {
             lskh = new List<eKhachHang>();
@@ -189,7 +190,7 @@ namespace Home
             int a = tpbus.insertThuePhong(tp);
             if (a == 1)
             {
-                //Đổi tình trạng phòng
+                //Đổi tình trạng phòng thành phòng có khách khi đặt phòng thành công
                 ePhong p = new ePhong();
                 p.MaPhong = pbus.maPhong(TenPhong);
                 p.TinhTrang = true;
@@ -200,12 +201,13 @@ namespace Home
             else
             {
                 MessageBox.Show("Không thành công");
+                return;
             }
 
             DichVuBUS dvbus = new DichVuBUS();
             eDichVu dv = new eDichVu();
 
-            //Thêm chi tiết dịch vụ
+            //Thêm chi tiết dịch vụ nếu có đặt dịch vụ
             if (gridViewCTDV.RowCount > 0)
             {
                 eSuDungDichVu sddv = new eSuDungDichVu();
@@ -219,7 +221,7 @@ namespace Home
                     int s = sddvbus.InsertSDDV(sddv);
                     foreach (eDichVu item in mangDichVu)
                     {
-                        //Cập nhật số lượng trong bảng dịch vụ
+                        //Cập nhật lại số lượng trong bảng dịch vụ
                         if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV)
                         {
                             dv.MaDV = item.MaDV;
@@ -232,7 +234,7 @@ namespace Home
                 }
             }
         }
-
+        //Chọn ngày để trả phòng, không được chọn ngày nhỏ hơn ngày hiện tại
         private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
         {
             TimeSpan date = dtmNgayRa.Value - DateTime.Now.Date;
@@ -240,16 +242,18 @@ namespace Home
             {
                 MessageBox.Show("Nhập ngày lớn hơn ngày hiện tại");
                 dtmNgayRa.Focus();
+                return;
             }
         }
-
+        //Load lại giao diện chính khi đã đặt phòng xong
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
             JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
-            frmHome.textPhongCoKhach(joinbus.GetPhong_ThuePhong(true, 0));
+            frmHome.cleanGiaoDien();
+            frmHome.TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
         }
-
+        //Kiểm tra xem số lượng dịch vụ cần đặt có lớn hơn số lượng dịch vụ có trong khi
         private void gridViewCTDV_Click(object sender, EventArgs e)
         {
             eDichVu dv = new eDichVu();
@@ -262,23 +266,7 @@ namespace Home
                         ls.RemoveAt(i);
                         gridViewCTDV.DeleteRow(i);
                         DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
-                    }
-                }
-            }
-        }
-
-        private void gridViewCTDV_MouseMove(object sender, MouseEventArgs e)
-        {
-            eDichVu dv = new eDichVu();
-            for (int i = 0; i < gridViewCTDV.RowCount; i++)
-            {
-                foreach (eDichVu item in mangDichVu)
-                {
-                    if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV && item.SoLuong < Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])))
-                    {
-                        ls.RemoveAt(i);
-                        gridViewCTDV.DeleteRow(i);
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
+                        return;
                     }
                 }
             }

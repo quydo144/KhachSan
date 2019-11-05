@@ -30,5 +30,9 @@ namespace BUS
         {
             return khdal.getmaKH(s);
         }
+        public string getenKH_ByID(string id)
+        {
+            return khdal.getenKH_ByID(id);
+        }
     }
 }

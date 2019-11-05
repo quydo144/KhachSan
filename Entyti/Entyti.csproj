@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao.cs" />
+    <Compile Include="CTDVBaoCao.cs" />
     <Compile Include="eCTDV.cs" />
     <Compile Include="eDichVu.cs" />
     <Compile Include="eHonLoan.cs" />

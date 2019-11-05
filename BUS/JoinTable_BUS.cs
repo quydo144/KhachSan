@@ -16,5 +16,10 @@ namespace BUS
         {
             return joindal.GetPhong_ThuePhong(s, TrangThai);
         }
+
+        public List<eHonLoan> GetPhog_TraVaoNgay(bool s, int trangThai, DateTime date)
+        {
+            return joindal.GetPhog_TraVaoNgay(s, trangThai, date);
+        }
     }
 }

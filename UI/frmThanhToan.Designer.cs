@@ -467,6 +467,7 @@
             this.txtKhachThanhToan.Size = new System.Drawing.Size(358, 30);
             this.txtKhachThanhToan.TabIndex = 14;
             this.txtKhachThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtKhachThanhToan.TextChanged += new System.EventHandler(this.txtKhachThanhToan_TextChanged);
             // 
             // txtPhuThu
             // 

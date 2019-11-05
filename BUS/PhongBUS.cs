@@ -35,5 +35,17 @@ namespace BUS
         {
             return pdal.getEPhong_byID(ma);
         }
+        public string getTenPhong_ByID(string id)
+        {
+            return pdal.getTenPhong_ByID(id);
+        }
+        public List<ePhong> getLoaiPhong(string maLoaiPhong)
+        {
+            return pdal.getLoaiPhong(maLoaiPhong);
+        }
+        public List<ePhong> getLoaiPhong_Trong(string maLoaiPhong, bool tinhTrang)
+        {
+            return pdal.getLoaiPhong_Trong(maLoaiPhong, tinhTrang);
+        }
     }
 }
