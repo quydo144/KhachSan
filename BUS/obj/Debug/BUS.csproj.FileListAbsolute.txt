@@ -1,0 +1,9 @@
+E:\KhachSan\BUS\bin\Debug\BUS.dll
+E:\KhachSan\BUS\bin\Debug\BUS.pdb
+E:\KhachSan\BUS\bin\Debug\DAL.dll
+E:\KhachSan\BUS\bin\Debug\Entyti.dll
+E:\KhachSan\BUS\bin\Debug\DAL.pdb
+E:\KhachSan\BUS\bin\Debug\Entyti.pdb
+E:\KhachSan\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\KhachSan\BUS\obj\Debug\BUS.dll
+E:\KhachSan\BUS\obj\Debug\BUS.pdb

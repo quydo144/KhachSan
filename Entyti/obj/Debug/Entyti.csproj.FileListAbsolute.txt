@@ -1,0 +1,5 @@
+E:\KhachSan\Entyti\bin\Debug\Entyti.dll
+E:\KhachSan\Entyti\bin\Debug\Entyti.pdb
+E:\KhachSan\Entyti\obj\Debug\Entyti.dll
+E:\KhachSan\Entyti\obj\Debug\Entyti.pdb
+E:\KhachSan\Entyti\obj\Debug\Entyti.csprojResolveAssemblyReference.cache
