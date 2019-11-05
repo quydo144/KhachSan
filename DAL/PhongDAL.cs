@@ -46,6 +46,19 @@ namespace DAL
             return ls;
         }
 
+        public ePhong getEPhong_byID(string ma)
+        {
+            ePhong p = new ePhong();
+            Phong ph = db.Phongs.Where(n => n.maPhong.Trim().Equals(ma)).SingleOrDefault();
+            p.MaPhong = ph.maPhong;
+            p.TenPhong = ph.tenPhong;
+            p.Tang = Convert.ToInt32(ph.tang);
+            p.GhiChu = ph.ghiChu;
+            p.MaLoaiPhong = ph.maLoaiPhong;
+            p.TinhTrang = Convert.ToBoolean(ph.tinhTrang);
+            return p;
+        }
+
         public string maPhong(string tenPhong)
         {
             Phong p = db.Phongs.Where(n => n.tenPhong.Trim().Equals(tenPhong)).SingleOrDefault();

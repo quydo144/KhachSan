@@ -31,5 +31,9 @@ namespace BUS
         {
             return pdal.getLoaiPhong_ByID(id);
         }
+        public ePhong getEPhong_byID(string ma)
+        {
+            return pdal.getEPhong_byID(ma);
+        }
     }
 }

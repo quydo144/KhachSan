@@ -39,11 +39,11 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnKH = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btndmk = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnOut = new DevExpress.XtraBars.BarButtonItem();
@@ -59,7 +59,9 @@
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.btnphong = new DevExpress.XtraBars.BarButtonItem();
             this.btnNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSapXep = new DevExpress.XtraBars.BarButtonItem();
             this.btndv = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -75,6 +77,8 @@
             this.timerDateSystem = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -83,6 +87,7 @@
             this.toggleSwitchSS = new DevExpress.XtraEditors.ToggleSwitch();
             this.panel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.cmnstrpSanSang = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DatPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,16 +98,20 @@
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmnSapXep = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.phòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loạiPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchCK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchSS.Properties)).BeginInit();
             this.panel.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.cmnstrpSanSang.SuspendLayout();
             this.cmnstrpCoKhach.SuspendLayout();
+            this.cmnSapXep.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTinhTrang
@@ -169,19 +178,8 @@
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Lọc và sắp xếp";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Id = 23;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPageGroup8
             // 
@@ -220,6 +218,12 @@
             this.barButtonItem18.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "barButtonItem11";
+            this.barButtonItem11.Id = 30;
+            this.barButtonItem11.Name = "barButtonItem11";
+            // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
@@ -242,14 +246,16 @@
             this.btnphong,
             this.btnNV,
             this.btnKH,
-            this.barButtonItem2,
+            this.btnSapXep,
             this.btndmk,
             this.btnDangXuat,
             this.barButtonItem18,
-            this.btndv});
+            this.btndv,
+            this.barButtonItem2,
+            this.barButtonItem11});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 28;
+            this.ribbonControl1.MaxItemId = 35;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnHome,
@@ -373,6 +379,15 @@
             this.btnNV.Name = "btnNV";
             this.btnNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNV_ItemClick);
             // 
+            // btnSapXep
+            // 
+            this.btnSapXep.Id = 23;
+            this.btnSapXep.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSapXep.ImageOptions.Image")));
+            this.btnSapXep.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSapXep.ImageOptions.LargeImage")));
+            this.btnSapXep.Name = "btnSapXep";
+            this.btnSapXep.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
             // btndv
             // 
             this.btndv.Caption = "Quản lý dịch vụ               ";
@@ -382,6 +397,12 @@
             this.btndv.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btndv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btndv_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 29;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // ribbonPage1
             // 
@@ -514,6 +535,24 @@
             this.panel1.Size = new System.Drawing.Size(1332, 52);
             this.panel1.TabIndex = 0;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(1481, 14);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(290, 32);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(873, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(372, 24);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Lọc những phòng có khách trả vào ngày:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -593,14 +632,24 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
             this.flowLayoutPanel1.TabIndex = 12;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel2.TabIndex = 0;
             // 
             // ribbonPageGroup6
             // 
@@ -678,23 +727,36 @@
             this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
             // 
-            // label3
+            // cmnSapXep
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(873, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(372, 24);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Lọc những phòng có khách trả vào ngày:";
+            this.cmnSapXep.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnSapXep.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.phòngToolStripMenuItem,
+            this.loạiPhòngToolStripMenuItem});
+            this.cmnSapXep.Name = "cmnSapXep";
+            this.cmnSapXep.Size = new System.Drawing.Size(154, 52);
             // 
-            // dateTimePicker1
+            // phòngToolStripMenuItem
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1481, 14);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(290, 32);
-            this.dateTimePicker1.TabIndex = 13;
+            this.phòngToolStripMenuItem.Name = "phòngToolStripMenuItem";
+            this.phòngToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.phòngToolStripMenuItem.Text = "Phòng";
+            // 
+            // loạiPhòngToolStripMenuItem
+            // 
+            this.loạiPhòngToolStripMenuItem.Name = "loạiPhòngToolStripMenuItem";
+            this.loạiPhòngToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.loạiPhòngToolStripMenuItem.Text = "Loại phòng";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(838, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 41);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmHome
             // 
@@ -702,6 +764,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 847);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControl1);
@@ -722,8 +785,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchCK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchSS.Properties)).EndInit();
             this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.cmnstrpSanSang.ResumeLayout(false);
             this.cmnstrpCoKhach.ResumeLayout(false);
+            this.cmnSapXep.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -776,7 +843,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnKH;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnSapXep;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
@@ -801,6 +868,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.ContextMenuStrip cmnSapXep;
+        private System.Windows.Forms.ToolStripMenuItem phòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loạiPhòngToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private System.Windows.Forms.Button button1;
     }
 }
 
