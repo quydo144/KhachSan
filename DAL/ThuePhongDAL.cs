@@ -50,7 +50,7 @@ namespace DAL
 
         public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
         {
-            ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).SingleOrDefault();
+            ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).FirstOrDefault();   //
             return tp.maThue;
         }
 

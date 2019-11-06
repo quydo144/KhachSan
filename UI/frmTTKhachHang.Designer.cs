@@ -68,6 +68,7 @@
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(376, 32);
             this.txtCMND.TabIndex = 3;
+            this.txtCMND.Text = "123654754";
             // 
             // txtSDT
             // 
@@ -75,6 +76,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(376, 32);
             this.txtSDT.TabIndex = 4;
+            this.txtSDT.Text = "01245876";
             // 
             // txtTenKhach
             // 
@@ -82,6 +84,7 @@
             this.txtTenKhach.Name = "txtTenKhach";
             this.txtTenKhach.Size = new System.Drawing.Size(376, 32);
             this.txtTenKhach.TabIndex = 0;
+            this.txtTenKhach.Text = "Lục Gia Nam";
             // 
             // label5
             // 

@@ -14,8 +14,8 @@ namespace DAL
         public int insertCTDV(eSuDungDichVu ctdvnew)
         {
             SuDungDichVu ctdvtemp = new SuDungDichVu();
-            ctdvtemp.maDV = ctdvnew.MaDV;
             ctdvtemp.maThue = ctdvnew.MaThue;
+            ctdvtemp.maDV = ctdvnew.MaDV;            
             ctdvtemp.soLuong = ctdvnew.SoLuong;
             ctdvtemp.ngaySuDung = ctdvnew.NgaySD;
             ctdvtemp.gioSuDung = ctdvnew.GioSD;
@@ -39,6 +39,13 @@ namespace DAL
                 ls.Add(dv);
             }
             return ls;
+        }
+
+        public void updateCTDV(eSuDungDichVu update)
+        {
+            IQueryable<SuDungDichVu> p = db.SuDungDichVus.Where(x => x.maThue.Equals(update.MaThue) && x.maDV.Equals(update.MaDV));
+            p.First().soLuong = update.SoLuong;
+            db.SubmitChanges();
         }
 
     }

@@ -42,7 +42,7 @@
             this.btnTheoLoaiPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnTheoTang = new DevExpress.XtraBars.BarButtonItem();
             this.barSubltem = new DevExpress.XtraBars.BarSubItem();
-            this.btn500 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhoHon500 = new DevExpress.XtraBars.BarButtonItem();
             this.btn1000 = new DevExpress.XtraBars.BarButtonItem();
             this.btn1500 = new DevExpress.XtraBars.BarButtonItem();
             this.btnHon1500 = new DevExpress.XtraBars.BarButtonItem();
@@ -111,12 +111,12 @@
             this.cmnstrpCoKhach = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cậpNhậtDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ThemDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnSapXep = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.phòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.imgPhong = new System.Windows.Forms.ImageList(this.components);
+            this.cbxSoLuongNg = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -206,6 +206,7 @@
             // 
             this.btnTheoPhong.Caption = "Theo phòng";
             this.btnTheoPhong.Id = 43;
+            this.btnTheoPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheoPhong.ImageOptions.Image")));
             this.btnTheoPhong.Name = "btnTheoPhong";
             this.btnTheoPhong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -215,6 +216,7 @@
             // 
             this.btnTheoLoaiPhong.Caption = "Theo loại phòng";
             this.btnTheoLoaiPhong.Id = 35;
+            this.btnTheoLoaiPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheoLoaiPhong.ImageOptions.Image")));
             this.btnTheoLoaiPhong.Name = "btnTheoLoaiPhong";
             this.btnTheoLoaiPhong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -224,16 +226,19 @@
             // 
             this.btnTheoTang.Caption = "Theo tầng";
             this.btnTheoTang.Id = 37;
+            this.btnTheoTang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTheoTang.ImageOptions.Image")));
             this.btnTheoTang.Name = "btnTheoTang";
             this.btnTheoTang.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTheoTang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTheoTang_ItemClick);
             // 
             // barSubltem
             // 
             this.barSubltem.Caption = "Theo giá";
             this.barSubltem.Id = 42;
+            this.barSubltem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubltem.ImageOptions.Image")));
             this.barSubltem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn500),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNhoHon500),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn1000),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn1500),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHon1500)});
@@ -241,30 +246,33 @@
             this.barSubltem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // btn500
+            // btnNhoHon500
             // 
-            this.btn500.Caption = "Giá <=500 ";
-            this.btn500.Id = 44;
-            this.btn500.Name = "btn500";
-            this.btn500.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn500_ItemClick);
+            this.btnNhoHon500.Caption = "Giá <=500 ";
+            this.btnNhoHon500.Id = 44;
+            this.btnNhoHon500.Name = "btnNhoHon500";
+            this.btnNhoHon500.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn500_ItemClick);
             // 
             // btn1000
             // 
             this.btn1000.Caption = "500 < Giá <=1000";
             this.btn1000.Id = 45;
             this.btn1000.Name = "btn1000";
+            this.btn1000.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn1000_ItemClick);
             // 
             // btn1500
             // 
             this.btn1500.Caption = "1000 < Giá <= 1500";
             this.btn1500.Id = 46;
             this.btn1500.Name = "btn1500";
+            this.btn1500.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn1500_ItemClick);
             // 
             // btnHon1500
             // 
             this.btnHon1500.Caption = "Giá > 1500";
             this.btnHon1500.Id = 47;
             this.btnHon1500.Name = "btnHon1500";
+            this.btnHon1500.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHon1500_ItemClick);
             // 
             // ribbonPageGroup8
             // 
@@ -346,7 +354,7 @@
             this.barEditItem3,
             this.barSubltem,
             this.btnTheoPhong,
-            this.btn500,
+            this.btnNhoHon500,
             this.btn1000,
             this.btn1500,
             this.btnHon1500});
@@ -653,9 +661,9 @@
             this.lblTime.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblTime.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblTime.Location = new System.Drawing.Point(2526, 0);
+            this.lblTime.Location = new System.Drawing.Point(2587, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(340, 52);
+            this.lblTime.Size = new System.Drawing.Size(340, 55);
             this.lblTime.TabIndex = 8;
             this.lblTime.Text = "Time";
             // 
@@ -664,6 +672,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             this.panel1.Controls.Add(this.dtpNgayTra);
+            this.panel1.Controls.Add(this.cbxSoLuongNg);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -682,7 +691,7 @@
             // 
             this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTra.Location = new System.Drawing.Point(1481, 14);
+            this.dtpNgayTra.Location = new System.Drawing.Point(1646, 12);
             this.dtpNgayTra.Name = "dtpNgayTra";
             this.dtpNgayTra.Size = new System.Drawing.Size(290, 32);
             this.dtpNgayTra.TabIndex = 13;
@@ -691,16 +700,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(873, 19);
+            this.label3.Location = new System.Drawing.Point(1337, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(372, 24);
+            this.label3.Size = new System.Drawing.Size(189, 24);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Lọc những phòng có khách trả vào ngày:";
+            this.label3.Text = "Khách trả vào ngày:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2377, 14);
+            this.label2.Location = new System.Drawing.Point(2438, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 24);
             this.label2.TabIndex = 11;
@@ -709,7 +718,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1969, 14);
+            this.label1.Location = new System.Drawing.Point(2088, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 24);
             this.label1.TabIndex = 11;
@@ -717,9 +726,9 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(2280, 10);
+            this.panel3.Location = new System.Drawing.Point(2341, 14);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(75, 41);
             this.panel3.TabIndex = 10;
@@ -729,14 +738,14 @@
             this.panel2.BackColor = System.Drawing.Color.LawnGreen;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.ForeColor = System.Drawing.Color.LawnGreen;
-            this.panel2.Location = new System.Drawing.Point(1888, 10);
+            this.panel2.Location = new System.Drawing.Point(2007, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(75, 41);
             this.panel2.TabIndex = 10;
             // 
             // toggleSwitchCK
             // 
-            this.toggleSwitchCK.Location = new System.Drawing.Point(437, 6);
+            this.toggleSwitchCK.Location = new System.Drawing.Point(343, 3);
             this.toggleSwitchCK.Name = "toggleSwitchCK";
             this.toggleSwitchCK.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.toggleSwitchCK.Properties.Appearance.Options.UseFont = true;
@@ -749,7 +758,7 @@
             // 
             // toggleSwitchSS
             // 
-            this.toggleSwitchSS.Location = new System.Drawing.Point(41, 3);
+            this.toggleSwitchSS.Location = new System.Drawing.Point(12, 3);
             this.toggleSwitchSS.Name = "toggleSwitchSS";
             this.toggleSwitchSS.Properties.AllowThumbAnimation = false;
             this.toggleSwitchSS.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -848,7 +857,7 @@
             this.cmnstrpCoKhach.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thuePhongToolStripMenuItem,
             this.thanhToánToolStripMenuItem,
-            this.cậpNhậtDịchVụToolStripMenuItem});
+            this.ThemDichVuToolStripMenuItem});
             this.cmnstrpCoKhach.Name = "cmnstrpCoKhach";
             this.cmnstrpCoKhach.Size = new System.Drawing.Size(221, 76);
             // 
@@ -865,11 +874,12 @@
             this.thanhToánToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.thanhToánToolStripMenuItem.Text = "Thông tin khách hàng";
             // 
-            // cậpNhậtDịchVụToolStripMenuItem
+            // ThemDichVuToolStripMenuItem
             // 
-            this.cậpNhậtDịchVụToolStripMenuItem.Name = "cậpNhậtDịchVụToolStripMenuItem";
-            this.cậpNhậtDịchVụToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
-            this.cậpNhậtDịchVụToolStripMenuItem.Text = "Cập nhật dịch vụ";
+            this.ThemDichVuToolStripMenuItem.Name = "ThemDichVuToolStripMenuItem";
+            this.ThemDichVuToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.ThemDichVuToolStripMenuItem.Text = "Cập nhật dịch vụ";
+            this.ThemDichVuToolStripMenuItem.Click += new System.EventHandler(this.ThemDichVuToolStripMenuItem_Click);
             // 
             // cmnSapXep
             // 
@@ -892,21 +902,19 @@
             this.loạiPhòngToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.loạiPhòngToolStripMenuItem.Text = "Loại phòng";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1013, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 41);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // imgPhong
             // 
             this.imgPhong.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgPhong.ImageStream")));
             this.imgPhong.TransparentColor = System.Drawing.Color.Transparent;
             this.imgPhong.Images.SetKeyName(0, "icons8-bedroom-30.png");
+            // 
+            // cbxSoLuongNg
+            // 
+            this.cbxSoLuongNg.FormattingEnabled = true;
+            this.cbxSoLuongNg.Location = new System.Drawing.Point(806, 15);
+            this.cbxSoLuongNg.Name = "cbxSoLuongNg";
+            this.cbxSoLuongNg.Size = new System.Drawing.Size(330, 32);
+            this.cbxSoLuongNg.TabIndex = 1;
             // 
             // frmHome
             // 
@@ -914,7 +922,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 847);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControl1);
@@ -1011,7 +1018,7 @@
         private System.Windows.Forms.ContextMenuStrip cmnstrpCoKhach;
         private System.Windows.Forms.ToolStripMenuItem thuePhongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cậpNhậtDịchVụToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ThemDichVuToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
@@ -1024,7 +1031,6 @@
         private System.Windows.Forms.ToolStripMenuItem loạiPhòngToolStripMenuItem;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private System.Windows.Forms.Button button1;
         private DevExpress.XtraBars.BarButtonItem btnTheoLoaiPhong;
         private DevExpress.XtraBars.BarButtonItem btnTheoTang;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
@@ -1036,11 +1042,12 @@
         private DevExpress.XtraBars.BarEditItem barEditItem3;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraBars.BarButtonItem btnTheoPhong;
-        private DevExpress.XtraBars.BarButtonItem btn500;
+        private DevExpress.XtraBars.BarButtonItem btnNhoHon500;
         private DevExpress.XtraBars.BarButtonItem btn1000;
         private DevExpress.XtraBars.BarButtonItem btn1500;
         private DevExpress.XtraBars.BarButtonItem btnHon1500;
         private System.Windows.Forms.ImageList imgPhong;
+        private System.Windows.Forms.ComboBox cbxSoLuongNg;
     }
 }
 

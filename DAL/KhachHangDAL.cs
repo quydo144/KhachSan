@@ -50,7 +50,6 @@ namespace DAL
         }
         public List<eKhachHang> getcmnd(string s)
         {
-            //var listkh = (from x in db.KhachHangs where x.soCMND.Trim().Equals(s) select x).ToList();
             var listkh = db.KhachHangs.Where(x => x.soCMND.Trim().Equals(s)).ToList();
             List<eKhachHang> ls = new List<eKhachHang>();
             foreach (KhachHang item in listkh)

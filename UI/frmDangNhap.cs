@@ -27,12 +27,12 @@ namespace Home
             Application.Run(new frmHome());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
             frmDatPhong.emailNV = txtEmail.Text;
             NhanVienBUS nvbus = new NhanVienBUS();
             frmThanhToan.maNVThanhToan = nvbus.getmaNV_byEmail(txtEmail.Text.Trim());
-            if (nvbus.GetTKQL(txtEmail.Text.Trim(),txtPass.Text.Trim()))
+            if (nvbus.GetTKQL(txtEmail.Text.Trim(), txtPass.Text.Trim()))
             {
                 Thread th = new Thread(open_frmMain);
                 th.Start();

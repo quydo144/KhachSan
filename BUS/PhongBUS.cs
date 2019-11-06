@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 using Entyti;
 using DAL;
 
@@ -46,6 +47,18 @@ namespace BUS
         public List<ePhong> getLoaiPhong_Trong(string maLoaiPhong, bool tinhTrang)
         {
             return pdal.getLoaiPhong_Trong(maLoaiPhong, tinhTrang);
+        }
+        public ArrayList Tang()
+        {
+            return pdal.Tang();
+        }
+        public List<ePhong> getTang(string tang)
+        {
+            return pdal.getTang(tang);
+        }
+        public List<ePhong> getTang_PhongTrong(string tang, bool tinhtrang)
+        {
+            return pdal.getTang_PhongTrong(tang, tinhtrang);
         }
     }
 }

@@ -6,3 +6,11 @@ E:\KhachSan\DAL\bin\Debug\Entyti.pdb
 E:\KhachSan\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\KhachSan\DAL\obj\Debug\DAL.dll
 E:\KhachSan\DAL\obj\Debug\DAL.pdb
+C:\Users\quydo\Desktop\KhachSan\DAL\bin\Debug\DAL.dll.config
+C:\Users\quydo\Desktop\KhachSan\DAL\bin\Debug\DAL.dll
+C:\Users\quydo\Desktop\KhachSan\DAL\bin\Debug\DAL.pdb
+C:\Users\quydo\Desktop\KhachSan\DAL\bin\Debug\Entyti.dll
+C:\Users\quydo\Desktop\KhachSan\DAL\bin\Debug\Entyti.pdb
+C:\Users\quydo\Desktop\KhachSan\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\quydo\Desktop\KhachSan\DAL\obj\Debug\DAL.dll
+C:\Users\quydo\Desktop\KhachSan\DAL\obj\Debug\DAL.pdb

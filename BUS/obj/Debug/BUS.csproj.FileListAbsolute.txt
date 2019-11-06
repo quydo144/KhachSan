@@ -7,3 +7,12 @@ E:\KhachSan\BUS\bin\Debug\Entyti.pdb
 E:\KhachSan\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 E:\KhachSan\BUS\obj\Debug\BUS.dll
 E:\KhachSan\BUS\obj\Debug\BUS.pdb
+C:\Users\quydo\Desktop\KhachSan\BUS\bin\Debug\BUS.dll
+C:\Users\quydo\Desktop\KhachSan\BUS\bin\Debug\BUS.pdb
+C:\Users\quydo\Desktop\KhachSan\BUS\bin\Debug\DAL.dll
+C:\Users\quydo\Desktop\KhachSan\BUS\bin\Debug\Entyti.dll
+C:\Users\quydo\Desktop\KhachSan\BUS\bin\Debug\DAL.pdb
+C:\Users\quydo\Desktop\KhachSan\BUS\bin\Debug\Entyti.pdb
+C:\Users\quydo\Desktop\KhachSan\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\quydo\Desktop\KhachSan\BUS\obj\Debug\BUS.dll
+C:\Users\quydo\Desktop\KhachSan\BUS\obj\Debug\BUS.pdb

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace DAL
     public class PhongDAL
     {
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
+
         public List<ePhong> getallphong()
         {
             var litsphong = (from x in db.Phongs select x).ToList();
@@ -118,6 +120,54 @@ namespace DAL
         {
             Phong p = db.Phongs.Where(n => n.maPhong.Trim().Equals(id)).SingleOrDefault();
             return p.tenPhong.Trim();
+        }
+
+        ArrayList tang = new ArrayList();
+
+        public ArrayList Tang()
+        {
+            var phong = (from x in db.Phongs select x.tang).Distinct();
+            foreach (var item in phong)
+            {
+                tang.Add(item);
+            }
+            return tang;
+        }
+
+        public List<ePhong> getTang(string tang)
+        {
+            var litsphong = (from x in db.Phongs where x.tang.Equals(tang) select x).ToList();
+            List<ePhong> ls = new List<ePhong>();
+            foreach (Phong item in litsphong)
+            {
+                ePhong p = new ePhong();
+                p.MaPhong = item.maPhong;
+                p.TenPhong = item.tenPhong;
+                p.Tang = Convert.ToInt32(item.tang);
+                p.GhiChu = item.ghiChu;
+                p.MaLoaiPhong = item.maLoaiPhong;
+                p.TinhTrang = Convert.ToBoolean(item.tinhTrang);
+                ls.Add(p);
+            }
+            return ls;
+        }
+
+        public List<ePhong> getTang_PhongTrong(string tang, bool tinhtrang)
+        {
+            var litsphong = (from x in db.Phongs where x.tang.Equals(tang) && x.tinhTrang == tinhtrang select x).ToList();
+            List<ePhong> ls = new List<ePhong>();
+            foreach (Phong item in litsphong)
+            {
+                ePhong p = new ePhong();
+                p.MaPhong = item.maPhong;
+                p.TenPhong = item.tenPhong;
+                p.Tang = Convert.ToInt32(item.tang);
+                p.GhiChu = item.ghiChu;
+                p.MaLoaiPhong = item.maLoaiPhong;
+                p.TinhTrang = Convert.ToBoolean(item.tinhTrang);
+                ls.Add(p);
+            }
+            return ls;
         }
 
     }

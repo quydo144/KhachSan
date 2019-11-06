@@ -19,6 +19,7 @@ namespace Home
         KhachHangBUS khBus;
         eKhachHang kh = new eKhachHang();
         string cmnd, tenkh, sdt, giotinh;
+        int kq = 0;
 
         public frmTTKhachHang()
         {
@@ -34,7 +35,7 @@ namespace Home
             if (radNam.Checked == true) newkh.GioiTinh = true;
             else newkh.GioiTinh = false;
             khBus = new KhachHangBUS();
-            int kq = khBus.InsertKH(newkh);
+            kq = khBus.InsertKH(newkh);
             if (kq == 1)
             {
                 MessageBox.Show("Thêm thành công!!!");
@@ -59,10 +60,18 @@ namespace Home
 
         private void frmTTKhachHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmDatPhong.CMND = cmnd;
-            frmDatPhong.TenKH = tenkh;
-            frmDatPhong.SDT = sdt;
-            frmDatPhong.GioiTinh = giotinh;
+            if (kq != 1)
+            {
+                return;
+            }
+            else
+            {
+                frmDatPhong.CMND = cmnd;
+                frmDatPhong.TenKH = tenkh;
+                frmDatPhong.SDT = sdt;
+                frmDatPhong.GioiTinh = giotinh;
+            }
+            
         }
     }
 }

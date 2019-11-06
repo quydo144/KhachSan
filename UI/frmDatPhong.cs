@@ -27,6 +27,7 @@ namespace Home
         DichVuBUS dvbus = new DichVuBUS();
         KhachHangBUS khbus = new KhachHangBUS();
         ArrayList mangDichVu = new ArrayList();
+        int kieuForm;
 
         //Truyền dữ liệu từ form này sáng form khác
         public static string TenPhong = string.Empty;
@@ -43,10 +44,33 @@ namespace Home
             InitializeComponent();
         }
 
+        /**Kiểu Form
+        1: là form đặt phòng
+        2: là form cập nhật dịch vụ**/
+        //Form 1
         public frmDatPhong(frmHome sql)
         {
             InitializeComponent();
             frmHome = sql;
+            kieuForm = 1;
+        }
+        //Form 2
+        public frmDatPhong(string s)
+        {
+            InitializeComponent();
+            this.Text = s;
+            kieuForm = 2;
+            panel4.Visible = false;
+            panel3.Dock = DockStyle.Fill;
+            dgvCTDV.Dock = DockStyle.Fill;
+            labelControl7.Visible = false;
+            comboBox1.Visible = false;
+            label5.Visible = false;
+            dtmNgayRa.Visible = false;
+            btnLuu.Text = "Cập nhật dịch vụ";
+            panel12.Location = new Point(666, 0);
+            panel12.Size = new Size(245, 54);
+            btnLuu.Size = new Size(191, 54);
         }
 
         private void btnLuu_MouseHover(object sender, EventArgs e)
@@ -71,6 +95,7 @@ namespace Home
 
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
+            cboSoNguoi.SelectedIndex = 0;
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             dgvDichVu.DataSource = dvbus.getalldv();
             lblTenPhong.Text = TenPhong;
@@ -173,67 +198,136 @@ namespace Home
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //Thêm mã thuê phòng
-            eThuePhong tp = new eThuePhong();
-            PhongBUS pbus = new PhongBUS();
-            NhanVienBUS nvbus = new NhanVienBUS();
-            tp.MaPhong = pbus.maPhong(TenPhong);
-            tp.MaKH = maKH;
-            tp.NgayVao = DateTime.Now.Date;
-            tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
-            tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
-            tp.TrangThai = 0;
-            TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            tp.GioVao = gioVao;
-            TimeSpan gioRa = new TimeSpan(14, 00, 00);
-            tp.GioRa = gioRa;
-            int a = tpbus.insertThuePhong(tp);
-            if (a == 1)
+            if (kieuForm == 1)
             {
-                //Đổi tình trạng phòng thành phòng có khách khi đặt phòng thành công
-                ePhong p = new ePhong();
-                p.MaPhong = pbus.maPhong(TenPhong);
-                p.TinhTrang = true;
-                pbus.updateTinhTrangPhong(p);
-                MessageBox.Show("Đặt phòng thành công");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Không thành công");
-                return;
-            }
-
-            DichVuBUS dvbus = new DichVuBUS();
-            eDichVu dv = new eDichVu();
-
-            //Thêm chi tiết dịch vụ nếu có đặt dịch vụ
-            if (gridViewCTDV.RowCount > 0)
-            {
-                eSuDungDichVu sddv = new eSuDungDichVu();
-                for (int i = 0; i < gridViewCTDV.RowCount; i++)
+                //Thêm mã thuê phòng
+                PhongBUS pbus = new PhongBUS();
+                LoaiPhongBUS lpbus = new LoaiPhongBUS();
+                if (Convert.ToInt32(cboSoNguoi.Text) > lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong(TenPhong))))
                 {
-                    sddv.MaThue = tpbus.getMaThue_ByMaPhongTrangThai(tp.MaPhong, 0);
-                    sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
-                    sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
-                    sddv.NgaySD = DateTime.Now.Date;
-                    sddv.GioSD = gioVao;
-                    int s = sddvbus.InsertSDDV(sddv);
-                    foreach (eDichVu item in mangDichVu)
+                    MessageBox.Show("Phòng chứa quá số người quy định");
+                    return;
+                }
+                else
+                {
+                    eThuePhong tp = new eThuePhong();
+                    //PhongBUS pbus = new PhongBUS();
+                    NhanVienBUS nvbus = new NhanVienBUS();
+                    tp.MaPhong = pbus.maPhong(TenPhong);
+                    tp.MaKH = maKH;
+                    tp.NgayVao = DateTime.Now.Date;
+                    tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
+                    tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
+                    tp.TrangThai = 0;
+                    TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                    tp.GioVao = gioVao;
+                    TimeSpan gioRa = new TimeSpan(14, 00, 00);
+                    tp.GioRa = gioRa;
+                    int a = tpbus.insertThuePhong(tp);
+                    if (a == 1)
                     {
-                        //Cập nhật lại số lượng trong bảng dịch vụ
-                        if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV)
+                        //Đổi tình trạng phòng thành phòng có khách khi đặt phòng thành công
+                        ePhong p = new ePhong();
+                        p.MaPhong = pbus.maPhong(TenPhong);
+                        p.TinhTrang = true;
+                        pbus.updateTinhTrangPhong(p);
+                        MessageBox.Show("Đặt phòng thành công");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thành công");
+                        return;
+                    }
+
+                    DichVuBUS dvbus = new DichVuBUS();
+                    eDichVu dv = new eDichVu();
+
+                    //Thêm chi tiết dịch vụ nếu có đặt dịch vụ
+                    if (gridViewCTDV.RowCount > 0)
+                    {
+                        eSuDungDichVu sddv = new eSuDungDichVu();
+                        for (int i = 0; i < gridViewCTDV.RowCount; i++)
                         {
-                            dv.MaDV = item.MaDV;
-                            dv.TenDV = item.TenDV;
-                            dv.DonGia = item.DonGia;
-                            dv.SoLuong = (item.SoLuong - Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])));
-                            dvbus.SuaDV(dv);
+                            sddv.MaThue = tpbus.getMaThue_ByMaPhongTrangThai(tp.MaPhong, 0);
+                            sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
+                            sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
+                            sddv.NgaySD = DateTime.Now.Date;
+                            sddv.GioSD = gioVao;
+                            int s = sddvbus.InsertSDDV(sddv);
+                            foreach (eDichVu item in mangDichVu)
+                            {
+                                //Cập nhật lại số lượng trong bảng dịch vụ
+                                if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV)
+                                {
+                                    dv.MaDV = item.MaDV;
+                                    dv.TenDV = item.TenDV;
+                                    dv.DonGia = item.DonGia;
+                                    dv.SoLuong = (item.SoLuong - Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])));
+                                    dvbus.SuaDV(dv);
+                                }
+                            }
                         }
                     }
+                }                
+            }
+
+            if (kieuForm == 2)
+            {
+                //Thêm chi tiết dịch vụ nếu có đặt dịch vụ
+                TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                if (gridViewCTDV.RowCount > 0)
+                {
+                    eSuDungDichVu sddv = new eSuDungDichVu();
+                    for (int i = 0; i < gridViewCTDV.RowCount; i++)
+                    {
+                        sddv.MaThue = maThue.Trim();
+                        sddv.MaDV = gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString();
+                        /**Kiểm tra xem mã thuê và mã dịch vụ đó có trong csdl hay chưa
+                        Nếu có thì hãy update lại số lượng
+                        Chưa có thì thêm mới chi tiết dịch vụ**/
+                        foreach (var item in sddvbus.getctdv(maThue.Trim()))
+                        {
+                            if (item.MaThue == sddv.MaThue && item.MaDV == sddv.MaDV)
+                            {
+                                sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString()) +item.SoLuong;
+                                sddv.NgaySD = DateTime.Now.Date;
+                                sddv.GioSD = gioVao;
+                                sddvbus.updateCTDV(sddv);
+                            }
+                            if (item.MaDV == null)
+                            {
+                                sddv.SoLuong = Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2]).ToString());
+                                sddv.NgaySD = DateTime.Now.Date;
+                                sddv.GioSD = gioVao;
+                                int s = sddvbus.InsertSDDV(sddv);
+                            }
+                        }                     
+                        DichVuBUS dvbus = new DichVuBUS();
+                        eDichVu dv = new eDichVu();
+                        foreach (eDichVu item in mangDichVu)
+                        {
+                            //Cập nhật lại số lượng trong bảng dịch vụ
+                            if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV)
+                            {
+                                dv.MaDV = item.MaDV;
+                                dv.TenDV = item.TenDV;
+                                dv.DonGia = item.DonGia;
+                                dv.SoLuong = (item.SoLuong - Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])));
+                                dvbus.SuaDV(dv);
+                            }
+                        }
+                    }
+                    MessageBox.Show("Cập nhật dịch vụ thành công");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dịch vụ cần cập nhật xin nhập lại");
                 }
             }
         }
+
         //Chọn ngày để trả phòng, không được chọn ngày nhỏ hơn ngày hiện tại
         private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
         {
@@ -248,10 +342,13 @@ namespace Home
         //Load lại giao diện chính khi đã đặt phòng xong
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JoinTable_BUS joinbus = new JoinTable_BUS();
-            PhongBUS pbus = new PhongBUS();
-            frmHome.cleanGiaoDien();
-            frmHome.TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+            if (kieuForm == 1)
+            {
+                JoinTable_BUS joinbus = new JoinTable_BUS();
+                PhongBUS pbus = new PhongBUS();
+                frmHome.cleanGiaoDien();
+                frmHome.TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+            }          
         }
         //Kiểm tra xem số lượng dịch vụ cần đặt có lớn hơn số lượng dịch vụ có trong khi
         private void gridViewCTDV_Click(object sender, EventArgs e)
@@ -266,6 +363,11 @@ namespace Home
                         ls.RemoveAt(i);
                         gridViewCTDV.DeleteRow(i);
                         DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
+                        return;
+                    }
+                    if (Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])) == 0)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ phải lớn hơn 0");
                         return;
                     }
                 }

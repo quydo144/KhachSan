@@ -23,5 +23,13 @@ namespace BUS
         {
             return lpdal.getma_ByTen(tenLoaiPhong);
         }
+        public List<eLoaiPhong> getDOnGia(double min, double max)
+        {
+            return lpdal.getDOnGia(min,max);
+        }
+        public int getsoNguoi_ByID(string id)
+        {
+            return lpdal.getsoNguoi_ByID(id);
+        }
     }
 }

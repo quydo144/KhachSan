@@ -68,63 +68,14 @@ namespace Home
             return donGia;
         }
 
-        public void textPhongTrong(List<ePhong> lsTrue)
-        {
-            foreach (var item in lsTrue)
-            {
-                foreach (var pnl in flowLayoutPanel2.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                {
-                    if (pnl.Name.Equals(item.MaPhong.Trim()))
-                    {
-                        pnl.BackColor = Color.LawnGreen;
-                        foreach (var lbl in pnl.Controls.OfType<Label>())
-                        {
-                            lbl.BackColor = Color.LawnGreen;
-                            lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nGiá phòng: " + donGiaphong(item.MaLoaiPhong.Trim());
-                            lbl.MouseDown += new MouseEventHandler(lbl_ClickTP);
-                            lbl.ContextMenuStrip = cmnstrpSanSang;
-                        }
-                    }
-                }
-            }
-        }
-
-        public void textPhongCoKhach(List<eHonLoan> lsTrue)
-        {
-            foreach (var item in lsTrue)
-            {
-                string[] s = { item.MaThue, item.MaPhong };
-                foreach (var pnl in flowLayoutPanel2.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
-                {
-                    if (pnl.Name.Equals(item.MaPhong.Trim()))
-                    {
-                        pnl.BackColor = Color.Red;
-                        foreach (var lbl in pnl.Controls.OfType<Label>())
-                        {
-                            lbl.BackColor = Color.Red;
-                            if (item.NgayTra < DateTime.Now)
-                            {
-                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
-                            }
-                            else
-                            {
-                                lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nMã thuê phòng: " + item.MaThue + "\r\n\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
-                            }
-                            lbl.MouseDown += new MouseEventHandler(lblred_Click);
-                            lbl.ContextMenuStrip = cmnstrpCoKhach;
-                        }
-                    }
-                }
-            }
-        }
-
         public void frmHome_Load(object sender, EventArgs e)
         {
             cleanGiaoDien();
             PhongBUS pbus = new PhongBUS();
             TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");            
         }
-
+        /**Tạo sự kiện kích chuột phải vào label để lấy các thông tin trong label đó
+         * ra truyền qua các form khác* */
         public void lblred_Click(object sender, MouseEventArgs e)
         {
             Label lbl = sender as Label;
@@ -135,15 +86,22 @@ namespace Home
                 if (list[2].Substring(12, 10).Equals(" Phòng Vip"))
                 {
                     frmThanhToan.LoaiPhong = list[2].Substring(12, 10);
+                    frmDatPhong.TenPhong= list[0];
+                    frmDatPhong.TenLoaiPhong= list[2].Substring(12, 10);
                 }
                 else
                 {
+                    frmDatPhong.TenLoaiPhong = list[2].Substring(12, 13); ;
                     frmThanhToan.LoaiPhong = list[2].Substring(12, 13);
+                    frmDatPhong.TenPhong = list[0];
                 }
                 frmThanhToan.MaThue = list[4].Substring(15, 9);
+                frmDatPhong.maThue = list[4].Substring(15, 9);
             }
         }
-
+        /**Tạo sự kiện kích chuột phải vào label để lấy các thông tin trong label đó
+         * ra truyền qua các form khác
+         * */
         private void lbl_ClickTP(object sender, MouseEventArgs e)
         {
             Label lbl = sender as Label;
@@ -164,7 +122,8 @@ namespace Home
 
         //Load giao diện các phòng trống và phòng có chứa khách hàng
         public void TaoGiaoDienPhong(List<ePhong> soPhong, List<ePhong> phongTrong, List<eHonLoan> coKhach, string title)
-        {                              
+        {
+            //Tạo ra một flowLayoutPanel để chứa các panel                   
             PhongBUS pbus = new PhongBUS();
             FlowLayoutPanel flowLayoutPanel3 = new FlowLayoutPanel();
             flowLayoutPanel3.AutoSize = true;
@@ -175,6 +134,7 @@ namespace Home
             text.TextAlign = ContentAlignment.TopCenter;
             text.Text = title;
             flowLayoutPanel3.Controls.Add(text);
+            //Tạo các label để chứa thông tin, màu sắc thể hiện các phòng
             foreach (var item in soPhong)
             {
                 DevExpress.XtraEditors.PanelControl P0001 = new DevExpress.XtraEditors.PanelControl();
@@ -192,7 +152,7 @@ namespace Home
                 lbl.Text = item.TenPhong;
                 lbl.TextAlign = ContentAlignment.TopCenter;
             }
-
+            //Load thông tin của phòng trống vào từng label
             foreach (var item in phongTrong)
             {
                 foreach (var pnl in flowLayoutPanel3.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
@@ -202,6 +162,7 @@ namespace Home
                         pnl.BackColor = Color.LawnGreen;
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
+
                             lbl.BackColor = Color.LawnGreen;
                             lbl.Text = item.TenPhong + "\r\n\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\n\r\nGiá phòng: " + donGiaphong(item.MaLoaiPhong.Trim());
                             lbl.MouseDown += new MouseEventHandler(lbl_ClickTP);
@@ -210,8 +171,7 @@ namespace Home
                     }
                 }
             }
-
-
+            //Load thông tin của phòng đang có khách vào từng label
             foreach (var item in coKhach)
             {
                 string[] s = { item.MaThue, item.MaPhong };
@@ -219,19 +179,19 @@ namespace Home
                 {
                     if (pnl.Name.Equals(item.MaPhong.Trim()))
                     {
-                        pnl.BackColor = Color.Red;
+                        pnl.BackColor= Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+                        //pnl.BackColor = Color.Red;
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
-                            lbl.Image = imgPhong.Images[0];
-                            lbl.ImageAlign = ContentAlignment.BottomCenter;
-                            lbl.BackColor = Color.Red;
+                            lbl.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+                            //lbl.BackColor = Color.Red;
                             if (item.NgayTra < DateTime.Now)
                             {
-                                lbl.Text = item.TenPhong + "\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\nMã thuê phòng: " + item.MaThue + "\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
+                                lbl.Text = item.TenPhong + "\r\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\r\nMã thuê phòng: " + item.MaThue + "\r\r\nNgày trả: " + DateTime.Now.Date.ToShortDateString();
                             }
                             else
                             {
-                                lbl.Text = item.TenPhong + "\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\nMã thuê phòng: " + item.MaThue + "\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
+                                lbl.Text = item.TenPhong + "\r\r\nLoại phòng: Phòng " + tenloaiphong(item.MaLoaiPhong.Trim()) + "\r\r\nMã thuê phòng: " + item.MaThue + "\r\r\nNgày trả: " + item.NgayTra.Date.ToShortDateString();
                             }
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
@@ -241,7 +201,7 @@ namespace Home
             }
 
         }
-
+        //Lọc các phòng trống có trong hệ thống
         private void toggleSwitchSS_Toggled(object sender, EventArgs e)
         {
             foreach (var item in flowLayoutPanel1.Controls.OfType<FlowLayoutPanel>())
@@ -257,7 +217,7 @@ namespace Home
                         }
                         pnl.Show();
                     }
-                    this.toggleSwitchSS.Properties.OffText = "Sẵn sàng " + s.ToString();
+                    this.toggleSwitchSS.Properties.OffText = "Sẵn sàng";
                 }
                 else
                 {
@@ -273,12 +233,12 @@ namespace Home
                             s++;
                         }
                     }
-                    this.toggleSwitchSS.Properties.OnText = "Sẵn sàng " + s.ToString();
+                    this.toggleSwitchSS.Properties.OnText = "Sẵn sàng";
                 }
             }
            
         }
-
+        //Lọc các phòng đang có khách ở
         private void toggleSwitchCK_Toggled(object sender, EventArgs e)
         {
             foreach (var item in flowLayoutPanel1.Controls.OfType<FlowLayoutPanel>())
@@ -288,20 +248,20 @@ namespace Home
                     int s = 0;
                     foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        if (pnl.BackColor == Color.Red)
+                        if (/*pnl.BackColor == Color.Red*/pnl.BackColor == Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128))))))
                         {
                             s++;
                         }
                         pnl.Show();
                     }
-                    this.toggleSwitchCK.Properties.OffText = "Có khách " + s.ToString();
+                    this.toggleSwitchCK.Properties.OffText = "Có khách ";
                 }
-                else
+                else                           
                 {
                     int s = 0;
                     foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        if (pnl.BackColor != Color.Red)
+                        if (/*pnl.BackColor != Color.Red*/pnl.BackColor != Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128))))))
                         {
                             pnl.Hide();
                         }
@@ -310,7 +270,7 @@ namespace Home
                             s++;
                         }
                     }
-                    this.toggleSwitchCK.Properties.OnText = "Có khách " + s.ToString();
+                    this.toggleSwitchCK.Properties.OnText = "Có khách ";
                 }
             }          
         }
@@ -371,7 +331,7 @@ namespace Home
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             isDangXuat = true;
-            DialogResult ds = MessageBox.Show("Bạn Có Muốn Đăng Xuất ?", "QUAY VỀ ĐĂNG NHẬP", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult ds = MessageBox.Show("Bạn Có Muốn Đăng Xuất ?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ds == DialogResult.Yes)
             {
                 Thread th = new Thread(back_login);
@@ -391,36 +351,21 @@ namespace Home
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (isDead == false)
-            //{
-            //    if (!isDangXuat)
-            //    {
-            //        DialogResult ds = MessageBox.Show("Bạn Có Muốn Thoát ?", "THOÁT", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-            //        if (ds == DialogResult.Yes)
-            //        {
-            //            Environment.Exit(0);
-            //        }
-            //        else
-            //        {
-            //            e.Cancel = true;
-            //        }
-            //    }
-            //}
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            List<eHonLoan> ls = new List<eHonLoan>();
-            List<ePhong> phRong = new List<ePhong>();       //Phòng rỗng
-            List<ePhong> phKhach = new List<ePhong>();       //Phòng có khách
-            PhongBUS pbus = new PhongBUS();
-            foreach (var item in joinbus.GetPhong_ThuePhong(true, 0))
+            if (isDead == false)
             {
-                pbus.getEPhong_byID(item.MaPhong);
-                phKhach.Add(pbus.getEPhong_byID(item.MaPhong));
+                if (!isDangXuat)
+                {
+                    DialogResult ds = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (ds == DialogResult.Yes)
+                    {
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
             }
-            TaoGiaoDienPhong(pbus.gettinhtrangp(false), pbus.gettinhtrangp(false), ls, "Phòng trống");
-            TaoGiaoDienPhong(phKhach, phRong, joinbus.GetPhong_ThuePhong(true, 0), "Phòng có khách");
         }
 
         public void cleanGiaoDien()
@@ -452,7 +397,12 @@ namespace Home
         private void btn500_ItemClick(object sender, ItemClickEventArgs e)
         {
             cleanGiaoDien();
-
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            foreach (var item in lpbus.getDOnGia(0,500000))
+            {
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng dưới 500,000 đồng");
+            }         
         }
 
         private void btnTheoPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -473,6 +423,56 @@ namespace Home
             TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Family")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Family"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Family");
             TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Vip")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Vip"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Vip");
             TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Deluxe")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Deluxe"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Deluxe");
+        }
+
+        private void btnTheoTang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+            PhongBUS pbus = new PhongBUS();
+            foreach (var item in pbus.Tang())
+            {
+                TaoGiaoDienPhong(pbus.getTang(item.ToString()), pbus.getTang_PhongTrong(item.ToString(), false), joinbus.GetPhong_ThuePhong(true, 0), "Tầng " + item.ToString());
+            }
+
+        }
+
+        private void btn1000_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            foreach (var item in lpbus.getDOnGia(500000, 1000000))
+            {
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng 500,000 đồng đến 1 triệu đồng");
+            }
+        }
+
+        private void btn1500_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            foreach (var item in lpbus.getDOnGia(1000000, 1500000))
+            {
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng 1 triệu đồng đến 1 triệu 500 nghìn đồng");
+            }
+        }
+
+        private void btnHon1500_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            cleanGiaoDien();
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            foreach (var item in lpbus.getDOnGia(1500000, int.MaxValue))
+            {
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng trên 1 triệu 500 nghìn đồng");
+            }
+        }
+
+        private void ThemDichVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDatPhong frm = new frmDatPhong("Cập nhật dịch vụ");
+            frm.ShowDialog();
         }
     }
 }

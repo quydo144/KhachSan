@@ -21,5 +21,10 @@ namespace BUS
         {
             return sddvdal.getctdv(mathue);
         }
+
+        public void updateCTDV(eSuDungDichVu update)
+        {
+             sddvdal.updateCTDV(update);
+        }
     }
 }

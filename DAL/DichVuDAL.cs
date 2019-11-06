@@ -12,7 +12,7 @@ namespace DAL
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
         public List<eDichVu> getdv()
         {
-            var listdv = (from x in db.DichVus select x).ToList();
+            var listdv = (from x in db.DichVus where x.soLuongDV != 0 select x).ToList();
             List<eDichVu> ls = new List<eDichVu>();
             foreach (DichVu item in listdv)
             {

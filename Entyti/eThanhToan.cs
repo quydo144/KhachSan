@@ -151,16 +151,16 @@ namespace Entyti
             {
                 money = (0.3 * tienPhong);
             }
-            if (ngay == 0 && h > 2)
+            if (ngay == 0 && h >= 2)
             {
                 money = (0.5 * tienPhong);
             }
-            if (ngay == 0 && h > 5)
+            if (ngay == 0 && h >= 5)
             {
                 money = tienPhong;
             }
             //Tính thuê theo ngày
-            if (ngay > 0 && h > 6)
+            if (ngay > 0 && h >= 6)
             {
                 money = (ngay * tienPhong + tienPhong);
             }

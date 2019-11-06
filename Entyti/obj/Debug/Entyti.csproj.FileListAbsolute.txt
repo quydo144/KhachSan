@@ -3,3 +3,8 @@ E:\KhachSan\Entyti\bin\Debug\Entyti.pdb
 E:\KhachSan\Entyti\obj\Debug\Entyti.dll
 E:\KhachSan\Entyti\obj\Debug\Entyti.pdb
 E:\KhachSan\Entyti\obj\Debug\Entyti.csprojResolveAssemblyReference.cache
+C:\Users\quydo\Desktop\KhachSan\Entyti\bin\Debug\Entyti.dll
+C:\Users\quydo\Desktop\KhachSan\Entyti\bin\Debug\Entyti.pdb
+C:\Users\quydo\Desktop\KhachSan\Entyti\obj\Debug\Entyti.csprojResolveAssemblyReference.cache
+C:\Users\quydo\Desktop\KhachSan\Entyti\obj\Debug\Entyti.dll
+C:\Users\quydo\Desktop\KhachSan\Entyti\obj\Debug\Entyti.pdb
