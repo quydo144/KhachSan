@@ -15,9 +15,16 @@ namespace Home
 {
     public partial class frmKhachHang : DevExpress.XtraEditors.XtraForm
     {
+        frmHome frm;
         public frmKhachHang()
         {
             InitializeComponent();
+        }
+
+        public frmKhachHang(frmHome sql)
+        {
+            InitializeComponent();
+            frm = sql;
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)
@@ -47,6 +54,14 @@ namespace Home
             else newkh.GioiTinh = false;
             newkh.MaDoan = "";
             int kq = khbus.InsertKH(newkh);
+        }
+
+        private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PhongBUS pbus = new PhongBUS();
+            JoinTable_BUS joinbus = new JoinTable_BUS();
+            frm.AnflowLayoutPanel();
+            frm.TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
         }
     }
 }

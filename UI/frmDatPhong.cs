@@ -139,6 +139,18 @@ namespace Home
             gridViewCTDV.DeleteRow(index);
         }
 
+        private void autoCompleteSource()
+        {
+            txtSeachKH.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSeachKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            KhachHangBUS khbus = new KhachHangBUS();
+            txtSeachKH.AutoCompleteCustomSource.Clear();
+            foreach (eKhachHang item in khbus.get())
+            {
+                txtSeachKH.AutoCompleteCustomSource.Add(item.SoCMND);
+            }
+        }
+
         private void txtSeachDV_TextChanged(object sender, EventArgs e)
         {
             if (txtSeachDV.Text == "")
@@ -203,7 +215,7 @@ namespace Home
                 //Thêm mã thuê phòng
                 PhongBUS pbus = new PhongBUS();
                 LoaiPhongBUS lpbus = new LoaiPhongBUS();
-                if (Convert.ToInt32(cboSoNguoi.Text) > lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong(TenPhong))))
+                if (Convert.ToInt32(cboSoNguoi.Text) > lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))))
                 {
                     MessageBox.Show("Phòng chứa quá số người quy định");
                     return;
@@ -213,7 +225,7 @@ namespace Home
                     eThuePhong tp = new eThuePhong();
                     //PhongBUS pbus = new PhongBUS();
                     NhanVienBUS nvbus = new NhanVienBUS();
-                    tp.MaPhong = pbus.maPhong(TenPhong);
+                    tp.MaPhong = pbus.maPhong_byTen(TenPhong);
                     tp.MaKH = maKH;
                     tp.NgayVao = DateTime.Now.Date;
                     tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
@@ -228,7 +240,7 @@ namespace Home
                     {
                         //Đổi tình trạng phòng thành phòng có khách khi đặt phòng thành công
                         ePhong p = new ePhong();
-                        p.MaPhong = pbus.maPhong(TenPhong);
+                        p.MaPhong = pbus.maPhong_byTen(TenPhong);
                         p.TinhTrang = true;
                         pbus.updateTinhTrangPhong(p);
                         MessageBox.Show("Đặt phòng thành công");

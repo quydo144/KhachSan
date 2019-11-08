@@ -392,3 +392,4 @@ C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\de\DevExpress.Diagram.v19.1.Core.re
 C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\es\DevExpress.Diagram.v19.1.Core.resources.dll
 C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.resources.dll
 C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
+E:\KhachSan\UI\obj\Debug\Home.frmDatKhachDoan.resources

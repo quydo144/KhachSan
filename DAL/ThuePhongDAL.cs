@@ -68,5 +68,11 @@ namespace DAL
             ThuePhong tp = db.ThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).SingleOrDefault();
             return tp.maPhong;
         }
+
+        public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        {
+            ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).SingleOrDefault();
+            return tp.maThue;
+        }
     }
 }

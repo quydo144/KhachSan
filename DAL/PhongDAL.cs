@@ -97,7 +97,7 @@ namespace DAL
             return p;
         }
 
-        public string maPhong(string tenPhong)
+        public string maPhong_byTen(string tenPhong)
         {
             Phong p = db.Phongs.Where(n => n.tenPhong.Trim().Equals(tenPhong)).SingleOrDefault();
             return p.maPhong;

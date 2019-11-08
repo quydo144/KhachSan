@@ -39,6 +39,12 @@ namespace DAL
             return lp.maLoaiPhong;
         }
 
+        public string getTen_Byma(string ma)
+        {
+            LoaiPhong lp = db.LoaiPhongs.Where(n => n.maLoaiPhong.Trim().Equals(ma.Trim())).SingleOrDefault();
+            return lp.tenLoaiPhong;
+        }
+
         public List<eLoaiPhong> getDOnGia(double min, double max)
         {
             var ls = (from x in db.LoaiPhongs where Convert.ToDecimal(min) < x.donGia  && x.donGia <= Convert.ToDecimal(max) select x).ToList();

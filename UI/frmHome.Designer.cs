@@ -92,6 +92,7 @@
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
+            this.cbxSoLuongNg = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,9 +100,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.toggleSwitchCK = new DevExpress.XtraEditors.ToggleSwitch();
             this.toggleSwitchSS = new DevExpress.XtraEditors.ToggleSwitch();
-            this.panel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.cmnstrpSanSang = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DatPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,7 +114,11 @@
             this.phòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgPhong = new System.Windows.Forms.ImageList(this.components);
-            this.cbxSoLuongNg = new System.Windows.Forms.ComboBox();
+            this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnKhachDoan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -124,11 +126,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchCK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchSS.Properties)).BeginInit();
-            this.panel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.cmnstrpSanSang.SuspendLayout();
             this.cmnstrpCoKhach.SuspendLayout();
             this.cmnSapXep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTinhTrang
@@ -153,6 +155,7 @@
             this.rbnHome.Appearance.Options.UseFont = true;
             this.rbnHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
+            this.ribbonPageGroup10,
             this.ribbonPageGroup5,
             this.ribbonPageGroup7,
             this.ribbonPageGroup8});
@@ -357,10 +360,11 @@
             this.btnNhoHon500,
             this.btn1000,
             this.btn1500,
-            this.btnHon1500});
+            this.btnHon1500,
+            this.btnKhachDoan});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 48;
+            this.ribbonControl1.MaxItemId = 49;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnHome,
@@ -697,6 +701,14 @@
             this.dtpNgayTra.TabIndex = 13;
             this.dtpNgayTra.ValueChanged += new System.EventHandler(this.dtpNgayTra_ValueChanged);
             // 
+            // cbxSoLuongNg
+            // 
+            this.cbxSoLuongNg.FormattingEnabled = true;
+            this.cbxSoLuongNg.Location = new System.Drawing.Point(806, 15);
+            this.cbxSoLuongNg.Name = "cbxSoLuongNg";
+            this.cbxSoLuongNg.Size = new System.Drawing.Size(330, 32);
+            this.cbxSoLuongNg.TabIndex = 1;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -772,37 +784,6 @@
             this.toggleSwitchSS.Size = new System.Drawing.Size(500, 46);
             this.toggleSwitchSS.TabIndex = 9;
             this.toggleSwitchSS.Toggled += new System.EventHandler(this.toggleSwitchSS_Toggled);
-            // 
-            // panel
-            // 
-            this.panel.Controls.Add(this.flowLayoutPanel1);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 193);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1332, 602);
-            this.panel.TabIndex = 14;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
-            this.flowLayoutPanel1.TabIndex = 12;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel2.TabIndex = 0;
             // 
             // ribbonPageGroup6
             // 
@@ -904,17 +885,49 @@
             // 
             // imgPhong
             // 
-            this.imgPhong.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgPhong.ImageStream")));
+            this.imgPhong.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imgPhong.ImageSize = new System.Drawing.Size(60, 60);
             this.imgPhong.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgPhong.Images.SetKeyName(0, "icons8-bedroom-30.png");
             // 
-            // cbxSoLuongNg
+            // MdiManager
             // 
-            this.cbxSoLuongNg.FormattingEnabled = true;
-            this.cbxSoLuongNg.Location = new System.Drawing.Point(806, 15);
-            this.cbxSoLuongNg.Name = "cbxSoLuongNg";
-            this.cbxSoLuongNg.Size = new System.Drawing.Size(330, 32);
-            this.cbxSoLuongNg.TabIndex = 1;
+            this.MdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPagesAndTabControlHeader;
+            this.MdiManager.MdiParent = this;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 193);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnKhachDoan);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Đặt phòng khách đoàn";
+            // 
+            // btnKhachDoan
+            // 
+            this.btnKhachDoan.Caption = "barButtonItem14";
+            this.btnKhachDoan.Id = 48;
+            this.btnKhachDoan.Name = "btnKhachDoan";
+            this.btnKhachDoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachDoan_ItemClick);
             // 
             // frmHome
             // 
@@ -922,7 +935,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 847);
-            this.Controls.Add(this.panel);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -943,13 +956,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchCK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchSS.Properties)).EndInit();
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.cmnstrpSanSang.ResumeLayout(false);
             this.cmnstrpCoKhach.ResumeLayout(false);
             this.cmnSapXep.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1001,8 +1013,6 @@
         private DevExpress.XtraBars.BarButtonItem btnKH;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem btnSapXep;
-        private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btndmk;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
@@ -1025,7 +1035,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpNgayTra;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.ContextMenuStrip cmnSapXep;
         private System.Windows.Forms.ToolStripMenuItem phòngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loạiPhòngToolStripMenuItem;
@@ -1048,6 +1057,11 @@
         private DevExpress.XtraBars.BarButtonItem btnHon1500;
         private System.Windows.Forms.ImageList imgPhong;
         private System.Windows.Forms.ComboBox cbxSoLuongNg;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager MdiManager;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem btnKhachDoan;
     }
 }
 

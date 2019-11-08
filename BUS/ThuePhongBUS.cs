@@ -36,5 +36,11 @@ namespace BUS
         {
             return tpdal.getMaPhong_ByMaThueTrangThai(maThue, trangThai);
         }
+
+        public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        {
+            return tpdal.getmaThue_ByMaPhongTrangThai(maPhong, trangThai);
+        }
+
     }
 }

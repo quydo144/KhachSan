@@ -20,9 +20,9 @@ namespace BUS
         {
             return pdal.gettinhtrangphong(tinhtrang);
         }
-        public string maPhong(string ten)
+        public string maPhong_byTen(string ten)
         {
-            return pdal.maPhong(ten);
+            return pdal.maPhong_byTen(ten);
         }
         public void updateTinhTrangPhong(ePhong pupdate)
         {

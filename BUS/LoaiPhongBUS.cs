@@ -31,5 +31,9 @@ namespace BUS
         {
             return lpdal.getsoNguoi_ByID(id);
         }
+        public string getTen_Byma(string ma)
+        {
+            return lpdal.getTen_Byma(ma);
+        }
     }
 }
