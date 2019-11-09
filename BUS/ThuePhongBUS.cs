@@ -12,10 +12,10 @@ namespace BUS
     {
         ThuePhongDAL tpdal = new ThuePhongDAL();
 
-        public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
-        {
-            return tpdal.getMaThue_ByMaPhongTrangThai(maPhong, trangThai);
-        }
+        //public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        //{
+        //    return tpdal.getMaThue_ByMaPhongTrangThai(maPhong, trangThai);
+        //}
 
         public int insertThuePhong(eThuePhong tp)
         {
@@ -27,20 +27,25 @@ namespace BUS
             return tpdal.getMaThuePhong(s);
         }
 
-        public void updateThuePhong(eThuePhong tp)
+        public string getMaThueCuoi()
         {
-            tpdal.updateThuePhong(tp);
+            return tpdal.getMaThueCuoi();
         }
 
-        public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
-        {
-            return tpdal.getMaPhong_ByMaThueTrangThai(maThue, trangThai);
-        }
+        //public void updateThuePhong(eThuePhong tp)
+        //{
+        //    tpdal.updateThuePhong(tp);
+        //}
 
-        public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
-        {
-            return tpdal.getmaThue_ByMaPhongTrangThai(maPhong, trangThai);
-        }
+        //public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
+        //{
+        //    return tpdal.getMaPhong_ByMaThueTrangThai(maThue, trangThai);
+        //}
+
+        //public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        //{
+        //    return tpdal.getmaThue_ByMaPhongTrangThai(maPhong, trangThai);
+        //}
 
     }
 }

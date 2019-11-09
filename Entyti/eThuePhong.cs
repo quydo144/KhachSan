@@ -8,66 +8,19 @@ namespace Entyti
 {
     public class eThuePhong
     {
-        private string maThuePhong, maPhong, maKH, maNV;
-        private DateTime ngayVao, ngayRa;
+        private string maThue, maNV;
         private int trangThai;
-        private TimeSpan gioVao, gioRa;
 
-        public eThuePhong(TimeSpan gioVao, TimeSpan gioRa, string maThuePhong, string maPhong, string maKH, string maNV, DateTime ngayVao, DateTime ngayRa, int trangThai)
+        public eThuePhong(string maThue, string maNV, int trangThai)
         {
-            this.maThuePhong = maThuePhong;
-            this.maPhong = maPhong;
-            this.maKH = maKH;
+            this.maThue = maThue;
             this.maNV = maNV;
-            this.ngayVao = ngayVao;
-            this.ngayRa = ngayRa;
             this.trangThai = trangThai;
-            this.gioVao = gioVao;
-            this.gioRa = gioRa;
         }
 
         public eThuePhong()
         {
 
-        }
-
-        public string MaThuePhong
-        {
-            get
-            {
-                return maThuePhong;
-            }
-
-            set
-            {
-                maThuePhong = value;
-            }
-        }
-
-        public string MaPhong
-        {
-            get
-            {
-                return maPhong;
-            }
-
-            set
-            {
-                maPhong = value;
-            }
-        }
-
-        public string MaKH
-        {
-            get
-            {
-                return maKH;
-            }
-
-            set
-            {
-                maKH = value;
-            }
         }
 
         public string MaNV
@@ -83,29 +36,16 @@ namespace Entyti
             }
         }
 
-        public DateTime NgayVao
+        public string MaThue
         {
             get
             {
-                return ngayVao;
+                return maThue;
             }
 
             set
             {
-                ngayVao = value;
-            }
-        }
-
-        public DateTime NgayRa
-        {
-            get
-            {
-                return ngayRa;
-            }
-
-            set
-            {
-                ngayRa = value;
+                maThue = value;
             }
         }
 
@@ -119,32 +59,6 @@ namespace Entyti
             set
             {
                 trangThai = value;
-            }
-        }
-
-        public TimeSpan GioVao
-        {
-            get
-            {
-                return gioVao;
-            }
-
-            set
-            {
-                gioVao = value;
-            }
-        }
-
-        public TimeSpan GioRa
-        {
-            get
-            {
-                return gioRa;
-            }
-
-            set
-            {
-                gioRa = value;
             }
         }
     }

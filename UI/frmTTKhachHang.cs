@@ -70,6 +70,10 @@ namespace Home
                 frmDatPhong.TenKH = tenkh;
                 frmDatPhong.SDT = sdt;
                 frmDatPhong.GioiTinh = giotinh;
+
+                frmDatKhachDoan.CMND = cmnd;
+                frmDatKhachDoan.TenKH = tenkh;
+                frmDatKhachDoan.SDT = sdt;
             }
             
         }

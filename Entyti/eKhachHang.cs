@@ -8,27 +8,21 @@ namespace Entyti
 {
     public class eKhachHang
     {
-        private string maKH, tenKH, soCMND, soDT, maDoan;
+        private string maKH, tenKH, soCMND, soDT;
         private bool gioiTinh;
 
-        public eKhachHang(string maKH, string tenKH, string soCMND, string soDT, string maDoan, bool gioiTinh)
+        public eKhachHang(string maKH, string tenKH, string soCMND, string soDT, bool gioiTinh)
         {
             this.maKH = maKH;
             this.tenKH = tenKH;
             this.soCMND = soCMND;
             this.soDT = soDT;
-            this.maDoan = maDoan;
             this.gioiTinh = gioiTinh;
         }
 
         public eKhachHang()
         {
-            this.maKH = "";
-            this.tenKH = "";
-            this.soCMND = "";
-            this.soDT = "";
-            this.maDoan = "";
-            this.gioiTinh = true;
+
         }
 
         public string MaKH
@@ -80,19 +74,6 @@ namespace Entyti
             set
             {
                 soDT = value;
-            }
-        }
-
-        public string MaDoan
-        {
-            get
-            {
-                return maDoan;
-            }
-
-            set
-            {
-                maDoan = value;
             }
         }
 

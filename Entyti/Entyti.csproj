@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BaoCao.cs" />
     <Compile Include="CTDVBaoCao.cs" />
+    <Compile Include="eChiTietThuePhong.cs" />
     <Compile Include="eCTDV.cs" />
     <Compile Include="eDichVu.cs" />
     <Compile Include="eHonLoan.cs" />

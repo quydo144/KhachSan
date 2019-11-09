@@ -12,9 +12,9 @@ namespace BUS
     {
         JoinTable_DAL joindal = new JoinTable_DAL();
 
-        public List<eHonLoan> GetPhong_ThuePhong(bool s, int TrangThai)
+        public List<eHonLoan> GetPhong_ChiTietThuePhong(bool s, int TrangThai)
         {
-            return joindal.GetPhong_ThuePhong(s, TrangThai);
+            return joindal.GetPhong_ChiTietThuePhong(s, TrangThai);
         }
 
         public List<eHonLoan> GetPhog_TraVaoNgay(bool s, int trangThai, DateTime date)

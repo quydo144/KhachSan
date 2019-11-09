@@ -11,10 +11,10 @@ namespace DAL
     {
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
         
-        public List<eHonLoan> GetPhong_ThuePhong(bool s, int trangThai)
+        public List<eHonLoan> GetPhong_ChiTietThuePhong(bool s, int trangThai)
         {
             List<eHonLoan> ls = new List<eHonLoan>();
-            var q = from p in db.Phongs join t in db.ThuePhongs
+            var q = from p in db.Phongs join t in db.ChiTietThuePhongs
                     on p.maPhong equals t.maPhong
                     where p.tinhTrang == s && t.trangThai == trangThai
                     select new {p.maPhong , p.maLoaiPhong, p.tenPhong, t.maThue , t.ngayRa};
@@ -35,7 +35,7 @@ namespace DAL
         {
             List<eHonLoan> ls = new List<eHonLoan>();
             var q = from p in db.Phongs
-                    join t in db.ThuePhongs
+                    join t in db.ChiTietThuePhongs
                     on p.maPhong equals t.maPhong
                     where p.tinhTrang == s && t.trangThai == trangThai && t.ngayRa == date
                     select new { p.maPhong, p.maLoaiPhong, p.tenPhong, t.maThue, t.ngayRa };

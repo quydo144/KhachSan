@@ -18,12 +18,11 @@ namespace DAL
             foreach (KhachHang item in listkh)
             {
                 eKhachHang kh = new eKhachHang();
-                //kh.MaKH = item.maKH.Trim();
+                kh.MaKH = item.maKH.Trim();
                 kh.TenKH = item.tenKh.Trim();
                 kh.SoCMND = item.soCMND.Trim();
                 kh.SoDT = item.soDT.Trim();
                 kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
-                kh.MaDoan = item.maDoan;
                 ls.Add(kh);
             }
             return ls;
@@ -31,18 +30,10 @@ namespace DAL
         public int insertKH(eKhachHang khmoi)
         {
             KhachHang khtemp = new KhachHang();
-            //khtemp.maKH = khmoi.MaKH;
+            khtemp.maKH = "";
             khtemp.soCMND = khmoi.SoCMND;
             khtemp.soDT = khmoi.SoDT;
             khtemp.tenKh = khmoi.TenKH;
-            if (khmoi.MaDoan == "")
-            {
-                khtemp.maDoan = null;
-            }
-            else
-            {
-                khtemp.maDoan = khmoi.MaDoan;
-            }
             khtemp.gioiTinh = Convert.ToByte(khmoi.GioiTinh);
             db.KhachHangs.InsertOnSubmit(khtemp);
             db.SubmitChanges();
@@ -60,7 +51,6 @@ namespace DAL
                 kh.SoCMND = item.soCMND.Trim();
                 kh.SoDT = item.soDT.Trim();
                 kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
-                kh.MaDoan = item.maDoan;
                 ls.Add(kh);
             }
             return ls;
@@ -78,7 +68,6 @@ namespace DAL
                 kh.SoCMND = item.soCMND.Trim();
                 kh.SoDT = item.soDT.Trim();
                 kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
-                kh.MaDoan = item.maDoan;
                 ls.Add(kh);
             }
             return ls;
@@ -87,6 +76,12 @@ namespace DAL
         {
             KhachHang nv = db.KhachHangs.Where(x => x.maKH.Equals(id)).SingleOrDefault();
             return nv.tenKh;
+        }
+
+        public string gemaKH_ByCMND(string cmnd)
+        {
+            KhachHang kh = db.KhachHangs.Where(x => x.soCMND.Equals(cmnd)).SingleOrDefault();
+            return kh.maKH;
         }
     }
 }

@@ -106,14 +106,14 @@ namespace Entyti
             }
         }
 
-        public double tinhTienPhuThu(List<eThuePhong> ls, double tienPhong)
+        public double tinhTienPhuThu(List<eChiTietThuePhong> ls, double tienPhong)
         {
             double phuThu = 0;
             TimeSpan nhan13h = new TimeSpan(13, 00, 00);
             TimeSpan nhan11h = new TimeSpan(11, 00, 00);
             TimeSpan nhan8h = new TimeSpan(8, 00, 00);
             TimeSpan nhan6h = new TimeSpan(6, 00, 00);
-            foreach (eThuePhong item in ls)
+            foreach (eChiTietThuePhong item in ls)
             {
                 if (item.GioVao <= nhan13h && item.GioVao > nhan11h)
                 {

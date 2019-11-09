@@ -52,7 +52,6 @@ namespace Home
             newkh.SoDT = txtSDT.Text;
             if (radNam.Checked == true) newkh.GioiTinh = true;
             else newkh.GioiTinh = false;
-            newkh.MaDoan = "";
             int kq = khbus.InsertKH(newkh);
         }
 
@@ -61,7 +60,7 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             JoinTable_BUS joinbus = new JoinTable_BUS();
             frm.AnflowLayoutPanel();
-            frm.TaoGiaoDienPhong(pbus.getallp(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+            //frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
         }
     }
 }

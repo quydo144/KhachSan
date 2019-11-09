@@ -117,8 +117,6 @@
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnKhachDoan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -155,7 +153,6 @@
             this.rbnHome.Appearance.Options.UseFont = true;
             this.rbnHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
-            this.ribbonPageGroup10,
             this.ribbonPageGroup5,
             this.ribbonPageGroup7,
             this.ribbonPageGroup8});
@@ -171,7 +168,7 @@
             // 
             // btnDatPhong
             // 
-            this.btnDatPhong.Caption = "Đặt phòng";
+            this.btnDatPhong.Caption = "Đặt phòng khách đoàn                ";
             this.btnDatPhong.Id = 2;
             this.btnDatPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.ImageOptions.Image")));
             this.btnDatPhong.Name = "btnDatPhong";
@@ -360,8 +357,7 @@
             this.btnNhoHon500,
             this.btn1000,
             this.btn1500,
-            this.btnHon1500,
-            this.btnKhachDoan});
+            this.btnHon1500});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonControl1.MaxItemId = 49;
@@ -916,19 +912,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnKhachDoan);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Đặt phòng khách đoàn";
-            // 
-            // btnKhachDoan
-            // 
-            this.btnKhachDoan.Caption = "barButtonItem14";
-            this.btnKhachDoan.Id = 48;
-            this.btnKhachDoan.Name = "btnKhachDoan";
-            this.btnKhachDoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachDoan_ItemClick);
-            // 
             // frmHome
             // 
             this.Appearance.Options.UseFont = true;
@@ -944,7 +927,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmHome";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Hệ thống quản lý khách sạn Sky";
+            this.Text = "`";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHome_FormClosing);
             this.Load += new System.EventHandler(this.frmHome_Load);
@@ -1060,8 +1043,6 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager MdiManager;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.BarButtonItem btnKhachDoan;
     }
 }
 

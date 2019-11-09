@@ -22,19 +22,24 @@ namespace Home
             InitializeComponent();
         }
 
-        private void open_frmMain()
+        public void open_frmMain()
         {
             Application.Run(new frmHome());
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmDatPhong.emailNV = txtEmail.Text;
+            frmDatPhong.emailNV = txtEmail.Text.Trim();
             NhanVienBUS nvbus = new NhanVienBUS();
             frmThanhToan.maNVThanhToan = nvbus.getmaNV_byEmail(txtEmail.Text.Trim());
+            frmDatKhachDoan.emailNV = txtEmail.Text.Trim();
             if (nvbus.GetTKQL(txtEmail.Text.Trim(), txtPass.Text.Trim()))
             {
-                Thread th = new Thread(open_frmMain);
+                Thread th = new Thread(new ThreadStart(open_frmMain));
+                //#pragma warning disable CS0618 // Type or member is obsolete
+                //                th.ApartmentState = ApartmentState.STA;
+                //#pragma warning restore CS0618 // Type or member is obsolete
+                th.SetApartmentState(ApartmentState.STA);
                 th.Start();
                 this.Close();
             }

@@ -124,7 +124,7 @@
     <Compile Include="frmPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhong.Designer.cs">
+    <Compile Include="frmPhong.designer.cs">
       <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrint.cs">
@@ -132,6 +132,12 @@
     </Compile>
     <Compile Include="frmPrint.designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTextPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTextPhong.designer.cs">
+      <DependentUpon>frmTextPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThanhToan.cs">
       <SubType>Form</SubType>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTextPhong.resx">
+      <DependentUpon>frmTextPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>

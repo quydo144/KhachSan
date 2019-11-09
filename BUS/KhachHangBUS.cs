@@ -34,5 +34,9 @@ namespace BUS
         {
             return khdal.getenKH_ByID(id);
         }
+        public string gemaKH_ByCMND(string cmnd)
+        {
+            return khdal.gemaKH_ByCMND(cmnd);
+        }
     }
 }

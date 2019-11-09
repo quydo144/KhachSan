@@ -11,42 +11,55 @@ namespace DAL
     {
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
 
-        public int insertCTDV(eSuDungDichVu ctdvnew)
-        {
-            SuDungDichVu ctdvtemp = new SuDungDichVu();
-            ctdvtemp.maThue = ctdvnew.MaThue;
-            ctdvtemp.maDV = ctdvnew.MaDV;            
-            ctdvtemp.soLuong = ctdvnew.SoLuong;
-            ctdvtemp.ngaySuDung = ctdvnew.NgaySD;
-            ctdvtemp.gioSuDung = ctdvnew.GioSD;
-            db.SuDungDichVus.InsertOnSubmit(ctdvtemp);
-            db.SubmitChanges();
-            return 1;
-        }
+        //public int insertCTDV(eSuDungDichVu ctdvnew)
+        //{
+        //    SuDungDichVu ctdvtemp = new SuDungDichVu();
+        //    //ctdvtemp.maThue = ctdvnew.MaThue;
+        //    ctdvtemp.maDV = ctdvnew.MaDV;            
+        //    ctdvtemp.soLuong = ctdvnew.SoLuong;
+        //    ctdvtemp.ngaySuDung = ctdvnew.NgaySD;
+        //    ctdvtemp.gioSuDung = ctdvnew.GioSD;
+        //    db.SuDungDichVus.InsertOnSubmit(ctdvtemp);
+        //    db.SubmitChanges();
+        //    return 1;
+        //}
 
-        public List<eSuDungDichVu> getctdv(string mathue)
-        {
-            var listdv = db.SuDungDichVus.Where(x=>x.maThue.Trim().Equals(mathue)).ToList();
-            List<eSuDungDichVu> ls = new List<eSuDungDichVu>();
-            foreach (SuDungDichVu item in listdv)
-            {
-                eSuDungDichVu dv = new eSuDungDichVu();
-                dv.MaDV = item.maDV.Trim();
-                dv.MaThue = item.maThue.Trim();
-                dv.SoLuong = Convert.ToInt32(item.soLuong);
-                dv.NgaySD = item.ngaySuDung;
-                dv.GioSD = item.gioSuDung;
-                ls.Add(dv);
-            }
-            return ls;
-        }
+        //public List<eSuDungDichVu> getctdv(string mathue)
+        //{
+        //    var listdv = db.SuDungDichVus.Where(x=>x.maThue.Trim().Equals(mathue)).ToList();
+        //    List<eSuDungDichVu> ls = new List<eSuDungDichVu>();
+        //    foreach (SuDungDichVu item in listdv)
+        //    {
+        //        eSuDungDichVu dv = new eSuDungDichVu();
+        //        dv.MaDV = item.maDV.Trim();
+        //        dv.MaThue = item.maThue.Trim();
+        //        dv.SoLuong = Convert.ToInt32(item.soLuong);
+        //        dv.NgaySD = item.ngaySuDung;
+        //        dv.GioSD = item.gioSuDung;
+        //        ls.Add(dv);
+        //    }
+        //    return ls;
+        //}
 
-        public void updateCTDV(eSuDungDichVu update)
-        {
-            IQueryable<SuDungDichVu> p = db.SuDungDichVus.Where(x => x.maThue.Equals(update.MaThue) && x.maDV.Equals(update.MaDV));
-            p.First().soLuong = update.SoLuong;
-            db.SubmitChanges();
-        }
+        //public void updateCTDV(eSuDungDichVu update)
+        //{
+        //    IQueryable<SuDungDichVu> p = db.SuDungDichVus.Where(x => x.maThue.Equals(update.MaThue) && x.maDV.Equals(update.MaDV));
+        //    p.First().soLuong = update.SoLuong;
+        //    db.SubmitChanges();
+        //}
+
+        //public bool maThue_maDV_CoTonTai(string maThue, string maDV)
+        //{
+        //    SuDungDichVu sddv = db.SuDungDichVus.Where(x => x.maThue.Equals(maThue) && x.maDV.Equals(maDV)).SingleOrDefault();
+        //    if (sddv == null)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
     }
 }

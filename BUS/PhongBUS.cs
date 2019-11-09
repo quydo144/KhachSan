@@ -12,7 +12,7 @@ namespace BUS
     public class PhongBUS
     {
         PhongDAL pdal = new PhongDAL();
-        public List<ePhong> getallp()
+        public List<ePhong> getallphong()
         {
             return pdal.getallphong();
         }
@@ -59,6 +59,26 @@ namespace BUS
         public List<ePhong> getTang_PhongTrong(string tang, bool tinhtrang)
         {
             return pdal.getTang_PhongTrong(tang, tinhtrang);
+        }
+        public ePhong getP_byMa(string ma)
+        {
+            return pdal.gettP_byMa(ma);
+        }
+        public ePhong get_tenP(string tenPhong)
+        {
+            return pdal.get_tenP(tenPhong);
+        }
+        public bool deletePhong(string map)
+        {
+            return pdal.deletePhong(map);
+        }
+        public int CapNhatPhong(ePhong ep)
+        {
+            return pdal.updatePhong(ep);
+        }
+        public int ThemPhong(ePhong ep)
+        {
+            return pdal.insertPhong(ep);
         }
     }
 }

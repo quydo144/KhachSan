@@ -30,6 +30,19 @@ namespace DAL
             return ls;
         }
 
+        public ePhong gettP_byMa(string ma)
+        {
+            ePhong phong_ent = new ePhong();
+            Phong phong = (from x in db.Phongs where x.maPhong.Equals(ma) select x).SingleOrDefault();
+            phong_ent.MaPhong = phong.maPhong;
+            phong_ent.MaLoaiPhong = phong.maLoaiPhong;
+            phong_ent.TenPhong = phong.tenPhong;
+            phong_ent.Tang = Convert.ToInt32(phong.tang);
+            phong_ent.GhiChu = phong.ghiChu;
+            return phong_ent;
+            
+        }
+
         public List<ePhong> gettinhtrangphong(bool tinhtrang)
         {
             var litsphong = (from x in db.Phongs where x.tinhTrang.Equals(tinhtrang) select x).ToList();
@@ -46,6 +59,19 @@ namespace DAL
                 ls.Add(p);
             }
             return ls;
+        }
+
+        public ePhong get_tenP(string tenPhong)
+        {
+            Phong item = (from x in db.Phongs where x.tenPhong.Equals(tenPhong) select x).SingleOrDefault();
+            ePhong p = new ePhong();
+            p.MaPhong = item.maPhong;
+            p.TenPhong = item.tenPhong;
+            p.Tang = Convert.ToInt32(item.tang);
+            p.GhiChu = item.ghiChu;
+            p.MaLoaiPhong = item.maLoaiPhong;
+            p.TinhTrang = Convert.ToBoolean(item.tinhTrang);
+            return p;
         }
 
         public List<ePhong> getLoaiPhong(string maLoaiPhong)
@@ -170,5 +196,40 @@ namespace DAL
             return ls;
         }
 
+        public bool deletePhong(string map)
+        {
+            Phong ptemp = db.Phongs.Where(x => x.maPhong == map).FirstOrDefault();
+            if (ptemp != null)
+            {
+                db.Phongs.DeleteOnSubmit(ptemp);
+                db.SubmitChanges(); //cập nhật việc xóa vào CSDL
+                return true; //xóa thành công
+            }
+            return false;
+        }
+
+        public int updatePhong(ePhong pupdate)
+        {
+            IQueryable<Phong> p = db.Phongs.Where(x => x.maPhong.Equals(pupdate.MaPhong));
+            p.First().maLoaiPhong = pupdate.MaLoaiPhong;
+            p.First().ghiChu = pupdate.GhiChu;
+            p.First().tang = pupdate.Tang.ToString();
+            db.SubmitChanges();
+            return 1;
+        }
+
+        public int insertPhong(ePhong pnew)
+        {
+            Phong ptemp = new Phong();
+            ptemp.maPhong = "";
+            ptemp.tenPhong = pnew.TenPhong;
+            ptemp.ghiChu = pnew.GhiChu;
+            ptemp.maLoaiPhong = pnew.MaLoaiPhong;
+            ptemp.tang = (pnew.Tang).ToString();
+            ptemp.tinhTrang = pnew.TinhTrang;
+            db.Phongs.InsertOnSubmit(ptemp);
+            db.SubmitChanges();
+            return 1;
+        }
     }
 }

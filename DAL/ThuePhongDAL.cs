@@ -14,13 +14,8 @@ namespace DAL
         public int insertThuePhong(eThuePhong newtp)
         {
             ThuePhong temp = new ThuePhong();
-            temp.maKhach = newtp.MaKH;
+            temp.maThue = "";
             temp.maNV = newtp.MaNV;
-            temp.maPhong = newtp.MaPhong;
-            temp.ngayVao = newtp.NgayVao;
-            temp.ngayRa = newtp.NgayRa;
-            temp.gioRa = newtp.GioRa;
-            temp.gioVao = newtp.GioVao;
             temp.trangThai = Convert.ToByte(newtp.TrangThai);
             db.ThuePhongs.InsertOnSubmit(temp);
             db.SubmitChanges();
@@ -34,45 +29,44 @@ namespace DAL
             foreach (ThuePhong item in list)
             {
                 eThuePhong tp = new eThuePhong();
-                tp.MaThuePhong = item.maThue.Trim();
+                tp.MaThue = item.maThue.Trim();
                 tp.MaNV = item.maNV.Trim();
-                tp.MaPhong = item.maPhong.Trim();
-                tp.NgayRa = item.ngayRa;
-                tp.MaKH = item.maKhach.Trim();
-                tp.TrangThai = item.trangThai;
-                tp.NgayVao = item.ngayVao;
-                tp.GioVao = item.gioVao;
-                tp.GioRa = item.gioRa;
                 ls.Add(tp);
             }
             return ls;
         }
 
-        public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        public string getMaThueCuoi()
         {
-            ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).FirstOrDefault();   //
+            ThuePhong tp = (from x in db.ThuePhongs orderby x.maThue descending select x).FirstOrDefault();
             return tp.maThue;
         }
 
-        public void updateThuePhong(eThuePhong tp)
-        {
-            IQueryable<ThuePhong> tphong = db.ThuePhongs.Where(x => x.maThue.Equals(tp.MaThuePhong));
-            tphong.First().gioRa = tp.GioRa;
-            tphong.First().ngayRa = tp.NgayRa;
-            tphong.First().trangThai = Convert.ToByte(tp.TrangThai);
-            db.SubmitChanges();
-        }
+        //public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        //{
+        //    ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).FirstOrDefault();   //
+        //    return tp.maThue;
+        //}
 
-        public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
-        {
-            ThuePhong tp = db.ThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).SingleOrDefault();
-            return tp.maPhong;
-        }
+        //public void updateThuePhong(eThuePhong tp)
+        //{
+        //    IQueryable<ThuePhong> tphong = db.ThuePhongs.Where(x => x.maThue.Equals(tp.MaThuePhong));
+        //    tphong.First().gioRa = tp.GioRa;
+        //    tphong.First().ngayRa = tp.NgayRa;
+        //    tphong.First().trangThai = Convert.ToByte(tp.TrangThai);
+        //    db.SubmitChanges();
+        //}
 
-        public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
-        {
-            ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).SingleOrDefault();
-            return tp.maThue;
-        }
+        //public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
+        //{
+        //    ThuePhong tp = db.ThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).SingleOrDefault();
+        //    return tp.maPhong;
+        //}
+
+        //public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
+        //{
+        //    ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).SingleOrDefault();
+        //    return tp.maThue;
+        //}
     }
 }

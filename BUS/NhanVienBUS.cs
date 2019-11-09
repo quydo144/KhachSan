@@ -27,10 +27,6 @@ namespace BUS
         {
             return ndal.deleteNhanVien(maNV);
         }
-        public eNhanVien tangma()
-        {
-            return ndal.maTangTuDong();
-        }
         public List<eNhanVien> getallMaNV(string s)
         {
             return ndal.getAllMa(s);

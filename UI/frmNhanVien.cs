@@ -41,23 +41,7 @@ namespace Home
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            nv = nvBus.tangma();
-            if (Convert.ToInt32(nv.MaNV.Substring(5)) > 10)
-            {
-                txtMa.Text = "NV000" + (Convert.ToInt32(nv.MaNV.Substring(5)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(nv.MaNV.Substring(4, 5)) < 100)
-            {
-                txtMa.Text = "NV00" + (Convert.ToInt32(nv.MaNV.Substring(4, 5)) + 1).ToString();
-            }
-            else if (Convert.ToInt32(nv.MaNV.Substring(3, 5)) < 1000)
-            {
-                txtMa.Text = "NV0" + (Convert.ToInt32(nv.MaNV.Substring(3, 5)) + 1).ToString();
-            }
-            else
-            {
-                txtMa.Text = "NV" + (Convert.ToInt32(nv.MaNV.Substring(2, 5)) + 1).ToString();
-            }
+            
             eNhanVien newnv = new eNhanVien();
             newnv.MaNV = txtMa.Text.Trim();
             newnv.HoTen = txtTen.Text;
