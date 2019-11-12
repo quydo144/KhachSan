@@ -67,7 +67,7 @@
             this.soLuongPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bteSoLuong = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
-            this.btnReLoad = new System.Windows.Forms.Button();
+            this.btnAddKhAutoPhong = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -344,6 +344,7 @@
             this.cboPhong.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboPhong.Name = "cboPhong";
+            this.cboPhong.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cboPhong_ButtonClick);
             // 
             // labelControl3
             // 
@@ -358,7 +359,7 @@
             this.labelControl3.LineVisible = true;
             this.labelControl3.Location = new System.Drawing.Point(-4, 403);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(1001, 30);
+            this.labelControl3.Size = new System.Drawing.Size(1014, 30);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "Danh sách khách hàng theo đoàn";
             // 
@@ -488,15 +489,15 @@
             0});
             this.bteSoLuong.Name = "bteSoLuong";
             // 
-            // btnReLoad
+            // btnAddKhAutoPhong
             // 
-            this.btnReLoad.Location = new System.Drawing.Point(1003, 403);
-            this.btnReLoad.Name = "btnReLoad";
-            this.btnReLoad.Size = new System.Drawing.Size(92, 30);
-            this.btnReLoad.TabIndex = 29;
-            this.btnReLoad.Text = "ReLoad";
-            this.btnReLoad.UseVisualStyleBackColor = true;
-            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
+            this.btnAddKhAutoPhong.Location = new System.Drawing.Point(1016, 403);
+            this.btnAddKhAutoPhong.Name = "btnAddKhAutoPhong";
+            this.btnAddKhAutoPhong.Size = new System.Drawing.Size(92, 30);
+            this.btnAddKhAutoPhong.TabIndex = 30;
+            this.btnAddKhAutoPhong.Text = "Add";
+            this.btnAddKhAutoPhong.UseVisualStyleBackColor = true;
+            this.btnAddKhAutoPhong.Click += new System.EventHandler(this.btnAddKhAutoPhong_Click);
             // 
             // frmDatKhachDoan
             // 
@@ -505,7 +506,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1107, 834);
-            this.Controls.Add(this.btnReLoad);
+            this.Controls.Add(this.btnAddKhAutoPhong);
             this.Controls.Add(this.dgvLoaiPhong);
             this.Controls.Add(this.btnThemKH);
             this.Controls.Add(this.label6);
@@ -579,6 +580,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.TextBox txtTruongDoan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnReLoad;
+        private System.Windows.Forms.Button btnAddKhAutoPhong;
     }
 }
