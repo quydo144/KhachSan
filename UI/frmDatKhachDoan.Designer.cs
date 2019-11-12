@@ -50,7 +50,7 @@
             this.btnKhToView = new System.Windows.Forms.Button();
             this.dgvDsKH = new DevExpress.XtraGrid.GridControl();
             this.gridViewDsKH = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,10 +62,12 @@
             this.dgvLoaiPhong = new DevExpress.XtraGrid.GridControl();
             this.gridViewLoaiPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tenLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.giaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.phongTrong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.soLuongPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bteSoLuong = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
+            this.btnReLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,15 +91,14 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(-4, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(616, 171);
+            this.groupBox1.Size = new System.Drawing.Size(616, 177);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đoàn";
             // 
             // txtTruongDoan
             // 
-            this.txtTruongDoan.Enabled = false;
-            this.txtTruongDoan.Location = new System.Drawing.Point(190, 136);
+            this.txtTruongDoan.Location = new System.Drawing.Point(190, 142);
             this.txtTruongDoan.Multiline = true;
             this.txtTruongDoan.Name = "txtTruongDoan";
             this.txtTruongDoan.Size = new System.Drawing.Size(372, 29);
@@ -106,7 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 136);
+            this.label3.Location = new System.Drawing.Point(16, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 13;
@@ -115,7 +116,6 @@
             // 
             // txtTenDoan
             // 
-            this.txtTenDoan.Enabled = false;
             this.txtTenDoan.Location = new System.Drawing.Point(190, 30);
             this.txtTenDoan.Multiline = true;
             this.txtTenDoan.Name = "txtTenDoan";
@@ -134,7 +134,6 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Location = new System.Drawing.Point(190, 65);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
@@ -143,7 +142,6 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Enabled = false;
             this.txtSDT.Location = new System.Drawing.Point(190, 101);
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
@@ -245,6 +243,7 @@
             this.txtTKcmnd.Name = "txtTKcmnd";
             this.txtTKcmnd.Size = new System.Drawing.Size(293, 32);
             this.txtTKcmnd.TabIndex = 20;
+            this.txtTKcmnd.Enter += new System.EventHandler(this.txtTKcmnd_Enter);
             // 
             // groupBox3
             // 
@@ -259,22 +258,22 @@
             // 
             // btnKhToView
             // 
-            this.btnKhToView.Location = new System.Drawing.Point(361, 29);
+            this.btnKhToView.Location = new System.Drawing.Point(350, 29);
             this.btnKhToView.Name = "btnKhToView";
-            this.btnKhToView.Size = new System.Drawing.Size(37, 25);
+            this.btnKhToView.Size = new System.Drawing.Size(103, 30);
             this.btnKhToView.TabIndex = 22;
-            this.btnKhToView.Text = "button1";
+            this.btnKhToView.Text = "Add KH";
             this.btnKhToView.UseVisualStyleBackColor = true;
             this.btnKhToView.Click += new System.EventHandler(this.btnKhToView_Click);
             // 
             // dgvDsKH
             // 
-            this.dgvDsKH.Location = new System.Drawing.Point(-4, 427);
+            this.dgvDsKH.Location = new System.Drawing.Point(-4, 439);
             this.dgvDsKH.MainView = this.gridViewDsKH;
             this.dgvDsKH.Name = "dgvDsKH";
             this.dgvDsKH.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cboPhong});
-            this.dgvDsKH.Size = new System.Drawing.Size(1112, 363);
+            this.dgvDsKH.Size = new System.Drawing.Size(1112, 351);
             this.dgvDsKH.TabIndex = 22;
             this.dgvDsKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDsKH});
@@ -282,7 +281,7 @@
             // gridViewDsKH
             // 
             this.gridViewDsKH.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
+            this.gridColumn1,
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6});
@@ -290,19 +289,15 @@
             this.gridViewDsKH.Name = "gridViewDsKH";
             this.gridViewDsKH.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn3
+            // gridColumn1
             // 
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Tên khách hàng";
-            this.gridColumn3.FieldName = "TenKH";
-            this.gridColumn3.MinWidth = 25;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 94;
+            this.gridColumn1.Caption = "Tên khách hàng";
+            this.gridColumn1.FieldName = "TenKH";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 246;
             // 
             // gridColumn4
             // 
@@ -316,7 +311,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 94;
+            this.gridColumn4.Width = 245;
             // 
             // gridColumn5
             // 
@@ -330,17 +325,18 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
-            this.gridColumn5.Width = 94;
+            this.gridColumn5.Width = 258;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Số phòng";
             this.gridColumn6.ColumnEdit = this.cboPhong;
+            this.gridColumn6.FieldName = "SoPhong";
             this.gridColumn6.MinWidth = 25;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 94;
+            this.gridColumn6.Width = 212;
             // 
             // cboPhong
             // 
@@ -360,9 +356,9 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelControl3.LineVisible = true;
-            this.labelControl3.Location = new System.Drawing.Point(-4, 391);
+            this.labelControl3.Location = new System.Drawing.Point(-4, 403);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(1112, 30);
+            this.labelControl3.Size = new System.Drawing.Size(1001, 30);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "Danh sách khách hàng theo đoàn";
             // 
@@ -377,7 +373,7 @@
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelControl2.LineVisible = true;
-            this.labelControl2.Location = new System.Drawing.Point(-4, 172);
+            this.labelControl2.Location = new System.Drawing.Point(-4, 184);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(1112, 30);
             this.labelControl2.TabIndex = 25;
@@ -404,7 +400,7 @@
             // 
             // dgvLoaiPhong
             // 
-            this.dgvLoaiPhong.Location = new System.Drawing.Point(-4, 208);
+            this.dgvLoaiPhong.Location = new System.Drawing.Point(-4, 220);
             this.dgvLoaiPhong.MainView = this.gridViewLoaiPhong;
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -418,6 +414,7 @@
             // 
             this.gridViewLoaiPhong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.tenLoaiPhong,
+            this.giaPhong,
             this.phongTrong,
             this.soLuongPhong});
             this.gridViewLoaiPhong.GridControl = this.dgvLoaiPhong;
@@ -439,6 +436,16 @@
             this.tenLoaiPhong.VisibleIndex = 0;
             this.tenLoaiPhong.Width = 94;
             // 
+            // giaPhong
+            // 
+            this.giaPhong.Caption = "Giá phòng";
+            this.giaPhong.FieldName = "Giá phòng";
+            this.giaPhong.MinWidth = 25;
+            this.giaPhong.Name = "giaPhong";
+            this.giaPhong.Visible = true;
+            this.giaPhong.VisibleIndex = 1;
+            this.giaPhong.Width = 94;
+            // 
             // phongTrong
             // 
             this.phongTrong.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -450,7 +457,7 @@
             this.phongTrong.MinWidth = 25;
             this.phongTrong.Name = "phongTrong";
             this.phongTrong.Visible = true;
-            this.phongTrong.VisibleIndex = 1;
+            this.phongTrong.VisibleIndex = 2;
             this.phongTrong.Width = 94;
             // 
             // soLuongPhong
@@ -465,7 +472,7 @@
             this.soLuongPhong.MinWidth = 25;
             this.soLuongPhong.Name = "soLuongPhong";
             this.soLuongPhong.Visible = true;
-            this.soLuongPhong.VisibleIndex = 2;
+            this.soLuongPhong.VisibleIndex = 3;
             this.soLuongPhong.Width = 94;
             // 
             // bteSoLuong
@@ -481,6 +488,16 @@
             0});
             this.bteSoLuong.Name = "bteSoLuong";
             // 
+            // btnReLoad
+            // 
+            this.btnReLoad.Location = new System.Drawing.Point(1003, 403);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(92, 30);
+            this.btnReLoad.TabIndex = 29;
+            this.btnReLoad.Text = "ReLoad";
+            this.btnReLoad.UseVisualStyleBackColor = true;
+            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
+            // 
             // frmDatKhachDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -488,6 +505,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1107, 834);
+            this.Controls.Add(this.btnReLoad);
             this.Controls.Add(this.dgvLoaiPhong);
             this.Controls.Add(this.btnThemKH);
             this.Controls.Add(this.label6);
@@ -539,8 +557,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTKcmnd;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtTruongDoan;
-        private System.Windows.Forms.Label label3;
         private DevExpress.XtraGrid.GridControl dgvDsKH;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDsKH;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -548,7 +564,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtmNgayRa;
         private System.Windows.Forms.Button btnKhToView;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
@@ -560,5 +575,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn soLuongPhong;
         private System.Windows.Forms.ToolTip toolTipKH;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit bteSoLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn giaPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private System.Windows.Forms.TextBox txtTruongDoan;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnReLoad;
     }
 }

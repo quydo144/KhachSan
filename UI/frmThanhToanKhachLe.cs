@@ -235,10 +235,6 @@ namespace Home
                     ctbc.tenLoaiPhong = lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(item.MaPhong));
                     ctbc.thoiGianNhan = item.GioVao + " " + item.NgayVao.Date.ToShortDateString();
                     ctbc.thoiGianTra = item.GioRa + " " + item.NgayRa.Date.ToShortDateString();
-                    //foreach (double pt in phuthu)
-                    //{
-                    //    ctbc.tienPhong = tienvat + tienphong + tiendv + pt;
-                    //}
                     ctbc.tienPhong = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu[0]);
                     listphong.Add(ctbc);
                 }

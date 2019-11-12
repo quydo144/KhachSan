@@ -110,6 +110,24 @@ namespace DAL
             return ls;
         }
 
+        public List<ePhong> getLoaiPhong_Trong_soLuong(string maLoaiPhong, bool tinhTrang, int n)
+        {
+            var litsphong = (from x in db.Phongs where x.maLoaiPhong.Equals(maLoaiPhong) && x.tinhTrang == tinhTrang select x).ToList().Take(n);
+            List<ePhong> ls = new List<ePhong>();
+            foreach (Phong item in litsphong)
+            {
+                ePhong p = new ePhong();
+                p.MaPhong = item.maPhong;
+                p.TenPhong = item.tenPhong;
+                p.Tang = Convert.ToInt32(item.tang);
+                p.GhiChu = item.ghiChu;
+                p.MaLoaiPhong = item.maLoaiPhong;
+                p.TinhTrang = Convert.ToBoolean(item.tinhTrang);
+                ls.Add(p);
+            }
+            return ls;
+        }
+
         public ePhong getEPhong_byID(string ma)
         {
             ePhong p = new ePhong();

@@ -10,14 +10,16 @@ namespace Entyti
     {
         private string maKH, tenKH, soCMND, soDT;
         private bool gioiTinh;
+        private string soPhong;
 
-        public eKhachHang(string maKH, string tenKH, string soCMND, string soDT, bool gioiTinh)
+        public eKhachHang(string soPhong, string maKH, string tenKH, string soCMND, string soDT, bool gioiTinh)
         {
             this.maKH = maKH;
             this.tenKH = tenKH;
             this.soCMND = soCMND;
             this.soDT = soDT;
             this.gioiTinh = gioiTinh;
+            this.soPhong = soPhong;
         }
 
         public eKhachHang()
@@ -87,6 +89,19 @@ namespace Entyti
             set
             {
                 gioiTinh = value;
+            }
+        }
+
+        public string SoPhong
+        {
+            get
+            {
+                return soPhong;
+            }
+
+            set
+            {
+                soPhong = value;
             }
         }
     }

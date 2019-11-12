@@ -80,5 +80,9 @@ namespace BUS
         {
             return pdal.insertPhong(ep);
         }
+        public List<ePhong> getLoaiPhong_Trong_soLuong(string maLoaiPhong, bool tinhTrang, int n)
+        {
+            return pdal.getLoaiPhong_Trong_soLuong(maLoaiPhong, tinhTrang, n);
+        }
     }
 }
