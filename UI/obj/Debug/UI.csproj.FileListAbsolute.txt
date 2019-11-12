@@ -121,7 +121,6 @@ E:\KhachSan\UI\obj\Debug\Home.frmDatPhong.resources
 E:\KhachSan\UI\obj\Debug\Home.frmKhachHang.resources
 E:\KhachSan\UI\obj\Debug\Home.frmNhanVien.resources
 E:\KhachSan\UI\obj\Debug\Home.frmPhong.resources
-E:\KhachSan\UI\obj\Debug\Home.frmThanhToan.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTTKhachHang.resources
 E:\KhachSan\UI\obj\Debug\Home.Properties.Resources.resources
 E:\KhachSan\UI\obj\Debug\UI.csproj.GenerateResource.Cache
@@ -193,8 +192,6 @@ E:\KhachSan\UI\bin\Debug\de\DevExpress.Diagram.v19.1.Core.resources.dll
 E:\KhachSan\UI\bin\Debug\es\DevExpress.Diagram.v19.1.Core.resources.dll
 E:\KhachSan\UI\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.resources.dll
 E:\KhachSan\UI\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
-E:\KhachSan\UI\obj\Debug\Home.InHoaDon.resources
-E:\KhachSan\UI\obj\Debug\Home.frmPrint.resources
 C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\Home.exe.config
 C:\Users\quydo\Desktop\KhachSan\UI\obj\Debug\Home.exe
 C:\Users\quydo\Desktop\KhachSan\UI\obj\Debug\Home.pdb
@@ -394,3 +391,6 @@ C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.re
 C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
 E:\KhachSan\UI\obj\Debug\Home.frmDatKhachDoan.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTextPhong.resources
+E:\KhachSan\UI\obj\Debug\Home.frmThanhToanKhachLe.resources
+E:\KhachSan\UI\obj\Debug\Home.frmPrintHDTP.resources
+E:\KhachSan\UI\obj\Debug\Home.InHoaDonTienPhong.resources

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDichVuDAL.cs" />
     <Compile Include="ChiTietThuePhongDAL.cs" />
     <Compile Include="DichVuDAL.cs" />
     <Compile Include="JoinTable_DAL.cs" />
@@ -59,8 +60,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SuDungDichVuDAL.cs" />
-    <Compile Include="ThanhToanDAL.cs" />
+    <Compile Include="ThanhToanHoaDonTienPhongDAL.cs" />
     <Compile Include="ThuePhongDAL.cs" />
   </ItemGroup>
   <ItemGroup>

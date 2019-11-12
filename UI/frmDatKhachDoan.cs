@@ -15,7 +15,6 @@ namespace Home
 {
     public partial class frmDatKhachDoan : DevExpress.XtraEditors.XtraForm
     {
-        List<eLoaiPhong> lsLP = new List<eLoaiPhong>();
         List<eKhachHang> ls = new List<eKhachHang>();
         int stt = 0;
         public static string CMND = string.Empty;
@@ -30,7 +29,6 @@ namespace Home
 
         private void frmDatKhachDoan_Load(object sender, EventArgs e)
         {
-            //PhongBUS pbus = new PhongBUS();
             autoCompleteSource();
             LoadPhongTrong();
             lblTongSoPhong.Text = stt.ToString();
@@ -50,22 +48,23 @@ namespace Home
 
         public void LoadPhongTrong()
         {
+            int sl = 0;
+            DataTable dt = new DataTable();
             PhongBUS pbus = new PhongBUS();
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            dt.Columns.Add("Tên loại phòng", typeof(string));
+            dt.Columns.Add("Số phòng trống", typeof(int));
+            dt.Columns.Add("Số lượng phòng", typeof(int));
             foreach (var item in lpbus.getall())
             {
-                eLoaiPhong lp = new eLoaiPhong();
                 int s = 0;
                 foreach (var p in pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false))
                 {
                     s++;
                 }
-                lp.TenLoaiPhong = item.TenLoaiPhong;
-                lp.SoPhongTrong = s;
-                lp.SoNguoi = 0;
-                lsLP.Add(lp);
+                dt.Rows.Add(item.TenLoaiPhong, s, sl);
             }
-            dgvLoaiPhong.DataSource = lsLP.ToList();
+            dgvLoaiPhong.DataSource = dt;
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
@@ -78,38 +77,7 @@ namespace Home
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //eThuePhong tp = new eThuePhong();
-            //ThuePhongBUS tpbus = new ThuePhongBUS();
-            //PhongBUS pbus = new PhongBUS();
-            //LoaiPhongBUS lpbus = new LoaiPhongBUS();
-            //NhanVienBUS nvbus = new NhanVienBUS();
-            //KhachHangBUS khbus = new KhachHangBUS();
-            //tp.MaPhong = pbus.maPhong_byTen(TenPhong);
-            //tp.MaKH = khbus.gemaKH_ByCMND(txtCMND.Text.Trim());
-            //tp.NgayVao = DateTime.Now.Date;
-            //tp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text);
-            //tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
-            //tp.TrangThai = 0;
-            //TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            //tp.GioVao = gioVao;
-            //TimeSpan gioRa = new TimeSpan(14, 00, 00);
-            //tp.GioRa = gioRa;
-            //int a = tpbus.insertThuePhong(tp);
-            //if (a == 1)
-            //{
-            //    //Đổi tình trạng phòng thành phòng có khách khi đặt phòng thành công
-            //    ePhong p = new ePhong();
-            //    p.MaPhong = pbus.maPhong_byTen(TenPhong);
-            //    p.TinhTrang = true;
-            //    pbus.updateTinhTrangPhong(p);
-            //    MessageBox.Show("Đặt phòng thành công");
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Không thành công");
-            //    return;
-            //}
+
         }
 
         private void btnKhToView_Click(object sender, EventArgs e)
@@ -124,5 +92,27 @@ namespace Home
             dgvDsKH.DataSource = ls.ToList();
         }
 
+        private void gridViewLoaiPhong_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            //eDichVu dv = new eDichVu();
+            //for (int i = 0; i < gridViewCTDV.RowCount; i++)
+            //{
+            //    foreach (eDichVu item in mangDichVu)
+            //    {
+            //        if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV && item.SoLuong < Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])))
+            //        {
+            //            ls.RemoveAt(i);
+            //            gridViewCTDV.DeleteRow(i);
+            //            DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
+            //            return;
+            //        }
+            //        if (Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])) == 0)
+            //        {
+            //            DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ phải lớn hơn 0");
+            //            return;
+            //        }
+            //    }
+            //}
+        }
     }
 }

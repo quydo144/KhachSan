@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace Entyti
 {
-    public class eSuDungDichVu
+    public class eChiTetDichVu
     {
-        private string maDV;
-        private string maThue;
+        private string maThue, maKhach, maPhong, maDV;
         private int soLuong;
-        private DateTime ngaySD;
-        private TimeSpan gioSD;
 
-        public eSuDungDichVu(string maDV, string maThue, int soLuong, DateTime ngaySD, TimeSpan gioSD)
+        public eChiTetDichVu(string maThue, string maKhach, string maPhong, string maDV, int soLuong)
         {
+            this.maThue = maThue;
+            this.maKhach = maKhach;
+            this.maPhong = maPhong;
             this.maDV = maDV;
             this.soLuong = soLuong;
-            this.maThue = maThue;
-            this.ngaySD = ngaySD;
-            this.gioSD = gioSD;
         }
 
-        public eSuDungDichVu()
+        public eChiTetDichVu()
         {
 
         }
@@ -41,29 +38,29 @@ namespace Entyti
             }
         }
 
-        public int SoLuong
+        public string MaKhach
         {
             get
             {
-                return soLuong;
+                return maKhach;
             }
 
             set
             {
-                soLuong = value;
+                maKhach = value;
             }
         }
 
-        public DateTime NgaySD
+        public string MaPhong
         {
             get
             {
-                return ngaySD;
+                return maPhong;
             }
 
             set
             {
-                ngaySD = value;
+                maPhong = value;
             }
         }
 
@@ -80,16 +77,16 @@ namespace Entyti
             }
         }
 
-        public TimeSpan GioSD
+        public int SoLuong
         {
             get
             {
-                return gioSD;
+                return soLuong;
             }
 
             set
             {
-                gioSD = value;
+                soLuong = value;
             }
         }
     }

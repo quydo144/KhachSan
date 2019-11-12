@@ -11,8 +11,9 @@ namespace Entyti
         private string maPhong, tenPhong, ghiChu, maLoaiPhong;
         private int tang;
         private bool tinhTrang;
+        private int soNgHienTai;
 
-        public ePhong(string maPhong, string tenPhong, string ghiChu, string maLoaiPhong, int tang, bool tinhTrang)
+        public ePhong(int soNgHienTai, string maPhong, string tenPhong, string ghiChu, string maLoaiPhong, int tang, bool tinhTrang)
         {
             this.maPhong = maPhong;
             this.tenPhong = tenPhong;
@@ -20,6 +21,7 @@ namespace Entyti
             this.maLoaiPhong = maLoaiPhong;
             this.tang = tang;
             this.tinhTrang = tinhTrang;
+            this.soNgHienTai = soNgHienTai;
         }
 
         public ePhong()
@@ -102,6 +104,19 @@ namespace Entyti
             set
             {
                 tinhTrang = value;
+            }
+        }
+
+        public int SoNgHienTai
+        {
+            get
+            {
+                return soNgHienTai;
+            }
+
+            set
+            {
+                soNgHienTai = value;
             }
         }
     }

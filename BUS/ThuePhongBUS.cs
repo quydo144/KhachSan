@@ -22,9 +22,9 @@ namespace BUS
             return tpdal.insertThuePhong(tp);
         }
 
-        public List<eThuePhong> getMaThuePhong(string s)
+        public List<eThuePhong> getMaThue(string s)
         {
-            return tpdal.getMaThuePhong(s);
+            return tpdal.getMaThue(s);
         }
 
         public string getMaThueCuoi()
@@ -32,10 +32,10 @@ namespace BUS
             return tpdal.getMaThueCuoi();
         }
 
-        //public void updateThuePhong(eThuePhong tp)
-        //{
-        //    tpdal.updateThuePhong(tp);
-        //}
+        public void updateThuePhong(eThuePhong tp)
+        {
+            tpdal.updateThuePhong(tp);
+        }
 
         //public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
         //{

@@ -66,10 +66,6 @@ namespace Home
             {
                 return false;
             }
-            if (txtTenPhong.Text.Equals(""))
-            {
-                return false;
-            }
             if (bteTang.Text.Equals(""))
             {
                 return false;
@@ -86,7 +82,6 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             ePhong p_ent = new ePhong();
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
-            p_ent.TenPhong = txtTenPhong.Text.Trim();
             p_ent.GhiChu = txtGhiChu.Text.Trim();
             p_ent.Tang = Convert.ToInt32(bteTang.Value.ToString());
             p_ent.MaLoaiPhong = lpbus.getma_ByTen(cbxLoaiPhong.Text);

@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbxLoaiPhong = new System.Windows.Forms.ComboBox();
             this.bteTang = new DevExpress.XtraEditors.SpinEdit();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
@@ -38,16 +36,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bteTang.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtTenPhong
-            // 
-            this.txtTenPhong.Location = new System.Drawing.Point(126, 85);
-            this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(319, 32);
-            this.txtTenPhong.TabIndex = 47;
-            this.txtTenPhong.Text = "Phòng 31";
             // 
             // label3
             // 
@@ -57,15 +49,6 @@
             this.label3.TabIndex = 45;
             this.label3.Text = "Tầng";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(-3, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 38);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Tên phòng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbxLoaiPhong
             // 
@@ -160,6 +143,23 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnThemPhong_Click);
             // 
+            // txtTenPhong
+            // 
+            this.txtTenPhong.Enabled = false;
+            this.txtTenPhong.Location = new System.Drawing.Point(126, 85);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(319, 32);
+            this.txtTenPhong.TabIndex = 47;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(-3, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 38);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Tên phòng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmTextPhong
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -193,10 +193,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxLoaiPhong;
         private DevExpress.XtraEditors.SpinEdit bteTang;
         private System.Windows.Forms.TextBox txtGhiChu;
@@ -204,5 +201,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTieuDe;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -80,16 +80,17 @@ namespace Home
         public void lblred_Click(object sender, MouseEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
-            ThuePhongBUS tpbus = new ThuePhongBUS();
+            ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
             Label lbl = sender as Label;
             if (e.Button == MouseButtons.Right)
             {
-                frmThanhToan.TenPhong = lbl.Text;
+                frmThanhToanKhachLe.TenPhong = lbl.Text;
                 frmDatPhong.TenLoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(lbl.Text)));
-                frmThanhToan.LoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(lbl.Text)));
+                frmThanhToanKhachLe.LoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(lbl.Text)));
                 frmDatPhong.TenPhong = lbl.Text;
-                //frmThanhToan.MaThue = tpbus.getMaThue_ByMaPhongTrangThai(pbus.maPhong_byTen(lbl.Text), 0);
-                //frmDatPhong.maThue = tpbus.getMaThue_ByMaPhongTrangThai(pbus.maPhong_byTen(lbl.Text), 0);
+                frmThanhToanKhachLe.MaThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(lbl.Text), false);
+                frmDatPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(lbl.Text), false);
+                frmDatPhong.maKhachHang = cttpbus.getMaKhach_By_MaPhong_TrangThai(pbus.maPhong_byTen(lbl.Text), false);
             }
         }
 
@@ -322,7 +323,7 @@ namespace Home
 
         private void thuePhongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmThanhToan frm = new frmThanhToan(this);
+            frmThanhToanKhachLe frm = new frmThanhToanKhachLe(this);
             frm.ShowDialog();
         }
 
@@ -415,7 +416,7 @@ namespace Home
         {
             cleanGiaoDien();
             PhongBUS pbus = new PhongBUS();
-            //TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+            TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }
 
         private void btnTheoLoaiPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -423,12 +424,12 @@ namespace Home
             cleanGiaoDien();
             PhongBUS pbus = new PhongBUS();
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
-            //TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Normal")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Normal"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Normal");
-            //TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Double")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Double"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Double");
-            //TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Triple")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Triple"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Triple");
-            //TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Family")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Family"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Family");
-            //TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Vip")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Vip"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Vip");
-            //TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Deluxe")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Deluxe"), false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng Deluxe");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Normal")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Normal"), false), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Normal"), true), "Phòng Normal");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Double")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Double"), false), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Double"), true), "Phòng Double");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Triple")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Triple"), false), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Triple"),true), "Phòng Triple");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Family")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Family"), false), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Family"),true), "Phòng Family");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Vip")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Vip"), false), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Vip"), true), "Phòng Vip");
+            TaoGiaoDienPhong(pbus.getLoaiPhong(lpbus.getma_ByTen("Deluxe")), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Deluxe"), false), pbus.getLoaiPhong_Trong(lpbus.getma_ByTen("Deluxe"), true), "Phòng Deluxe");
         }
 
         private void btnTheoTang_ItemClick(object sender, ItemClickEventArgs e)
@@ -437,7 +438,7 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             foreach (var item in pbus.Tang())
             {
-                //TaoGiaoDienPhong(pbus.getTang(item.ToString()), pbus.getTang_PhongTrong(item.ToString(), false), joinbus.GetPhong_ThuePhong(true, 0), "Tầng " + item.ToString());
+                TaoGiaoDienPhong(pbus.getTang(item.ToString()), pbus.getTang_PhongTrong(item.ToString(), false), pbus.getTang_PhongTrong(item.ToString(), true), "Tầng " + item.ToString());
             }
 
         }
@@ -449,7 +450,7 @@ namespace Home
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             foreach (var item in lpbus.getDOnGia(500000, 1000000))
             {
-                //TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng 500,000 đồng đến 1 triệu đồng");
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, true), "Phòng 500,000 đồng đến 1 triệu đồng");
             }
         }
 
@@ -460,7 +461,7 @@ namespace Home
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             foreach (var item in lpbus.getDOnGia(1000000, 1500000))
             {
-                //TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng 1 triệu đồng đến 1 triệu 500 nghìn đồng");
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, true), "Phòng 1 triệu đồng đến 1 triệu 500 nghìn đồng");
             }
         }
 
@@ -471,7 +472,7 @@ namespace Home
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             foreach (var item in lpbus.getDOnGia(1500000, int.MaxValue))
             {
-                //TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng trên 1 triệu 500 nghìn đồng");
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, true), "Phòng trên 1 triệu 500 nghìn đồng");
             }
         }
 

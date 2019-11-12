@@ -13,21 +13,21 @@ using BUS;
 
 namespace Home
 {
-    public partial class frmPrint : DevExpress.XtraEditors.XtraForm
+    public partial class frmPrintHDTP : DevExpress.XtraEditors.XtraForm
     {
-        public frmPrint()
+        public frmPrintHDTP()
         {
             InitializeComponent();
         }
 
-        public void InHoaDonInTuReport(BaoCao bc, List<CTDVBaoCao> ls)
+        public void InHoaDonInTuReport(HoaDon bc, List<eChiTietBaoCao> ls)
         {
-            InHoaDon report = new InHoaDon();
+            InHoaDonTienPhong report = new InHoaDonTienPhong();
             foreach (DevExpress.XtraReports.Parameters.Parameter item in report.Parameters)
             {
                 item.Visible = false;
             }
-            report.InHoaDonInData(bc.tenNV, bc.tenKH, bc.soPhong, bc.soHD, bc.thoiGianInHD, bc.ngayDen, bc.ngayRa, bc.tienPhong, ls.ToList());
+            report.InHoaDonInData(bc.tenNV, bc.tenKH, bc.soHD, bc.thoiGianInHD, ls.ToList());
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }

@@ -213,7 +213,7 @@ namespace DAL
             IQueryable<Phong> p = db.Phongs.Where(x => x.maPhong.Equals(pupdate.MaPhong));
             p.First().maLoaiPhong = pupdate.MaLoaiPhong;
             p.First().ghiChu = pupdate.GhiChu;
-            p.First().tang = pupdate.Tang.ToString();
+            p.First().tang = pupdate.Tang;
             db.SubmitChanges();
             return 1;
         }
@@ -222,10 +222,10 @@ namespace DAL
         {
             Phong ptemp = new Phong();
             ptemp.maPhong = "";
-            ptemp.tenPhong = pnew.TenPhong;
+            ptemp.tenPhong = "";
             ptemp.ghiChu = pnew.GhiChu;
             ptemp.maLoaiPhong = pnew.MaLoaiPhong;
-            ptemp.tang = (pnew.Tang).ToString();
+            ptemp.tang = (pnew.Tang);
             ptemp.tinhTrang = pnew.TinhTrang;
             db.Phongs.InsertOnSubmit(ptemp);
             db.SubmitChanges();

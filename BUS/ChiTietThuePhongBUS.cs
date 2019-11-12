@@ -16,5 +16,30 @@ namespace BUS
         {
             return cttpdal.insertCTTP(cttpnew);
         }
+
+        public string getMaThue_By_MaPhong_TrangThai(string maPhong, bool trangThai)
+        {
+            return cttpdal.getMaThue_By_MaPhong_TrangThai(maPhong, trangThai);
+        }
+
+        public string getMaKhach_By_MaPhong_TrangThai(string maPhong, bool trangThai)
+        {
+            return cttpdal.getMaKhach_By_MaPhong_TrangThai(maPhong, trangThai);
+        }
+
+        public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue(string maThue)
+        {
+            return cttpdal.getChiTietThuePhong_By_MaThue(maThue);
+        }
+
+        public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue_MaPhong(string maThue, string maPhong)
+        {
+            return cttpdal.getChiTietThuePhong_By_MaThue_MaPhong(maThue, maPhong);
+        }
+
+        public void updateChiTietThuePhong(eChiTietThuePhong tp)
+        {
+            cttpdal.updateChiTietThuePhong(tp);
+        }
     }
 }

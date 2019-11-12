@@ -1,6 +1,6 @@
 ﻿namespace Home
 {
-    partial class frmThanhToan
+    partial class frmThanhToanKhachLe
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanKhachLe));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMaThue = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -199,7 +199,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 170);
+            this.label4.Location = new System.Drawing.Point(10, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 22);
             this.label4.TabIndex = 16;
@@ -207,9 +207,9 @@
             // 
             // lblGhiChu
             // 
-            this.lblGhiChu.Location = new System.Drawing.Point(86, 199);
+            this.lblGhiChu.Location = new System.Drawing.Point(10, 199);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(478, 89);
+            this.lblGhiChu.Size = new System.Drawing.Size(562, 89);
             this.lblGhiChu.TabIndex = 15;
             // 
             // groupBox1
@@ -721,7 +721,7 @@
             this.label7.Text = "Họ tên";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // frmThanhToan
+            // frmThanhToanKhachLe
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -734,9 +734,9 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmThanhToan";
+            this.Name = "frmThanhToanKhachLe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thanh toán";
+            this.Text = "Thanh toán khách lẻ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThanhToan_FormClosing);
             this.Load += new System.EventHandler(this.frmThanhToan_Load);
             this.panel1.ResumeLayout(false);

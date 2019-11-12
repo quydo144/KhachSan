@@ -11,15 +11,14 @@ namespace Entyti
         private string maLoaiPhong, tenLoaiPhong;
         private double donGia;
         private int soNguoi;
-        private int soPhongTrong;
 
-        public eLoaiPhong(int soPhongTrong, string maLoaiPhong, string tenLoaiPhong, double donGia, int soNguoi)
+        public eLoaiPhong(string maLoaiPhong, string tenLoaiPhong, double donGia, int soNguoi)
         {
             this.maLoaiPhong = maLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
             this.donGia = donGia;
             this.soNguoi = soNguoi;
-            this.soPhongTrong = soPhongTrong;
+
         }
 
         public eLoaiPhong()
@@ -76,19 +75,6 @@ namespace Entyti
             set
             {
                 soNguoi = value;
-            }
-        }
-
-        public int SoPhongTrong
-        {
-            get
-            {
-                return soPhongTrong;
-            }
-
-            set
-            {
-                soPhongTrong = value;
             }
         }
     }

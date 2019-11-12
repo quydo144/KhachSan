@@ -423,6 +423,7 @@
             this.gridViewLoaiPhong.GridControl = this.dgvLoaiPhong;
             this.gridViewLoaiPhong.Name = "gridViewLoaiPhong";
             this.gridViewLoaiPhong.OptionsView.ShowGroupPanel = false;
+            this.gridViewLoaiPhong.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewLoaiPhong_RowClick);
             // 
             // tenLoaiPhong
             // 
@@ -431,7 +432,7 @@
             this.tenLoaiPhong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F);
             this.tenLoaiPhong.AppearanceHeader.Options.UseFont = true;
             this.tenLoaiPhong.Caption = "Tên loại phòng";
-            this.tenLoaiPhong.FieldName = "TenLoaiPhong";
+            this.tenLoaiPhong.FieldName = "Tên loại phòng";
             this.tenLoaiPhong.MinWidth = 25;
             this.tenLoaiPhong.Name = "tenLoaiPhong";
             this.tenLoaiPhong.Visible = true;
@@ -445,7 +446,7 @@
             this.phongTrong.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F);
             this.phongTrong.AppearanceHeader.Options.UseFont = true;
             this.phongTrong.Caption = "Số phòng trống";
-            this.phongTrong.FieldName = "SoPhongTrong";
+            this.phongTrong.FieldName = "Số phòng trống";
             this.phongTrong.MinWidth = 25;
             this.phongTrong.Name = "phongTrong";
             this.phongTrong.Visible = true;
@@ -460,7 +461,7 @@
             this.soLuongPhong.AppearanceHeader.Options.UseFont = true;
             this.soLuongPhong.Caption = "Số lượng phòng";
             this.soLuongPhong.ColumnEdit = this.bteSoLuong;
-            this.soLuongPhong.FieldName = "SoNguoi";
+            this.soLuongPhong.FieldName = "Số lượng phòng";
             this.soLuongPhong.MinWidth = 25;
             this.soLuongPhong.Name = "soLuongPhong";
             this.soLuongPhong.Visible = true;

@@ -40,16 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao.cs" />
-    <Compile Include="CTDVBaoCao.cs" />
+    <Compile Include="eChiTietBaoCao.cs" />
+    <Compile Include="HoaDon.cs" />
+    <Compile Include="eChiTetDichVu.cs" />
     <Compile Include="eChiTietThuePhong.cs" />
     <Compile Include="eCTDV.cs" />
     <Compile Include="eDichVu.cs" />
+    <Compile Include="eDoan.cs" />
+    <Compile Include="eHoaDonDichVu.cs" />
     <Compile Include="eHonLoan.cs" />
     <Compile Include="eNhanVien.cs" />
     <Compile Include="eThuePhong.cs" />
-    <Compile Include="eSuDungDichVu.cs" />
-    <Compile Include="eThanhToan.cs" />
+    <Compile Include="eHoaDonTienPhong.cs" />
     <Compile Include="eKhachHang.cs" />
     <Compile Include="eLoaiPhong.cs" />
     <Compile Include="ePhong.cs" />

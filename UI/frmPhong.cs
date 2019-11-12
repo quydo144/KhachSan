@@ -97,7 +97,7 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             JoinTable_BUS joinbus = new JoinTable_BUS();
             frm.AnflowLayoutPanel();
-            //frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }
     }
 }

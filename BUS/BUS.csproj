@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDichVuBUS.cs" />
     <Compile Include="ChiTietThuePhongBUS.cs" />
     <Compile Include="DichVuBUS.cs" />
     <Compile Include="JoinTable_BUS.cs" />
@@ -48,8 +49,7 @@
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuDungDichVuBUS.cs" />
-    <Compile Include="ThanhToanBUS.cs" />
+    <Compile Include="ThanhToanHoaDonTienPhongBUS.cs" />
     <Compile Include="ThuePhongBUS.cs" />
   </ItemGroup>
   <ItemGroup>

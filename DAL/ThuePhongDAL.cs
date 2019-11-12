@@ -16,13 +16,14 @@ namespace DAL
             ThuePhong temp = new ThuePhong();
             temp.maThue = "";
             temp.maNV = newtp.MaNV;
+            temp.soLuongPhong = newtp.SoLuongPhong;
             temp.trangThai = Convert.ToByte(newtp.TrangThai);
             db.ThuePhongs.InsertOnSubmit(temp);
             db.SubmitChanges();
             return 1;
         }
 
-        public List<eThuePhong> getMaThuePhong(string s)
+        public List<eThuePhong> getMaThue(string s)
         {
             var list = (from x in db.ThuePhongs where x.maThue.Trim().Equals(s.Trim()) select x).ToList();
             List<eThuePhong> ls = new List<eThuePhong>();
@@ -48,14 +49,12 @@ namespace DAL
         //    return tp.maThue;
         //}
 
-        //public void updateThuePhong(eThuePhong tp)
-        //{
-        //    IQueryable<ThuePhong> tphong = db.ThuePhongs.Where(x => x.maThue.Equals(tp.MaThuePhong));
-        //    tphong.First().gioRa = tp.GioRa;
-        //    tphong.First().ngayRa = tp.NgayRa;
-        //    tphong.First().trangThai = Convert.ToByte(tp.TrangThai);
-        //    db.SubmitChanges();
-        //}
+        public void updateThuePhong(eThuePhong tp)
+        {
+            IQueryable<ThuePhong> tphong = db.ThuePhongs.Where(x => x.maThue.Equals(tp.MaThue));
+            tphong.First().trangThai = Convert.ToByte(tp.TrangThai);
+            db.SubmitChanges();
+        }
 
         //public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
         //{

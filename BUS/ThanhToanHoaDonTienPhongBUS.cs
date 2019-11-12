@@ -8,11 +8,11 @@ using DAL;
 
 namespace BUS
 {
-    public class ThanhToanBUS
+    public class ThanhToanHoaDonTienPhongBUS
     {
-        ThanhToanDAL ttdal = new ThanhToanDAL();
+        ThanhToanHoaDonTienPhongDAL ttdal = new ThanhToanHoaDonTienPhongDAL();
 
-        public int insertThanhToan(eThanhToan tt)
+        public int insertThanhToan(eHoaDonTienPhong tt)
         {
             return ttdal.insertThanhToan(tt);
         }

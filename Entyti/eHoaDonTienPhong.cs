@@ -3,67 +3,71 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Entyti
 {
-    public class eThanhToan
+    public class eHoaDonTienPhong
     {
-        private string maHD, maThuePhong;
+        private string maHDPhong, maThue, ghiChu;
         private DateTime ngayLap;
-        private float thueVAT, giamGia;
+        private float thueVAT, khuyenMai;
         private TimeSpan gioLap;
+        private double tienKhac;
 
-        public eThanhToan(string maHD, string maThuePhong, DateTime ngayLap, float thueVAT, float giamGia, TimeSpan gioLap)
+        public eHoaDonTienPhong(string maHDPhong, string maThue, string ghiChu, DateTime ngayLap, float thueVAT, float khuyenMai, TimeSpan gioLap, double tienKhac)
         {
-            this.maHD = maHD;
-            this.maThuePhong = maThuePhong;
+            this.maHDPhong = maHDPhong;
+            this.maThue = maThue;
+            this.ghiChu = ghiChu;
             this.ngayLap = ngayLap;
             this.thueVAT = thueVAT;
-            this.giamGia = giamGia;
+            this.khuyenMai = khuyenMai;
             this.gioLap = gioLap;
+            this.tienKhac = tienKhac;
         }
-
-        public eThanhToan()
+        
+        public eHoaDonTienPhong()
         {
 
         }
 
-        public string MaHD
+        public string MaHDPhong
         {
             get
             {
-                return maHD;
+                return maHDPhong;
             }
 
             set
             {
-                maHD = value;
+                maHDPhong = value;
             }
         }
 
-        public float GiamGia
+        public string MaThue
         {
             get
             {
-                return giamGia;
+                return maThue;
             }
 
             set
             {
-                giamGia = value;
+                maThue = value;
             }
         }
 
-        public string MaThuePhong
+        public string GhiChu
         {
             get
             {
-                return maThuePhong;
+                return ghiChu;
             }
 
             set
             {
-                maThuePhong = value;
+                ghiChu = value;
             }
         }
 
@@ -93,6 +97,19 @@ namespace Entyti
             }
         }
 
+        public float KhuyenMai
+        {
+            get
+            {
+                return khuyenMai;
+            }
+
+            set
+            {
+                khuyenMai = value;
+            }
+        }
+
         public TimeSpan GioLap
         {
             get
@@ -106,9 +123,22 @@ namespace Entyti
             }
         }
 
-        public double tinhTienPhuThu(List<eChiTietThuePhong> ls, double tienPhong)
+        public double TienKhac
         {
-            double phuThu = 0;
+            get
+            {
+                return tienKhac;
+            }
+
+            set
+            {
+                tienKhac = value;
+            }
+        }
+
+        public ArrayList tinhTienPhuThu(List<eChiTietThuePhong> ls, double tienPhong)
+        {
+            ArrayList phuThu = new ArrayList();
             TimeSpan nhan13h = new TimeSpan(13, 00, 00);
             TimeSpan nhan11h = new TimeSpan(11, 00, 00);
             TimeSpan nhan8h = new TimeSpan(8, 00, 00);
@@ -117,25 +147,25 @@ namespace Entyti
             {
                 if (item.GioVao <= nhan13h && item.GioVao > nhan11h)
                 {
-                    phuThu = (0.3 * tienPhong);
+                    phuThu.Add(0.3 * tienPhong);
                 }
                 else if (item.GioVao <= nhan11h && item.GioVao > nhan8h)
                 {
-                    phuThu = (0.5 * tienPhong);
+                    phuThu.Add(0.5 * tienPhong);
                 }
                 else if (item.GioVao < nhan6h)
                 {
-                    phuThu = 0;
+                    phuThu.Add(0);
                 }
                 else if (item.GioVao >= nhan13h)
                 {
-                    phuThu = 0;
+                    phuThu.Add(0);
                 }
             }
             return phuThu;
         }
 
-        public double tinhTienPhong(eThuePhong tp, double tienPhong, DateTime nhanPhong, DateTime traPhong)
+        public double tinhTienPhong(eChiTietThuePhong tp, double tienPhong, DateTime nhanPhong, DateTime traPhong)
         {
             double money = 0;
             TimeSpan date = traPhong - nhanPhong;

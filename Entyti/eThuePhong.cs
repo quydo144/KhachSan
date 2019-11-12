@@ -9,13 +9,17 @@ namespace Entyti
     public class eThuePhong
     {
         private string maThue, maNV;
-        private int trangThai;
+        private bool trangThai;
+        private int soLuongPhong;
+        private string maDoan;
 
-        public eThuePhong(string maThue, string maNV, int trangThai)
+        public eThuePhong(string maThue, string maNV, bool trangThai, int soLuongPhong, string maDoan)
         {
             this.maThue = maThue;
             this.maNV = maNV;
             this.trangThai = trangThai;
+            this.soLuongPhong = soLuongPhong;
+            this.maDoan = maDoan;
         }
 
         public eThuePhong()
@@ -49,7 +53,7 @@ namespace Entyti
             }
         }
 
-        public int TrangThai
+        public bool TrangThai
         {
             get
             {
@@ -59,6 +63,32 @@ namespace Entyti
             set
             {
                 trangThai = value;
+            }
+        }
+
+        public int SoLuongPhong
+        {
+            get
+            {
+                return soLuongPhong;
+            }
+
+            set
+            {
+                soLuongPhong = value;
+            }
+        }
+
+        public string MaDoan
+        {
+            get
+            {
+                return maDoan;
+            }
+
+            set
+            {
+                maDoan = value;
             }
         }
     }
