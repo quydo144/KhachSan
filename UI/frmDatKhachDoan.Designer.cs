@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatKhachDoan));
+            DevExpress.XtraEditors.BreadCrumbNode breadCrumbNode1 = new DevExpress.XtraEditors.BreadCrumbNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTruongDoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,6 +69,8 @@
             this.bteSoLuong = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
             this.btnAddKhAutoPhong = new System.Windows.Forms.Button();
+            this.btnAddCoSanPhong = new System.Windows.Forms.Button();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.BreadCrumbEdit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoaiPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bteSoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -359,7 +363,7 @@
             this.labelControl3.LineVisible = true;
             this.labelControl3.Location = new System.Drawing.Point(-4, 403);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(1014, 30);
+            this.labelControl3.Size = new System.Drawing.Size(859, 30);
             this.labelControl3.TabIndex = 23;
             this.labelControl3.Text = "Danh sách khách hàng theo đoàn";
             // 
@@ -421,7 +425,7 @@
             this.gridViewLoaiPhong.GridControl = this.dgvLoaiPhong;
             this.gridViewLoaiPhong.Name = "gridViewLoaiPhong";
             this.gridViewLoaiPhong.OptionsView.ShowGroupPanel = false;
-            this.gridViewLoaiPhong.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewLoaiPhong_RowClick);
+            this.gridViewLoaiPhong.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewLoaiPhong_RowCellClick);
             // 
             // tenLoaiPhong
             // 
@@ -433,6 +437,8 @@
             this.tenLoaiPhong.FieldName = "Tên loại phòng";
             this.tenLoaiPhong.MinWidth = 25;
             this.tenLoaiPhong.Name = "tenLoaiPhong";
+            this.tenLoaiPhong.OptionsColumn.AllowEdit = false;
+            this.tenLoaiPhong.OptionsColumn.AllowFocus = false;
             this.tenLoaiPhong.Visible = true;
             this.tenLoaiPhong.VisibleIndex = 0;
             this.tenLoaiPhong.Width = 94;
@@ -443,6 +449,8 @@
             this.giaPhong.FieldName = "Giá phòng";
             this.giaPhong.MinWidth = 25;
             this.giaPhong.Name = "giaPhong";
+            this.giaPhong.OptionsColumn.AllowEdit = false;
+            this.giaPhong.OptionsColumn.AllowFocus = false;
             this.giaPhong.Visible = true;
             this.giaPhong.VisibleIndex = 1;
             this.giaPhong.Width = 94;
@@ -457,6 +465,8 @@
             this.phongTrong.FieldName = "Số phòng trống";
             this.phongTrong.MinWidth = 25;
             this.phongTrong.Name = "phongTrong";
+            this.phongTrong.OptionsColumn.AllowEdit = false;
+            this.phongTrong.OptionsColumn.AllowFocus = false;
             this.phongTrong.Visible = true;
             this.phongTrong.VisibleIndex = 2;
             this.phongTrong.Width = 94;
@@ -499,6 +509,29 @@
             this.btnAddKhAutoPhong.UseVisualStyleBackColor = true;
             this.btnAddKhAutoPhong.Click += new System.EventHandler(this.btnAddKhAutoPhong_Click);
             // 
+            // btnAddCoSanPhong
+            // 
+            this.btnAddCoSanPhong.Location = new System.Drawing.Point(879, 402);
+            this.btnAddCoSanPhong.Name = "btnAddCoSanPhong";
+            this.btnAddCoSanPhong.Size = new System.Drawing.Size(122, 30);
+            this.btnAddCoSanPhong.TabIndex = 31;
+            this.btnAddCoSanPhong.Text = "Add_CoSan";
+            this.btnAddCoSanPhong.UseVisualStyleBackColor = true;
+            this.btnAddCoSanPhong.Click += new System.EventHandler(this.btnAddCoSanPhong_Click);
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(683, 143);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            breadCrumbNode1.Caption = "Root";
+            breadCrumbNode1.Value = "Root";
+            this.comboBoxEdit1.Properties.Nodes.AddRange(new DevExpress.XtraEditors.BreadCrumbNode[] {
+            breadCrumbNode1});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(237, 26);
+            this.comboBoxEdit1.TabIndex = 32;
+            // 
             // frmDatKhachDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -506,6 +539,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1107, 834);
+            this.Controls.Add(this.btnAddCoSanPhong);
             this.Controls.Add(this.btnAddKhAutoPhong);
             this.Controls.Add(this.dgvLoaiPhong);
             this.Controls.Add(this.btnThemKH);
@@ -517,6 +551,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.comboBoxEdit1);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -538,6 +573,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoaiPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bteSoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -581,5 +617,7 @@
         private System.Windows.Forms.TextBox txtTruongDoan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddKhAutoPhong;
+        private System.Windows.Forms.Button btnAddCoSanPhong;
+        private DevExpress.XtraEditors.BreadCrumbEdit comboBoxEdit1;
     }
 }

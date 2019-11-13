@@ -78,11 +78,6 @@ namespace Home
             txtTenDoan.Text = TenKH;
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnKhToView_Click(object sender, EventArgs e)
         {
             KhachHangBUS khbus = new KhachHangBUS();
@@ -109,35 +104,58 @@ namespace Home
             dgvDsKH.DataSource = ls.ToList();
         }
 
-        private void gridViewLoaiPhong_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            //eDichVu dv = new eDichVu();
-            //for (int i = 0; i < gridViewCTDV.RowCount; i++)
-            //{
-            //    foreach (eDichVu item in mangDichVu)
-            //    {
-            //        if (gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[0]).ToString() == item.MaDV && item.SoLuong < Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])))
-            //        {
-            //            ls.RemoveAt(i);
-            //            gridViewCTDV.DeleteRow(i);
-            //            DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ " + item.TenDV.ToLower() + " đã hết");
-            //            return;
-            //        }
-            //        if (Convert.ToInt32(gridViewCTDV.GetRowCellValue(i, gridViewCTDV.Columns[2])) == 0)
-            //        {
-            //            DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng dịch vụ phải lớn hơn 0");
-            //            return;
-            //        }
-            //    }
-            //}
-        }
-
         private void txtTKcmnd_Enter(object sender, EventArgs e)
         {
             txtTKcmnd.Clear();
         }
 
+        public void auToloadKhachHanhToDSPhong()
+        {
+            ArrayList dsTenPhong = new ArrayList();
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            for (int i = 0; i < gridViewLoaiPhong.RowCount; i++)
+            {
+                foreach (var item in pbus.getLoaiPhong_Trong_soLuong(lpbus.getma_ByTen(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[0]).ToString()), false, Convert.ToInt32(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[3]))))
+                {
+                    dsTenPhong.Add(item.TenPhong);
+                }
+            }
+            for (int i = 0; i < dsTenPhong.Count; i++)
+            {
+                if (dsTenPhong.Count == 1)
+                {
+                    break;
+                }
+                for (int j = i + 1; j < dsTenPhong.Count; j++)
+                {
+                    if (dsTenPhong[i].Equals(dsTenPhong[j]))
+                    {
+                        dsTenPhong.RemoveAt(i);
+                    }
+                }
+            }
+            int s = 0;
+            for (int i = s; i < dsTenPhong.Count; i++)
+            {
+                int soNguoiToiDa = lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(dsTenPhong[i].ToString())));
+                for (int j = 0; j < soNguoiToiDa; j++)
+                {
+                    gridViewDsKH.SetRowCellValue(s, gridViewDsKH.Columns[3], dsTenPhong[i]);
+                    s++;
+
+                }
+            }
+            cboPhong.DataSource = dsTenPhong;
+
+        }
+
         private void btnAddKhAutoPhong_Click(object sender, EventArgs e)
+        {
+            auToloadKhachHanhToDSPhong();
+        }
+
+        private void cboPhong_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             ArrayList dsTenPhong = new ArrayList();
             ArrayList dsPhongO = new ArrayList();
@@ -150,7 +168,6 @@ namespace Home
                     dsTenPhong.Add(item.TenPhong);
                 }
             }
-
             for (int i = 0; i < dsTenPhong.Count; i++)
             {
                 if (dsTenPhong.Count == 1)
@@ -166,64 +183,118 @@ namespace Home
                 }
             }
             cboPhong.DataSource = dsTenPhong;
+        }
 
-            int s = 0;
-            for (int i = 0; i < dsTenPhong.Count; i++)
-            {
-                for (int j = 0; j < lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(dsTenPhong[i].ToString()))); j++)
-                {
-                    gridViewDsKH.SetRowCellValue(s, gridViewDsKH.Columns[3], dsTenPhong[i]);
-                    s++;
-                }
-            }
-
-            //int stt = 0;
-            //for (int i = stt; i < gridViewDsKH.RowCount; i++)
-            //{
-            //    int kh = 0, a = 0;
-            //    if (gridViewDsKH.GetRowCellValue(i, gridViewDsKH.Columns[3]).ToString().Equals(dsTenPhong[a]))
-            //    {
-            //        kh++;
-            //    }
-            //    if (lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(dsTenPhong[a].ToString()))) == kh)
-            //    {
-            //        dsTenPhong.RemoveAt(a);
-            //    }
-            //    a++;
-            //    stt++; 
-            //}
-
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void cboPhong_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void gridViewLoaiPhong_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            ArrayList dsTenPhong = new ArrayList();
-            PhongBUS pbus = new PhongBUS();
-            LoaiPhongBUS lpbus = new LoaiPhongBUS();
             for (int i = 0; i < gridViewLoaiPhong.RowCount; i++)
             {
-                foreach (var item in pbus.getLoaiPhong_Trong_soLuong(lpbus.getma_ByTen(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[0]).ToString()), false, Convert.ToInt32(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[3]))))
+                if (Convert.ToInt32(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[2])) < Convert.ToInt32(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[3])))
                 {
-                    dsTenPhong.Add(item.TenPhong);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng phòng " + gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[0]).ToString() + " lớn hơn yêu cầu");
+                    return;
                 }
             }
+        }
 
-            for (int i = 0; i < dsTenPhong.Count; i++)
-            {
-                if (dsTenPhong.Count == 1)
-                {
-                    break;
-                }
-                for (int j = i + 1; j < dsTenPhong.Count; j++)
-                {
-                    if (dsTenPhong[i].Equals(dsTenPhong[j]))
-                    {
-                        dsTenPhong.RemoveAt(i);
-                    }
-                }
-            }
-            cboPhong.DataSource = dsTenPhong;
+        private void btnAddCoSanPhong_Click(object sender, EventArgs e)
+        {
+            //ArrayList dsTenPhong = new ArrayList();
+            //ArrayList dsPhongO = new ArrayList();
+            //PhongBUS pbus = new PhongBUS();
+            //LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            //for (int i = 0; i < gridViewLoaiPhong.RowCount; i++)
+            //{
+            //    foreach (var item in pbus.getLoaiPhong_Trong_soLuong(lpbus.getma_ByTen(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[0]).ToString()), false, Convert.ToInt32(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[3]))))
+            //    {
+            //        dsTenPhong.Add(item.TenPhong);
+            //    }
+            //}
+            //for (int i = 0; i < dsTenPhong.Count; i++)
+            //{
+            //    if (dsTenPhong.Count == 1)
+            //    {
+            //        break;
+            //    }
+            //    for (int j = i + 1; j < dsTenPhong.Count; j++)
+            //    {
+            //        if (dsTenPhong[i].Equals(dsTenPhong[j]))
+            //        {
+            //            dsTenPhong.RemoveAt(i);
+            //        }
+            //    }
+            //}
+
+            //for (int a = 0; a < gridViewDsKH.RowCount; a++) 
+            //{
+            //    eKhachHang kh = new eKhachHang();
+            //    kh = (eKhachHang)(gridViewDsKH.GetRow(a));
+            //    int x = 0;
+            //    if (kh.SoPhong == null)
+            //    {
+            //        continue;
+            //    }
+            //    for (int i = 0; i < dsTenPhong.Count; i++)
+            //    {
+            //        if (kh.SoPhong.Equals(dsTenPhong[i]))
+            //        {
+            //            dsTenPhong.RemoveAt(i);
+            //            x--;
+            //        }
+            //    }
+            //    x++;
+            //}
+
+            //int y = 0;
+            //for (int a = y; a < gridViewDsKH.RowCount; a++)
+            //{
+            //    eKhachHang kh = new eKhachHang();
+            //    kh = (eKhachHang)(gridViewDsKH.GetRow(a));
+            //    for (int i = 0; i < dsTenPhong.Count; i++)
+            //    {
+            //        int soNguoiToiDa = lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(dsTenPhong[i].ToString())));
+            //        for (int j = 0; j < soNguoiToiDa; j++)
+            //        {
+            //            if (kh.SoPhong != null)
+            //            {
+            //                continue;
+            //            }
+            //            else
+            //            {
+            //                gridViewDsKH.SetRowCellValue(a, gridViewDsKH.Columns[3], dsTenPhong[i]);                   
+            //            }
+            //        }
+            //        y++;
+            //    }
+            //}
+
+            //for (int i = 0; i < dsTenPhong.Count; i++)
+            //{
+            //    for (int a = y; a < gridViewDsKH.RowCount; a++)
+            //    {
+            //        eKhachHang kh = new eKhachHang();
+            //        kh = (eKhachHang)(gridViewDsKH.GetRow(a));
+            //        int soNguoiToiDa = lpbus.getsoNguoi_ByID(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(dsTenPhong[i].ToString())));
+            //        for (int j = 0; j < soNguoiToiDa; j++)
+            //        {
+            //            if (kh.SoPhong != null)
+            //            {
+            //                continue;
+            //            }
+            //            else
+            //            {
+            //                gridViewDsKH.SetRowCellValue(a, gridViewDsKH.Columns[3], dsTenPhong[i]);
+            //            }
+            //        }
+            //        y++;
+            //    }
+            //}
+            //cboPhong.DataSource = dsTenPhong;
         }
     }
 }
