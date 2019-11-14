@@ -186,8 +186,8 @@ namespace Home
                 eThuePhong tp = new eThuePhong();
                 NhanVienBUS nvbus = new NhanVienBUS();
                 tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
-                tp.SoLuongPhong = 0;
-                tp.TrangThai = true;
+                tp.SoLuongPhong = 1;
+                tp.TrangThai = false;
                 TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
                 TimeSpan gioRa = new TimeSpan(14, 00, 00);
                 int a = tpbus.insertThuePhong(tp);

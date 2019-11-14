@@ -16,12 +16,12 @@ namespace Home
 {
     public partial class frmTextKhachHang : DevExpress.XtraEditors.XtraForm
     {
+        frmKhachHang frm;
         KhachHangBUS khBus;
         string cmnd, tenkh, sdt, giotinh;
         int kq = 0;
         string maKhachHang;
         int kieuForm;
-        frmKhachHang frm;
 
         public frmTextKhachHang()
         {
@@ -32,14 +32,14 @@ namespace Home
         {
             InitializeComponent();
             kieuForm = 1;
-            sql = frm;
+            frm = sql;
         }
 
         public frmTextKhachHang(frmKhachHang sql, string idKH)
         {
             InitializeComponent();
             kieuForm = 2;
-            sql = frm;
+            frm = sql;
             maKhachHang = idKH;
         }
 
@@ -89,17 +89,6 @@ namespace Home
             if (kq == 1)
             {
                 MessageBox.Show("Thêm thành công!!!");
-                cmnd = txtCMND.Text;
-                tenkh = txtTenKhach.Text;
-                sdt = txtCMND.Text;
-                if (radNam.Checked)
-                {
-                    giotinh = "Nam";
-                }
-                else
-                {
-                    giotinh = "Nữ";
-                }
                 this.Close();
             }
             else
@@ -119,6 +108,7 @@ namespace Home
             if (radNam.Checked == true) kh.GioiTinh = true;
             else kh.GioiTinh = false;
             khbus.updateKH(kh);
+            this.Close();
         }
 
         private void frmTTKhachHang_FormClosing(object sender, FormClosingEventArgs e)

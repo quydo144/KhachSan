@@ -16,6 +16,7 @@ namespace Home
 {
     public partial class frmDatKhachDoan : DevExpress.XtraEditors.XtraForm
     {
+        frmHome frm;
         List<eKhachHang> ls = new List<eKhachHang>();
         int stt = 0;
         public static string CMND = string.Empty;
@@ -26,6 +27,12 @@ namespace Home
         public frmDatKhachDoan()
         {
             InitializeComponent();
+        }
+
+        public frmDatKhachDoan(frmHome sql)
+        {
+            InitializeComponent();
+            frm = sql;
         }
 
         private void frmDatKhachDoan_Load(object sender, EventArgs e)
@@ -64,7 +71,7 @@ namespace Home
                 {
                     s++;
                 }
-                dt.Rows.Add(item.TenLoaiPhong, item.DonGia, s, sl);
+                dt.Rows.Add(item.TenLoaiPhong, item.DonGia, s, sl);               
             }
             dgvLoaiPhong.DataSource = dt;
 
@@ -187,7 +194,67 @@ namespace Home
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            ThuePhongBUS tpbus = new ThuePhongBUS();
+            PhongBUS pbus = new PhongBUS();
+            LoaiPhongBUS lpbus = new LoaiPhongBUS();
+            eThuePhong tp = new eThuePhong();
+            NhanVienBUS nvbus = new NhanVienBUS();
+            DoanBUS dbus = new DoanBUS();
+            //Tao Doan
+            eDoan doan = new eDoan();
+            doan.DiaChi = txtDiaChi.Text.Trim();
+            doan.MaTruongDoan = txtTruongDoan.Text.Trim();
+            doan.TenDoan = txtTenDoan.Text.Trim();
+            int kqTaoDoan = dbus.insertDoan(doan);
+            tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
+            tp.MaDoan = dbus.getDoanID(); //ma doan
+            int soLuongP = 0;
+            for (int i = 0; i < gridViewLoaiPhong.RowCount ; i++)
+            {
+                soLuongP += Convert.ToInt32(gridViewLoaiPhong.GetRowCellValue(i, gridViewLoaiPhong.Columns[3]));
+            }
 
+            tp.SoLuongPhong = soLuongP;
+            tp.TrangThai = false;
+            TimeSpan gioVao = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            TimeSpan gioRa = new TimeSpan(14, 00, 00);
+            int a = tpbus.insertThuePhong(tp);
+            eChiTietThuePhong cttp = new eChiTietThuePhong();
+            if (kqTaoDoan == 1)
+            {
+                if (a == 1)
+                {
+                    ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+                    foreach (eKhachHang item in ls)
+                    {
+                        cttp.MaThue = tpbus.getMaThueCuoi();
+                        cttp.MaKhach = item.MaKH;
+                        cttp.MaPhong = pbus.maPhong_byTen(item.SoPhong);
+                        cttp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text).Date;
+                        cttp.NgayVao = DateTime.Now.Date;
+                        cttp.GioRa = gioRa;
+                        cttp.GioVao = gioVao;
+                        cttp.TrangThai = false;
+                        cttpbus.insertCTTP(cttp);
+                        ePhong p = new ePhong();
+                        p.MaPhong = pbus.maPhong_byTen(item.SoPhong);
+                        p.TinhTrang = true;
+                        pbus.updateTinhTrangPhong(p);
+                    }
+                    MessageBox.Show("Đặt phòng thành công");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không thành công, phải tạo đoàn trước!");
+                return;
+            }
         }
 
         private void gridViewLoaiPhong_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -295,6 +362,23 @@ namespace Home
             //    }
             //}
             //cboPhong.DataSource = dsTenPhong;
+        }
+
+        private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
+        {
+            TimeSpan date = dtmNgayRa.Value - DateTime.Now.Date;
+            if (date.Days < 0)
+            {
+                MessageBox.Show("Nhập ngày lớn hơn ngày hiện tại");
+                dtmNgayRa.Focus();
+                return;
+            }
+        }
+
+        private void frmDatKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PhongBUS pbus = new PhongBUS();
+            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }
     }
 }

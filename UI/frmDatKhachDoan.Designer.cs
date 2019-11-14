@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatKhachDoan));
-            DevExpress.XtraEditors.BreadCrumbNode breadCrumbNode1 = new DevExpress.XtraEditors.BreadCrumbNode();
+            DevExpress.XtraEditors.BreadCrumbNode breadCrumbNode2 = new DevExpress.XtraEditors.BreadCrumbNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTruongDoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -402,6 +402,7 @@
             this.dtmNgayRa.Name = "dtmNgayRa";
             this.dtmNgayRa.Size = new System.Drawing.Size(190, 32);
             this.dtmNgayRa.TabIndex = 26;
+            this.dtmNgayRa.ValueChanged += new System.EventHandler(this.dtmNgayRa_ValueChanged);
             // 
             // dgvLoaiPhong
             // 
@@ -525,10 +526,10 @@
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            breadCrumbNode1.Caption = "Root";
-            breadCrumbNode1.Value = "Root";
+            breadCrumbNode2.Caption = "Root";
+            breadCrumbNode2.Value = "Root";
             this.comboBoxEdit1.Properties.Nodes.AddRange(new DevExpress.XtraEditors.BreadCrumbNode[] {
-            breadCrumbNode1});
+            breadCrumbNode2});
             this.comboBoxEdit1.Size = new System.Drawing.Size(237, 26);
             this.comboBoxEdit1.TabIndex = 32;
             // 
@@ -560,6 +561,7 @@
             this.Name = "frmDatKhachDoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách đoàn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDatKhachDoan_FormClosing);
             this.Load += new System.EventHandler(this.frmDatKhachDoan_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

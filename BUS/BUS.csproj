@@ -43,6 +43,7 @@
     <Compile Include="ChiTietDichVuBUS.cs" />
     <Compile Include="ChiTietThuePhongBUS.cs" />
     <Compile Include="DichVuBUS.cs" />
+    <Compile Include="DoanBUS.cs" />
     <Compile Include="JoinTable_BUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="LoaiPhongBUS.cs" />

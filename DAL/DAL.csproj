@@ -44,6 +44,7 @@
     <Compile Include="ChiTietDichVuDAL.cs" />
     <Compile Include="ChiTietThuePhongDAL.cs" />
     <Compile Include="DichVuDAL.cs" />
+    <Compile Include="DoanDAL.cs" />
     <Compile Include="JoinTable_DAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />

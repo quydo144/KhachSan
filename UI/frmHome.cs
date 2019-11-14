@@ -484,7 +484,7 @@ namespace Home
 
         private void btnDatPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDatKhachDoan frm = new frmDatKhachDoan();
+            frmDatKhachDoan frm = new frmDatKhachDoan(this);
             frm.ShowDialog();
         }
     }
