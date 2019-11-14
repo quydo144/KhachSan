@@ -56,22 +56,18 @@ namespace DAL
             return ls;
         }
 
-        public List<eKhachHang> getmaKH(string s)
+        public eKhachHang getmaKH(string s)
         {
-            var listkh = (from x in db.KhachHangs where x.maKH.Trim().Equals(s) select x).ToList();
-            List<eKhachHang> ls = new List<eKhachHang>();
-            foreach (KhachHang item in listkh)
-            {
-                eKhachHang kh = new eKhachHang();
-                //kh.MaKH = item.maKH.Trim();
-                kh.TenKH = item.tenKh.Trim();
-                kh.SoCMND = item.soCMND.Trim();
-                kh.SoDT = item.soDT.Trim();
-                kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
-                ls.Add(kh);
-            }
-            return ls;
+            KhachHang item = (from x in db.KhachHangs where x.maKH.Trim().Equals(s) select x).SingleOrDefault();
+            eKhachHang kh = new eKhachHang();
+            kh.MaKH = item.maKH.Trim();
+            kh.TenKH = item.tenKh.Trim();
+            kh.SoCMND = item.soCMND.Trim();
+            kh.SoDT = item.soDT.Trim();
+            kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
+            return kh;
         }
+
         public string getenKH_ByID(string id)
         {
             KhachHang nv = db.KhachHangs.Where(x => x.maKH.Equals(id)).SingleOrDefault();
@@ -82,6 +78,28 @@ namespace DAL
         {
             KhachHang kh = db.KhachHangs.Where(x => x.soCMND.Equals(cmnd)).SingleOrDefault();
             return kh.maKH;
+        }
+
+        public eKhachHang getallKhDangO(string maKH)
+        {
+            var item = (from x in db.KhachHangs where x.maKH.Equals(maKH) select x).SingleOrDefault();
+            eKhachHang kh = new eKhachHang();
+            kh.MaKH = item.maKH;
+            kh.TenKH = item.tenKh.Trim();
+            kh.SoCMND = item.soCMND.Trim();
+            kh.SoDT = item.soDT.Trim();
+            kh.GioiTinh = Convert.ToBoolean(item.gioiTinh);
+            return kh;
+        }
+
+        public void updateKH(eKhachHang kh)
+        {
+            IQueryable<KhachHang> item = db.KhachHangs.Where(x => x.maKH.Equals(kh.MaKH));
+            item.First().tenKh = kh.TenKH;
+            item.First().soCMND = kh.SoCMND;
+            item.First().soDT = kh.SoDT;
+            item.First().gioiTinh = Convert.ToByte(kh.GioiTinh);
+            db.SubmitChanges();
         }
     }
 }

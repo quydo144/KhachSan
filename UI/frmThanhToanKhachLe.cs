@@ -82,19 +82,18 @@ namespace Home
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
             foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue,pbus.maPhong_byTen(TenPhong)))
             {
-                foreach (var kh in khbus.getmaKH(item.MaKhach))
+                eKhachHang kh = new eKhachHang();
+                kh = khbus.getmaKH(item.MaKhach);
+                txtHoTen.Text = kh.TenKH;
+                txtCMND.Text = kh.SoCMND;
+                txtSDT.Text = kh.SoDT;
+                if (kh.GioiTinh)
                 {
-                    txtHoTen.Text = kh.TenKH;
-                    txtCMND.Text = kh.SoCMND;
-                    txtSDT.Text = kh.SoDT;
-                    if (kh.GioiTinh)
-                    {
-                        radNam.Checked = true;
-                    }
-                    else
-                    {
-                        radNu.Checked = true;
-                    }
+                    radNam.Checked = true;
+                }
+                else
+                {
+                    radNu.Checked = true;
                 }
             }
         }

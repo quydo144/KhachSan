@@ -19,7 +19,7 @@ namespace Home
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
-            Application.Run(new frmDatKhachDoan());
+            Application.Run(new frmHome());
         }
     }
 }

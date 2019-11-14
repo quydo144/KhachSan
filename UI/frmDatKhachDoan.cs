@@ -72,7 +72,7 @@ namespace Home
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            frmTTKhachHang frm = new frmTTKhachHang();
+            frmTextKhachHang frm = new frmTextKhachHang();
             frm.ShowDialog();
             txtSDT.Text = SDT;
             txtTenDoan.Text = TenKH;

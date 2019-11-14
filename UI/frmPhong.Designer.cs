@@ -49,10 +49,10 @@
             // gclDSP
             // 
             this.gclDSP.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gclDSP.Location = new System.Drawing.Point(0, 213);
+            this.gclDSP.Location = new System.Drawing.Point(0, 124);
             this.gclDSP.MainView = this.gridViewPhong;
             this.gclDSP.Name = "gclDSP";
-            this.gclDSP.Size = new System.Drawing.Size(1279, 531);
+            this.gclDSP.Size = new System.Drawing.Size(1279, 626);
             this.gclDSP.TabIndex = 1;
             this.gclDSP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPhong});
@@ -126,7 +126,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(-1, -2);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1284, 65);
+            this.label7.Size = new System.Drawing.Size(1284, 42);
             this.label7.TabIndex = 42;
             this.label7.Text = "Quản lý phòng";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,9 +134,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbo_LocTheoTang);
-            this.groupBox2.Location = new System.Drawing.Point(12, 83);
+            this.groupBox2.Location = new System.Drawing.Point(12, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 92);
+            this.groupBox2.Size = new System.Drawing.Size(736, 69);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lọc tìm kiếm";
@@ -151,7 +151,7 @@
             "4",
             "5",
             "6"});
-            this.cbo_LocTheoTang.Location = new System.Drawing.Point(16, 35);
+            this.cbo_LocTheoTang.Location = new System.Drawing.Point(55, 29);
             this.cbo_LocTheoTang.Name = "cbo_LocTheoTang";
             this.cbo_LocTheoTang.Size = new System.Drawing.Size(238, 30);
             this.cbo_LocTheoTang.TabIndex = 0;
@@ -159,9 +159,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(774, 98);
+            this.btnThem.Location = new System.Drawing.Point(772, 65);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(134, 55);
+            this.btnThem.Size = new System.Drawing.Size(134, 37);
             this.btnThem.TabIndex = 45;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -169,9 +169,9 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(1128, 102);
+            this.btnSua.Location = new System.Drawing.Point(1133, 65);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(125, 51);
+            this.btnSua.Size = new System.Drawing.Size(134, 37);
             this.btnSua.TabIndex = 46;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -179,9 +179,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(949, 102);
+            this.btnXoa.Location = new System.Drawing.Point(946, 65);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(125, 51);
+            this.btnXoa.Size = new System.Drawing.Size(134, 37);
             this.btnXoa.TabIndex = 47;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1279, 744);
+            this.ClientSize = new System.Drawing.Size(1279, 750);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);

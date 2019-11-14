@@ -35,6 +35,19 @@ namespace Home
             cboTKKH.Items.Add("Số điện thoại");
             cboTKKH.Items.Add("Số CMND");
             cboTKKH.SelectedIndex = 4;
+            LoadKHDangThuePhong();
+        }
+
+        public void LoadKHDangThuePhong()
+        {
+            List<eKhachHang> ls = new List<eKhachHang>();
+            KhachHangBUS khbus = new KhachHangBUS();
+            ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+            foreach (var item in cttpbus.getAllKHDangO())
+            {
+                ls.Add(khbus.getallKhDangO(item.MaKhach));
+            }
+            gridControlDsKH.DataSource = ls.ToList();
         }
 
         private void txtTK_Enter(object sender, EventArgs e)
@@ -45,14 +58,24 @@ namespace Home
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            KhachHangBUS khbus = new KhachHangBUS();
-            eKhachHang newkh = new eKhachHang();
-            newkh.TenKH = txtTenKH.Text;
-            newkh.SoCMND = txtCMND.Text;
-            newkh.SoDT = txtSDT.Text;
-            if (radNam.Checked == true) newkh.GioiTinh = true;
-            else newkh.GioiTinh = false;
-            int kq = khbus.InsertKH(newkh);
+            frmTextKhachHang frm = new frmTextKhachHang(this);
+            frm.ShowDialog();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (gridViewDsKh.SelectedRowsCount == 1)
+            {
+                KhachHangBUS khbus = new KhachHangBUS();
+                string id = gridViewDsKh.GetRowCellValue(gridViewDsKh.FocusedRowHandle, gridViewDsKh.Columns[0]).ToString();
+                frmTextKhachHang ftph = new frmTextKhachHang(this, id);
+                ftph.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Chọn 1 Phòng Cần Sửa", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,7 +83,7 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             JoinTable_BUS joinbus = new JoinTable_BUS();
             frm.AnflowLayoutPanel();
-            //frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng");
+            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }
     }
 }

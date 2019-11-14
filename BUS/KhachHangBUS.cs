@@ -25,8 +25,7 @@ namespace BUS
         {
             return khdal.insertKH(p);
         }
-
-        public List<eKhachHang> getmaKH(string s)
+        public eKhachHang getmaKH(string s)
         {
             return khdal.getmaKH(s);
         }
@@ -37,6 +36,14 @@ namespace BUS
         public string gemaKH_ByCMND(string cmnd)
         {
             return khdal.gemaKH_ByCMND(cmnd);
+        }
+        public eKhachHang getallKhDangO(string maKH)
+        {
+            return khdal.getallKhDangO(maKH);
+        }
+        public void updateKH(eKhachHang kh)
+        {
+            khdal.updateKH(kh);
         }
     }
 }

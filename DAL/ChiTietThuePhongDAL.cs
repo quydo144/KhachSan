@@ -87,5 +87,25 @@ namespace DAL
             cttp.First().gioRa = tp.GioRa;
             db.SubmitChanges();
         }
+
+        public List<eChiTietThuePhong> getAllKHDangO()
+        {
+            var list = db.ChiTietThuePhongs.Where(x => x.trangThai == 0 ).ToList();
+            List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();
+            foreach (var item in list)
+            {
+                eChiTietThuePhong cttp = new eChiTietThuePhong();
+                cttp.MaThue = item.maThue;
+                cttp.MaKhach = item.maKhach;
+                cttp.MaPhong = item.maPhong;
+                cttp.NgayRa = item.ngayRa;
+                cttp.NgayVao = item.ngayVao;
+                cttp.GioRa = item.gioRa;
+                cttp.GioVao = item.gioVao;
+                cttp.TrangThai = Convert.ToBoolean(item.trangThai);
+                ls.Add(cttp);
+            }
+            return ls;
+        }
     }
 }

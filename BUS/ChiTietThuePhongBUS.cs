@@ -41,5 +41,9 @@ namespace BUS
         {
             cttpdal.updateChiTietThuePhong(tp);
         }
+        public List<eChiTietThuePhong> getAllKHDangO()
+        {
+            return cttpdal.getAllKHDangO();
+        }
     }
 }
