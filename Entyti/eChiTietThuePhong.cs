@@ -12,8 +12,10 @@ namespace Entyti
         private DateTime ngayVao, ngayRa;
         private TimeSpan gioVao, gioRa;
         private bool trangThai;
+        double tienKhac;
+        string ghiChu;
 
-        public eChiTietThuePhong(string maThue, string maKhach, string maPhong, DateTime ngayVao, DateTime ngayRa, TimeSpan gioVao, TimeSpan gioRa, bool trangThai)
+        public eChiTietThuePhong(double tienKhac, string ghiChu, string maThue, string maKhach, string maPhong, DateTime ngayVao, DateTime ngayRa, TimeSpan gioVao, TimeSpan gioRa, bool trangThai)
         {
             this.maThue = maThue;
             this.maKhach = maKhach;
@@ -23,6 +25,8 @@ namespace Entyti
             this.gioVao = gioVao;
             this.gioRa = gioRa;
             this.trangThai = trangThai;
+            this.tienKhac = tienKhac;
+            this.ghiChu = ghiChu;
         }
 
         public eChiTietThuePhong()
@@ -131,6 +135,32 @@ namespace Entyti
             set
             {
                 trangThai = value;
+            }
+        }
+
+        public double TienKhac
+        {
+            get
+            {
+                return tienKhac;
+            }
+
+            set
+            {
+                tienKhac = value;
+            }
+        }
+
+        public string GhiChu
+        {
+            get
+            {
+                return ghiChu;
+            }
+
+            set
+            {
+                ghiChu = value;
             }
         }
     }

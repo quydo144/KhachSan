@@ -17,7 +17,7 @@ namespace Home
     public partial class frmThanhToanKhachLe : DevExpress.XtraEditors.XtraForm
     {
         frmHome home;
-        ArrayList phuthu = new ArrayList();
+        double phuthu = 0;
         double tienphong = 0, tiendv = 0, tienvat = 0;
         public static string MaThue = string.Empty;
         public static string TenPhong = string.Empty;
@@ -47,7 +47,7 @@ namespace Home
             tienPhuThu();
             tinhTienPhong();
             load_list_dichvu();
-            txtTongTien.Text = (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu[0])).ToString();
+            txtTongTien.Text = (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu)).ToString();
         }
 
         public DataTable DataTable_DSDV(List<eChiTetDichVu> ds)
@@ -135,7 +135,7 @@ namespace Home
                 }
                 if (item.GioVao > nhan6h && item.GioVao < nhan13h)
                 {
-                    lblGhiChu.Text = "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + phuthu[0].ToString() + " đồng"
+                    lblGhiChu.Text = "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + phuthu.ToString() + " đồng"
                         + "\nSố tiền phòng: " + nhan14h + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + tienphong.ToString() + " đồng";
                 }
                 else
@@ -147,19 +147,11 @@ namespace Home
 
         public void tienPhuThu()
         {
-            ArrayList tien = new ArrayList();
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
-            eHoaDonTienPhong pt = new eHoaDonTienPhong();
             PhongBUS pbus = new PhongBUS();
-            foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue(MaThue))
-            {
-                tien.Add(tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)));
-            }
-            foreach (double item in tien)
-            {
-                phuthu = pt.tinhTienPhuThu(cttpbus.getChiTietThuePhong_By_MaThue(MaThue), item);
-            }           
-            txtPhuThu.Text = phuthu[0].ToString();
+            eHoaDonTienPhong pt = new eHoaDonTienPhong();
+            phuthu = pt.tinhTienPhuThu(cttpbus.getChiTietThuePhong_By_MaThue(MaThue),tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
+            txtPhuThu.Text = phuthu.ToString();
         }
 
         private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
@@ -170,7 +162,7 @@ namespace Home
             }
             else
             {
-                txtTienThua.Text = ((Convert.ToDouble(txtKhachThanhToan.Text)) - (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu[0]))).ToString();
+                txtTienThua.Text = ((Convert.ToDouble(txtKhachThanhToan.Text)) - (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu))).ToString();
             }
         }
 
@@ -234,7 +226,7 @@ namespace Home
                     ctbc.tenLoaiPhong = lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(item.MaPhong));
                     ctbc.thoiGianNhan = item.GioVao + " " + item.NgayVao.Date.ToShortDateString();
                     ctbc.thoiGianTra = item.GioRa + " " + item.NgayRa.Date.ToShortDateString();
-                    ctbc.tienPhong = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu[0]);
+                    ctbc.tienPhong = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu);
                     listphong.Add(ctbc);
                 }
 

@@ -226,7 +226,7 @@ namespace Home
                 {
                     ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
                     foreach (eKhachHang item in ls)
-                    {
+                    {                        
                         cttp.MaThue = tpbus.getMaThueCuoi();
                         cttp.MaKhach = item.MaKH;
                         cttp.MaPhong = pbus.maPhong_byTen(item.SoPhong);
@@ -239,6 +239,15 @@ namespace Home
                         ePhong p = new ePhong();
                         p.MaPhong = pbus.maPhong_byTen(item.SoPhong);
                         p.TinhTrang = true;
+                        int soPhong = 0;
+                        foreach (var kh in ls)
+                        {
+                            if (kh.SoPhong.Equals(item.SoPhong))
+                            {
+                                soPhong++;
+                            }
+                        }
+                        p.SoNgHienTai = soPhong;
                         pbus.updateTinhTrangPhong(p);
                     }
                     MessageBox.Show("Đặt phòng thành công");
@@ -378,6 +387,7 @@ namespace Home
         private void frmDatKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
+            frm.AnflowLayoutPanel();
             frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }
     }

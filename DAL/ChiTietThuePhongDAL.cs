@@ -29,7 +29,7 @@ namespace DAL
 
         public string getMaThue_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
-            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false)).SingleOrDefault();
+            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false) && x.ghiChu.Equals(null)).SingleOrDefault();
             return cttp.maThue;
         }
 
@@ -39,10 +39,45 @@ namespace DAL
             return cttp.maKhach;
         }
 
+        public eChiTietThuePhong getCTTP_By_MaPhong_TrangThai(string maPhong, bool trangThai)
+        {
+            ChiTietThuePhong item = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false)).SingleOrDefault();
+            eChiTietThuePhong cttp = new eChiTietThuePhong();
+            cttp.MaThue = item.maThue;
+            cttp.MaKhach = item.maKhach;
+            cttp.MaPhong = item.maPhong;
+            cttp.NgayRa = item.ngayRa;
+            cttp.NgayVao = item.ngayVao;
+            cttp.GioRa = item.gioRa;
+            cttp.GioVao = item.gioVao;
+            cttp.TrangThai = Convert.ToBoolean(item.trangThai);
+            return cttp;
+        }
+
         public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue(string maThue)
         {
             var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue)).ToList();
             List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();           
+            foreach (var item in list)
+            {
+                eChiTietThuePhong cttp = new eChiTietThuePhong();
+                cttp.MaThue = item.maThue;
+                cttp.MaKhach = item.maKhach;
+                cttp.MaPhong = item.maPhong;
+                cttp.NgayRa = item.ngayRa;
+                cttp.NgayVao = item.ngayVao;
+                cttp.GioRa = item.gioRa;
+                cttp.GioVao = item.gioVao;
+                cttp.TrangThai = Convert.ToBoolean(item.trangThai);
+                ls.Add(cttp);
+            }
+            return ls;
+        }
+
+        public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue_TrangThai(string maThue, byte trangthai)
+        {
+            var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue)  && x.trangThai==trangthai).ToList();
+            List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();
             foreach (var item in list)
             {
                 eChiTietThuePhong cttp = new eChiTietThuePhong();
@@ -85,6 +120,8 @@ namespace DAL
             cttp.First().trangThai = Convert.ToByte(tp.TrangThai);
             cttp.First().ngayRa = tp.NgayRa;
             cttp.First().gioRa = tp.GioRa;
+            cttp.First().tienKhac = Convert.ToDecimal(tp.TienKhac);
+            cttp.First().ghiChu = tp.GhiChu;
             db.SubmitChanges();
         }
 

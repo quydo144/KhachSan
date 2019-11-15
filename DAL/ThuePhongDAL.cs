@@ -16,6 +16,7 @@ namespace DAL
             ThuePhong temp = new ThuePhong();
             temp.maThue = "";
             temp.maNV = newtp.MaNV;
+            temp.maDoan = newtp.MaDoan;
             temp.soLuongPhong = newtp.SoLuongPhong;
             temp.trangThai = Convert.ToByte(newtp.TrangThai);
             db.ThuePhongs.InsertOnSubmit(temp);
@@ -31,6 +32,9 @@ namespace DAL
             {
                 eThuePhong tp = new eThuePhong();
                 tp.MaThue = item.maThue.Trim();
+                tp.MaDoan = item.maDoan;
+                tp.SoLuongPhong = item.soLuongPhong;
+                tp.TrangThai = Convert.ToBoolean(item.trangThai);
                 tp.MaNV = item.maNV.Trim();
                 ls.Add(tp);
             }
@@ -43,11 +47,11 @@ namespace DAL
             return tp.maThue;
         }
 
-        //public string getMaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
-        //{
-        //    ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).FirstOrDefault();   //
-        //    return tp.maThue;
-        //}
+        public string getMaDoan_ByMaThue(string maThue)
+        {
+            ThuePhong tp = db.ThuePhongs.Where(x => x.maThue.Equals(maThue)).SingleOrDefault();
+            return tp.maDoan;
+        }
 
         public void updateThuePhong(eThuePhong tp)
         {
@@ -55,17 +59,11 @@ namespace DAL
             tphong.First().trangThai = Convert.ToByte(tp.TrangThai);
             db.SubmitChanges();
         }
+        public string getMaThue_ByMaDoan(string madoan, byte trangThai)
+        {
+            ThuePhong tp = db.ThuePhongs.Where(x => x.maDoan.Contains(madoan) && x.trangThai == trangThai).SingleOrDefault();
+            return tp.maThue;
+        }
 
-        //public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
-        //{
-        //    ThuePhong tp = db.ThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).SingleOrDefault();
-        //    return tp.maPhong;
-        //}
-
-        //public string getmaThue_ByMaPhongTrangThai(string maPhong, int trangThai)
-        //{
-        //    ThuePhong tp = db.ThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == 0).SingleOrDefault();
-        //    return tp.maThue;
-        //}
     }
 }

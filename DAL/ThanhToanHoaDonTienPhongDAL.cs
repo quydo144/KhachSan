@@ -19,7 +19,6 @@ namespace DAL
             temp.gioLap = tt.GioLap;
             temp.thueVAT = tt.ThueVAT;
             temp.khuyenMai = tt.KhuyenMai;
-            temp.tienKhac = Convert.ToDecimal(tt.TienKhac);
             temp.ghiChu = tt.GhiChu;
             db.HoaDonTienPhongs.InsertOnSubmit(temp);
             db.SubmitChanges();

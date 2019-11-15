@@ -151,6 +151,7 @@ namespace DAL
         {
             IQueryable<Phong> p = db.Phongs.Where(x => x.maPhong.Equals(pupdate.MaPhong));
             p.First().tinhTrang = Convert.ToBoolean(pupdate.TinhTrang);
+            p.First().soNguoiHienTai = pupdate.SoNgHienTai;
             db.SubmitChanges();
         }
 

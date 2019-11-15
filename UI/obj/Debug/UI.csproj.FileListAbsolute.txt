@@ -396,3 +396,6 @@ E:\KhachSan\UI\obj\Debug\Home.InHoaDonTienPhong.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTraKhachDoan.resources
 E:\KhachSan\UI\obj\Debug\Home.InHoaDonDichVu.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTextKhachHang.resources
+E:\KhachSan\UI\obj\Debug\Home.frmDoan.resources
+E:\KhachSan\UI\obj\Debug\Home.frmBC_TienPhong.resources
+E:\KhachSan\UI\obj\Debug\Home.frmDoiPhong.resources

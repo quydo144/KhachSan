@@ -203,6 +203,8 @@ namespace Home
                     cttp.GioRa = gioRa;
                     cttp.GioVao = gioVao;
                     cttp.TrangThai = false;
+                    cttp.TienKhac = 0;
+                    cttp.GhiChu = "";
                     cttpbus.insertCTTP(cttp);
                     ePhong p = new ePhong();
                     p.MaPhong = pbus.maPhong_byTen(TenPhong);

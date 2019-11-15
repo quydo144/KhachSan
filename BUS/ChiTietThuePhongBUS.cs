@@ -45,5 +45,13 @@ namespace BUS
         {
             return cttpdal.getAllKHDangO();
         }
+        public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue_TrangThai(string maThue, byte trangthai)
+        {
+            return cttpdal.getChiTietThuePhong_By_MaThue_TrangThai(maThue, trangthai);
+        }
+        public eChiTietThuePhong getCTTP_By_MaPhong_TrangThai(string maPhong, bool trangThai)
+        {
+            return cttpdal.getCTTP_By_MaPhong_TrangThai(maPhong, trangThai);
+        }
     }
 }

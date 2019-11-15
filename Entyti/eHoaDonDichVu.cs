@@ -74,5 +74,12 @@ namespace Entyti
                 maThue = value;
             }
         }
+
+        public double tinhDichVu(double donGia, int sluong)
+        {
+            double money = 0;
+            money = donGia * sluong;
+            return money;
+        }
     }
 }

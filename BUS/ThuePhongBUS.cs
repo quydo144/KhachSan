@@ -37,6 +37,15 @@ namespace BUS
             tpdal.updateThuePhong(tp);
         }
 
+        public string getMaDoan_ByMaThue(string maThue)
+        {
+            return tpdal.getMaDoan_ByMaThue(maThue);
+        }
+        public string getMaThue_ByMaDoan(string madoan, byte trangThai)
+        {
+            return tpdal.getMaThue_ByMaDoan(madoan, trangThai);
+        }
+
         //public string getMaPhong_ByMaThueTrangThai(string maThue, int trangThai)
         //{
         //    return tpdal.getMaPhong_ByMaThueTrangThai(maThue, trangThai);

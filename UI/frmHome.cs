@@ -84,13 +84,17 @@ namespace Home
             Label lbl = sender as Label;
             if (e.Button == MouseButtons.Right)
             {
-                frmThanhToanKhachLe.TenPhong = lbl.Text;
-                frmDatPhong.TenLoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(lbl.Text)));
-                frmThanhToanKhachLe.LoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(lbl.Text)));
-                frmDatPhong.TenPhong = lbl.Text;
-                frmThanhToanKhachLe.MaThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(lbl.Text), false);
-                frmDatPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(lbl.Text), false);
-                frmDatPhong.maKhachHang = cttpbus.getMaKhach_By_MaPhong_TrangThai(pbus.maPhong_byTen(lbl.Text), false);
+                string ttPhong = lbl.Text;
+                string[] lsPhong = ttPhong.Split('\r');
+                string tenPhong = lsPhong[0].Trim();
+                frmThanhToanKhachLe.TenPhong = tenPhong;
+                frmDatPhong.TenLoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(tenPhong)));
+                frmThanhToanKhachLe.LoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(tenPhong)));
+                frmDatPhong.TenPhong = tenPhong;
+                frmThanhToanKhachLe.MaThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
+                frmDatPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
+                frmDatPhong.maKhachHang = cttpbus.getMaKhach_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
+                frmDoiPhong.TenPhong = tenPhong;
             }
         }
 
@@ -132,8 +136,8 @@ namespace Home
                 P0001.Controls.Add(lbl);
                 P0001.Location = new Point(3, 3);
                 P0001.Name = item.MaPhong;
-                P0001.Size = new Size(150, 120);
-                lbl.Font = new Font("Tahoma", 10F);
+                P0001.Size = new Size(170, 150);
+                lbl.Font = new Font("Tahoma", 9F);
                 lbl.Dock = DockStyle.Fill;
                 lbl.Size = new Size(150, 120);
                 lbl.TextAlign = ContentAlignment.TopCenter;
@@ -165,13 +169,26 @@ namespace Home
                     if (pnl.Name.Equals(item.MaPhong.Trim()))
                     {
                         pnl.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-                        //pnl.BackColor = Color.Red;
                         foreach (var lbl in pnl.Controls.OfType<Label>())
                         {
                             lbl.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-                            //lbl.BackColor = Color.Red;
                             string ma = item.MaPhong.Substring(3, 5);
-                            lbl.Text = "Phòng " + Convert.ToInt32(ma);
+                            ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+                            DoanBUS dbus = new DoanBUS();
+                            ThuePhongBUS tpbus = new ThuePhongBUS();
+                            foreach (var thuePhong in tpbus.getMaThue(cttpbus.getMaThue_By_MaPhong_TrangThai(item.MaPhong, false)))
+                            {
+                                if (thuePhong.MaDoan == null)
+                                {
+                                    lbl.Text = "Phòng " + Convert.ToInt32(ma);
+                                }
+                                else
+                                {
+                                    string tendoan = dbus.getTen_ById(tpbus.getMaDoan_ByMaThue(cttpbus.getMaThue_By_MaPhong_TrangThai(item.MaPhong, false)));
+                                    string tenPhong = "Phòng " + Convert.ToInt32(ma);
+                                    lbl.Text = tenPhong + "\n\n\rĐoàn: " + tendoan;
+                                }
+                            }
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
@@ -227,7 +244,7 @@ namespace Home
                     int s = 0;
                     foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        if (/*pnl.BackColor == Color.Red*/pnl.BackColor == Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128))))))
+                        if (pnl.BackColor == Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128))))))
                         {
                             s++;
                         }
@@ -240,7 +257,7 @@ namespace Home
                     int s = 0;
                     foreach (var pnl in item.Controls.OfType<DevExpress.XtraEditors.PanelControl>())
                     {
-                        if (/*pnl.BackColor != Color.Red*/pnl.BackColor != Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128))))))
+                        if (pnl.BackColor != Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128))))))
                         {
                             pnl.Hide();
                         }
@@ -485,6 +502,12 @@ namespace Home
         private void btnDatPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDatKhachDoan frm = new frmDatKhachDoan(this);
+            frm.ShowDialog();
+        }
+
+        private void DoiPhongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDoiPhong frm = new frmDoiPhong(this);
             frm.ShowDialog();
         }
     }

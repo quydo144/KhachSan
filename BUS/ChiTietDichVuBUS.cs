@@ -31,5 +31,9 @@ namespace BUS
         {
             ctdvdal.updateCTDV(update);
         }
+        public List<eChiTetDichVu> getctdv_MaThue_MaPhong(string maThue, string maPhong)
+        {
+            return ctdvdal.getctdv_MaThue_MaPhong(maThue, maPhong);
+        }
     }
 }

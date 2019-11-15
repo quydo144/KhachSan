@@ -136,9 +136,9 @@ namespace Entyti
             }
         }
 
-        public ArrayList tinhTienPhuThu(List<eChiTietThuePhong> ls, double tienPhong)
+        public double tinhTienPhuThu(List<eChiTietThuePhong> ls, double tienPhong)
         {
-            ArrayList phuThu = new ArrayList();
+            double phuThu = 0;
             TimeSpan nhan13h = new TimeSpan(13, 00, 00);
             TimeSpan nhan11h = new TimeSpan(11, 00, 00);
             TimeSpan nhan8h = new TimeSpan(8, 00, 00);
@@ -147,19 +147,19 @@ namespace Entyti
             {
                 if (item.GioVao <= nhan13h && item.GioVao > nhan11h)
                 {
-                    phuThu.Add(0.3 * tienPhong);
+                    phuThu = (0.3 * tienPhong);
                 }
                 else if (item.GioVao <= nhan11h && item.GioVao > nhan8h)
                 {
-                    phuThu.Add(0.5 * tienPhong);
+                    phuThu = (0.5 * tienPhong);
                 }
                 else if (item.GioVao < nhan6h)
                 {
-                    phuThu.Add(0);
+                    phuThu = (0);
                 }
                 else if (item.GioVao >= nhan13h)
                 {
-                    phuThu.Add(0);
+                    phuThu = (0);
                 }
             }
             return phuThu;

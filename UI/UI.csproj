@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBC_TienPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBC_TienPhong.Designer.cs">
+      <DependentUpon>frmBC_TienPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,11 +97,23 @@
     <Compile Include="frmDichVu.Designer.cs">
       <DependentUpon>frmDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoan.Designer.cs">
+      <DependentUpon>frmDoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDoiMK.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDoiMK.Designer.cs">
       <DependentUpon>frmDoiMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiPhong.Designer.cs">
+      <DependentUpon>frmDoiPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
@@ -171,6 +189,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBC_TienPhong.resx">
+      <DependentUpon>frmBC_TienPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,8 +201,14 @@
     <EmbeddedResource Include="frmDichVu.resx">
       <DependentUpon>frmDichVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDoan.resx">
+      <DependentUpon>frmDoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMK.resx">
       <DependentUpon>frmDoiMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiPhong.resx">
+      <DependentUpon>frmDoiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

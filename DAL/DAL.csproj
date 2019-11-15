@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="ThanhToanHoaDonTienPhongDAL.cs" />
     <Compile Include="ThuePhongDAL.cs" />
+    <Compile Include="ThuePhong_DoanDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entyti\Entyti.csproj">
