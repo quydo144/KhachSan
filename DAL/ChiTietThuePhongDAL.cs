@@ -22,6 +22,8 @@ namespace DAL
             temp.gioRa = cttpnew.GioRa;
             temp.gioVao = cttpnew.GioVao;
             temp.trangThai = Convert.ToByte(cttpnew.TrangThai);
+            temp.ghiChu = cttpnew.GhiChu;
+            temp.tienKhac = Convert.ToDecimal(cttpnew.TienKhac);
             db.ChiTietThuePhongs.InsertOnSubmit(temp);
             db.SubmitChanges();
             return 1;
@@ -29,13 +31,24 @@ namespace DAL
 
         public string getMaThue_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
-            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false) && x.ghiChu.Equals(null)).SingleOrDefault();
-            return cttp.maThue;
+            string maThue = "";
+            ChiTietThuePhong cttpnull = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai) && x.ghiChu == null).SingleOrDefault();          
+            ChiTietThuePhong cttpkhacnull = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai) && x.ghiChu != null).SingleOrDefault();          
+            if (cttpnull == null)
+            {
+                maThue = cttpkhacnull.maThue;
+            }
+            if (cttpkhacnull == null)
+            {
+                maThue = cttpnull.maThue;
+            }
+            return maThue;
+
         }
 
         public string getMaKhach_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
-            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false)).SingleOrDefault();
+            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x =>x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai)).SingleOrDefault();
             return cttp.maKhach;
         }
 
@@ -51,6 +64,8 @@ namespace DAL
             cttp.GioRa = item.gioRa;
             cttp.GioVao = item.gioVao;
             cttp.TrangThai = Convert.ToBoolean(item.trangThai);
+            cttp.GhiChu = item.ghiChu;
+            cttp.TienKhac = Convert.ToDouble(item.tienKhac);
             return cttp;
         }
 

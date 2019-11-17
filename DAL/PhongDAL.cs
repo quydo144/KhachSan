@@ -138,6 +138,7 @@ namespace DAL
             p.GhiChu = ph.ghiChu;
             p.MaLoaiPhong = ph.maLoaiPhong;
             p.TinhTrang = Convert.ToBoolean(ph.tinhTrang);
+            p.SoNgHienTai = Convert.ToInt32(ph.soNguoiHienTai);
             return p;
         }
 

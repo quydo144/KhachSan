@@ -95,6 +95,7 @@ namespace Home
                 frmDatPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
                 frmDatPhong.maKhachHang = cttpbus.getMaKhach_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
                 frmDoiPhong.TenPhong = tenPhong;
+                frmDoiPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
             }
         }
 

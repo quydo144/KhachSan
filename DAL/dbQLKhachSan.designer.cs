@@ -502,7 +502,7 @@ namespace DAL
 		{
 			this._ChiTietDichVus = new EntitySet<ChiTietDichVu>(new Action<ChiTietDichVu>(this.attach_ChiTietDichVus), new Action<ChiTietDichVu>(this.detach_ChiTietDichVus));
 			this._HoaDonDichVus = new EntitySet<HoaDonDichVu>(new Action<HoaDonDichVu>(this.attach_HoaDonDichVus), new Action<HoaDonDichVu>(this.detach_HoaDonDichVus));
-			this._KhachHang = default(EntityRef<KhachHang>);
+			 this._KhachHang = default(EntityRef<KhachHang>);
 			this._Phong = default(EntityRef<Phong>);
 			this._ThuePhong = default(EntityRef<ThuePhong>);
 			OnCreated();

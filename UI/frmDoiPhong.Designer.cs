@@ -59,7 +59,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(217, 96);
+            this.label3.Location = new System.Drawing.Point(199, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 24);
             this.label3.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             this.lblTienKhac.BackColor = System.Drawing.Color.White;
             this.lblTienKhac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTienKhac.Location = new System.Drawing.Point(394, 96);
+            this.lblTienKhac.Location = new System.Drawing.Point(376, 88);
             this.lblTienKhac.Name = "lblTienKhac";
             this.lblTienKhac.Size = new System.Drawing.Size(156, 29);
             this.lblTienKhac.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 49);
             this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
+            this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // frmDoiPhong
