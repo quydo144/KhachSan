@@ -1,6 +1,6 @@
 ﻿namespace Home
 {
-    partial class frmThanhToanKhachLe
+    partial class frmTraKhachLe
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToanKhachLe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTraKhachLe));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMaThue = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,6 +55,8 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTienKhac = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -87,6 +89,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnTraDoan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -199,7 +202,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 170);
+            this.label4.Location = new System.Drawing.Point(10, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 22);
             this.label4.TabIndex = 16;
@@ -207,9 +210,9 @@
             // 
             // lblGhiChu
             // 
-            this.lblGhiChu.Location = new System.Drawing.Point(10, 199);
+            this.lblGhiChu.Location = new System.Drawing.Point(10, 115);
             this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(562, 89);
+            this.lblGhiChu.Size = new System.Drawing.Size(562, 173);
             this.lblGhiChu.TabIndex = 15;
             // 
             // groupBox1
@@ -221,7 +224,7 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Location = new System.Drawing.Point(0, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(578, 168);
+            this.groupBox1.Size = new System.Drawing.Size(578, 91);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời gian thuê phòng";
@@ -229,7 +232,7 @@
             // lblTraPhong
             // 
             this.lblTraPhong.AutoSize = true;
-            this.lblTraPhong.Location = new System.Drawing.Point(271, 113);
+            this.lblTraPhong.Location = new System.Drawing.Point(274, 58);
             this.lblTraPhong.Name = "lblTraPhong";
             this.lblTraPhong.Size = new System.Drawing.Size(60, 22);
             this.lblTraPhong.TabIndex = 15;
@@ -238,7 +241,7 @@
             // lblNhanPhong
             // 
             this.lblNhanPhong.AutoSize = true;
-            this.lblNhanPhong.Location = new System.Drawing.Point(271, 58);
+            this.lblNhanPhong.Location = new System.Drawing.Point(274, 26);
             this.lblNhanPhong.Name = "lblNhanPhong";
             this.lblNhanPhong.Size = new System.Drawing.Size(60, 22);
             this.lblNhanPhong.TabIndex = 15;
@@ -246,7 +249,7 @@
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(50, 108);
+            this.label19.Location = new System.Drawing.Point(50, 53);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(198, 32);
             this.label19.TabIndex = 14;
@@ -255,7 +258,7 @@
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(50, 53);
+            this.label18.Location = new System.Drawing.Point(50, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(198, 32);
             this.label18.TabIndex = 14;
@@ -373,6 +376,8 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(247)))));
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.txtTienKhac);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label15);
             this.panel7.Controls.Add(this.txtTongTien);
@@ -396,9 +401,28 @@
             this.panel7.Size = new System.Drawing.Size(578, 377);
             this.panel7.TabIndex = 0;
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(319, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 32);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Tiền khác";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTienKhac
+            // 
+            this.txtTienKhac.Enabled = false;
+            this.txtTienKhac.Location = new System.Drawing.Point(422, 96);
+            this.txtTienKhac.Name = "txtTienKhac";
+            this.txtTienKhac.Size = new System.Drawing.Size(145, 30);
+            this.txtTienKhac.TabIndex = 18;
+            this.txtTienKhac.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btnTraDoan);
             this.panel8.Controls.Add(this.btnThoat);
             this.panel8.Controls.Add(this.btnLuu);
             this.panel8.Location = new System.Drawing.Point(0, 331);
@@ -555,7 +579,7 @@
             this.txtVAT.Enabled = false;
             this.txtVAT.Location = new System.Drawing.Point(214, 94);
             this.txtVAT.Name = "txtVAT";
-            this.txtVAT.Size = new System.Drawing.Size(358, 30);
+            this.txtVAT.Size = new System.Drawing.Size(87, 30);
             this.txtVAT.TabIndex = 14;
             this.txtVAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -721,7 +745,17 @@
             this.label7.Text = "Họ tên";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // frmThanhToanKhachLe
+            // btnTraDoan
+            // 
+            this.btnTraDoan.Location = new System.Drawing.Point(169, -1);
+            this.btnTraDoan.Name = "btnTraDoan";
+            this.btnTraDoan.Size = new System.Drawing.Size(69, 47);
+            this.btnTraDoan.TabIndex = 18;
+            this.btnTraDoan.Text = "Đoàn";
+            this.btnTraDoan.UseVisualStyleBackColor = true;
+            this.btnTraDoan.Click += new System.EventHandler(this.btnTraDoan_Click);
+            // 
+            // frmTraKhachLe
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -734,7 +768,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmThanhToanKhachLe";
+            this.Name = "frmTraKhachLe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán khách lẻ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThanhToan_FormClosing);
@@ -819,5 +853,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTienKhac;
+        private System.Windows.Forms.Button btnTraDoan;
     }
 }

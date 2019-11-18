@@ -34,7 +34,6 @@ namespace BUS
         public string getId_ByTenDoan(string tendoan)
         {
             return ddal.getId_ByTenDoan(tendoan);
-
         }
     }
 }

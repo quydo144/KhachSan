@@ -118,6 +118,7 @@
             this.thuePhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThemDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DoiPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnSapXep = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.phòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,7 +126,7 @@
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.DoiPhongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnKhachDoan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -172,6 +173,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnDatPhong);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnKhachDoan);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Phòng";
             // 
@@ -372,10 +374,11 @@
             this.barButtonItem17,
             this.barButtonItem19,
             this.barButtonItem20,
-            this.barButtonItem21});
+            this.barButtonItem21,
+            this.btnKhachDoan});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ribbonControl1.MaxItemId = 55;
+            this.ribbonControl1.MaxItemId = 56;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnHome,
@@ -922,7 +925,7 @@
             this.ThemDichVuToolStripMenuItem,
             this.DoiPhongToolStripMenuItem});
             this.cmnstrpCoKhach.Name = "cmnstrpCoKhach";
-            this.cmnstrpCoKhach.Size = new System.Drawing.Size(221, 128);
+            this.cmnstrpCoKhach.Size = new System.Drawing.Size(221, 100);
             // 
             // thuePhongToolStripMenuItem
             // 
@@ -943,6 +946,13 @@
             this.ThemDichVuToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.ThemDichVuToolStripMenuItem.Text = "Cập nhật dịch vụ";
             this.ThemDichVuToolStripMenuItem.Click += new System.EventHandler(this.ThemDichVuToolStripMenuItem_Click);
+            // 
+            // DoiPhongToolStripMenuItem
+            // 
+            this.DoiPhongToolStripMenuItem.Name = "DoiPhongToolStripMenuItem";
+            this.DoiPhongToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.DoiPhongToolStripMenuItem.Text = "Đổi phòng";
+            this.DoiPhongToolStripMenuItem.Click += new System.EventHandler(this.DoiPhongToolStripMenuItem_Click);
             // 
             // cmnSapXep
             // 
@@ -998,12 +1008,14 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
-            // DoiPhongToolStripMenuItem
+            // btnKhachDoan
             // 
-            this.DoiPhongToolStripMenuItem.Name = "DoiPhongToolStripMenuItem";
-            this.DoiPhongToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
-            this.DoiPhongToolStripMenuItem.Text = "Đổi phòng";
-            this.DoiPhongToolStripMenuItem.Click += new System.EventHandler(this.DoiPhongToolStripMenuItem_Click);
+            this.btnKhachDoan.Caption = "Trả khách đoàn                     ";
+            this.btnKhachDoan.Id = 55;
+            this.btnKhachDoan.Name = "btnKhachDoan";
+            this.btnKhachDoan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnKhachDoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachDoan_ItemClick);
             // 
             // frmHome
             // 
@@ -1145,6 +1157,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
         private System.Windows.Forms.ToolStripMenuItem DoiPhongToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem btnKhachDoan;
     }
 }
 

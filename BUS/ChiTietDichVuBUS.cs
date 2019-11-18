@@ -26,7 +26,10 @@ namespace BUS
         {
             return ctdvdal.getctdv(maThue, maKhach);
         }
-
+        public List<eChiTetDichVu> getctdv_byMaThue(string maThue)
+        {
+            return ctdvdal.getctdv_byMaThue(maThue);
+        }
         public void updateCTDV(eChiTetDichVu update)
         {
             ctdvdal.updateCTDV(update);

@@ -16,15 +16,21 @@ namespace Home
 {
     public partial class frmTraKhachDoan : DevExpress.XtraEditors.XtraForm
     {
+        frmHome form;
         public frmTraKhachDoan()
         {
             InitializeComponent();
         }
-        
+
+        public frmTraKhachDoan(frmHome sql)
+        {
+            InitializeComponent();
+            form = sql;
+        }
+
         private void frmTraKhachDoan_Load(object sender, EventArgs e)
         {
             autoCompleteSource();
-
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -55,8 +61,7 @@ namespace Home
             DichVuBUS dvbus = new DichVuBUS();
             List<eChiTietThuePhong> list_ect = new List<eChiTietThuePhong>();
             list_ect = cttpbus.getChiTietThuePhong_By_MaThue_TrangThai(tpbus.getMaThue_ByMaDoan(dbus.getId_ByTenDoan(txtTenDoan.Text), 0), 0); 
-            dbus.getId_ByTenDoan(txtTenDoan.Text.Trim());
-            List<eThuePhong_Doan> tp_dbus = new List<eThuePhong_Doan>(); 
+            List<eThuePhong_Doan> lstp_d = new List<eThuePhong_Doan>(); 
             foreach (eChiTietThuePhong item in list_ect)
             {
                 eThuePhong_Doan etpd = new eThuePhong_Doan();
@@ -72,14 +77,44 @@ namespace Home
                     tienDV += hddv.tinhDichVu(dvbus.getDonGia_byID(ctdv.MaDV), ctdv.SoLuong);
                 }
                 etpd.TienDV = tienDV;
+                etpd.TienKhac = item.TienKhac;
+                etpd.GhiChu = item.GhiChu;
+                lstp_d.Add(etpd);
             }
+            dgvDsThuePhong.DataSource = lstp_d.ToList();
+
+            double tongTienPhong = 0;
+            for (int i = 0; i < gridViewDsThuePhong.RowCount; i++)
+            {
+                tongTienPhong += Convert.ToDouble(gridViewDsThuePhong.GetRowCellValue(i, gridViewDsThuePhong.Columns[1]));
+            }
+            txtTongTienPhong.Text = tongTienPhong.ToString();
+            txtThueVAT.Text = "10%";
+            txtKhuyenMai.Text = "20%";
+            txtTienThanhToan.Text = (tongTienPhong + tongTienPhong * 0.1 - tongTienPhong * 0.2).ToString();
         }
 
         private void txtTenDoan_TextChanged(object sender, EventArgs e)
         {
             DoanBUS dbus = new DoanBUS();
             txtTruongDoan.Text = dbus.getTD_ByTenDoan(txtTenDoan.Text.Trim());
+        }
+
+        private void frmTraKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PhongBUS pbus = new PhongBUS();
+            form.cleanGiaoDien();
+            form.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             loadThuePhong_Doan();
+        }
+
+        private void txtTienKhachDua_TextChanged(object sender, EventArgs e)
+        {
+            txtTienThua.Text = (Convert.ToDouble(txtTienThanhToan.Text) - Convert.ToDouble(txtTienKhachDua.Text)).ToString();
         }
     }
 }

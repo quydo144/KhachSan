@@ -61,7 +61,7 @@ namespace DAL
         }
         public string getMaThue_ByMaDoan(string madoan, byte trangThai)
         {
-            ThuePhong tp = db.ThuePhongs.Where(x => x.maDoan.Contains(madoan) && x.trangThai == trangThai).SingleOrDefault();
+            ThuePhong tp = db.ThuePhongs.Where(x => x.maDoan.Equals(madoan) && x.trangThai == trangThai).SingleOrDefault();
             return tp.maThue;
         }
 

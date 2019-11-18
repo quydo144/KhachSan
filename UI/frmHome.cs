@@ -20,6 +20,7 @@ namespace Home
         frmDangNhap frmDangNhap;
         string s;
         double donGia;
+        string TenPhong;
         List<ePhong> listp = new List<ePhong>();
         PhongBUS pbus = new PhongBUS();
         List<eLoaiPhong> listlp = new List<eLoaiPhong>();
@@ -81,21 +82,23 @@ namespace Home
         {
             PhongBUS pbus = new PhongBUS();
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+            ThuePhongBUS tpbus = new ThuePhongBUS();
             Label lbl = sender as Label;
             if (e.Button == MouseButtons.Right)
             {
                 string ttPhong = lbl.Text;
                 string[] lsPhong = ttPhong.Split('\r');
                 string tenPhong = lsPhong[0].Trim();
-                frmThanhToanKhachLe.TenPhong = tenPhong;
+                frmTraKhachLe.TenPhong = tenPhong;
                 frmDatPhong.TenLoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(tenPhong)));
-                frmThanhToanKhachLe.LoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(tenPhong)));
+                frmTraKhachLe.LoaiPhong = "Phòng " + lpbus.getTen_Byma(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(tenPhong)));
                 frmDatPhong.TenPhong = tenPhong;
-                frmThanhToanKhachLe.MaThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
+                frmTraKhachLe.MaThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
                 frmDatPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
                 frmDatPhong.maKhachHang = cttpbus.getMaKhach_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
                 frmDoiPhong.TenPhong = tenPhong;
                 frmDoiPhong.maThue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(tenPhong), false);
+                TenPhong = tenPhong;
             }
         }
 
@@ -341,8 +344,21 @@ namespace Home
 
         private void thuePhongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmThanhToanKhachLe frm = new frmThanhToanKhachLe(this);
-            frm.ShowDialog();
+            ThuePhongBUS tpbus = new ThuePhongBUS();
+            ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+            foreach (eThuePhong item in tpbus.getMaThue(cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false)))
+            {
+                if (item.MaDoan != null)
+                {
+                    frmTraKhachLe frm = new frmTraKhachLe(this, item.MaDoan);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    frmTraKhachLe frm = new frmTraKhachLe(this);
+                    frm.ShowDialog();
+                }
+            }
         }
 
         private void DatPhongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -509,6 +525,12 @@ namespace Home
         private void DoiPhongToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDoiPhong frm = new frmDoiPhong(this);
+            frm.ShowDialog();
+        }
+
+        private void btnKhachDoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmTraKhachDoan frm = new frmTraKhachDoan(this);
             frm.ShowDialog();
         }
     }

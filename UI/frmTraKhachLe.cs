@@ -14,9 +14,10 @@ using BUS;
 
 namespace Home
 {
-    public partial class frmThanhToanKhachLe : DevExpress.XtraEditors.XtraForm
+    public partial class frmTraKhachLe : DevExpress.XtraEditors.XtraForm
     {
         frmHome home;
+        string doan;
         double phuthu = 0;
         double tienphong = 0, tiendv = 0, tienvat = 0;
         public static string MaThue = string.Empty;
@@ -27,15 +28,23 @@ namespace Home
         ThuePhongBUS tpbus = new ThuePhongBUS();
         ChiTietDichVuBUS ctdvbus = new ChiTietDichVuBUS();
 
-        public frmThanhToanKhachLe()
+        public frmTraKhachLe()
         {
             InitializeComponent();
         }
 
-        public frmThanhToanKhachLe(frmHome sql)
+        public frmTraKhachLe(frmHome sql)
         {
             InitializeComponent();
             home = sql;
+            btnTraDoan.Visible = false;
+        }
+
+        public frmTraKhachLe(frmHome sql, string maDoan)
+        {
+            InitializeComponent();
+            home = sql;
+            doan = maDoan;       
         }
 
         private void frmThanhToan_Load(object sender, EventArgs e)
@@ -47,7 +56,7 @@ namespace Home
             tienPhuThu();
             tinhTienPhong();
             load_list_dichvu();
-            txtTongTien.Text = (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu)).ToString();
+            txtTongTien.Text = (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu) + Convert.ToDouble(txtTienKhac.Text)).ToString();
         }
 
         public DataTable DataTable_DSDV(List<eChiTetDichVu> ds)
@@ -114,7 +123,7 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong hdtp = new eHoaDonTienPhong();
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
-            foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue(MaThue))
+            foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue,pbus.maPhong_byTen(TenPhong)))
             {
                 lblNhanPhong.Text = item.GioVao + "   " + item.NgayVao.ToShortDateString();
                 string gioMacDinh = nhan14h + "  " + item.NgayVao.ToShortDateString();
@@ -135,13 +144,14 @@ namespace Home
                 }
                 if (item.GioVao > nhan6h && item.GioVao < nhan13h)
                 {
-                    lblGhiChu.Text = "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + phuthu.ToString() + " đồng"
+                    lblGhiChu.Text =item.GhiChu + "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + phuthu.ToString() + " đồng"
                         + "\nSố tiền phòng: " + nhan14h + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + tienphong.ToString() + " đồng";
                 }
                 else
                 {
-                    lblGhiChu.Text = "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + tienphong.ToString() + " đồng";
+                    lblGhiChu.Text = item.GhiChu + "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + tienphong.ToString() + " đồng";
                 }
+                txtTienKhac.Text = item.TienKhac.ToString();
             }
         }
 
@@ -150,7 +160,7 @@ namespace Home
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong pt = new eHoaDonTienPhong();
-            phuthu = pt.tinhTienPhuThu(cttpbus.getChiTietThuePhong_By_MaThue(MaThue),tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
+            phuthu = pt.tinhTienPhuThu(cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
             txtPhuThu.Text = phuthu.ToString();
         }
 
@@ -219,7 +229,7 @@ namespace Home
                 LoaiPhongBUS lpbus = new LoaiPhongBUS();
                 HoaDon bc = new HoaDon();
                 List<eChiTietBaoCao> listphong = new List<eChiTietBaoCao>();
-                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue(tt_ent.MaThue))
+                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(tt_ent.MaThue, pbus.maPhong_byTen(TenPhong)))
                 {
                     eChiTietBaoCao ctbc = new eChiTietBaoCao();
                     ctbc.tenPhong = pbus.getTenPhong_ByID(item.MaPhong);
@@ -249,6 +259,13 @@ namespace Home
             }
         }
 
+        private void btnTraDoan_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmTraKhachDoan frm = new frmTraKhachDoan(home);
+            frm.ShowDialog();
+        }
+
         private void txtTienPhong_TextChanged(object sender, EventArgs e)
         {
             txtVAT.Text = (Convert.ToDouble(txtTienPhong.Text) * 0.1).ToString();
@@ -257,7 +274,6 @@ namespace Home
 
         private void frmThanhToan_FormClosing(object sender, FormClosingEventArgs e)
         {         
-            JoinTable_BUS joinbus = new JoinTable_BUS();
             PhongBUS pbus = new PhongBUS();
             home.cleanGiaoDien();
             home.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");

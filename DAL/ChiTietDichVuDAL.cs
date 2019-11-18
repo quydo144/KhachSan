@@ -54,6 +54,23 @@ namespace DAL
             return ls;
         }
 
+        public List<eChiTetDichVu> getctdv_byMaThue(string maThue)
+        {
+            var listdv = db.ChiTietDichVus.Where(x => x.maThue.Trim().Equals(maThue)).ToList();
+            List<eChiTetDichVu> ls = new List<eChiTetDichVu>();
+            foreach (ChiTietDichVu item in listdv)
+            {
+                eChiTetDichVu dv = new eChiTetDichVu();
+                dv.MaDV = item.maDV.Trim();
+                dv.MaThue = item.maThue.Trim();
+                dv.SoLuong = Convert.ToInt32(item.soLuong);
+                dv.MaKhach = item.maKhach;
+                dv.MaPhong = item.maPhong;
+                ls.Add(dv);
+            }
+            return ls;
+        }
+
         public void updateCTDV(eChiTetDichVu update)
         {
             IQueryable<ChiTietDichVu> p = db.ChiTietDichVus.Where(x => x.maThue.Equals(update.MaThue) && x.maDV.Equals(update.MaDV));

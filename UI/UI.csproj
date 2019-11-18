@@ -157,11 +157,11 @@
     <Compile Include="frmTextPhong.designer.cs">
       <DependentUpon>frmTextPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThanhToanKhachLe.cs">
+    <Compile Include="frmTraKhachLe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThanhToanKhachLe.Designer.cs">
-      <DependentUpon>frmThanhToanKhachLe.cs</DependentUpon>
+    <Compile Include="frmTraKhachLe.Designer.cs">
+      <DependentUpon>frmTraKhachLe.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTraKhachDoan.cs">
       <SubType>Form</SubType>
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="frmTextPhong.resx">
       <DependentUpon>frmTextPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThanhToanKhachLe.resx">
-      <DependentUpon>frmThanhToanKhachLe.cs</DependentUpon>
+    <EmbeddedResource Include="frmTraKhachLe.resx">
+      <DependentUpon>frmTraKhachLe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraKhachDoan.resx">
       <DependentUpon>frmTraKhachDoan.cs</DependentUpon>

@@ -50,6 +50,7 @@ namespace Home
         {
             ThuePhongBUS tpbus = new ThuePhongBUS();
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+            ChiTietDichVuBUS ctdvbus = new ChiTietDichVuBUS();
             PhongBUS pbus = new PhongBUS();
             int s = 0;
             foreach (eThuePhong item in tpbus.getMaThue(maThue))
@@ -60,6 +61,11 @@ namespace Home
                 etp.SoLuongPhong = item.SoLuongPhong;
                 etp.TrangThai = false;
                 s = tpbus.insertThuePhong(etp);
+            }
+
+            if (s != 1)
+            {
+                return;
             }
             if (s == 1)
             {
@@ -76,20 +82,8 @@ namespace Home
                     ect.TienKhac = Convert.ToDouble(lblTienKhac.Text);
                     ect.MaThue = tpbus.getMaThueCuoi();
                     ect.TrangThai = false;
-                    if (cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu == null)
-                    {
-                        ect.GhiChu = cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu + "Đổi phòng từ " + lblTenPhong.Text + " (" + item.GioVao + " " + item.NgayVao.ToShortDateString() + ")" + "đến " + cboPhongTrong.Text + " (" + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToShortDateString() + ")";
-                    }
-                    else
-                    {
-                        ect.GhiChu = "Đổi phòng từ " + lblTenPhong.Text + " (" + item.GioVao + " " + item.NgayVao.ToShortDateString() + ")" + "đến " + cboPhongTrong.Text + " (" + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToShortDateString() + ")";
-                    }
+                    ect.GhiChu = cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu + lblTenPhong.Text + " (" + item.GioVao + " " + item.NgayVao.ToShortDateString() + ")" + "đến " + cboPhongTrong.Text + " (" + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToShortDateString() + ")";
                     cttpbus.insertCTTP(ect);
-
-                    eChiTietThuePhong ectOld = new eChiTietThuePhong();
-                    ectOld.MaThue = maThue;
-                    ectOld.MaThue = pbus.maPhong_byTen(TenPhong);
-                    ectOld.GhiChu = "Đổi phòng";
 
                 }
                 foreach (eChiTietThuePhong item in cttpbus.getChiTietThuePhong_By_MaThue_TrangThai(maThue, 0))
@@ -121,6 +115,48 @@ namespace Home
                     ect.TrangThai = true;
                     cttpbus.insertCTTP(ect);
                 }
+
+                foreach (eChiTetDichVu item in ctdvbus.getctdv_byMaThue(maThue))
+                {
+                    eChiTetDichVu ctdv = new eChiTetDichVu();
+                    ctdv.MaThue =tpbus.getMaThueCuoi();
+                    ctdv.MaPhong = cboPhongTrong.SelectedValue.ToString();
+                    ctdv.MaKhach = item.MaKhach;
+                    ctdv.MaDV = item.MaDV;
+                    ctdv.SoLuong = item.SoLuong;
+                    ctdvbus.insertCTDV(ctdv);
+                }
+
+                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue(maThue))
+                {
+                    if (item.MaPhong.Equals(pbus.maPhong_byTen(TenPhong)))
+                    {
+                        eChiTietThuePhong ectOld = new eChiTietThuePhong();
+                        ectOld.MaThue = maThue;
+                        ectOld.MaPhong = item.MaPhong;
+                        //ectOld.MaKhach = cttpbus.getMaKhach_By_MaPhong_TrangThai(ectOld.MaPhong, false);
+                        ectOld.MaKhach = item.MaKhach;
+                        ectOld.TrangThai = true;
+                        ectOld.GhiChu = "Đổi phòng";
+                        cttpbus.updateTrangThaiChiTietThuePhong(ectOld);
+                    }
+                    else
+                    {
+                        eChiTietThuePhong ectOld = new eChiTietThuePhong();
+                        ectOld.MaThue = maThue;
+                        ectOld.MaPhong = item.MaPhong;
+                        ectOld.MaKhach = item.MaKhach;
+                        ectOld.TrangThai = true;
+                        ectOld.GhiChu = null;
+                        cttpbus.updateTrangThaiChiTietThuePhong(ectOld);
+                    }
+                }
+
+                eThuePhong tp = new eThuePhong();
+                tp.MaThue = maThue;
+                tp.TrangThai = true;
+                tpbus.updateThuePhong(tp);
+
                 ePhong ep = new ePhong();
                 ep.MaPhong = pbus.maPhong_byTen(TenPhong);
                 ep.TinhTrang = false;
@@ -131,12 +167,6 @@ namespace Home
                 newp.TinhTrang = true;
                 newp.SoNgHienTai = pbus.getEPhong_byID(pbus.maPhong_byTen(TenPhong)).SoNgHienTai;
                 pbus.updateTinhTrangPhong(newp);
-
-                //eChiTietThuePhong ecttp = new eChiTietThuePhong();
-                //ecttp.MaThue = maThue;
-                //ecttp.MaPhong = pbus.maPhong_byTen(TenPhong);
-                //ecttp.GhiChu = "Đổi phòng";
-                //cttpbus.updateChiTietThuePhong(ecttp);
 
                 MessageBox.Show("Thành công");
                 this.Close();
@@ -168,7 +198,7 @@ namespace Home
             }
             else
             {
-                lblTienKhac.Text = (tienPhongCu - tienPhongMoi).ToString();
+                lblTienKhac.Text = (-(tienPhongCu - tienPhongMoi)).ToString();
             }          
         }
     }
