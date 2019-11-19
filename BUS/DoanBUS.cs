@@ -35,5 +35,9 @@ namespace BUS
         {
             return ddal.getId_ByTenDoan(tendoan);
         }
+        public eDoan getdoan_sdt(string sdt)
+        {
+            return ddal.getdoan_sdt(sdt);
+        }
     }
 }

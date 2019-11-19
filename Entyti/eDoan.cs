@@ -9,13 +9,15 @@ namespace Entyti
     public class eDoan
     {
         private string maDoan, tenDoan, diaChi, maTruongDoan;
+        private string sdt;
 
-        public eDoan(string maDoan, string tenDoan, string diaChi, string maTruongDoan)
+        public eDoan(string sdt, string maDoan, string tenDoan, string diaChi, string maTruongDoan)
         {
             this.maDoan = maDoan;
             this.tenDoan = tenDoan;
             this.diaChi = diaChi;
             this.maTruongDoan = maTruongDoan;
+            this.sdt = sdt;
         }
 
         public eDoan()
@@ -72,6 +74,19 @@ namespace Entyti
             set
             {
                 tenDoan = value;
+            }
+        }
+
+        public string Sdt
+        {
+            get
+            {
+                return sdt;
+            }
+
+            set
+            {
+                sdt = value;
             }
         }
     }

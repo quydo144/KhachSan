@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatKhachDoan));
             DevExpress.XtraEditors.BreadCrumbNode breadCrumbNode2 = new DevExpress.XtraEditors.BreadCrumbNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSdtDoan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtTruongDoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenDoan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnThemKH = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTongSoPhong = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@
             this.btnAddKhAutoPhong = new System.Windows.Forms.Button();
             this.btnAddCoSanPhong = new System.Windows.Forms.Button();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.BreadCrumbEdit();
+            this.btnTimDoan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,14 +86,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnTimDoan);
+            this.groupBox1.Controls.Add(this.txtSdtDoan);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTruongDoan);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTenDoan);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDiaChi);
-            this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(-4, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(616, 177);
@@ -100,9 +102,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đoàn";
             // 
+            // txtSdtDoan
+            // 
+            this.txtSdtDoan.Location = new System.Drawing.Point(200, 30);
+            this.txtSdtDoan.Multiline = true;
+            this.txtSdtDoan.Name = "txtSdtDoan";
+            this.txtSdtDoan.Size = new System.Drawing.Size(319, 29);
+            this.txtSdtDoan.TabIndex = 15;
+            this.txtSdtDoan.Text = "123456789";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(67, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 24);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Số điện thoại";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txtTruongDoan
             // 
-            this.txtTruongDoan.Location = new System.Drawing.Point(190, 142);
+            this.txtTruongDoan.Location = new System.Drawing.Point(200, 142);
             this.txtTruongDoan.Multiline = true;
             this.txtTruongDoan.Name = "txtTruongDoan";
             this.txtTruongDoan.Size = new System.Drawing.Size(372, 29);
@@ -111,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 142);
+            this.label3.Location = new System.Drawing.Point(26, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 13;
@@ -120,16 +141,16 @@
             // 
             // txtTenDoan
             // 
-            this.txtTenDoan.Location = new System.Drawing.Point(190, 30);
+            this.txtTenDoan.Location = new System.Drawing.Point(200, 71);
             this.txtTenDoan.Multiline = true;
             this.txtTenDoan.Name = "txtTenDoan";
             this.txtTenDoan.Size = new System.Drawing.Size(372, 29);
-            this.txtTenDoan.TabIndex = 12;
+            this.txtTenDoan.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 30);
+            this.label2.Location = new System.Drawing.Point(84, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 8;
@@ -138,39 +159,21 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(190, 65);
+            this.txtDiaChi.Location = new System.Drawing.Point(200, 106);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(372, 29);
             this.txtDiaChi.TabIndex = 11;
             // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(190, 101);
-            this.txtSDT.Multiline = true;
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(372, 29);
-            this.txtSDT.TabIndex = 11;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 65);
+            this.label1.Location = new System.Drawing.Point(107, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Địa chỉ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Số điện thoại";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnThemKH
             // 
@@ -533,6 +536,16 @@
             this.comboBoxEdit1.Size = new System.Drawing.Size(237, 26);
             this.comboBoxEdit1.TabIndex = 32;
             // 
+            // btnTimDoan
+            // 
+            this.btnTimDoan.Location = new System.Drawing.Point(525, 36);
+            this.btnTimDoan.Name = "btnTimDoan";
+            this.btnTimDoan.Size = new System.Drawing.Size(47, 23);
+            this.btnTimDoan.TabIndex = 17;
+            this.btnTimDoan.Text = "button1";
+            this.btnTimDoan.UseVisualStyleBackColor = true;
+            this.btnTimDoan.Click += new System.EventHandler(this.btnTimDoan_Click);
+            // 
             // frmDatKhachDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -584,8 +597,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTenDoan;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLuu;
@@ -621,5 +632,8 @@
         private System.Windows.Forms.Button btnAddKhAutoPhong;
         private System.Windows.Forms.Button btnAddCoSanPhong;
         private DevExpress.XtraEditors.BreadCrumbEdit comboBoxEdit1;
+        private System.Windows.Forms.TextBox txtSdtDoan;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnTimDoan;
     }
 }

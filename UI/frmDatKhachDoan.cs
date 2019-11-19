@@ -37,7 +37,6 @@ namespace Home
         private void frmDatKhachDoan_Load(object sender, EventArgs e)
         {         
             LoadPhongTrong();
-            autoCompleteSourceDoan();
             autoCompleteSourceCMND();
         }
 
@@ -50,18 +49,6 @@ namespace Home
             foreach (eKhachHang item in khbus.get())
             {
                 txtTKcmnd.AutoCompleteCustomSource.Add(item.SoCMND);
-            }
-        }
-
-        public void autoCompleteSourceDoan()
-        {
-            txtTenDoan.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtTenDoan.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            DoanBUS dbus = new DoanBUS();
-            txtTenDoan.AutoCompleteCustomSource.Clear();
-            foreach (eDoan item in dbus.getdoans())
-            {
-                txtTenDoan.AutoCompleteCustomSource.Add(item.TenDoan);
             }
         }
 
@@ -91,9 +78,7 @@ namespace Home
         private void btnThemKH_Click(object sender, EventArgs e)
         {
             frmTextKhachHang frm = new frmTextKhachHang();
-            frm.ShowDialog();
-            txtSDT.Text = SDT;
-            txtTenDoan.Text = TenKH;
+            frm.ShowDialog();           
         }
 
         private void btnKhToView_Click(object sender, EventArgs e)
@@ -216,9 +201,13 @@ namespace Home
             doan.DiaChi = txtDiaChi.Text.Trim();
             doan.MaTruongDoan = txtTruongDoan.Text.Trim();
             doan.TenDoan = txtTenDoan.Text.Trim();
-            int kqTaoDoan = dbus.insertDoan(doan);
+            doan.Sdt = txtSdtDoan.Text.Trim();
+            if (dbus.getdoan_sdt(txtSdtDoan.Text.Trim()) == null)
+            {
+                int kqTaoDoan = dbus.insertDoan(doan);
+            }
             tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
-            tp.MaDoan = dbus.getTD_ByTenDoan(txtTenDoan.Text.Trim()); //ma doan
+            tp.MaDoan = dbus.getId_ByTenDoan(txtTenDoan.Text.Trim()); //ma doan
             int soLuongP = 0;
             for (int i = 0; i < gridViewLoaiPhong.RowCount ; i++)
             {
@@ -231,48 +220,40 @@ namespace Home
             TimeSpan gioRa = new TimeSpan(14, 00, 00);
             int a = tpbus.insertThuePhong(tp);
             eChiTietThuePhong cttp = new eChiTietThuePhong();
-            if (kqTaoDoan == 1)
+            if (a == 1)
             {
-                if (a == 1)
+                ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+                foreach (eKhachHang item in ls)
                 {
-                    ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
-                    foreach (eKhachHang item in ls)
-                    {                        
-                        cttp.MaThue = tpbus.getMaThueCuoi();
-                        cttp.MaKhach = item.MaKH;
-                        cttp.MaPhong = pbus.maPhong_byTen(item.SoPhong);
-                        cttp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text).Date;
-                        cttp.NgayVao = DateTime.Now.Date;
-                        cttp.GioRa = gioRa;
-                        cttp.GioVao = gioVao;
-                        cttp.TrangThai = false;
-                        cttpbus.insertCTTP(cttp);
-                        ePhong p = new ePhong();
-                        p.MaPhong = pbus.maPhong_byTen(item.SoPhong);
-                        p.TinhTrang = true;
-                        int soPhong = 0;
-                        foreach (var kh in ls)
+                    cttp.MaThue = tpbus.getMaThueCuoi();
+                    cttp.MaKhach = item.MaKH;
+                    cttp.MaPhong = pbus.maPhong_byTen(item.SoPhong);
+                    cttp.NgayRa = Convert.ToDateTime(dtmNgayRa.Text).Date;
+                    cttp.NgayVao = DateTime.Now.Date;
+                    cttp.GioRa = gioRa;
+                    cttp.GioVao = gioVao;
+                    cttp.TrangThai = false;
+                    cttpbus.insertCTTP(cttp);
+                    ePhong p = new ePhong();
+                    p.MaPhong = pbus.maPhong_byTen(item.SoPhong);
+                    p.TinhTrang = true;
+                    int soPhong = 0;
+                    foreach (var kh in ls)
+                    {
+                        if (kh.SoPhong.Equals(item.SoPhong))
                         {
-                            if (kh.SoPhong.Equals(item.SoPhong))
-                            {
-                                soPhong++;
-                            }
+                            soPhong++;
                         }
-                        p.SoNgHienTai = soPhong;
-                        pbus.updateTinhTrangPhong(p);
                     }
-                    MessageBox.Show("Đặt phòng thành công");
-                    this.Close();
+                    p.SoNgHienTai = soPhong;
+                    pbus.updateTinhTrangPhong(p);
                 }
-                else
-                {
-                    MessageBox.Show("Không thành công");
-                    return;
-                }
+                MessageBox.Show("Đặt phòng thành công");
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Không thành công, phải tạo đoàn trước!");
+                MessageBox.Show("Không thành công");
                 return;
             }
         }
@@ -398,8 +379,18 @@ namespace Home
         private void frmDatKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
-            frm.AnflowLayoutPanel();
-            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            //frm.AnflowLayoutPanel();
+            //frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+        }
+
+        private void btnTimDoan_Click(object sender, EventArgs e)
+        {
+            DoanBUS dbus = new DoanBUS();          
+            eDoan doan = new eDoan();
+            doan = dbus.getdoan_sdt(txtSdtDoan.Text.Trim());
+            txtTenDoan.Text = doan.TenDoan;
+            txtDiaChi.Text = doan.DiaChi;
+            txtTruongDoan.Text = doan.MaTruongDoan;
         }
     }
 }

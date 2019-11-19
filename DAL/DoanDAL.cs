@@ -19,6 +19,7 @@ namespace DAL
         {
             Doan temd = new Doan();
             temd.maDoan = "";
+            temd.soDienThoai = newd.Sdt;
             temd.diaChi = newd.DiaChi;
             temd.maTruongDoan = newd.MaTruongDoan;
             temd.tenDoan = newd.TenDoan;
@@ -35,12 +36,26 @@ namespace DAL
                 eDoan d = new eDoan();
                 d.MaDoan = item.maDoan.Trim();
                 d.TenDoan = item.tenDoan.Trim();
+                d.Sdt = item.soDienThoai.Trim();
                 d.MaTruongDoan = item.maTruongDoan.Trim();
                 d.DiaChi = item.diaChi.Trim();
                 ls.Add(d);
             }
             return ls;
         }
+
+        public eDoan getdoan_sdt(string sdt)
+        {
+            Doan item = (from x in db.Doans where x.soDienThoai.Equals(sdt) select x).SingleOrDefault();
+            eDoan d = new eDoan();
+            d.MaDoan = item.maDoan.Trim();
+            d.TenDoan = item.tenDoan.Trim();
+            d.Sdt = item.soDienThoai.Trim();
+            d.MaTruongDoan = item.maTruongDoan.Trim();
+            d.DiaChi = item.diaChi.Trim();
+            return d;
+        }
+
         public string getTen_ById(string id)
         {
             Doan d = db.Doans.Where(x => x.maDoan.Equals(id)).SingleOrDefault();
@@ -48,7 +63,7 @@ namespace DAL
         }
         public string getTD_ByTenDoan(string id)
         {
-            Doan d = db.Doans.Where(x => x.tenDoan.Contains(id)).SingleOrDefault();
+            Doan d = db.Doans.Where(x => x.tenDoan.Equals(id)).SingleOrDefault();
             return d.maTruongDoan;
         }
         public string getId_ByTenDoan(string tendoan)
