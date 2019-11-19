@@ -13,5 +13,7 @@ namespace Entyti
         public string thoiGianNhan { get; set; }
         public string thoiGianTra { get; set; }
         public double tienPhong { get; set; }
+
+
     }
 }

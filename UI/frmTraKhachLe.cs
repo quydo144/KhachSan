@@ -206,7 +206,7 @@ namespace Home
                 //Update lại trạng thái chi tiết thuê phòng
                 eChiTietThuePhong cttp = new eChiTietThuePhong();
                 ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
-                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue,pbus.maPhong_byTen(TenPhong)))
+                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
                 {
                     cttp.MaThue = MaThue;
                     cttp.MaKhach = item.MaKhach;
@@ -220,6 +220,20 @@ namespace Home
                 tp.MaThue = tt_ent.MaThue;
                 tp.TrangThai = true;
                 tpbus.updateThuePhong(tp);
+
+                HoaDonDichVuBUS hddvbus = new HoaDonDichVuBUS();
+                if (ctdvbus.getctdv_byMaThue(MaThue) != null)
+                {
+                    foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue(MaThue))
+                    {
+                        eHoaDonDichVu hddv = new eHoaDonDichVu();
+                        hddv.MaHDDV = "";
+                        hddv.MaThue = MaThue;
+                        hddv.MaKH = item.MaKhach;
+                        hddv.MaPhong = item.MaPhong;
+                        hddvbus.insertThanhToanDV(hddv);
+                    }
+                }
 
                 MessageBox.Show("Đã thanh toán thành công");
 
@@ -248,9 +262,38 @@ namespace Home
                     bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
                 }
                 this.Close();
-                frmPrintHDTP frmp = new frmPrintHDTP();
+                frmPrint frmp = new frmPrint();
                 frmp.InHoaDonInTuReport(bc, listphong.ToList());
                 frmp.ShowDialog();
+
+                List<eCTDV> lsctdv = new List<eCTDV>();
+                DichVuBUS dvbus = new DichVuBUS();
+
+                if (ctdvbus.getctdv_byMaThue(MaThue) != null)
+                {
+                    foreach (var item in ctdvbus.getctdv_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
+                    {
+                        eCTDV ctdv = new eCTDV();
+                        ctdv.TenDV = dvbus.getTenDV_byID(item.MaDV);
+                        ctdv.SoLuong = item.SoLuong;
+                        ctdv.DonGia = dvbus.getDonGia_byID(item.MaDV);
+                        lsctdv.Add(ctdv);
+                    }
+
+                    foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
+                    {
+                        bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
+                        bc.tenKH = khbus.getenKH_ByID(item.MaKhach);
+                        bc.soHD = hddvbus.gemaHD_BymaThue_maPhong(item.MaThue,item.MaPhong);         //Cần xem xét lại
+                        bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
+                        bc.tenPhong = pbus.getTenPhong_ByID(item.MaPhong);
+                    }
+
+                    frmPrint frmInDV = new frmPrint();
+                    frmp.InHoaDonInDichVuTuReport(bc, lsctdv.ToList());
+                    frmp.ShowDialog();
+
+                }
             }
             else
             {

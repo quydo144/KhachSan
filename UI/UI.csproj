@@ -145,11 +145,11 @@
     <Compile Include="frmPhong.designer.cs">
       <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrintHDTP.cs">
+    <Compile Include="frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrintHDTP.designer.cs">
-      <DependentUpon>frmPrintHDTP.cs</DependentUpon>
+    <Compile Include="frmPrint.designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTextPhong.cs">
       <SubType>Form</SubType>
@@ -225,8 +225,8 @@
     <EmbeddedResource Include="frmPhong.resx">
       <DependentUpon>frmPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintHDTP.resx">
-      <DependentUpon>frmPrintHDTP.cs</DependentUpon>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTextPhong.resx">
       <DependentUpon>frmTextPhong.cs</DependentUpon>

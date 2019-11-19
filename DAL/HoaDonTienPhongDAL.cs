@@ -7,7 +7,7 @@ using Entyti;
 
 namespace DAL
 {
-    public class ThanhToanHoaDonTienPhongDAL
+    public class HoaDonTienPhongDAL
     {
         dbQLKhachSanDataContext db = new dbQLKhachSanDataContext();
 

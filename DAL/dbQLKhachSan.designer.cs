@@ -464,8 +464,6 @@ namespace DAL
 		
 		private EntitySet<ChiTietDichVu> _ChiTietDichVus;
 		
-		private EntitySet<HoaDonDichVu> _HoaDonDichVus;
-		
 		private EntityRef<KhachHang> _KhachHang;
 		
 		private EntityRef<Phong> _Phong;
@@ -501,7 +499,6 @@ namespace DAL
 		public ChiTietThuePhong()
 		{
 			this._ChiTietDichVus = new EntitySet<ChiTietDichVu>(new Action<ChiTietDichVu>(this.attach_ChiTietDichVus), new Action<ChiTietDichVu>(this.detach_ChiTietDichVus));
-			this._HoaDonDichVus = new EntitySet<HoaDonDichVu>(new Action<HoaDonDichVu>(this.attach_HoaDonDichVus), new Action<HoaDonDichVu>(this.detach_HoaDonDichVus));
 			this._KhachHang = default(EntityRef<KhachHang>);
 			this._Phong = default(EntityRef<Phong>);
 			this._ThuePhong = default(EntityRef<ThuePhong>);
@@ -733,19 +730,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietThuePhong_HoaDonDichVu", Storage="_HoaDonDichVus", ThisKey="maThue,maKhach,maPhong", OtherKey="maKhach,maThue,maPhong")]
-		public EntitySet<HoaDonDichVu> HoaDonDichVus
-		{
-			get
-			{
-				return this._HoaDonDichVus;
-			}
-			set
-			{
-				this._HoaDonDichVus.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_ChiTietThuePhong", Storage="_KhachHang", ThisKey="maKhach", OtherKey="maKH", IsForeignKey=true)]
 		public KhachHang KhachHang
 		{
@@ -875,18 +859,6 @@ namespace DAL
 		}
 		
 		private void detach_ChiTietDichVus(ChiTietDichVu entity)
-		{
-			this.SendPropertyChanging();
-			entity.ChiTietThuePhong = null;
-		}
-		
-		private void attach_HoaDonDichVus(HoaDonDichVu entity)
-		{
-			this.SendPropertyChanging();
-			entity.ChiTietThuePhong = this;
-		}
-		
-		private void detach_HoaDonDichVus(HoaDonDichVu entity)
 		{
 			this.SendPropertyChanging();
 			entity.ChiTietThuePhong = null;
@@ -1255,8 +1227,6 @@ namespace DAL
 		
 		private string _maKhach;
 		
-		private EntityRef<ChiTietThuePhong> _ChiTietThuePhong;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1273,7 +1243,6 @@ namespace DAL
 		
 		public HoaDonDichVu()
 		{
-			this._ChiTietThuePhong = default(EntityRef<ChiTietThuePhong>);
 			OnCreated();
 		}
 		
@@ -1308,10 +1277,6 @@ namespace DAL
 			{
 				if ((this._maThue != value))
 				{
-					if (this._ChiTietThuePhong.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnmaThueChanging(value);
 					this.SendPropertyChanging();
 					this._maThue = value;
@@ -1332,10 +1297,6 @@ namespace DAL
 			{
 				if ((this._maPhong != value))
 				{
-					if (this._ChiTietThuePhong.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnmaPhongChanging(value);
 					this.SendPropertyChanging();
 					this._maPhong = value;
@@ -1356,53 +1317,11 @@ namespace DAL
 			{
 				if ((this._maKhach != value))
 				{
-					if (this._ChiTietThuePhong.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnmaKhachChanging(value);
 					this.SendPropertyChanging();
 					this._maKhach = value;
 					this.SendPropertyChanged("maKhach");
 					this.OnmaKhachChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietThuePhong_HoaDonDichVu", Storage="_ChiTietThuePhong", ThisKey="maKhach,maThue,maPhong", OtherKey="maThue,maKhach,maPhong", IsForeignKey=true)]
-		public ChiTietThuePhong ChiTietThuePhong
-		{
-			get
-			{
-				return this._ChiTietThuePhong.Entity;
-			}
-			set
-			{
-				ChiTietThuePhong previousValue = this._ChiTietThuePhong.Entity;
-				if (((previousValue != value) 
-							|| (this._ChiTietThuePhong.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ChiTietThuePhong.Entity = null;
-						previousValue.HoaDonDichVus.Remove(this);
-					}
-					this._ChiTietThuePhong.Entity = value;
-					if ((value != null))
-					{
-						value.HoaDonDichVus.Add(this);
-						this._maKhach = value.maThue;
-						this._maThue = value.maKhach;
-						this._maPhong = value.maPhong;
-					}
-					else
-					{
-						this._maKhach = default(string);
-						this._maThue = default(string);
-						this._maPhong = default(string);
-					}
-					this.SendPropertyChanged("ChiTietThuePhong");
 				}
 			}
 		}

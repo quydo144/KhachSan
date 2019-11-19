@@ -13,9 +13,9 @@ using BUS;
 
 namespace Home
 {
-    public partial class frmPrintHDTP : DevExpress.XtraEditors.XtraForm
+    public partial class frmPrint : DevExpress.XtraEditors.XtraForm
     {
-        public frmPrintHDTP()
+        public frmPrint()
         {
             InitializeComponent();
         }
@@ -28,6 +28,18 @@ namespace Home
                 item.Visible = false;
             }
             report.InHoaDonInData(bc.tenNV, bc.tenKH, bc.soHD, bc.thoiGianInHD, ls.ToList());
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+
+        public void InHoaDonInDichVuTuReport(HoaDon bc, List<eCTDV> ls)
+        {
+            InHoaDonDichVu report = new InHoaDonDichVu();
+            foreach (DevExpress.XtraReports.Parameters.Parameter item in report.Parameters)
+            {
+                item.Visible = false;
+            }
+            report.InHoaDonDataDichVu(bc.tenNV, bc.tenKH, bc.soHD, bc.thoiGianInHD, bc.tenPhong, ls.ToList());
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }

@@ -335,7 +335,6 @@ namespace Home
         {
             if (kieuForm == 1)
             {
-                JoinTable_BUS joinbus = new JoinTable_BUS();
                 PhongBUS pbus = new PhongBUS();
                 frmHome.cleanGiaoDien();
                 frmHome.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");

@@ -81,7 +81,6 @@ namespace Home
         private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
-            JoinTable_BUS joinbus = new JoinTable_BUS();
             frm.AnflowLayoutPanel();
             frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }

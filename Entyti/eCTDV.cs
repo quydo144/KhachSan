@@ -70,12 +70,7 @@ namespace Entyti
         {
             get
             {
-                return thanhTien;
-            }
-
-            set
-            {
-                thanhTien = value;
+                return SoLuong * DonGia;
             }
         }
 

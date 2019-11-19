@@ -45,7 +45,7 @@
     <Compile Include="ChiTietThuePhongDAL.cs" />
     <Compile Include="DichVuDAL.cs" />
     <Compile Include="DoanDAL.cs" />
-    <Compile Include="JoinTable_DAL.cs" />
+    <Compile Include="HoaDonDichVuDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
@@ -61,7 +61,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ThanhToanHoaDonTienPhongDAL.cs" />
+    <Compile Include="HoaDonTienPhongDAL.cs" />
     <Compile Include="ThuePhongDAL.cs" />
     <Compile Include="ThuePhong_DoanDAL.cs" />
   </ItemGroup>

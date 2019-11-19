@@ -12,5 +12,6 @@ namespace Entyti
         public string tenKH { get; set; }
         public string soHD { get; set; }
         public string thoiGianInHD { get; set; }
+        public string tenPhong { get; set; }
     }
 }

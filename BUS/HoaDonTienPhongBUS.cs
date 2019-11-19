@@ -10,7 +10,7 @@ namespace BUS
 {
     public class HoaDonTienPhongBUS
     {
-        ThanhToanHoaDonTienPhongDAL ttdal = new ThanhToanHoaDonTienPhongDAL();
+        HoaDonTienPhongDAL ttdal = new HoaDonTienPhongDAL();
 
         public int insertThanhToan(eHoaDonTienPhong tt)
         {

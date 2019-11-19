@@ -59,7 +59,6 @@
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -84,6 +83,7 @@
             this.tgianInHoaDon = new DevExpress.XtraReports.Parameters.Parameter();
             this.soHoaDon = new DevExpress.XtraReports.Parameters.Parameter();
             this.tenNhanVien = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -376,16 +376,6 @@
             this.xrTableCell15.Text = "Thanh toán ";
             this.xrTableCell15.Weight = 2.2152476208172756D;
             // 
-            // xrTableCell16
-            // 
-            this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ReportItems].[xrLabel14].[Text]")});
-            this.xrTableCell16.Multiline = true;
-            this.xrTableCell16.Name = "xrTableCell16";
-            this.xrTableCell16.Text = "xrTableCell16";
-            this.xrTableCell16.TextFormatString = "{0:#,#}";
-            this.xrTableCell16.Weight = 0.78475171286005829D;
-            // 
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
@@ -614,6 +604,16 @@
             this.tenNhanVien.Name = "tenNhanVien";
             this.tenNhanVien.ValueInfo = "0";
             // 
+            // xrTableCell16
+            // 
+            this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([tienPhong]) + Sum([tienPhong]) * 0.1")});
+            this.xrTableCell16.Multiline = true;
+            this.xrTableCell16.Name = "xrTableCell16";
+            this.xrTableCell16.Text = "xrTableCell16";
+            this.xrTableCell16.TextFormatString = "{0:#,#}";
+            this.xrTableCell16.Weight = 0.78475171286005829D;
+            // 
             // InHoaDonTienPhong
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -665,7 +665,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell14;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow5;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell15;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel12;
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
@@ -700,5 +699,6 @@
         private DevExpress.XtraReports.Parameters.Parameter tgianInHoaDon;
         private DevExpress.XtraReports.Parameters.Parameter soHoaDon;
         private DevExpress.XtraReports.Parameters.Parameter tenNhanVien;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
     }
 }

@@ -25,7 +25,6 @@ namespace Home
         PhongBUS pbus = new PhongBUS();
         List<eLoaiPhong> listlp = new List<eLoaiPhong>();
         LoaiPhongBUS lpbus = new LoaiPhongBUS();
-        JoinTable_BUS joinbus = new JoinTable_BUS();
 
         public frmHome()
         {
@@ -422,16 +421,7 @@ namespace Home
 
         private void dtpNgayTra_ValueChanged(object sender, EventArgs e)
         {
-            cleanGiaoDien();
-            List<ePhong> phRong = new List<ePhong>();
-            List<ePhong> phKhach = new List<ePhong>();
-            PhongBUS pbus = new PhongBUS();
-            foreach (var item in joinbus.GetPhog_TraVaoNgay(true, 0, Convert.ToDateTime(dtpNgayTra.Text)))
-            {
-                pbus.getEPhong_byID(item.MaPhong);
-                phKhach.Add(pbus.getEPhong_byID(item.MaPhong));
-            }
-            //TaoGiaoDienPhong(phKhach, phRong, joinbus.GetPhog_TraVaoNgay(true, 0, Convert.ToDateTime(dtpNgayTra.Text)), "Phòng trả trong ngày: " + dtpNgayTra.Text);
+
         }
 
         private void btn500_ItemClick(object sender, ItemClickEventArgs e)

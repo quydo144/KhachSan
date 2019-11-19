@@ -390,7 +390,6 @@ C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.re
 C:\Users\quydo\Desktop\KhachSan\UI\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
 E:\KhachSan\UI\obj\Debug\Home.frmDatKhachDoan.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTextPhong.resources
-E:\KhachSan\UI\obj\Debug\Home.frmPrintHDTP.resources
 E:\KhachSan\UI\obj\Debug\Home.InHoaDonTienPhong.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTraKhachDoan.resources
 E:\KhachSan\UI\obj\Debug\Home.InHoaDonDichVu.resources
@@ -399,3 +398,4 @@ E:\KhachSan\UI\obj\Debug\Home.frmDoan.resources
 E:\KhachSan\UI\obj\Debug\Home.frmBC_TienPhong.resources
 E:\KhachSan\UI\obj\Debug\Home.frmDoiPhong.resources
 E:\KhachSan\UI\obj\Debug\Home.frmTraKhachLe.resources
+E:\KhachSan\UI\obj\Debug\Home.frmPrint.resources

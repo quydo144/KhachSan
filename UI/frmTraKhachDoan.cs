@@ -208,7 +208,7 @@ namespace Home
                     bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
                 }
                 this.Close();
-                frmPrintHDTP frmp = new frmPrintHDTP();
+                frmPrint frmp = new frmPrint();
                 frmp.InHoaDonInTuReport(bc, listphong.ToList());
                 frmp.ShowDialog();
             }
