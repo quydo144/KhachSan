@@ -18,7 +18,6 @@ namespace Home
     {
         frmHome frm;
         List<eKhachHang> ls = new List<eKhachHang>();
-        int stt = 0;
         public static string CMND = string.Empty;
         public static string TenKH = string.Empty;
         public static string SDT = string.Empty;
@@ -36,13 +35,13 @@ namespace Home
         }
 
         private void frmDatKhachDoan_Load(object sender, EventArgs e)
-        {
-            autoCompleteSource();
+        {         
             LoadPhongTrong();
-            lblTongSoPhong.Text = stt.ToString();
+            autoCompleteSourceDoan();
+            autoCompleteSourceCMND();
         }
 
-        public void autoCompleteSource()
+        public void autoCompleteSourceCMND()
         {
             txtTKcmnd.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtTKcmnd.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -51,6 +50,18 @@ namespace Home
             foreach (eKhachHang item in khbus.get())
             {
                 txtTKcmnd.AutoCompleteCustomSource.Add(item.SoCMND);
+            }
+        }
+
+        public void autoCompleteSourceDoan()
+        {
+            txtTenDoan.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTenDoan.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            DoanBUS dbus = new DoanBUS();
+            txtTenDoan.AutoCompleteCustomSource.Clear();
+            foreach (eDoan item in dbus.getdoans())
+            {
+                txtTenDoan.AutoCompleteCustomSource.Add(item.TenDoan);
             }
         }
 
@@ -207,7 +218,7 @@ namespace Home
             doan.TenDoan = txtTenDoan.Text.Trim();
             int kqTaoDoan = dbus.insertDoan(doan);
             tp.MaNV = nvbus.getmaNV_byEmail(emailNV);
-            tp.MaDoan = dbus.getDoanID(); //ma doan
+            tp.MaDoan = dbus.getTD_ByTenDoan(txtTenDoan.Text.Trim()); //ma doan
             int soLuongP = 0;
             for (int i = 0; i < gridViewLoaiPhong.RowCount ; i++)
             {

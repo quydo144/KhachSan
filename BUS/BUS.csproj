@@ -50,7 +50,7 @@
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThanhToanHoaDonTienPhongBUS.cs" />
+    <Compile Include="HoaDonTienPhongBUS.cs" />
     <Compile Include="ThuePhongBUS.cs" />
     <Compile Include="ThuePhong_DoanBUS.cs" />
   </ItemGroup>

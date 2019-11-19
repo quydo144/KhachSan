@@ -32,8 +32,8 @@ namespace DAL
         public string getMaThue_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
             string maThue = "";
-            ChiTietThuePhong cttpnull = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai) && x.ghiChu == null).SingleOrDefault();          
-            ChiTietThuePhong cttpkhacnull = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai) && x.ghiChu != null).SingleOrDefault();          
+            ChiTietThuePhong cttpnull = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai) && x.ghiChu == null).FirstOrDefault();          
+            ChiTietThuePhong cttpkhacnull = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai) && x.ghiChu != null).FirstOrDefault();          
             if (cttpnull == null)
             {
                 maThue = cttpkhacnull.maThue;
@@ -46,15 +46,32 @@ namespace DAL
 
         }
 
+        public bool kiemTraTrungPhong(string maThue)
+        {
+            var p = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).ToList();
+            for (int i = 0; i < p.Count + 1; i++)
+             {
+                if (i == p.Count - 1)
+                {
+                    break;
+                }
+                if (p[i].maPhong.Equals(p[i+1].maPhong))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public string getMaKhach_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
-            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x =>x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai)).SingleOrDefault();
+            ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x =>x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai)).FirstOrDefault();
             return cttp.maKhach;
         }
 
         public eChiTietThuePhong getCTTP_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
-            ChiTietThuePhong item = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false)).SingleOrDefault();
+            ChiTietThuePhong item = db.ChiTietThuePhongs.Where(x => x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(false)).FirstOrDefault();
             eChiTietThuePhong cttp = new eChiTietThuePhong();
             cttp.MaThue = item.maThue;
             cttp.MaKhach = item.maKhach;
@@ -93,7 +110,7 @@ namespace DAL
 
         public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue_TrangThai(string maThue, byte trangthai)
         {
-            var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue)  && x.trangThai==trangthai).ToList();
+            var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai==trangthai).ToList();
             List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();
             foreach (var item in list)
             {
@@ -136,9 +153,9 @@ namespace DAL
         public void updateChiTietThuePhong(eChiTietThuePhong tp)
         {
             IQueryable<ChiTietThuePhong> cttp = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(tp.MaThue) && x.maKhach.Equals(tp.MaKhach) && x.maPhong.Equals(tp.MaPhong));
-            cttp.First().trangThai = Convert.ToByte(tp.TrangThai);
             cttp.First().ngayRa = tp.NgayRa;
             cttp.First().gioRa = tp.GioRa;
+            cttp.First().trangThai = Convert.ToByte(tp.TrangThai);
             cttp.First().tienKhac = Convert.ToDecimal(tp.TienKhac);
             cttp.First().ghiChu = tp.GhiChu;
             db.SubmitChanges();

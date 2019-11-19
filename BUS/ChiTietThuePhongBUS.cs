@@ -56,5 +56,9 @@ namespace BUS
         {
             return cttpdal.getChiTietThuePhong_By_MaThue(maThue);
         }
+        public bool kiemTraTrungPhong(string maThue)
+        {
+            return cttpdal.kiemTraTrungPhong(maThue);
+        }
     }
 }

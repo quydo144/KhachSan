@@ -32,6 +32,7 @@ namespace Home
             frmDatPhong.emailNV = txtEmail.Text.Trim();
             NhanVienBUS nvbus = new NhanVienBUS();
             frmTraKhachLe.maNVThanhToan = nvbus.getmaNV_byEmail(txtEmail.Text.Trim());
+            frmTraKhachDoan.maNVThanhToan = nvbus.getmaNV_byEmail(txtEmail.Text.Trim());
             frmDatKhachDoan.emailNV = txtEmail.Text.Trim();
             if (nvbus.GetTKQL(txtEmail.Text.Trim(), txtPass.Text.Trim()))
             {

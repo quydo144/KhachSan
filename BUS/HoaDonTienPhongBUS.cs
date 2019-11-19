@@ -8,7 +8,7 @@ using DAL;
 
 namespace BUS
 {
-    public class ThanhToanHoaDonTienPhongBUS
+    public class HoaDonTienPhongBUS
     {
         ThanhToanHoaDonTienPhongDAL ttdal = new ThanhToanHoaDonTienPhongDAL();
 

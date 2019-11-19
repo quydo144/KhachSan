@@ -160,7 +160,7 @@ namespace Home
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong pt = new eHoaDonTienPhong();
-            phuthu = pt.tinhTienPhuThu(cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
+            phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
             txtPhuThu.Text = phuthu.ToString();
         }
 
@@ -185,7 +185,7 @@ namespace Home
             }
 
             TimeSpan gioHienTai = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            ThanhToanHoaDonTienPhongBUS hdtpbus = new ThanhToanHoaDonTienPhongBUS();
+            HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
             ThuePhongBUS tpbus = new ThuePhongBUS();
             eHoaDonTienPhong tt_ent = new eHoaDonTienPhong();
             tt_ent.MaThue = lblMaThue.Text.Trim();
@@ -210,10 +210,11 @@ namespace Home
                 foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
                 {
                     cttp.MaKhach = item.MaKhach;
+                    cttp.MaPhong = item.MaPhong;
                 }
-                cttp.TrangThai = true;
                 cttp.NgayRa = DateTime.Now.Date;
                 cttp.GioRa = gioHienTai;
+                cttp.TrangThai = true;
                 cttpbus.updateChiTietThuePhong(cttp);
 
                 //update lại thông tin thuê phòng

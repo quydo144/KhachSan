@@ -300,7 +300,6 @@ namespace Home
         }
 
 
-
         private void btndmk_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDoiMK frm = new frmDoiMK();

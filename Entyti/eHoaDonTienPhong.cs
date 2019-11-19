@@ -26,7 +26,7 @@ namespace Entyti
             this.gioLap = gioLap;
             this.tienKhac = tienKhac;
         }
-        
+
         public eHoaDonTienPhong()
         {
 
@@ -136,31 +136,28 @@ namespace Entyti
             }
         }
 
-        public double tinhTienPhuThu(List<eChiTietThuePhong> ls, double tienPhong)
+        public double tinhTienPhuThu(eChiTietThuePhong item, double tienPhong)
         {
             double phuThu = 0;
             TimeSpan nhan13h = new TimeSpan(13, 00, 00);
             TimeSpan nhan11h = new TimeSpan(11, 00, 00);
             TimeSpan nhan8h = new TimeSpan(8, 00, 00);
             TimeSpan nhan6h = new TimeSpan(6, 00, 00);
-            foreach (eChiTietThuePhong item in ls)
+            if (item.GioVao <= nhan13h && item.GioVao > nhan11h)
             {
-                if (item.GioVao <= nhan13h && item.GioVao > nhan11h)
-                {
-                    phuThu = (0.3 * tienPhong);
-                }
-                else if (item.GioVao <= nhan11h && item.GioVao > nhan8h)
-                {
-                    phuThu = (0.5 * tienPhong);
-                }
-                else if (item.GioVao < nhan6h)
-                {
-                    phuThu = (0);
-                }
-                else if (item.GioVao >= nhan13h)
-                {
-                    phuThu = (0);
-                }
+                phuThu = 0.3 * tienPhong;
+            }
+            else if (item.GioVao <= nhan11h && item.GioVao > nhan8h)
+            {
+                phuThu = 0.5 * tienPhong;
+            }
+            else if (item.GioVao < nhan6h)
+            {
+                phuThu = 0;
+            }
+            else if (item.GioVao >= nhan13h)
+            {
+                phuThu = 0;
             }
             return phuThu;
         }
