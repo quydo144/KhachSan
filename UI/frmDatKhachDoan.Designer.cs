@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatKhachDoan));
-            DevExpress.XtraEditors.BreadCrumbNode breadCrumbNode2 = new DevExpress.XtraEditors.BreadCrumbNode();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTimDoan = new System.Windows.Forms.Button();
             this.txtSdtDoan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTruongDoan = new System.Windows.Forms.TextBox();
@@ -69,9 +69,6 @@
             this.bteSoLuong = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.toolTipKH = new System.Windows.Forms.ToolTip(this.components);
             this.btnAddKhAutoPhong = new System.Windows.Forms.Button();
-            this.btnAddCoSanPhong = new System.Windows.Forms.Button();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.BreadCrumbEdit();
-            this.btnTimDoan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoaiPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bteSoLuong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,6 +97,16 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đoàn";
+            // 
+            // btnTimDoan
+            // 
+            this.btnTimDoan.Location = new System.Drawing.Point(525, 27);
+            this.btnTimDoan.Name = "btnTimDoan";
+            this.btnTimDoan.Size = new System.Drawing.Size(47, 32);
+            this.btnTimDoan.TabIndex = 17;
+            this.btnTimDoan.Text = "TK";
+            this.btnTimDoan.UseVisualStyleBackColor = true;
+            this.btnTimDoan.Click += new System.EventHandler(this.btnTimDoan_Click);
             // 
             // txtSdtDoan
             // 
@@ -513,39 +519,6 @@
             this.btnAddKhAutoPhong.UseVisualStyleBackColor = true;
             this.btnAddKhAutoPhong.Click += new System.EventHandler(this.btnAddKhAutoPhong_Click);
             // 
-            // btnAddCoSanPhong
-            // 
-            this.btnAddCoSanPhong.Location = new System.Drawing.Point(879, 402);
-            this.btnAddCoSanPhong.Name = "btnAddCoSanPhong";
-            this.btnAddCoSanPhong.Size = new System.Drawing.Size(122, 30);
-            this.btnAddCoSanPhong.TabIndex = 31;
-            this.btnAddCoSanPhong.Text = "Add_CoSan";
-            this.btnAddCoSanPhong.UseVisualStyleBackColor = true;
-            this.btnAddCoSanPhong.Click += new System.EventHandler(this.btnAddCoSanPhong_Click);
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(683, 143);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            breadCrumbNode2.Caption = "Root";
-            breadCrumbNode2.Value = "Root";
-            this.comboBoxEdit1.Properties.Nodes.AddRange(new DevExpress.XtraEditors.BreadCrumbNode[] {
-            breadCrumbNode2});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(237, 26);
-            this.comboBoxEdit1.TabIndex = 32;
-            // 
-            // btnTimDoan
-            // 
-            this.btnTimDoan.Location = new System.Drawing.Point(525, 36);
-            this.btnTimDoan.Name = "btnTimDoan";
-            this.btnTimDoan.Size = new System.Drawing.Size(47, 23);
-            this.btnTimDoan.TabIndex = 17;
-            this.btnTimDoan.Text = "button1";
-            this.btnTimDoan.UseVisualStyleBackColor = true;
-            this.btnTimDoan.Click += new System.EventHandler(this.btnTimDoan_Click);
-            // 
             // frmDatKhachDoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(237)))));
@@ -553,7 +526,6 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1107, 834);
-            this.Controls.Add(this.btnAddCoSanPhong);
             this.Controls.Add(this.btnAddKhAutoPhong);
             this.Controls.Add(this.dgvLoaiPhong);
             this.Controls.Add(this.btnThemKH);
@@ -565,7 +537,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBoxEdit1);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -588,7 +559,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLoaiPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bteSoLuong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,8 +600,6 @@
         private System.Windows.Forms.TextBox txtTruongDoan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddKhAutoPhong;
-        private System.Windows.Forms.Button btnAddCoSanPhong;
-        private DevExpress.XtraEditors.BreadCrumbEdit comboBoxEdit1;
         private System.Windows.Forms.TextBox txtSdtDoan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnTimDoan;

@@ -59,6 +59,7 @@
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -83,7 +84,6 @@
             this.tgianInHoaDon = new DevExpress.XtraReports.Parameters.Parameter();
             this.soHoaDon = new DevExpress.XtraReports.Parameters.Parameter();
             this.tenNhanVien = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -218,26 +218,30 @@
             this.xrLabel14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?tenNhanVien")});
             this.xrLabel14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(471.8749F, 242.7082F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(416.8749F, 229.3748F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel14.SizeF = new System.Drawing.SizeF(95.83333F, 20.83334F);
+            this.xrLabel14.SizeF = new System.Drawing.SizeF(233.9583F, 20.83333F);
             this.xrLabel14.StylePriority.UseFont = false;
+            this.xrLabel14.StylePriority.UseTextAlignment = false;
             this.xrLabel14.Text = "Lễ tân";
+            this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel13
             // 
             this.xrLabel13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?tenKhach")});
             this.xrLabel13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(138.3766F, 242.7082F);
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(41.43721F, 229.3748F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel13.SizeF = new System.Drawing.SizeF(95.83333F, 20.83334F);
+            this.xrLabel13.SizeF = new System.Drawing.SizeF(292.7727F, 20.83333F);
             this.xrLabel13.StylePriority.UseFont = false;
+            this.xrLabel13.StylePriority.UseTextAlignment = false;
             this.xrLabel13.Text = "Khách hàng";
+            this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel12
             // 
@@ -375,6 +379,16 @@
             this.xrTableCell15.StylePriority.UseFont = false;
             this.xrTableCell15.Text = "Thanh toán ";
             this.xrTableCell15.Weight = 2.2152476208172756D;
+            // 
+            // xrTableCell16
+            // 
+            this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([tienPhong]) + Sum([tienPhong]) * 0.1")});
+            this.xrTableCell16.Multiline = true;
+            this.xrTableCell16.Name = "xrTableCell16";
+            this.xrTableCell16.Text = "xrTableCell16";
+            this.xrTableCell16.TextFormatString = "{0:#,#}";
+            this.xrTableCell16.Weight = 0.78475171286005829D;
             // 
             // xrLabel1
             // 
@@ -551,7 +565,7 @@
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(109.375F, 31.25F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(366.875F, 31.24998F);
             this.xrLabel10.Text = "Thời gian in HĐ:";
             // 
             // xrLabel8
@@ -573,7 +587,7 @@
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(95.83334F, 32.29167F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(495F, 32.29167F);
             this.xrLabel5.Text = "Khách Hàng:";
             // 
             // objectDataSource1
@@ -603,16 +617,6 @@
             this.tenNhanVien.Description = "Parameter1";
             this.tenNhanVien.Name = "tenNhanVien";
             this.tenNhanVien.ValueInfo = "0";
-            // 
-            // xrTableCell16
-            // 
-            this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([tienPhong]) + Sum([tienPhong]) * 0.1")});
-            this.xrTableCell16.Multiline = true;
-            this.xrTableCell16.Name = "xrTableCell16";
-            this.xrTableCell16.Text = "xrTableCell16";
-            this.xrTableCell16.TextFormatString = "{0:#,#}";
-            this.xrTableCell16.Weight = 0.78475171286005829D;
             // 
             // InHoaDonTienPhong
             // 

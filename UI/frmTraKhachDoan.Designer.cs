@@ -58,7 +58,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSdt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsThuePhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDsThuePhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPhong)).BeginInit();
@@ -67,7 +68,7 @@
             // 
             // dgvDsThuePhong
             // 
-            this.dgvDsThuePhong.Location = new System.Drawing.Point(48, 216);
+            this.dgvDsThuePhong.Location = new System.Drawing.Point(43, 217);
             this.dgvDsThuePhong.MainView = this.gridViewDsThuePhong;
             this.dgvDsThuePhong.Name = "dgvDsThuePhong";
             this.dgvDsThuePhong.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -172,7 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 42);
+            this.label2.Location = new System.Drawing.Point(79, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 1;
@@ -181,7 +182,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 110);
+            this.label3.Location = new System.Drawing.Point(79, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 2;
@@ -189,15 +190,14 @@
             // 
             // txtTenDoan
             // 
-            this.txtTenDoan.Location = new System.Drawing.Point(265, 42);
+            this.txtTenDoan.Location = new System.Drawing.Point(265, 82);
             this.txtTenDoan.Name = "txtTenDoan";
             this.txtTenDoan.Size = new System.Drawing.Size(368, 32);
             this.txtTenDoan.TabIndex = 3;
-            this.txtTenDoan.TextChanged += new System.EventHandler(this.txtTenDoan_TextChanged);
             // 
             // txtTruongDoan
             // 
-            this.txtTruongDoan.Location = new System.Drawing.Point(265, 107);
+            this.txtTruongDoan.Location = new System.Drawing.Point(265, 136);
             this.txtTruongDoan.Name = "txtTruongDoan";
             this.txtTruongDoan.Size = new System.Drawing.Size(368, 32);
             this.txtTruongDoan.TabIndex = 3;
@@ -348,7 +348,7 @@
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(703, 39);
+            this.btnTim.Location = new System.Drawing.Point(705, 22);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(133, 37);
             this.btnTim.TabIndex = 5;
@@ -356,22 +356,29 @@
             this.btnTim.UseVisualStyleBackColor = true;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // button1
+            // txtSdt
             // 
-            this.button1.Location = new System.Drawing.Point(726, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 35);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtSdt.Location = new System.Drawing.Point(265, 25);
+            this.txtSdt.Name = "txtSdt";
+            this.txtSdt.Size = new System.Drawing.Size(368, 32);
+            this.txtSdt.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(79, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 24);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Số điện thoại";
             // 
             // frmTraKhachDoan
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1322, 749);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtSdt);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.panelThanhToanDoan);
             this.Controls.Add(this.txtTruongDoan);
@@ -431,6 +438,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnTim;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnPhong;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSdt;
+        private System.Windows.Forms.Label label1;
     }
 }

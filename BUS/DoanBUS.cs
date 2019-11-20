@@ -27,9 +27,9 @@ namespace BUS
         {
             return ddal.getdoans();
         }
-        public string getTD_ByTenDoan(string id)
+        public string getTruongDoan_ByTenDoan(string tenDoan)
         {
-            return ddal.getTD_ByTenDoan(id);
+            return ddal.getTruongDoan_ByTenDoan(tenDoan);
         }
         public string getId_ByTenDoan(string tendoan)
         {

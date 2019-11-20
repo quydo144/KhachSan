@@ -29,5 +29,7 @@ namespace DAL
             HoaDonTienPhong nv = db.HoaDonTienPhongs.Where(x => x.maThue.Equals(id)).SingleOrDefault();
             return nv.maHDPhong;
         }
+
+
     }
 }

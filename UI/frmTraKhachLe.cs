@@ -187,53 +187,56 @@ namespace Home
             TimeSpan gioHienTai = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
             ThuePhongBUS tpbus = new ThuePhongBUS();
-            eHoaDonTienPhong tt_ent = new eHoaDonTienPhong();
-            tt_ent.MaThue = lblMaThue.Text.Trim();
-            tt_ent.NgayLap = DateTime.Now;
-            tt_ent.GioLap = gioHienTai;
-            tt_ent.ThueVAT = Convert.ToSingle(10 / 100);
-            tt_ent.KhuyenMai = Convert.ToSingle(txtGiamTru.Text);
-            int a = hdtpbus.insertThanhToan(tt_ent);
+            ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+            HoaDonDichVuBUS hddvbus = new HoaDonDichVuBUS();
+            PhongBUS pbus = new PhongBUS();
+
+            int a = 0;
+            int b = 0;
+            if (cttpbus.getChiTietThuePhong_By_MaThue(MaThue).Count < 2)
+            {
+                eHoaDonTienPhong tt_ent = new eHoaDonTienPhong();
+                tt_ent.MaThue = lblMaThue.Text.Trim();
+                tt_ent.NgayLap = DateTime.Now;
+                tt_ent.GioLap = gioHienTai;
+                tt_ent.ThueVAT = Convert.ToSingle(10 / 100);
+                tt_ent.KhuyenMai = Convert.ToSingle(txtGiamTru.Text);
+                a = hdtpbus.insertThanhToan(tt_ent);
+            }
+
+            if (tpbus.getMaDoan_ByMaThue(MaThue) != null || ctdvbus.getctdv_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)).Count != 0)
+            {
+                b++;
+            }
+
+            /* Với a = 1 thanh toán khách lẻ 
+                Với b = 1 thanh toán khách đoàn */
+
+            //Update lại trạng thái phòng
+            ePhong phong = new ePhong();
+            phong.MaPhong = pbus.maPhong_byTen(TenPhong);
+            phong.TinhTrang = false;
+            pbus.updateTinhTrangPhong(phong);
+
+            //Update lại trạng thái chi tiết thuê phòng
+            eChiTietThuePhong cttp = new eChiTietThuePhong();
+            foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
+            {
+                cttp.MaThue = MaThue;
+                cttp.MaKhach = item.MaKhach;
+                cttp.MaPhong = item.MaPhong;
+                cttp.TrangThai = true;
+                cttpbus.updateTrangThaiChiTietThuePhong(cttp);
+            }
+
+            //update lại thông tin thuê phòng
+            eThuePhong tp = new eThuePhong();
+            tp.MaThue = MaThue;
+            tp.TrangThai = true;
+            tpbus.updateThuePhong(tp);
+
             if (a == 1)
             {
-                //Update lại trạng thái phòng
-                PhongBUS pbus = new PhongBUS();
-                ePhong phong = new ePhong();
-                phong.MaPhong = pbus.maPhong_byTen(TenPhong);
-                phong.TinhTrang = false;
-                pbus.updateTinhTrangPhong(phong);
-
-                //Update lại trạng thái chi tiết thuê phòng
-                eChiTietThuePhong cttp = new eChiTietThuePhong();
-                ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
-                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
-                {
-                    cttp.MaThue = MaThue;
-                    cttp.MaKhach = item.MaKhach;
-                    cttp.MaPhong = item.MaPhong;
-                    cttp.TrangThai = true;
-                    cttpbus.updateTrangThaiChiTietThuePhong(cttp);
-                }
-
-                //update lại thông tin thuê phòng
-                eThuePhong tp = new eThuePhong();
-                tp.MaThue = tt_ent.MaThue;
-                tp.TrangThai = true;
-                tpbus.updateThuePhong(tp);
-
-                HoaDonDichVuBUS hddvbus = new HoaDonDichVuBUS();
-                if (ctdvbus.getctdv_byMaThue(MaThue) != null)
-                {
-                    foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue(MaThue))
-                    {
-                        eHoaDonDichVu hddv = new eHoaDonDichVu();
-                        hddv.MaHDDV = "";
-                        hddv.MaThue = MaThue;
-                        hddv.MaKH = item.MaKhach;
-                        hddv.MaPhong = item.MaPhong;
-                        hddvbus.insertThanhToanDV(hddv);
-                    }
-                }
 
                 MessageBox.Show("Đã thanh toán thành công");
 
@@ -242,7 +245,7 @@ namespace Home
                 LoaiPhongBUS lpbus = new LoaiPhongBUS();
                 HoaDon bc = new HoaDon();
                 List<eChiTietBaoCao> listphong = new List<eChiTietBaoCao>();
-                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(tt_ent.MaThue, pbus.maPhong_byTen(TenPhong)))
+                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
                 {
                     eChiTietBaoCao ctbc = new eChiTietBaoCao();
                     ctbc.tenPhong = pbus.getTenPhong_ByID(item.MaPhong);
@@ -254,58 +257,79 @@ namespace Home
                     break;
                 }
 
-                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(tt_ent.MaThue, pbus.maPhong_byTen(TenPhong)))
+                if (cttpbus.getChiTietThuePhong_By_MaThue(MaThue).Count < 2)
                 {
-                    bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
-                    bc.tenKH = khbus.getenKH_ByID(item.MaKhach);
-                    bc.soHD = hdtpbus.gemaHD_BymaThue(tt_ent.MaThue);         //Cần xem xét lại
-                    bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
-                }
-                this.Close();
-                frmPrint frmp = new frmPrint();
-                frmp.InHoaDonInTuReport(bc, listphong.ToList());
-                frmp.ShowDialog();
-
-                List<eCTDV> lsctdv = new List<eCTDV>();
-                DichVuBUS dvbus = new DichVuBUS();
-
-                if (ctdvbus.getctdv_byMaThue(MaThue) != null)
-                {
-                    foreach (var item in ctdvbus.getctdv_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
-                    {
-                        eCTDV ctdv = new eCTDV();
-                        ctdv.TenDV = dvbus.getTenDV_byID(item.MaDV);
-                        ctdv.SoLuong = item.SoLuong;
-                        ctdv.DonGia = dvbus.getDonGia_byID(item.MaDV);
-                        lsctdv.Add(ctdv);
-                    }
-
                     foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
                     {
                         bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
                         bc.tenKH = khbus.getenKH_ByID(item.MaKhach);
-                        bc.soHD = hddvbus.gemaHD_BymaThue_maPhong(item.MaThue,item.MaPhong);         //Cần xem xét lại
+                        bc.soHD = hdtpbus.gemaHD_BymaThue(MaThue);         //Cần xem xét lại
+                        bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
+                    }
+                }
+
+                this.Close();
+                frmPrint frmp = new frmPrint();
+                frmp.InHoaDonInTuReport(bc, listphong.ToList());
+                frmp.ShowDialog();
+            }
+
+            if (b == 1)
+            {
+                List<eCTDV> lsctdv = new List<eCTDV>();
+                DichVuBUS dvbus = new DichVuBUS();
+                KhachHangBUS khbus = new KhachHangBUS();
+                NhanVienBUS nvbus = new NhanVienBUS();
+                LoaiPhongBUS lpbus = new LoaiPhongBUS();
+                HoaDon bc = new HoaDon();
+
+                if (ctdvbus.getctdv_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)) != null)
+                {
+                    foreach (var item in ctdvbus.getctdv_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
+                    {
+                        eHoaDonDichVu hddv = new eHoaDonDichVu();
+                        hddv.MaHDDV = (DateTime.Now.Day).ToString() + (DateTime.Now.Month).ToString() + (DateTime.Now.Year).ToString() + item.MaThue + item.MaKhach + item.MaPhong;
+                        hddv.MaThue = MaThue;
+                        hddv.MaKH = item.MaKhach;
+                        hddv.MaPhong = item.MaPhong;
+                        hddvbus.insertThanhToanDV(hddv);
+                        break;
+                    }
+                }
+
+                foreach (var item in ctdvbus.getctdv_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
+                {
+                    eCTDV ctdv = new eCTDV();
+                    ctdv.TenDV = dvbus.getTenDV_byID(item.MaDV);
+                    ctdv.SoLuong = item.SoLuong;
+                    ctdv.DonGia = dvbus.getDonGia_byID(item.MaDV);
+                    lsctdv.Add(ctdv);
+                }
+
+                foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(MaThue, pbus.maPhong_byTen(TenPhong)))
+                {
+                    if (item.MaPhong.Equals(pbus.maPhong_byTen(TenPhong)))
+                    {
+                        bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
+                        bc.tenKH = khbus.getenKH_ByID(item.MaKhach);
+                        bc.soHD = hddvbus.gemaHD_BymaThue_maPhong(MaThue, item.MaPhong);
                         bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
                         bc.tenPhong = pbus.getTenPhong_ByID(item.MaPhong);
                     }
-
-                    frmPrint frmInDV = new frmPrint();
-                    frmp.InHoaDonInDichVuTuReport(bc, lsctdv.ToList());
-                    frmp.ShowDialog();
-
                 }
-            }
-            else
-            {
-                MessageBox.Show("Thanh toán thất bại");
-                return;
+
+                frmPrint frmInDV = new frmPrint();
+                frmInDV.InHoaDonInDichVuTuReport(bc, lsctdv.ToList());
+                frmInDV.ShowDialog();
+                this.Close();
             }
         }
 
         private void btnTraDoan_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmTraKhachDoan frm = new frmTraKhachDoan(home);
+            ThuePhongBUS tpbus = new ThuePhongBUS();           
+            frmTraKhachDoan frm = new frmTraKhachDoan(home, tpbus.getMaDoan_ByMaThue(MaThue));
             frm.ShowDialog();
         }
 

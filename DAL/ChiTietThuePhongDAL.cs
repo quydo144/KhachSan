@@ -110,7 +110,11 @@ namespace DAL
 
         public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue_TrangThai(string maThue, byte trangthai)
         {
-            var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai==trangthai).ToList();
+            //var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai==trangthai 7).ToList();
+            var list = (from x in db.ChiTietThuePhongs
+                        where x.maThue.Equals(maThue) && x.trangThai == trangthai
+                        orderby x.maPhong
+                        select x).ToList();
             List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();
             foreach (var item in list)
             {

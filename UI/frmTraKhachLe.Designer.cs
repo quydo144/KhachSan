@@ -58,6 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTienKhac = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnTraDoan = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -89,7 +90,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnTraDoan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -430,6 +430,16 @@
             this.panel8.Size = new System.Drawing.Size(579, 46);
             this.panel8.TabIndex = 16;
             // 
+            // btnTraDoan
+            // 
+            this.btnTraDoan.Location = new System.Drawing.Point(169, -1);
+            this.btnTraDoan.Name = "btnTraDoan";
+            this.btnTraDoan.Size = new System.Drawing.Size(69, 47);
+            this.btnTraDoan.TabIndex = 18;
+            this.btnTraDoan.Text = "Đoàn";
+            this.btnTraDoan.UseVisualStyleBackColor = true;
+            this.btnTraDoan.Click += new System.EventHandler(this.btnTraDoan_Click);
+            // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
@@ -744,16 +754,6 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Họ tên";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnTraDoan
-            // 
-            this.btnTraDoan.Location = new System.Drawing.Point(169, -1);
-            this.btnTraDoan.Name = "btnTraDoan";
-            this.btnTraDoan.Size = new System.Drawing.Size(69, 47);
-            this.btnTraDoan.TabIndex = 18;
-            this.btnTraDoan.Text = "Đoàn";
-            this.btnTraDoan.UseVisualStyleBackColor = true;
-            this.btnTraDoan.Click += new System.EventHandler(this.btnTraDoan_Click);
             // 
             // frmTraKhachLe
             // 

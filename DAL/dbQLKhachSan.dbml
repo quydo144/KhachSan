@@ -24,6 +24,7 @@
       <Column Name="tienKhac" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="ghiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="ChiTietThuePhong_ChiTietDichVu" Member="ChiTietDichVus" ThisKey="maThue,maKhach,maPhong" OtherKey="maThue,maKhach,maPhong" Type="ChiTietDichVu" />
+      <Association Name="ChiTietThuePhong_HoaDonDichVu" Member="HoaDonDichVus" ThisKey="maThue,maKhach,maPhong" OtherKey="maThue,maKhach,maPhong" Type="HoaDonDichVu" />
       <Association Name="KhachHang_ChiTietThuePhong" Member="KhachHang" ThisKey="maKhach" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" />
       <Association Name="Phong_ChiTietThuePhong" Member="Phong" ThisKey="maPhong" OtherKey="maPhong" Type="Phong" IsForeignKey="true" />
       <Association Name="ThuePhong_ChiTietThuePhong" Member="ThuePhong" ThisKey="maThue" OtherKey="maThue" Type="ThuePhong" IsForeignKey="true" />
@@ -54,6 +55,7 @@
       <Column Name="maThue" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="maPhong" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="maKhach" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Association Name="ChiTietThuePhong_HoaDonDichVu" Member="ChiTietThuePhong" ThisKey="maThue,maKhach,maPhong" OtherKey="maThue,maKhach,maPhong" Type="ChiTietThuePhong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDonTienPhong" Member="HoaDonTienPhongs">

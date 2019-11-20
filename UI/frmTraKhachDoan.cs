@@ -17,6 +17,7 @@ namespace Home
     public partial class frmTraKhachDoan : DevExpress.XtraEditors.XtraForm
     {
         frmHome form;
+        string maDoan;
         public static string maNVThanhToan = string.Empty;
 
         public frmTraKhachDoan()
@@ -30,15 +31,35 @@ namespace Home
             form = sql;
         }
 
+        public frmTraKhachDoan(frmHome sql, string maD)
+        {
+            InitializeComponent();
+            form = sql;
+            maDoan = maD;
+        }
+
         private void frmTraKhachDoan_Load(object sender, EventArgs e)
         {
             autoCompleteSource();
+            if (maDoan != null)
+            {
+                DoanBUS dbus = new DoanBUS();
+                eDoan doan = new eDoan();
+                doan = dbus.getdoan_sdt(txtSdt.Text.Trim());
+                txtTruongDoan.Text = doan.MaTruongDoan;
+                txtTenDoan.Text = doan.TenDoan;
+                loadThuePhong_Doan();
+            }
         }
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            frmDoan frm = new frmDoan();
-            frm.ShowDialog();
+            DoanBUS dbus = new DoanBUS();
+            eDoan doan = new eDoan();
+            doan = dbus.getdoan_sdt(txtSdt.Text.Trim());
+            txtTruongDoan.Text = doan.MaTruongDoan;
+            txtTenDoan.Text = doan.TenDoan;
+            loadThuePhong_Doan();
         }
         public void autoCompleteSource()
         {
@@ -119,12 +140,6 @@ namespace Home
             txtTienThanhToan.Text = (tongTienPhong + tongTienPhong * 0.1 - tongTienPhong * 0.2).ToString();
         }
 
-        private void txtTenDoan_TextChanged(object sender, EventArgs e)
-        {
-            DoanBUS dbus = new DoanBUS();
-            txtTruongDoan.Text = dbus.getTD_ByTenDoan(txtTenDoan.Text.Trim());
-        }
-
         private void frmTraKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
@@ -134,7 +149,7 @@ namespace Home
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loadThuePhong_Doan();
+
         }
 
         private void txtTienKhachDua_TextChanged(object sender, EventArgs e)
@@ -165,8 +180,10 @@ namespace Home
                     ectOld.MaThue = tpbus.getMaThue_ByMaDoan(dbus.getId_ByTenDoan(txtTenDoan.Text), 0);
                     ectOld.MaPhong = item.MaPhong;
                     ectOld.MaKhach = item.MaKhach;
+                    ectOld.NgayRa = DateTime.Now.Date;
+                    ectOld.GioRa = gioHienTai;
                     ectOld.TrangThai = true;
-                    cttpbus.updateTrangThaiChiTietThuePhong(ectOld);
+                    cttpbus.updateChiTietThuePhong(ectOld);
 
                     ePhong newp = new ePhong();
                     newp.MaPhong = item.MaPhong;
@@ -211,9 +228,47 @@ namespace Home
                 frmPrint frmp = new frmPrint();
                 frmp.InHoaDonInTuReport(bc, listphong.ToList());
                 frmp.ShowDialog();
+
+                ChiTietDichVuBUS ctdvbus = new ChiTietDichVuBUS();
+                HoaDonDichVuBUS hddvbus = new HoaDonDichVuBUS();
+                DichVuBUS dvbus = new DichVuBUS();               
+                KhachHangBUS khbus = new KhachHangBUS();
+                if (ctdvbus.getctdv_byMaThue(tt_ent.MaThue) != null)
+                {
+                    foreach (var item in ctdvbus.getctdv_byMaThue(tt_ent.MaThue))
+                    {
+                        if (hddvbus.kiemTraTonTai(item.MaThue,item.MaPhong) == false)
+                        {
+                            eHoaDonDichVu hddv = new eHoaDonDichVu();
+                            hddv.MaHDDV = (DateTime.Now.Day).ToString() + (DateTime.Now.Month).ToString() + (DateTime.Now.Year).ToString() + item.MaThue + item.MaKhach + item.MaPhong;
+                            hddv.MaThue = item.MaThue;
+                            hddv.MaKH = item.MaKhach;
+                            hddv.MaPhong = item.MaPhong;
+                            hddvbus.insertThanhToanDV(hddv);
+                            List<eCTDV> lsctdv = new List<eCTDV>();
+                            foreach (eChiTetDichVu dv in ctdvbus.getctdv_MaThue_MaPhong(item.MaThue,item.MaPhong))
+                            {
+                                eCTDV ctdv = new eCTDV();
+                                ctdv.TenDV = dvbus.getTenDV_byID(dv.MaDV);
+                                ctdv.SoLuong = dv.SoLuong;
+                                ctdv.DonGia = dvbus.getDonGia_byID(dv.MaDV);
+                                lsctdv.Add(ctdv);
+                            }
+
+                            bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
+                            bc.tenKH = khbus.getenKH_ByID(item.MaKhach);
+                            bc.soHD = hddvbus.gemaHD_BymaThue_maPhong(item.MaThue, item.MaPhong);
+                            bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
+                            bc.tenPhong = pbus.getTenPhong_ByID(item.MaPhong);
+
+                            frmPrint frmInDV = new frmPrint();
+                            frmInDV.InHoaDonInDichVuTuReport(bc, lsctdv.ToList());
+                            frmInDV.ShowDialog();
+                            this.Close();
+                        }
+                    }
+                }               
             }
-
-
         }
     }
 }

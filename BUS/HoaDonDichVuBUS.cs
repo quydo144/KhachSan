@@ -21,5 +21,10 @@ namespace BUS
         {
             return hddvdal.gemaHD_BymaThue_maPhong(mathue, maphong);
         }
+
+        public bool kiemTraTonTai(string maThue, string maPhong)
+        {
+            return hddvdal.kiemTraTonTai(maThue, maPhong);
+        }
     }
 }

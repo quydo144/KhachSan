@@ -26,7 +26,20 @@ namespace DAL
         public string gemaHD_BymaThue_maPhong(string mathue, string maphong)
         {
             HoaDonDichVu nv = db.HoaDonDichVus.Where(x => x.maThue.Equals(mathue) && x.maPhong.Equals(maphong)).SingleOrDefault();
-            return nv.maHDDV;
+            return nv.maHDDV.Trim();
+        }
+
+        public bool kiemTraTonTai(string maThue, string maPhong)
+        {
+            HoaDonDichVu hddv = db.HoaDonDichVus.Where(x => x.maThue.Equals(maThue) && x.maPhong.Equals(maPhong)).SingleOrDefault();
+            if (hddv == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

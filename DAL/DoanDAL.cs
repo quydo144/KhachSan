@@ -61,9 +61,9 @@ namespace DAL
             Doan d = db.Doans.Where(x => x.maDoan.Equals(id)).SingleOrDefault();
             return d.tenDoan;
         }
-        public string getTD_ByTenDoan(string id)
+        public string getTruongDoan_ByTenDoan(string tenDoan)
         {
-            Doan d = db.Doans.Where(x => x.tenDoan.Equals(id)).SingleOrDefault();
+            Doan d = db.Doans.Where(x => x.tenDoan.Equals(tenDoan)).SingleOrDefault();
             return d.maTruongDoan;
         }
         public string getId_ByTenDoan(string tendoan)

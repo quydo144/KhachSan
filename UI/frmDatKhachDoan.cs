@@ -270,7 +270,7 @@ namespace Home
             }
         }
 
-        private void btnAddCoSanPhong_Click(object sender, EventArgs e)
+        /*private void btnAddCoSanPhong_Click(object sender, EventArgs e)
         {
             //ArrayList dsTenPhong = new ArrayList();
             //ArrayList dsPhongO = new ArrayList();
@@ -363,7 +363,7 @@ namespace Home
             //    }
             //}
             //cboPhong.DataSource = dsTenPhong;
-        }
+        }*/
 
         private void dtmNgayRa_ValueChanged(object sender, EventArgs e)
         {
@@ -379,8 +379,8 @@ namespace Home
         private void frmDatKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
-            //frm.AnflowLayoutPanel();
-            //frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            frm.AnflowLayoutPanel();
+            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
         }
 
         private void btnTimDoan_Click(object sender, EventArgs e)
