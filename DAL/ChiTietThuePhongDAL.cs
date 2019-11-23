@@ -108,6 +108,50 @@ namespace DAL
             return ls;
         }
 
+        /*  public List<eChiTietThuePhong> getChiTietThuePhong_By_TrangThai_Ngay(byte trangthai, DateTime ngay)
+        {
+            var list = db.ChiTietThuePhongs.Where(x => x.trangThai == trangthai && x.ngayRa.Date == ngay ).ToList();
+            List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();
+            foreach (var item in list)
+            {
+                eChiTietThuePhong cttp = new eChiTietThuePhong();
+                cttp.MaThue = item.maThue;
+                cttp.MaKhach = item.maKhach;
+                cttp.MaPhong = item.maPhong;
+                cttp.NgayRa = item.ngayRa;
+                cttp.NgayVao = item.ngayVao;
+                cttp.GioRa = item.gioRa;
+                cttp.GioVao = item.gioVao;
+                cttp.GhiChu = item.ghiChu;
+                cttp.TienKhac = Convert.ToDouble(item.tienKhac);
+                cttp.TrangThai = Convert.ToBoolean(item.trangThai);
+                ls.Add(cttp);
+            }
+            return ls;
+        }  */
+
+       /*  public List<eChiTietThuePhong> getChiTietThuePhong_By_TrangThai_Ngay_to_Ngay(byte trangthai, DateTime ngay1, DateTime ngay2)
+        {
+            var list = db.ChiTietThuePhongs.Where(x => x.trangThai == trangthai && ngay1 <= x.ngayRa && x.ngayRa <= ngay2).ToList();
+            List<eChiTietThuePhong> ls = new List<eChiTietThuePhong>();
+            foreach (var item in list)
+            {
+                eChiTietThuePhong cttp = new eChiTietThuePhong();
+                cttp.MaThue = item.maThue;
+                cttp.MaKhach = item.maKhach;
+                cttp.MaPhong = item.maPhong;
+                cttp.NgayRa = item.ngayRa;
+                cttp.NgayVao = item.ngayVao;
+                cttp.GioRa = item.gioRa;
+                cttp.GioVao = item.gioVao;
+                cttp.GhiChu = item.ghiChu;
+                cttp.TienKhac = Convert.ToDouble(item.tienKhac);
+                cttp.TrangThai = Convert.ToBoolean(item.trangThai);
+                ls.Add(cttp);
+            }
+            return ls;
+        }  */
+
         public List<eChiTietThuePhong> getChiTietThuePhong_By_MaThue_TrangThai(string maThue, byte trangthai)
         {
             //var list = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai==trangthai 7).ToList();
@@ -148,6 +192,7 @@ namespace DAL
                 cttp.NgayVao = item.ngayVao;
                 cttp.GioRa = item.gioRa;
                 cttp.GioVao = item.gioVao;
+                cttp.TienKhac = Convert.ToDouble(item.tienKhac);
                 cttp.TrangThai = Convert.ToBoolean(item.trangThai);
                 ls.Add(cttp);
             }

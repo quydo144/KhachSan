@@ -35,6 +35,7 @@
             this.rbnHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnDatPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKhachDoan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnKH = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -126,7 +127,6 @@
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnKhachDoan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -186,6 +186,15 @@
             this.btnDatPhong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnDatPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDatPhong_ItemClick);
+            // 
+            // btnKhachDoan
+            // 
+            this.btnKhachDoan.Caption = "Trả khách đoàn                     ";
+            this.btnKhachDoan.Id = 55;
+            this.btnKhachDoan.Name = "btnKhachDoan";
+            this.btnKhachDoan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnKhachDoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachDoan_ItemClick);
             // 
             // ribbonPageGroup5
             // 
@@ -593,7 +602,7 @@
             // 
             // barButtonItem17
             // 
-            this.barButtonItem17.Caption = "Tổng tiền";
+            this.barButtonItem17.Caption = "Hoá đơn";
             this.barButtonItem17.Id = 51;
             this.barButtonItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
             this.barButtonItem17.Name = "barButtonItem17";
@@ -1007,15 +1016,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1332, 602);
             this.flowLayoutPanel1.TabIndex = 17;
-            // 
-            // btnKhachDoan
-            // 
-            this.btnKhachDoan.Caption = "Trả khách đoàn                     ";
-            this.btnKhachDoan.Id = 55;
-            this.btnKhachDoan.Name = "btnKhachDoan";
-            this.btnKhachDoan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnKhachDoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachDoan_ItemClick);
             // 
             // frmHome
             // 

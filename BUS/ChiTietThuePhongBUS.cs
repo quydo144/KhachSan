@@ -60,5 +60,13 @@ namespace BUS
         {
             return cttpdal.kiemTraTrungPhong(maThue);
         }
+        //public List<eChiTietThuePhong> getChiTietThuePhong_By_TrangThai_Ngay(byte trangthai, DateTime ngay)
+        //{
+        //    return cttpdal.getChiTietThuePhong_By_TrangThai_Ngay(trangthai, ngay);
+        //}
+        //public List<eChiTietThuePhong> getChiTietThuePhong_By_TrangThai_Ngay_to_Ngay(byte trangthai, DateTime ngay1, DateTime ngay2)
+        //{
+        //    return cttpdal.getChiTietThuePhong_By_TrangThai_Ngay_to_Ngay(trangthai, ngay1, ngay2);
+        //}
     }
 }
