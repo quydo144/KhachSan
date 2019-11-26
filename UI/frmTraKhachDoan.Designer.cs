@@ -68,12 +68,12 @@
             // 
             // dgvDsThuePhong
             // 
-            this.dgvDsThuePhong.Location = new System.Drawing.Point(43, 217);
+            this.dgvDsThuePhong.Location = new System.Drawing.Point(1, 150);
             this.dgvDsThuePhong.MainView = this.gridViewDsThuePhong;
             this.dgvDsThuePhong.Name = "dgvDsThuePhong";
             this.dgvDsThuePhong.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnPhong});
-            this.dgvDsThuePhong.Size = new System.Drawing.Size(864, 288);
+            this.dgvDsThuePhong.Size = new System.Drawing.Size(928, 351);
             this.dgvDsThuePhong.TabIndex = 0;
             this.dgvDsThuePhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDsThuePhong});
@@ -98,6 +98,8 @@
             this.tenPhong.FieldName = "Tenphong";
             this.tenPhong.MinWidth = 25;
             this.tenPhong.Name = "tenPhong";
+            this.tenPhong.OptionsColumn.AllowEdit = false;
+            this.tenPhong.OptionsColumn.AllowFocus = false;
             this.tenPhong.Visible = true;
             this.tenPhong.VisibleIndex = 0;
             this.tenPhong.Width = 94;
@@ -105,9 +107,13 @@
             // tienPhong
             // 
             this.tienPhong.Caption = "Tiền phòng";
+            this.tienPhong.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.tienPhong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.tienPhong.FieldName = "TienPhong";
             this.tienPhong.MinWidth = 25;
             this.tienPhong.Name = "tienPhong";
+            this.tienPhong.OptionsColumn.AllowEdit = false;
+            this.tienPhong.OptionsColumn.AllowFocus = false;
             this.tienPhong.Visible = true;
             this.tienPhong.VisibleIndex = 1;
             this.tienPhong.Width = 94;
@@ -115,9 +121,13 @@
             // tienDV
             // 
             this.tienDV.Caption = "Tiền dịch vụ";
+            this.tienDV.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.tienDV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.tienDV.FieldName = "TienDV";
             this.tienDV.MinWidth = 25;
             this.tienDV.Name = "tienDV";
+            this.tienDV.OptionsColumn.AllowEdit = false;
+            this.tienDV.OptionsColumn.AllowFocus = false;
             this.tienDV.Visible = true;
             this.tienDV.VisibleIndex = 2;
             this.tienDV.Width = 94;
@@ -125,9 +135,13 @@
             // thueVat
             // 
             this.thueVat.Caption = "Thuế VAT";
+            this.thueVat.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.thueVat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.thueVat.FieldName = "TienVat";
             this.thueVat.MinWidth = 25;
             this.thueVat.Name = "thueVat";
+            this.thueVat.OptionsColumn.AllowEdit = false;
+            this.thueVat.OptionsColumn.AllowFocus = false;
             this.thueVat.Visible = true;
             this.thueVat.VisibleIndex = 3;
             this.thueVat.Width = 94;
@@ -135,9 +149,13 @@
             // khuyenMai
             // 
             this.khuyenMai.Caption = "Khuyến mãi";
+            this.khuyenMai.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.khuyenMai.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.khuyenMai.FieldName = "TienKM";
             this.khuyenMai.MinWidth = 25;
             this.khuyenMai.Name = "khuyenMai";
+            this.khuyenMai.OptionsColumn.AllowEdit = false;
+            this.khuyenMai.OptionsColumn.AllowFocus = false;
             this.khuyenMai.Visible = true;
             this.khuyenMai.VisibleIndex = 4;
             this.khuyenMai.Width = 94;
@@ -145,9 +163,13 @@
             // tienKhac
             // 
             this.tienKhac.Caption = "Tiền Khác";
+            this.tienKhac.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.tienKhac.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.tienKhac.FieldName = "TienKhac";
             this.tienKhac.MinWidth = 25;
             this.tienKhac.Name = "tienKhac";
+            this.tienKhac.OptionsColumn.AllowEdit = false;
+            this.tienKhac.OptionsColumn.AllowFocus = false;
             this.tienKhac.Visible = true;
             this.tienKhac.VisibleIndex = 5;
             this.tienKhac.Width = 94;
@@ -158,6 +180,8 @@
             this.ghiChu.FieldName = "GhiChu";
             this.ghiChu.MinWidth = 25;
             this.ghiChu.Name = "ghiChu";
+            this.ghiChu.OptionsColumn.AllowEdit = false;
+            this.ghiChu.OptionsColumn.AllowFocus = false;
             this.ghiChu.Visible = true;
             this.ghiChu.VisibleIndex = 6;
             this.ghiChu.Width = 94;
@@ -173,7 +197,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 82);
+            this.label2.Location = new System.Drawing.Point(79, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 1;
@@ -182,7 +206,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(79, 139);
+            this.label3.Location = new System.Drawing.Point(79, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 2;
@@ -190,14 +214,14 @@
             // 
             // txtTenDoan
             // 
-            this.txtTenDoan.Location = new System.Drawing.Point(265, 82);
+            this.txtTenDoan.Location = new System.Drawing.Point(265, 63);
             this.txtTenDoan.Name = "txtTenDoan";
             this.txtTenDoan.Size = new System.Drawing.Size(368, 32);
             this.txtTenDoan.TabIndex = 3;
             // 
             // txtTruongDoan
             // 
-            this.txtTruongDoan.Location = new System.Drawing.Point(265, 136);
+            this.txtTruongDoan.Location = new System.Drawing.Point(265, 101);
             this.txtTruongDoan.Name = "txtTruongDoan";
             this.txtTruongDoan.Size = new System.Drawing.Size(368, 32);
             this.txtTruongDoan.TabIndex = 3;
@@ -220,14 +244,14 @@
             this.panelThanhToanDoan.Controls.Add(this.label6);
             this.panelThanhToanDoan.Controls.Add(this.label5);
             this.panelThanhToanDoan.Controls.Add(this.label4);
-            this.panelThanhToanDoan.Location = new System.Drawing.Point(930, 12);
+            this.panelThanhToanDoan.Location = new System.Drawing.Point(930, 1);
             this.panelThanhToanDoan.Name = "panelThanhToanDoan";
-            this.panelThanhToanDoan.Size = new System.Drawing.Size(380, 725);
+            this.panelThanhToanDoan.Size = new System.Drawing.Size(393, 500);
             this.panelThanhToanDoan.TabIndex = 4;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(221, 562);
+            this.btnThoat.Location = new System.Drawing.Point(228, 393);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(133, 37);
             this.btnThoat.TabIndex = 2;
@@ -236,7 +260,7 @@
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(27, 562);
+            this.btnThanhToan.Location = new System.Drawing.Point(34, 393);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(133, 37);
             this.btnThanhToan.TabIndex = 2;
@@ -247,14 +271,14 @@
             // txtTienThua
             // 
             this.txtTienThua.Enabled = false;
-            this.txtTienThua.Location = new System.Drawing.Point(180, 377);
+            this.txtTienThua.Location = new System.Drawing.Point(185, 308);
             this.txtTienThua.Name = "txtTienThua";
             this.txtTienThua.Size = new System.Drawing.Size(187, 32);
             this.txtTienThua.TabIndex = 1;
             // 
             // txtTienKhachDua
             // 
-            this.txtTienKhachDua.Location = new System.Drawing.Point(180, 298);
+            this.txtTienKhachDua.Location = new System.Drawing.Point(185, 239);
             this.txtTienKhachDua.Name = "txtTienKhachDua";
             this.txtTienKhachDua.Size = new System.Drawing.Size(187, 32);
             this.txtTienKhachDua.TabIndex = 1;
@@ -263,7 +287,7 @@
             // txtTienThanhToan
             // 
             this.txtTienThanhToan.Enabled = false;
-            this.txtTienThanhToan.Location = new System.Drawing.Point(180, 232);
+            this.txtTienThanhToan.Location = new System.Drawing.Point(185, 180);
             this.txtTienThanhToan.Name = "txtTienThanhToan";
             this.txtTienThanhToan.Size = new System.Drawing.Size(187, 32);
             this.txtTienThanhToan.TabIndex = 1;
@@ -271,7 +295,7 @@
             // txtKhuyenMai
             // 
             this.txtKhuyenMai.Enabled = false;
-            this.txtKhuyenMai.Location = new System.Drawing.Point(180, 164);
+            this.txtKhuyenMai.Location = new System.Drawing.Point(185, 119);
             this.txtKhuyenMai.Name = "txtKhuyenMai";
             this.txtKhuyenMai.Size = new System.Drawing.Size(187, 32);
             this.txtKhuyenMai.TabIndex = 1;
@@ -279,7 +303,7 @@
             // txtThueVAT
             // 
             this.txtThueVAT.Enabled = false;
-            this.txtThueVAT.Location = new System.Drawing.Point(176, 94);
+            this.txtThueVAT.Location = new System.Drawing.Point(185, 66);
             this.txtThueVAT.Name = "txtThueVAT";
             this.txtThueVAT.Size = new System.Drawing.Size(187, 32);
             this.txtThueVAT.TabIndex = 1;
@@ -287,7 +311,7 @@
             // txtTongTienPhong
             // 
             this.txtTongTienPhong.Enabled = false;
-            this.txtTongTienPhong.Location = new System.Drawing.Point(176, 29);
+            this.txtTongTienPhong.Location = new System.Drawing.Point(185, 4);
             this.txtTongTienPhong.Name = "txtTongTienPhong";
             this.txtTongTienPhong.Size = new System.Drawing.Size(187, 32);
             this.txtTongTienPhong.TabIndex = 1;
@@ -295,7 +319,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 385);
+            this.label10.Location = new System.Drawing.Point(40, 316);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(138, 24);
             this.label10.TabIndex = 0;
@@ -304,7 +328,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 306);
+            this.label9.Location = new System.Drawing.Point(28, 247);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 24);
             this.label9.TabIndex = 0;
@@ -313,7 +337,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 232);
+            this.label8.Location = new System.Drawing.Point(20, 180);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 24);
             this.label8.TabIndex = 0;
@@ -322,7 +346,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 164);
+            this.label6.Location = new System.Drawing.Point(20, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(158, 24);
             this.label6.TabIndex = 0;
@@ -331,7 +355,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(73, 102);
+            this.label5.Location = new System.Drawing.Point(82, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 0;
@@ -340,7 +364,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 37);
+            this.label4.Location = new System.Drawing.Point(23, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 24);
             this.label4.TabIndex = 0;
@@ -348,7 +372,7 @@
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(705, 22);
+            this.btnTim.Location = new System.Drawing.Point(732, 20);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(133, 37);
             this.btnTim.TabIndex = 5;
@@ -376,7 +400,7 @@
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1322, 749);
+            this.ClientSize = new System.Drawing.Size(1322, 498);
             this.Controls.Add(this.txtSdt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTim);

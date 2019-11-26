@@ -56,6 +56,18 @@ namespace DAL
             return d;
         }
 
+        public eDoan getdoan_ID(string id)
+        {
+            Doan item = (from x in db.Doans where x.maDoan.Equals(id) select x).SingleOrDefault();
+            eDoan d = new eDoan();
+            d.MaDoan = item.maDoan.Trim();
+            d.TenDoan = item.tenDoan.Trim();
+            d.Sdt = item.soDienThoai.Trim();
+            d.MaTruongDoan = item.maTruongDoan.Trim();
+            d.DiaChi = item.diaChi.Trim();
+            return d;
+        }
+
         public string getTen_ById(string id)
         {
             Doan d = db.Doans.Where(x => x.maDoan.Equals(id)).SingleOrDefault();

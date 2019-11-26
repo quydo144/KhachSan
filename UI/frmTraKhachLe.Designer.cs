@@ -78,9 +78,9 @@
             this.txtDichVu = new System.Windows.Forms.TextBox();
             this.txtTienPhong = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtTenDoan = new System.Windows.Forms.TextBox();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.radNam = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -323,6 +323,8 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Đơn giá";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn3.FieldName = "Đơn giá";
             this.gridColumn3.MinWidth = 25;
             this.gridColumn3.Name = "gridColumn3";
@@ -335,6 +337,8 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Thành tiền";
+            this.gridColumn4.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn4.FieldName = "Thành tiền";
             this.gridColumn4.MinWidth = 25;
             this.gridColumn4.Name = "gridColumn4";
@@ -403,9 +407,10 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(319, 92);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(333, 99);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 32);
+            this.label6.Size = new System.Drawing.Size(86, 22);
             this.label6.TabIndex = 17;
             this.label6.Text = "Tiền khác";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -516,7 +521,7 @@
             // 
             this.txtGiamTru.Location = new System.Drawing.Point(214, 148);
             this.txtGiamTru.Name = "txtGiamTru";
-            this.txtGiamTru.Size = new System.Drawing.Size(87, 30);
+            this.txtGiamTru.Size = new System.Drawing.Size(113, 30);
             this.txtGiamTru.TabIndex = 14;
             this.txtGiamTru.Text = "0";
             this.txtGiamTru.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -532,9 +537,10 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(334, 146);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(349, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 32);
+            this.label2.Size = new System.Drawing.Size(67, 22);
             this.label2.TabIndex = 13;
             this.label2.Text = "Phụ thu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -589,7 +595,7 @@
             this.txtVAT.Enabled = false;
             this.txtVAT.Location = new System.Drawing.Point(214, 94);
             this.txtVAT.Name = "txtVAT";
-            this.txtVAT.Size = new System.Drawing.Size(87, 30);
+            this.txtVAT.Size = new System.Drawing.Size(113, 30);
             this.txtVAT.TabIndex = 14;
             this.txtVAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -616,9 +622,9 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(218)))), ((int)(((byte)(247)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.txtTenDoan);
             this.panel6.Controls.Add(this.radNu);
             this.panel6.Controls.Add(this.radNam);
-            this.panel6.Controls.Add(this.comboBox1);
             this.panel6.Controls.Add(this.txtSDT);
             this.panel6.Controls.Add(this.txtCMND);
             this.panel6.Controls.Add(this.txtHoTen);
@@ -633,6 +639,14 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(686, 377);
             this.panel6.TabIndex = 0;
+            // 
+            // txtTenDoan
+            // 
+            this.txtTenDoan.Enabled = false;
+            this.txtTenDoan.Location = new System.Drawing.Point(221, 317);
+            this.txtTenDoan.Name = "txtTenDoan";
+            this.txtTenDoan.Size = new System.Drawing.Size(403, 30);
+            this.txtTenDoan.TabIndex = 20;
             // 
             // radNu
             // 
@@ -657,15 +671,6 @@
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
             this.radNam.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(222, 320);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(403, 30);
-            this.comboBox1.TabIndex = 18;
             // 
             // txtSDT
             // 
@@ -834,7 +839,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblGhiChu;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.TextBox txtHoTen;
@@ -856,5 +860,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTienKhac;
         private System.Windows.Forms.Button btnTraDoan;
+        private System.Windows.Forms.TextBox txtTenDoan;
     }
 }

@@ -45,7 +45,8 @@ namespace Home
             {
                 DoanBUS dbus = new DoanBUS();
                 eDoan doan = new eDoan();
-                doan = dbus.getdoan_sdt(txtSdt.Text.Trim());
+                doan = dbus.getdoan_ID(maDoan);
+                txtSdt.Text = doan.Sdt;
                 txtTruongDoan.Text = doan.MaTruongDoan;
                 txtTenDoan.Text = doan.TenDoan;
                 loadThuePhong_Doan();
@@ -84,60 +85,52 @@ namespace Home
             DichVuBUS dvbus = new DichVuBUS();
             List<eChiTietThuePhong> list_ect = new List<eChiTietThuePhong>();
             list_ect = cttpbus.getChiTietThuePhong_By_MaThue_TrangThai(tpbus.getMaThue_ByMaDoan(dbus.getId_ByTenDoan(txtTenDoan.Text), 0), 0);
+
+            for (int i = 0; i < list_ect.Count; i++)
+            {
+                for (int j = 1; j < list_ect.Count; j++)
+                {
+                    if (i == j)
+                    {
+                        continue;
+                    }
+                    if (list_ect[i].MaPhong.Equals(list_ect[j].MaPhong))
+                    {
+                        list_ect.RemoveAt(i);
+                    }
+                }
+            }
             List<eThuePhong_Doan> lstp_d = new List<eThuePhong_Doan>();
             foreach (eChiTietThuePhong item in list_ect)
             {
-                if (cttpbus.kiemTraTrungPhong(item.MaThue))
+                eThuePhong_Doan etpd = new eThuePhong_Doan();
+                eHoaDonTienPhong hdtp = new eHoaDonTienPhong();
+                eHoaDonDichVu hddv = new eHoaDonDichVu();
+                double tienPhong = Convert.ToDouble(hdtp.tinhTienPhong(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(item.GioVao + "   " + item.NgayVao.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString())));
+                double tienPhuThu = Convert.ToDouble(hdtp.tinhTienPhuThu(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong))));
+                etpd.Tenphong = pbus.getTenPhong_ByID(item.MaPhong);
+                etpd.TienPhong = tienPhong + tienPhuThu;
+                double tienDV = 0;
+                foreach (eChiTetDichVu ctdv in ctdvbus.getctdv_MaThue_MaPhong(item.MaThue, item.MaPhong))
                 {
-                    eThuePhong_Doan etpd = new eThuePhong_Doan();
-                    eHoaDonTienPhong hdtp = new eHoaDonTienPhong();
-                    eHoaDonDichVu hddv = new eHoaDonDichVu();
-                    double tienPhong = Convert.ToDouble(hdtp.tinhTienPhong(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(item.GioVao + "   " + item.NgayVao.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString())));
-                    double tienPhuThu = Convert.ToDouble(hdtp.tinhTienPhuThu(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong))));
-                    etpd.Tenphong = pbus.getTenPhong_ByID(item.MaPhong);
-                    etpd.TienPhong = tienPhong + tienPhuThu;
-                    double tienDV = 0;
-                    foreach (eChiTetDichVu ctdv in ctdvbus.getctdv_MaThue_MaPhong(item.MaThue, item.MaPhong))
-                    {
-                        tienDV += hddv.tinhDichVu(dvbus.getDonGia_byID(ctdv.MaDV), ctdv.SoLuong);
-                    }
-                    etpd.TienDV = tienDV;
-                    etpd.TienKhac = item.TienKhac;
-                    etpd.GhiChu = item.GhiChu;
-                    lstp_d.Add(etpd);
+                    tienDV += hddv.tinhDichVu(dvbus.getDonGia_byID(ctdv.MaDV), ctdv.SoLuong);
                 }
-                else
-                {
-                    eThuePhong_Doan etpd = new eThuePhong_Doan();
-                    eHoaDonTienPhong hdtp = new eHoaDonTienPhong();
-                    eHoaDonDichVu hddv = new eHoaDonDichVu();
-                    double tienPhong = Convert.ToDouble(hdtp.tinhTienPhong(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(item.GioVao + "   " + item.NgayVao.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString())));
-                    double tienPhuThu = Convert.ToDouble(hdtp.tinhTienPhuThu(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong))));
-                    etpd.Tenphong = pbus.getTenPhong_ByID(item.MaPhong);
-                    etpd.TienPhong = tienPhong + tienPhuThu;
-                    double tienDV = 0;
-                    foreach (eChiTetDichVu ctdv in ctdvbus.getctdv_MaThue_MaPhong(item.MaThue, item.MaPhong))
-                    {
-                        tienDV += hddv.tinhDichVu(dvbus.getDonGia_byID(ctdv.MaDV), ctdv.SoLuong);
-                    }
-                    etpd.TienDV = tienDV;
-                    etpd.TienKhac = item.TienKhac;
-                    etpd.GhiChu = item.GhiChu;
-                    lstp_d.Add(etpd);
-                    break;
-                }
+                etpd.TienDV = tienDV;
+                etpd.TienKhac = item.TienKhac;
+                etpd.GhiChu = item.GhiChu;
+                lstp_d.Add(etpd);
+
             }
             dgvDsThuePhong.DataSource = lstp_d.ToList();
-
             double tongTienPhong = 0;
             for (int i = 0; i < gridViewDsThuePhong.RowCount; i++)
             {
                 tongTienPhong += Convert.ToDouble(gridViewDsThuePhong.GetRowCellValue(i, gridViewDsThuePhong.Columns[1]));
             }
-            txtTongTienPhong.Text = tongTienPhong.ToString();
-            txtThueVAT.Text = (tongTienPhong * 0.1).ToString();
-            txtKhuyenMai.Text = (tongTienPhong * 0.2).ToString();
-            txtTienThanhToan.Text = (tongTienPhong + tongTienPhong * 0.1 - tongTienPhong * 0.2).ToString();
+            txtTongTienPhong.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong).ToString();
+            txtThueVAT.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong * 0.1).ToString();
+            txtKhuyenMai.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong * 0.2).ToString();
+            txtTienThanhToan.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong + tongTienPhong * 0.1 - tongTienPhong * 0.2).ToString();
         }
 
         private void frmTraKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
@@ -145,11 +138,6 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             form.cleanGiaoDien();
             form.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtTienKhachDua_TextChanged(object sender, EventArgs e)

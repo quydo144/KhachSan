@@ -19,7 +19,7 @@ namespace Home
         frmHome home;
         string doan;
         double phuthu = 0;
-        double tienphong = 0, tiendv = 0, tienvat = 0;
+        double tienphong = 0, tiendv = 0, tienvat = 0, tienkhac = 0;
         public static string MaThue = string.Empty;
         public static string TenPhong = string.Empty;
         public static string LoaiPhong = string.Empty;
@@ -38,6 +38,8 @@ namespace Home
             InitializeComponent();
             home = sql;
             btnTraDoan.Visible = false;
+            label11.Visible = false;
+            txtTenDoan.Visible = false;
         }
 
         public frmTraKhachLe(frmHome sql, string maDoan)
@@ -49,6 +51,11 @@ namespace Home
 
         private void frmThanhToan_Load(object sender, EventArgs e)
         {
+            if (doan != null)
+            {
+                DoanBUS dbus = new DoanBUS();
+                txtTenDoan.Text = dbus.getTen_ById(doan);
+            }
             lblMaThue.Text = MaThue;
             lblLoaiPhong.Text = LoaiPhong;
             lblTenPhong.Text = TenPhong;
@@ -56,7 +63,8 @@ namespace Home
             tienPhuThu();
             tinhTienPhong();
             load_list_dichvu();
-            txtTongTien.Text = (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu) + Convert.ToDouble(txtTienKhac.Text)).ToString();
+            double tongtien = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu) + Convert.ToDouble(tienkhac);
+            txtTongTien.Text = string.Format("{0:#,##0 vnđ}", tongtien).ToString();
         }
 
         public DataTable DataTable_DSDV(List<eChiTetDichVu> ds)
@@ -74,7 +82,7 @@ namespace Home
                 tienDichVu = (ctdv.SoLuong * dvbus.getDonGia_byID(ctdv.MaDV)).ToString();
                 dt.Rows.Add(dvbus.getTenDV_byID(ctdv.MaDV), ctdv.SoLuong, dvbus.getDonGia_byID(ctdv.MaDV), tienDichVu);
             }
-            txtDichVu.Text = tiendv.ToString();
+            txtDichVu.Text = string.Format("{0:#,##0 vnđ}", tiendv).ToString();
             return dt;
         }
 
@@ -134,24 +142,25 @@ namespace Home
                 int m = date.Minutes;
                 if (item.NgayVao == DateTime.Now.Date && item.GioVao > nhan13h)
                 {
-                    tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text));
-                    txtTienPhong.Text = (tienphong).ToString();
+                    tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text));                   
+                    txtTienPhong.Text = (string.Format("{0:#,##0 vnđ}", tienphong)).ToString();
                 }
                 else
                 {
                     tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(lblNhanPhong.Text), Convert.ToDateTime(lblTraPhong.Text));
-                    txtTienPhong.Text = (tienphong).ToString();
+                    txtTienPhong.Text = (string.Format("{0:#,##0 vnđ}", tienphong)).ToString();
                 }
                 if (item.GioVao > nhan6h && item.GioVao < nhan13h)
                 {
-                    lblGhiChu.Text = item.GhiChu + "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + phuthu.ToString() + " đồng"
-                        + "\nSố tiền phòng: " + nhan14h + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + tienphong.ToString() + " đồng";
+                    lblGhiChu.Text = item.GhiChu + "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + string.Format("{0:#,##0}", phuthu).ToString() + " đồng"
+                        + "\nSố tiền phòng: " + nhan14h + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
                 }
                 else
                 {
-                    lblGhiChu.Text = item.GhiChu + "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + tienphong.ToString() + " đồng";
+                    lblGhiChu.Text = item.GhiChu + "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
                 }
-                txtTienKhac.Text = item.TienKhac.ToString();
+                txtTienKhac.Text = string.Format("{0:#,##0 vnđ}",item.TienKhac).ToString();
+                tienkhac = item.TienKhac;
             }
         }
 
@@ -161,7 +170,7 @@ namespace Home
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong pt = new eHoaDonTienPhong();
             phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
-            txtPhuThu.Text = phuthu.ToString();
+            txtPhuThu.Text = string.Format("{0:#,##0 vnd}", phuthu).ToString();
         }
 
         private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
@@ -330,13 +339,13 @@ namespace Home
             this.Close();
             ThuePhongBUS tpbus = new ThuePhongBUS();           
             frmTraKhachDoan frm = new frmTraKhachDoan(home, tpbus.getMaDoan_ByMaThue(MaThue));
-            frm.ShowDialog();
+            frm.ShowDialog();        
         }
 
         private void txtTienPhong_TextChanged(object sender, EventArgs e)
         {
-            txtVAT.Text = (Convert.ToDouble(txtTienPhong.Text) * 0.1).ToString();
-            tienvat = Convert.ToDouble(txtTienPhong.Text) * 0.1;
+            txtVAT.Text = string.Format("{0:#,##0 vnđ}", (Convert.ToDouble(tienphong) * 0.1)).ToString();
+            tienvat = Convert.ToDouble(tienphong) * 0.1;
         }
 
         private void frmThanhToan_FormClosing(object sender, FormClosingEventArgs e)

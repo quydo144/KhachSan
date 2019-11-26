@@ -11,7 +11,7 @@ namespace BUS
     public class DoanBUS
     {
         DoanDAL ddal = new DoanDAL();
-        public string getDoanID()
+        public string getmaDoanID()
         {
             return ddal.getDoanID();
         }
@@ -38,6 +38,10 @@ namespace BUS
         public eDoan getdoan_sdt(string sdt)
         {
             return ddal.getdoan_sdt(sdt);
+        }
+        public eDoan getdoan_ID(string id)
+        {
+            return ddal.getdoan_ID(id);
         }
     }
 }

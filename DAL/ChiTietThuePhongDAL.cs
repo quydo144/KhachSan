@@ -46,23 +46,6 @@ namespace DAL
 
         }
 
-        public bool kiemTraTrungPhong(string maThue)
-        {
-            var p = db.ChiTietThuePhongs.Where(x => x.maThue.Equals(maThue) && x.trangThai == 0).ToList();
-            for (int i = 0; i < p.Count + 1; i++)
-             {
-                if (i == p.Count - 1)
-                {
-                    break;
-                }
-                if (p[i].maPhong.Equals(p[i+1].maPhong))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
         public string getMaKhach_By_MaPhong_TrangThai(string maPhong, bool trangThai)
         {
             ChiTietThuePhong cttp = db.ChiTietThuePhongs.Where(x =>x.maPhong.Equals(maPhong) && x.trangThai == Convert.ToByte(trangThai)).FirstOrDefault();

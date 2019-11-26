@@ -101,6 +101,39 @@ namespace Home
             }
         }
 
+
+        public void lblred_MouseHover(object sender, EventArgs e)
+        {
+            PhongBUS pbus = new PhongBUS();
+            ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
+            ThuePhongBUS tpbus = new ThuePhongBUS();
+            KhachHangBUS khbus = new KhachHangBUS();
+            Label lbl = sender as Label;
+            string ttPhong = lbl.Text;
+            string[] lsPhong = ttPhong.Split('\r');
+            string mathue = cttpbus.getMaThue_By_MaPhong_TrangThai(pbus.maPhong_byTen(lsPhong[0].Trim()), false);
+            string ttThuePhong = "";
+            int stt = 0;
+            foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(mathue,pbus.maPhong_byTen(lsPhong[0].Trim())))
+            {
+                stt++;
+                ttThuePhong += "Khách hàng " + stt + " : " + khbus.getenKH_ByID(item.MaKhach) + "\n";
+            }
+            foreach (var item in cttpbus.getChiTietThuePhong_By_MaThue_MaPhong(mathue, pbus.maPhong_byTen(lsPhong[0].Trim())))
+            {
+                if (item.NgayRa < DateTime.Now.Date)
+                {
+                    ttThuePhong += "Ngày ra: " + DateTime.Now.Date.ToShortDateString();
+                }
+                else
+                {
+                    ttThuePhong += "Ngày ra: " + item.NgayRa.ToShortDateString();
+                }
+                break;
+            }
+            toolTipTTThuePhong.SetToolTip(lbl, ttThuePhong);
+        }
+
         /**Tạo sự kiện kích chuột phải vào label để lấy các thông tin trong label đó
          * ra truyền qua các form khác
          * */
@@ -193,6 +226,7 @@ namespace Home
                                 }
                             }
                             lbl.MouseDown += new MouseEventHandler(lblred_Click);
+                            lbl.MouseHover += new EventHandler(lblred_MouseHover);
                             lbl.ContextMenuStrip = cmnstrpCoKhach;
                         }
                     }
