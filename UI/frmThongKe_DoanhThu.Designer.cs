@@ -296,10 +296,13 @@
             DevExpress.XtraCharts.UI.CreateSideBySideGanttChartItem createSideBySideGanttChartItem2 = new DevExpress.XtraCharts.UI.CreateSideBySideGanttChartItem();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.commandBarGalleryDropDown1 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
@@ -319,6 +322,7 @@
             this.commandBarGalleryDropDown15 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.chartDoanhThu = new DevExpress.XtraCharts.ChartControl();
             this.cboLuaChon = new System.Windows.Forms.ComboBox();
+            this.cboNam = new System.Windows.Forms.ComboBox();
             this.eThongKeDoanhThuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown2)).BeginInit();
@@ -338,10 +342,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eThongKeDoanhThuBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -1764,25 +1771,39 @@
             xyDiagram1.AxisX.MinorCount = 1;
             xyDiagram1.AxisX.NumericScaleOptions.AutoGrid = false;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.Label.TextPattern = "{V:N0}";
             xyDiagram1.AxisY.MinorCount = 5;
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.DefaultPane.StackedBarTotalLabel.TextPattern = "{V:N0}";
             this.chartDoanhThu.Diagram = xyDiagram1;
             this.chartDoanhThu.Legend.Name = "Default Legend";
             this.chartDoanhThu.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.chartDoanhThu.Location = new System.Drawing.Point(55, 64);
+            this.chartDoanhThu.Location = new System.Drawing.Point(8, 60);
             this.chartDoanhThu.Name = "chartDoanhThu";
             series1.ArgumentDataMember = "donVi";
+            series1.CrosshairLabelPattern = "{V}";
+            sideBySideBarSeriesLabel1.TextPattern = "{V}";
+            series1.Label = sideBySideBarSeriesLabel1;
             series1.LegendName = "Default Legend";
+            series1.LegendTextPattern = "{V:N0}";
             series1.Name = "Doanh thu";
             series1.ValueDataMembersSerializable = "TongTien";
             sideBySideBarSeriesView1.BarWidth = 0.5D;
             series1.View = sideBySideBarSeriesView1;
             series2.ArgumentDataMember = "donVi";
+            series2.CrosshairLabelPattern = "{V}";
+            sideBySideBarSeriesLabel2.TextPattern = "{V}";
+            series2.Label = sideBySideBarSeriesLabel2;
+            series2.LegendTextPattern = "{V:N0}";
             series2.Name = "Tiền phòng";
             series2.ValueDataMembersSerializable = "TienPhong";
             sideBySideBarSeriesView2.BarWidth = 0.5D;
             series2.View = sideBySideBarSeriesView2;
             series3.ArgumentDataMember = "donVi";
+            series3.CrosshairLabelPattern = "{V}";
+            sideBySideBarSeriesLabel3.TextPattern = "{V}";
+            series3.Label = sideBySideBarSeriesLabel3;
+            series3.LegendTextPattern = "{V:N0}";
             series3.Name = "Tiền dịch vụ";
             series3.ValueDataMembersSerializable = "TienDichVu";
             sideBySideBarSeriesView3.BarWidth = 0.5D;
@@ -1791,7 +1812,7 @@
         series1,
         series2,
         series3};
-            this.chartDoanhThu.Size = new System.Drawing.Size(1319, 592);
+            this.chartDoanhThu.Size = new System.Drawing.Size(1462, 592);
             this.chartDoanhThu.TabIndex = 0;
             chartTitle1.Text = "Doanh thu";
             this.chartDoanhThu.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -1802,13 +1823,24 @@
             this.cboLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLuaChon.FormattingEnabled = true;
             this.cboLuaChon.Items.AddRange(new object[] {
-            "Tuần",
             "Tháng",
+            "Quí",
             "Năm"});
-            this.cboLuaChon.Location = new System.Drawing.Point(165, 12);
+            this.cboLuaChon.Location = new System.Drawing.Point(300, 12);
             this.cboLuaChon.Name = "cboLuaChon";
             this.cboLuaChon.Size = new System.Drawing.Size(218, 32);
             this.cboLuaChon.TabIndex = 1;
+            this.cboLuaChon.SelectedIndexChanged += new System.EventHandler(this.cboLuaChon_SelectedIndexChanged);
+            // 
+            // cboNam
+            // 
+            this.cboNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNam.FormattingEnabled = true;
+            this.cboNam.Location = new System.Drawing.Point(910, 12);
+            this.cboNam.Name = "cboNam";
+            this.cboNam.Size = new System.Drawing.Size(218, 32);
+            this.cboNam.TabIndex = 1;
+            this.cboNam.SelectedIndexChanged += new System.EventHandler(this.cboNam_SelectedIndexChanged);
             // 
             // eThongKeDoanhThuBindingSource
             // 
@@ -1817,9 +1849,9 @@
             // frmThongKe_DoanhThu
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1478, 671);
+            this.Controls.Add(this.cboNam);
             this.Controls.Add(this.cboLuaChon);
             this.Controls.Add(this.chartDoanhThu);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -1844,10 +1876,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
@@ -1876,5 +1911,6 @@
         private DevExpress.XtraCharts.ChartControl chartDoanhThu;
         private System.Windows.Forms.BindingSource eThongKeDoanhThuBindingSource;
         private System.Windows.Forms.ComboBox cboLuaChon;
+        private System.Windows.Forms.ComboBox cboNam;
     }
 }

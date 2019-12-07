@@ -11,24 +11,39 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{70497D2D-B8F5-487A-97EB-6A4FA6157528}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{18BFD9C2-BDAD-4B98-80CE-4C39691B36C5}"
+	ProjectSection(SolutionItems) = preProject
+		Data\KhachSan.mdf = Data\KhachSan.mdf
+		Data\KhachSan_log.ldf = Data\KhachSan_log.ldf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5848B5DE-D0B9-46F4-BEEC-E4811F044379}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{5848B5DE-D0B9-46F4-BEEC-E4811F044379}.All|Any CPU.Build.0 = Release|Any CPU
 		{5848B5DE-D0B9-46F4-BEEC-E4811F044379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5848B5DE-D0B9-46F4-BEEC-E4811F044379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5848B5DE-D0B9-46F4-BEEC-E4811F044379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5848B5DE-D0B9-46F4-BEEC-E4811F044379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03AEA294-B2B4-416C-9ABD-9A4584110A19}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{03AEA294-B2B4-416C-9ABD-9A4584110A19}.All|Any CPU.Build.0 = Release|Any CPU
 		{03AEA294-B2B4-416C-9ABD-9A4584110A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03AEA294-B2B4-416C-9ABD-9A4584110A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03AEA294-B2B4-416C-9ABD-9A4584110A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03AEA294-B2B4-416C-9ABD-9A4584110A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A16EAB-2865-4988-B37C-20C36CFAC62C}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{65A16EAB-2865-4988-B37C-20C36CFAC62C}.All|Any CPU.Build.0 = Release|Any CPU
 		{65A16EAB-2865-4988-B37C-20C36CFAC62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65A16EAB-2865-4988-B37C-20C36CFAC62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65A16EAB-2865-4988-B37C-20C36CFAC62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65A16EAB-2865-4988-B37C-20C36CFAC62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70497D2D-B8F5-487A-97EB-6A4FA6157528}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{70497D2D-B8F5-487A-97EB-6A4FA6157528}.All|Any CPU.Build.0 = Release|Any CPU
 		{70497D2D-B8F5-487A-97EB-6A4FA6157528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{70497D2D-B8F5-487A-97EB-6A4FA6157528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70497D2D-B8F5-487A-97EB-6A4FA6157528}.Release|Any CPU.ActiveCfg = Release|Any CPU

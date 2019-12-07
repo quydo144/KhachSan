@@ -11,6 +11,6 @@ namespace Entyti
         public double TienPhong { get; set; }
         public double TienDichVu { get; set; }
         public double TongTien { get; set; }
-        public string donVi { get; set; }
+        public int donVi { get; set; }
     }
 }

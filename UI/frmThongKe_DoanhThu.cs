@@ -25,10 +25,7 @@ namespace Home
 
         public void DinhDangX(DateTimeGridAlignment x, DateTimeMeasureUnit y)
         {
-            XYDiagram diagram = (XYDiagram)chartDoanhThu.Diagram;
-            diagram.AxisX.DateTimeScaleOptions.AutoGrid = false;
-            diagram.AxisX.DateTimeScaleOptions.GridAlignment = x;
-            diagram.AxisX.DateTimeScaleOptions.MeasureUnit = y;
+
         }
 
         public double tienPhong(ArrayList ds)
@@ -88,30 +85,6 @@ namespace Home
             return tongTienDV;
         }
 
-        public DateTime FirstDayOfWeek(DateTime dt)
-        {
-            var culture = System.Threading.Thread.CurrentThread.CurrentCulture;
-            var diff = dt.DayOfWeek - culture.DateTimeFormat.FirstDayOfWeek;
-            if (diff < 0)
-                diff += 7;
-            return dt.AddDays(-diff + 1).Date;
-        }
-
-        public DateTime LastDayOfWeek(DateTime dt)
-        {
-            return FirstDayOfWeek(dt).AddDays(6);
-        }
-
-        public DateTime FirstDayOfMonth(DateTime dt)
-        {
-            return new DateTime(dt.Year, dt.Month, 1);
-        }
-
-        public DateTime LastDayOfMonth(DateTime dt)
-        {
-            return FirstDayOfMonth(dt).AddMonths(1).AddDays(-1);
-        }
-
         public DateTime FirstDayOfYear(DateTime dt)
         {
             return new DateTime(dt.Year, 1, 1);
@@ -125,44 +98,116 @@ namespace Home
         private void frmThongKe_DoanhThu_Load(object sender, EventArgs e)
         {
             cboLuaChon.SelectedIndex = 0;
-
-            DinhDangX(DateTimeGridAlignment.Month, DateTimeMeasureUnit.Month);
-            HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
-            for (int i = 1; i < 13; i++)
+            int nam = DateTime.Now.Year - 9;
+            for (int i = nam ; i <= nam + 9; i++)
             {
-                eThongKeDoanhThu tk = new eThongKeDoanhThu();
-                tk.TienDichVu = tienDV(hdtpbus.getMaThue_byThang_Nam(i, DateTime.Now.Year));
-                tk.TienPhong = tienPhong(hdtpbus.getMaThue_byThang_Nam(i, DateTime.Now.Year));
-                tk.TongTien = tk.TienDichVu + tk.TienPhong;
-                tk.donVi = i.ToString();
-                eThongKeDoanhThuBindingSource.Add(tk);
+                cboNam.Items.Add(i);
             }
+            cboNam.SelectedIndex = 9;
+        }
 
-            //DateTime dt = DateTime.Now.AddYears(-10);
-            //DinhDangX(DateTimeGridAlignment.Year, DateTimeMeasureUnit.Year);
-            //HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
-            //for (int i = 1; i < 11; i++)
-            //{
-            //    eThongKeDoanhThu tk = new eThongKeDoanhThu();
-            //    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byNam(FirstDayOfYear(dt).AddYears(i).Year));
-            //    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byNam(FirstDayOfYear(dt).AddYears(i).Year));
-            //    tk.TongTien = tk.TienDichVu + tk.TienPhong;
-            //    tk.donVi = (FirstDayOfYear(dt).AddYears(i).Year).ToString();
-            //    eThongKeDoanhThuBindingSource.Add(tk);
-            //}
+        private void cboLuaChon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLuaChon.SelectedIndex == 0)
+            {
+                cboNam.Visible = true;
+                eThongKeDoanhThuBindingSource.Clear();
+                XYDiagram diagram = (XYDiagram)chartDoanhThu.Diagram;
+                diagram.AxisX.DateTimeScaleOptions.AutoGrid = true;
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+                diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+                HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
+                for (int i = 1; i < 13; i++)
+                {
+                    eThongKeDoanhThu tk = new eThongKeDoanhThu();
+                    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byThang_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byThang_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TongTien = tk.TienDichVu + tk.TienPhong;
+                    tk.donVi = Convert.ToInt32(i);
+                    eThongKeDoanhThuBindingSource.Add(tk);
+                }
+            }
+            if (cboLuaChon.SelectedIndex == 1)
+            {
+                cboNam.Visible = true;
+                eThongKeDoanhThuBindingSource.Clear();
+                XYDiagram diagram = (XYDiagram)chartDoanhThu.Diagram;
+                diagram.AxisX.DateTimeScaleOptions.AutoGrid = true;
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Quarter;
+                diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Quarter;
+                HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
+                for (int i = 1; i <= 4; i++)
+                {
+                    eThongKeDoanhThu tk = new eThongKeDoanhThu();
+                    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byQui_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byQui_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TongTien = tk.TienDichVu + tk.TienPhong;
+                    tk.donVi = i;
+                    eThongKeDoanhThuBindingSource.Add(tk);
+                }
+            }
+            if (cboLuaChon.SelectedIndex == 2)
+            {
+                cboNam.Visible = false;
+                eThongKeDoanhThuBindingSource.Clear();                
+                XYDiagram diagram = (XYDiagram)chartDoanhThu.Diagram;
+                diagram.AxisX.DateTimeScaleOptions.AutoGrid = true;
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Year;
+                diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Year;
+                DateTime dt = DateTime.Now.AddYears(-10);
+                HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
+                for (int i = 1; i < 11; i++)
+                {
+                    eThongKeDoanhThu tk = new eThongKeDoanhThu();
+                    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byNam(FirstDayOfYear(dt).AddYears(i).Year));
+                    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byNam(FirstDayOfYear(dt).AddYears(i).Year));
+                    tk.TongTien = tk.TienDichVu + tk.TienPhong;
+                    tk.donVi = (FirstDayOfYear(dt).AddYears(i).Year);
+                    eThongKeDoanhThuBindingSource.Add(tk);
+                }
+            }
+        }
 
-            //DinhDangX(DateTimeGridAlignment.Quarter, DateTimeMeasureUnit.Quarter);
-            //HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
-            //for (int i = 1; i <= 4; i++)
-            //{
-            //    eThongKeDoanhThu tk = new eThongKeDoanhThu();
-            //    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byQui_Nam(i, DateTime.Now.Year));
-            //    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byQui_Nam(i, DateTime.Now.Year));
-            //    tk.TongTien = tk.TienDichVu + tk.TienPhong;
-            //    tk.donVi = i.ToString();
-            //    eThongKeDoanhThuBindingSource.Add(tk);
-            //}
-
+        private void cboNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLuaChon.SelectedIndex == 0)
+            {
+                cboNam.Visible = true;
+                eThongKeDoanhThuBindingSource.Clear();
+                XYDiagram diagram = (XYDiagram)chartDoanhThu.Diagram;
+                diagram.AxisX.DateTimeScaleOptions.AutoGrid = true;
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+                diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+                HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
+                for (int i = 1; i < 13; i++)
+                {
+                    eThongKeDoanhThu tk = new eThongKeDoanhThu();
+                    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byThang_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byThang_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TongTien = tk.TienDichVu + tk.TienPhong;
+                    tk.donVi = Convert.ToInt32(i);
+                    eThongKeDoanhThuBindingSource.Add(tk);
+                }
+            }
+            if (cboLuaChon.SelectedIndex == 1)
+            {
+                cboNam.Visible = true;
+                eThongKeDoanhThuBindingSource.Clear();
+                XYDiagram diagram = (XYDiagram)chartDoanhThu.Diagram;
+                diagram.AxisX.DateTimeScaleOptions.AutoGrid = true;
+                diagram.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Quarter;
+                diagram.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Quarter;
+                HoaDonTienPhongBUS hdtpbus = new HoaDonTienPhongBUS();
+                for (int i = 1; i <= 4; i++)
+                {
+                    eThongKeDoanhThu tk = new eThongKeDoanhThu();
+                    tk.TienDichVu = tienDV(hdtpbus.getMaThue_byQui_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TienPhong = tienPhong(hdtpbus.getMaThue_byQui_Nam(i, Convert.ToInt32(cboNam.SelectedItem)));
+                    tk.TongTien = tk.TienDichVu + tk.TienPhong;
+                    tk.donVi = i;
+                    eThongKeDoanhThuBindingSource.Add(tk);
+                }
+            }
         }
     }
 }

@@ -1,0 +1,8 @@
+E:\KhachSan\DAL\bin\Release\DAL.dll.config
+E:\KhachSan\DAL\bin\Release\DAL.dll
+E:\KhachSan\DAL\bin\Release\DAL.pdb
+E:\KhachSan\DAL\bin\Release\Entyti.dll
+E:\KhachSan\DAL\bin\Release\Entyti.pdb
+E:\KhachSan\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+E:\KhachSan\DAL\obj\Release\DAL.dll
+E:\KhachSan\DAL\obj\Release\DAL.pdb
