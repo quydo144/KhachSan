@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gdvBCDoanhThu = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewTienPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tenKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tienPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tgianVao = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,31 +42,32 @@
             this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gdvBCDoanhThu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTienPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // gdvBCDoanhThu
             // 
             this.gdvBCDoanhThu.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.gdvBCDoanhThu.Location = new System.Drawing.Point(10, 72);
-            this.gdvBCDoanhThu.MainView = this.gridView1;
+            this.gdvBCDoanhThu.MainView = this.gridViewTienPhong;
             this.gdvBCDoanhThu.Name = "gdvBCDoanhThu";
-            this.gdvBCDoanhThu.Size = new System.Drawing.Size(1272, 585);
+            this.gdvBCDoanhThu.Size = new System.Drawing.Size(945, 585);
             this.gdvBCDoanhThu.TabIndex = 0;
             this.gdvBCDoanhThu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridViewTienPhong});
             // 
-            // gridView1
+            // gridViewTienPhong
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewTienPhong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.tenKH,
             this.tienPhong,
             this.tgianVao,
             this.tgianRa});
-            this.gridView1.GridControl = this.gdvBCDoanhThu;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridViewTienPhong.GridControl = this.gdvBCDoanhThu;
+            this.gridViewTienPhong.Name = "gridViewTienPhong";
+            this.gridViewTienPhong.OptionsView.ShowGroupPanel = false;
             // 
             // tenKH
             // 
@@ -201,11 +202,22 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Chọn nhân viên";
             // 
+            // btnIn
+            // 
+            this.btnIn.Location = new System.Drawing.Point(1035, 98);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(122, 41);
+            this.btnIn.TabIndex = 8;
+            this.btnIn.Text = "In hoá đơn";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
             // frmBC_TienPhong
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1294, 669);
+            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboNhanVien);
@@ -223,7 +235,7 @@
             this.Text = "Tiền phòng";
             this.Load += new System.EventHandler(this.frmBC_TienPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvBCDoanhThu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTienPhong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,7 +244,7 @@
         #endregion
 
         private DevExpress.XtraGrid.GridControl gdvBCDoanhThu;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewTienPhong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label2;
@@ -245,5 +257,6 @@
         private System.Windows.Forms.ComboBox cboNhanVien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnIn;
     }
 }

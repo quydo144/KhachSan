@@ -92,6 +92,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBC_SoLuongKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBC_SoLuongKhachHang.Designer.cs">
+      <DependentUpon>frmBC_SoLuongKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBC_TienDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBC_TienDichVu.designer.cs">
+      <DependentUpon>frmBC_TienDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBC_TienPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +212,24 @@
     <Compile Include="frmTextKhachHang.Designer.cs">
       <DependentUpon>frmTextKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="InBaoCao_LuongKhach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InBaoCao_LuongKhach.Designer.cs">
+      <DependentUpon>InBaoCao_LuongKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InBaoCao_TienDV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InBaoCao_TienDV.designer.cs">
+      <DependentUpon>InBaoCao_TienDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InBC_TienPhongcs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InBC_TienPhongcs.designer.cs">
+      <DependentUpon>InBC_TienPhongcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="InHoaDonDichVu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -214,6 +244,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBC_SoLuongKhachHang.resx">
+      <DependentUpon>frmBC_SoLuongKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBC_TienDichVu.resx">
+      <DependentUpon>frmBC_TienDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBC_TienPhong.resx">
       <DependentUpon>frmBC_TienPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +303,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTextKhachHang.resx">
       <DependentUpon>frmTextKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBaoCao_LuongKhach.resx">
+      <DependentUpon>InBaoCao_LuongKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBaoCao_TienDV.resx">
+      <DependentUpon>InBaoCao_TienDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBC_TienPhongcs.resx">
+      <DependentUpon>InBC_TienPhongcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InHoaDonDichVu.resx">
       <DependentUpon>InHoaDonDichVu.cs</DependentUpon>

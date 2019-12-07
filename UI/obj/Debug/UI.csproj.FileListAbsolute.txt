@@ -205,3 +205,8 @@ E:\KhachSan\UI\obj\Debug\Home.exe.licenses
 E:\KhachSan\UI\obj\Debug\Home.exe
 E:\KhachSan\UI\obj\Debug\Home.pdb
 E:\KhachSan\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+E:\KhachSan\UI\obj\Debug\Home.InBaoCao_TienDV.resources
+E:\KhachSan\UI\obj\Debug\Home.InBC_TienPhongcs.resources
+E:\KhachSan\UI\obj\Debug\Home.frmBC_TienDichVu.resources
+E:\KhachSan\UI\obj\Debug\Home.frmBC_SoLuongKhachHang.resources
+E:\KhachSan\UI\obj\Debug\Home.InBaoCao_LuongKhach.resources

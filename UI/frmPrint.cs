@@ -43,5 +43,40 @@ namespace Home
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }
+
+        public void InBaoCaoInDichVuTuReport(HoaDon bc, List<eBC_DoanhThuDV> ls)
+        {
+            InBaoCao_TienDV report = new InBaoCao_TienDV();
+            foreach (DevExpress.XtraReports.Parameters.Parameter item in report.Parameters)
+            {
+                item.Visible = false;
+            }
+            report.InBaoCaoDataDichVu(bc.loai, bc.thoiGianInHD, ls.ToList());
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+        public void InBaoCaoInTienPhongTuReport(HoaDon bc, List<eBC_TienPhong> ls)
+        {
+            InBC_TienPhongcs report = new InBC_TienPhongcs();
+            foreach (DevExpress.XtraReports.Parameters.Parameter item in report.Parameters)
+            {
+                item.Visible = false;
+            }
+            report.InBaoCaoDataTienPhong(bc.loai, bc.tenNV, bc.thoiGianInHD, ls.ToList());
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
+      
+        public void InBaoCaoInLuongKhachTuReport(HoaDon bc, List<eKhachHang> ls)
+        {
+            InBaoCao_LuongKhach report = new InBaoCao_LuongKhach();
+            foreach (DevExpress.XtraReports.Parameters.Parameter item in report.Parameters)
+            {
+                item.Visible = false;
+            }
+            report.InBaoCaoDataLuongKhach(bc.thoiGianInHD, ls.ToList());
+            documentViewer1.DocumentSource = report;
+            report.CreateDocument();
+        }
     }
 }

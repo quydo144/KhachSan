@@ -215,6 +215,8 @@ namespace DAL
                 cttp.NgayVao = item.ngayVao;
                 cttp.GioRa = item.gioRa;
                 cttp.GioVao = item.gioVao;
+                cttp.GhiChu = item.ghiChu;
+                cttp.TienKhac = Convert.ToDouble(item.tienKhac);
                 cttp.TrangThai = Convert.ToBoolean(item.trangThai);
                 ls.Add(cttp);
             }

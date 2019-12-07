@@ -13,5 +13,6 @@ namespace Entyti
         public string soHD { get; set; }
         public string thoiGianInHD { get; set; }
         public string tenPhong { get; set; }
+        public string loai { get; set; }
     }
 }

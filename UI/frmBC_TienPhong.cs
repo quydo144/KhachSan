@@ -255,5 +255,29 @@ namespace Home
             cboNgayThang.SelectedIndex = 5;
             TrongKhoangNgayToNgay(Convert.ToDateTime(dtpStart.Text), Convert.ToDateTime(dtpEnd.Text), cboNhanVien.SelectedValue.ToString());
         }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            HoaDon bc = new HoaDon();
+            List<eBC_TienPhong> listbctp = new List<eBC_TienPhong>();
+
+            for (int i = 0; i < gridViewTienPhong.RowCount; i++)
+            {
+                eBC_TienPhong bctp = new eBC_TienPhong();
+                bctp.TenKH = gridViewTienPhong.GetRowCellValue(i, gridViewTienPhong.Columns[0]).ToString();
+                bctp.TienPhong = Convert.ToDouble(gridViewTienPhong.GetRowCellValue(i, gridViewTienPhong.Columns[1]));
+                bctp.TgianVao = Convert.ToDateTime(gridViewTienPhong.GetRowCellValue(i, gridViewTienPhong.Columns[2]));
+                bctp.TgianRa = Convert.ToDateTime(gridViewTienPhong.GetRowCellValue(i, gridViewTienPhong.Columns[3]));
+                listbctp.Add(bctp);
+            }
+
+            bc.loai = cboNgayThang.Text;
+            bc.thoiGianInHD = DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString();
+            bc.tenNV = cboNhanVien.Text;
+            frmPrint frmInBCDV = new frmPrint();
+            frmInBCDV.InBaoCaoInTienPhongTuReport(bc, listbctp.ToList());
+            frmInBCDV.ShowDialog();
+            this.Close();
+        }
     }
 }
