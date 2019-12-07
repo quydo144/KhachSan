@@ -140,14 +140,14 @@ namespace Home
                 TimeSpan date = Convert.ToDateTime(lblTraPhong.Text) - Convert.ToDateTime(lblNhanPhong.Text);
                 int ngay = date.Days;
                 int h = date.Hours;
-                if (item.NgayVao == DateTime.Now.Date && item.GioVao > nhan13h)
+                if (item.NgayVao == DateTime.Now.Date)
                 {
-                    tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text));                   
+                    tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(lblNhanPhong.Text), Convert.ToDateTime(lblTraPhong.Text));
                     txtTienPhong.Text = (string.Format("{0:#,##0}", tienphong)).ToString();
                 }
                 else
                 {
-                    tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(lblNhanPhong.Text), Convert.ToDateTime(lblTraPhong.Text));
+                    tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text));
                     txtTienPhong.Text = (string.Format("{0:#,##0}", tienphong)).ToString();
                 }
                 if (ngay == 0 && h < 5)
@@ -178,7 +178,14 @@ namespace Home
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong pt = new eHoaDonTienPhong();
-            phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu.Substring(0, 8)))));
+            if (cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu == null)
+            {
+                phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
+            }
+            else
+            {
+                phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu.Substring(0, 8)))));
+            }
             txtPhuThu.Text = string.Format("{0:#,##0}", phuthu).ToString();
         }
 

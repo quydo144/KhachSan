@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eChiTietBaoCao.cs" />
+    <Compile Include="eThongKeDoanhThu.cs" />
     <Compile Include="eThuePhong_Doan.cs" />
     <Compile Include="HoaDon.cs" />
     <Compile Include="eChiTetDichVu.cs" />

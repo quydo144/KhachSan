@@ -17,7 +17,7 @@ namespace Home
     public partial class frmBC_TienPhong : DevExpress.XtraEditors.XtraForm
     {
         public frmBC_TienPhong()
-        {
+        {       
             InitializeComponent();
         }
 

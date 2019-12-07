@@ -81,5 +81,38 @@ namespace DAL
             return maThue;
         }
 
+        public ArrayList getMaThue_byThang_Nam(int thang, int nam)
+        {
+            ArrayList maThue = new ArrayList();
+            var list = db.HoaDonTienPhongs.Where(x => x.ngayLap.Month == thang && x.ngayLap.Year == nam).ToList();
+            foreach (var item in list)
+            {
+                maThue.Add(item.maThue);
+            }
+            return maThue;
+        }
+
+        public ArrayList getMaThue_byQui_Nam(int q , int nam)
+        {
+            ArrayList maThue = new ArrayList();
+            var list = db.HoaDonTienPhongs.Where(x => ((x.ngayLap.Month - 1) / 3) + 1 == q && x.ngayLap.Year == nam).ToList();
+            foreach (var item in list)
+            {
+                maThue.Add(item.maThue);
+            }
+            return maThue;
+        }
+
+        public ArrayList getMaThue_byNam( int nam)
+        {
+            ArrayList maThue = new ArrayList();
+            var list = db.HoaDonTienPhongs.Where(x => x.ngayLap.Year == nam).ToList();
+            foreach (var item in list)
+            {
+                maThue.Add(item.maThue);
+            }
+            return maThue;
+        }
+
     }
 }

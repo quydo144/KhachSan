@@ -81,6 +81,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -285,6 +286,23 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\Entyti.eChiTetDichVu.datasource" />
+    <None Include="Properties\DataSources\Entyti.eChiTietBaoCao.datasource" />
+    <None Include="Properties\DataSources\Entyti.eChiTietThuePhong.datasource" />
+    <None Include="Properties\DataSources\Entyti.eCTDV.datasource" />
+    <None Include="Properties\DataSources\Entyti.eDichVu.datasource" />
+    <None Include="Properties\DataSources\Entyti.eDoan.datasource" />
+    <None Include="Properties\DataSources\Entyti.eHoaDonDichVu.datasource" />
+    <None Include="Properties\DataSources\Entyti.eHoaDonTienPhong.datasource" />
+    <None Include="Properties\DataSources\Entyti.eHonLoan.datasource" />
+    <None Include="Properties\DataSources\Entyti.eKhachHang.datasource" />
+    <None Include="Properties\DataSources\Entyti.eLoaiPhong.datasource" />
+    <None Include="Properties\DataSources\Entyti.eNhanVien.datasource" />
+    <None Include="Properties\DataSources\Entyti.ePhong.datasource" />
+    <None Include="Properties\DataSources\Entyti.eThongKeDoanhThu.datasource" />
+    <None Include="Properties\DataSources\Entyti.eThuePhong.datasource" />
+    <None Include="Properties\DataSources\Entyti.eThuePhong_Doan.datasource" />
+    <None Include="Properties\DataSources\Entyti.HoaDon.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -92,6 +92,7 @@ namespace Home
                 {
                     if (i == j)
                     {
+                        list_ect.RemoveAt(i);
                         continue;
                     }
                     if (list_ect[i].MaPhong.Equals(list_ect[j].MaPhong))
@@ -108,7 +109,15 @@ namespace Home
                 eHoaDonTienPhong hdtp = new eHoaDonTienPhong();
                 eHoaDonDichVu hddv = new eHoaDonDichVu();
                 double tienPhong = Convert.ToDouble(hdtp.tinhTienPhong(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(item.GioVao + "   " + item.NgayVao.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString())));
-                double tienPhuThu = Convert.ToDouble(hdtp.tinhTienPhuThu(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong))));
+                double tienPhuThu = 0;
+                if (item.GhiChu.Equals(""))
+                {               
+                    tienPhuThu += Convert.ToDouble(hdtp.tinhTienPhuThu(item, lpbus.donGia(pbus.getLoaiPhong_ByID(item.MaPhong))));
+                }
+                else
+                {
+                    tienPhuThu += Convert.ToDouble(hdtp.tinhTienPhuThu(item, lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(item.GhiChu.Substring(0, 8))))));
+                }
                 etpd.Tenphong = pbus.getTenPhong_ByID(item.MaPhong);
                 etpd.TienPhong = tienPhong + tienPhuThu;
                 double tienDV = 0;
@@ -120,7 +129,6 @@ namespace Home
                 etpd.TienKhac = item.TienKhac;
                 etpd.GhiChu = item.GhiChu;
                 lstp_d.Add(etpd);
-
             }
             dgvDsThuePhong.DataSource = lstp_d.ToList();
             double tongTienPhong = 0;

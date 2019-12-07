@@ -37,5 +37,17 @@ namespace BUS
         {
             return ttdal.getMaThue_byNgay_to_Ngay_All(date1, date2);
         }
+        public ArrayList getMaThue_byThang_Nam(int thang, int nam)
+        {
+            return ttdal.getMaThue_byThang_Nam(thang, nam);
+        }
+        public ArrayList getMaThue_byNam(int nam)
+        {
+            return ttdal.getMaThue_byNam(nam);
+        }
+        public ArrayList getMaThue_byQui_Nam(int q, int nam)
+        {
+            return ttdal.getMaThue_byQui_Nam(q, nam);
+        }
     }
 }
