@@ -16,6 +16,7 @@ namespace Home
     public partial class frmDoiPhong : DevExpress.XtraEditors.XtraForm
     {
         frmHome frm;
+        double tienkhac = 0;
         public static string TenPhong = string.Empty;
         public static string maThue = string.Empty;
 
@@ -79,10 +80,10 @@ namespace Home
                     ect.MaPhong = cboPhongTrong.SelectedValue.ToString();
                     ect.NgayRa = item.NgayRa;
                     ect.NgayVao = item.NgayVao;
-                    ect.TienKhac = Convert.ToDouble(lblTienKhac.Text);
+                    ect.TienKhac = tienkhac;
                     ect.MaThue = tpbus.getMaThueCuoi();
                     ect.TrangThai = false;
-                    ect.GhiChu = cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu + lblTenPhong.Text + " (" + item.GioVao + " " + item.NgayVao.ToShortDateString() + ")" + "đến " + cboPhongTrong.Text + " (" + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToShortDateString() + ")";
+                    ect.GhiChu = cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu + lblTenPhong.Text + " (" + item.GioVao + " " + item.NgayVao.ToShortDateString() + ")" + " đến " + cboPhongTrong.Text + " (" + DateTime.Now.ToLongTimeString() + " " + DateTime.Now.ToShortDateString() + ")";
                     cttpbus.insertCTTP(ect);
 
                 }
@@ -188,18 +189,8 @@ namespace Home
             cttp = cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false);
             double tienPhongCu = hdtp.tinhTienPhong(cttp, lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))), Convert.ToDateTime(cttp.GioVao + "   " + cttp.NgayVao.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString()));
             double tienPhongMoi = hdtp.tinhTienPhong(cttp, lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(cboPhongTrong.Text.Trim()))), Convert.ToDateTime(cttp.GioVao + "   " + cttp.NgayVao.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToLongTimeString() + "   " + DateTime.Now.ToShortDateString()));
-            if (!(lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))) > lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(cboPhongTrong.Text.Trim())))))
-            {
-                lblTienKhac.Text = (tienPhongMoi - tienPhongCu).ToString();
-            }
-            else if (lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))) == lpbus.donGia(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(cboPhongTrong.Text.Trim()))))
-            {
-                lblTienKhac.Text = "0";
-            }
-            else
-            {
-                lblTienKhac.Text = (-(tienPhongCu - tienPhongMoi)).ToString();
-            }          
+            tienkhac = tienPhongCu - tienPhongMoi + cttp.TienKhac;
+            lblTienKhac.Text = (string.Format("{0:#,##0 vnd}", tienkhac).ToString());       
         }
     }
 }

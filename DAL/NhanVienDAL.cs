@@ -176,6 +176,11 @@ namespace DAL
             NhanVien nv = db.NhanViens.Where(x => x.email.Equals(email)).SingleOrDefault();
             return nv.maNV;
         }
+        public string getTenNV_byEmail(string email)
+        {
+            NhanVien nv = db.NhanViens.Where(x => x.email.Equals(email)).SingleOrDefault();
+            return nv.tenNV;
+        }
         public string getenNV_ByID(string id)
         {
             NhanVien nv = db.NhanViens.Where(x => x.maNV.Equals(id)).SingleOrDefault();

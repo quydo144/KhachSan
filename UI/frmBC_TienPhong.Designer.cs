@@ -74,6 +74,8 @@
             this.tenKH.FieldName = "Tên khách hàng";
             this.tenKH.MinWidth = 25;
             this.tenKH.Name = "tenKH";
+            this.tenKH.OptionsColumn.AllowEdit = false;
+            this.tenKH.OptionsColumn.AllowFocus = false;
             this.tenKH.Visible = true;
             this.tenKH.VisibleIndex = 0;
             this.tenKH.Width = 94;
@@ -81,9 +83,13 @@
             // tienPhong
             // 
             this.tienPhong.Caption = "Tiền phòng";
+            this.tienPhong.DisplayFormat.FormatString = "{0:#,##0 vnd}";
+            this.tienPhong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.tienPhong.FieldName = "Tiền phòng";
             this.tienPhong.MinWidth = 25;
             this.tienPhong.Name = "tienPhong";
+            this.tienPhong.OptionsColumn.AllowEdit = false;
+            this.tienPhong.OptionsColumn.AllowFocus = false;
             this.tienPhong.Visible = true;
             this.tienPhong.VisibleIndex = 1;
             this.tienPhong.Width = 94;
@@ -94,6 +100,8 @@
             this.tgianVao.FieldName = "Thời gian vào";
             this.tgianVao.MinWidth = 25;
             this.tgianVao.Name = "tgianVao";
+            this.tgianVao.OptionsColumn.AllowEdit = false;
+            this.tgianVao.OptionsColumn.AllowFocus = false;
             this.tgianVao.Visible = true;
             this.tgianVao.VisibleIndex = 2;
             this.tgianVao.Width = 94;
@@ -104,6 +112,8 @@
             this.tgianRa.FieldName = "Thời gian ra";
             this.tgianRa.MinWidth = 25;
             this.tgianRa.Name = "tgianRa";
+            this.tgianRa.OptionsColumn.AllowEdit = false;
+            this.tgianRa.OptionsColumn.AllowFocus = false;
             this.tgianRa.Visible = true;
             this.tgianRa.VisibleIndex = 3;
             this.tgianRa.Width = 94;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using DevExpress.XtraEditors;
+using System.Globalization;
 using Entyti;
 using BUS;
 
@@ -19,7 +20,7 @@ namespace Home
         frmHome home;
         string doan;
         double phuthu = 0;
-        double tienphong = 0, tiendv = 0, tienvat = 0, tienkhac = 0;
+        double tienphong = 0, tiendv = 0, tienvat = 0, tienkhac = 0, giamgia = 0;
         public static string MaThue = string.Empty;
         public static string TenPhong = string.Empty;
         public static string LoaiPhong = string.Empty;
@@ -63,8 +64,8 @@ namespace Home
             tienPhuThu();
             tinhTienPhong();
             load_list_dichvu();
-            double tongtien = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu) + Convert.ToDouble(tienkhac);
-            txtTongTien.Text = string.Format("{0:#,##0 vnđ}", tongtien).ToString();
+            double tongtien = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu) + Convert.ToDouble(tienkhac) - giamgia;
+            txtTongTien.Text = string.Format("{0:#,##0}", tongtien).ToString();
         }
 
         public DataTable DataTable_DSDV(List<eChiTetDichVu> ds)
@@ -82,7 +83,7 @@ namespace Home
                 tienDichVu = (ctdv.SoLuong * dvbus.getDonGia_byID(ctdv.MaDV)).ToString();
                 dt.Rows.Add(dvbus.getTenDV_byID(ctdv.MaDV), ctdv.SoLuong, dvbus.getDonGia_byID(ctdv.MaDV), tienDichVu);
             }
-            txtDichVu.Text = string.Format("{0:#,##0 vnđ}", tiendv).ToString();
+            txtDichVu.Text = string.Format("{0:#,##0}", tiendv).ToString();
             return dt;
         }
 
@@ -125,9 +126,9 @@ namespace Home
 
         public void tinhTienPhong()
         {
-            TimeSpan nhan6h = new TimeSpan(6, 00, 00);
-            TimeSpan nhan13h = new TimeSpan(13, 00, 00);
-            TimeSpan nhan14h = new TimeSpan(14, 00, 00);
+            TimeSpan nhan6h = new TimeSpan(6, 0, 0);
+            TimeSpan nhan13h = new TimeSpan(13, 0, 0);
+            TimeSpan nhan14h = new TimeSpan(14, 0, 0);
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong hdtp = new eHoaDonTienPhong();
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
@@ -139,28 +140,36 @@ namespace Home
                 TimeSpan date = Convert.ToDateTime(lblTraPhong.Text) - Convert.ToDateTime(lblNhanPhong.Text);
                 int ngay = date.Days;
                 int h = date.Hours;
-                int m = date.Minutes;
                 if (item.NgayVao == DateTime.Now.Date && item.GioVao > nhan13h)
                 {
                     tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(gioMacDinh), Convert.ToDateTime(lblTraPhong.Text));                   
-                    txtTienPhong.Text = (string.Format("{0:#,##0 vnđ}", tienphong)).ToString();
+                    txtTienPhong.Text = (string.Format("{0:#,##0}", tienphong)).ToString();
                 }
                 else
                 {
                     tienphong = hdtp.tinhTienPhong(item, tienPhong(pbus.getLoaiPhong_ByID(item.MaPhong)), Convert.ToDateTime(lblNhanPhong.Text), Convert.ToDateTime(lblTraPhong.Text));
-                    txtTienPhong.Text = (string.Format("{0:#,##0 vnđ}", tienphong)).ToString();
+                    txtTienPhong.Text = (string.Format("{0:#,##0}", tienphong)).ToString();
                 }
-                if (item.GioVao > nhan6h && item.GioVao < nhan13h)
+                if (ngay == 0 && h < 5)
                 {
-                    lblGhiChu.Text = item.GhiChu + "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + string.Format("{0:#,##0}", phuthu).ToString() + " đồng"
-                        + "\nSố tiền phòng: " + nhan14h + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
+                    lblGhiChu.Text = item.GhiChu + "\n" + "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
+                    phuthu = 0;
+                    txtPhuThu.Text = string.Format("{0:#,##0}", phuthu).ToString();
                 }
                 else
                 {
-                    lblGhiChu.Text = item.GhiChu + "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
+                    if (item.GioVao > nhan6h && item.GioVao < nhan13h)
+                    {
+                        lblGhiChu.Text = item.GhiChu + "\n" + "Số tiền khách đến sớm: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + "đến " + nhan14h + " " + item.NgayVao.ToShortDateString() + "là " + string.Format("{0:#,##0}", phuthu).ToString() + " đồng"
+                            + "\nSố tiền phòng: " + nhan14h + " " + item.NgayVao.ToShortDateString() + "đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
+                    }
+                    else
+                    {
+                        lblGhiChu.Text = item.GhiChu + "\n" + "\nSố tiền phòng: " + item.GioVao + " " + item.NgayVao.ToShortDateString() + " đến " + lblTraPhong.Text + " là " + string.Format("{0:#,##0}", tienphong).ToString() + " đồng";
+                    }
                 }
-                txtTienKhac.Text = string.Format("{0:#,##0 vnđ}",item.TienKhac).ToString();
-                tienkhac = item.TienKhac;
+                tienkhac += item.TienKhac;
+                txtTienKhac.Text = string.Format("{0:#,##0}", tienkhac).ToString();
             }
         }
 
@@ -169,24 +178,36 @@ namespace Home
             ChiTietThuePhongBUS cttpbus = new ChiTietThuePhongBUS();
             PhongBUS pbus = new PhongBUS();
             eHoaDonTienPhong pt = new eHoaDonTienPhong();
-            phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(TenPhong))));
-            txtPhuThu.Text = string.Format("{0:#,##0 vnd}", phuthu).ToString();
+            phuthu = pt.tinhTienPhuThu(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false), tienPhong(pbus.getLoaiPhong_ByID(pbus.maPhong_byTen(cttpbus.getCTTP_By_MaPhong_TrangThai(pbus.maPhong_byTen(TenPhong), false).GhiChu.Substring(0, 8)))));
+            txtPhuThu.Text = string.Format("{0:#,##0}", phuthu).ToString();
         }
 
         private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
         {
+            CultureInfo culture = new CultureInfo("en-US");
+            decimal value = decimal.Parse(txtKhachThanhToan.Text, NumberStyles.AllowThousands);
+            txtKhachThanhToan.Text = String.Format(culture, "{0:N0}", value);
+            txtKhachThanhToan.Select(txtKhachThanhToan.Text.Length, 0);
+
             if (txtKhachThanhToan.Text.Equals(""))
             {
                 txtTienThua.Text = "";
             }
             else
             {
-                txtTienThua.Text = ((Convert.ToDouble(txtKhachThanhToan.Text)) - (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu))).ToString();
+                double tienthua = ((Convert.ToDouble(txtKhachThanhToan.Text)) - (tienvat + tienphong + tiendv + Convert.ToDouble(phuthu)));
+                txtTienThua.Text = string.Format("{0:#,##0}", tienthua).ToString();
             }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(txtGiamTru.Text) > 10 && Convert.ToInt32(txtGiamTru.Text) <0 )
+            {
+                MessageBox.Show("Mức giảm giá phải nhỏ hơn 10%");
+                txtGiamTru.Focus();
+                return;
+            }
             if (txtKhachThanhToan.Text.Equals(""))
             {
                 MessageBox.Show("Xin hãy nhập số tiền khách thanh toán");
@@ -208,8 +229,8 @@ namespace Home
                 tt_ent.MaThue = lblMaThue.Text.Trim();
                 tt_ent.NgayLap = DateTime.Now;
                 tt_ent.GioLap = gioHienTai;
-                tt_ent.ThueVAT = Convert.ToSingle(10 / 100);
-                tt_ent.KhuyenMai = Convert.ToSingle(txtGiamTru.Text);
+                tt_ent.ThueVAT = Convert.ToSingle(10 / 10);
+                tt_ent.KhuyenMai = Convert.ToSingle((Convert.ToSingle(txtGiamTru.Text) * tienphong));
                 a = hdtpbus.insertThanhToan(tt_ent);
             }
 
@@ -299,6 +320,8 @@ namespace Home
                         eHoaDonDichVu hddv = new eHoaDonDichVu();
                         hddv.MaHDDV = (DateTime.Now.Day).ToString() + (DateTime.Now.Month).ToString() + (DateTime.Now.Year).ToString() + item.MaThue + item.MaKhach + item.MaPhong;
                         hddv.MaThue = MaThue;
+                        hddv.NgayLap = DateTime.Now.Date;
+                        hddv.GioLap = gioHienTai;
                         hddv.MaKH = item.MaKhach;
                         hddv.MaPhong = item.MaPhong;
                         hddvbus.insertThanhToanDV(hddv);
@@ -334,6 +357,22 @@ namespace Home
             }
         }
 
+        private void txtGiamTru_TextChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtGiamTru.Text) > 10)
+            {
+                MessageBox.Show("Mức giảm giá phải nhỏ hơn 10%");
+                txtGiamTru.Focus();
+                return;
+            }
+            else
+            {
+                giamgia = Convert.ToSingle((Convert.ToSingle(txtGiamTru.Text) / 10) * tienphong);
+            }            
+            double tongtien = tienvat + tienphong + tiendv + Convert.ToDouble(phuthu) + Convert.ToDouble(tienkhac) - giamgia;
+            txtTongTien.Text = string.Format("{0:#,##0}", tongtien).ToString();
+        }
+
         private void btnTraDoan_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -344,7 +383,7 @@ namespace Home
 
         private void txtTienPhong_TextChanged(object sender, EventArgs e)
         {
-            txtVAT.Text = string.Format("{0:#,##0 vnđ}", (Convert.ToDouble(tienphong) * 0.1)).ToString();
+            txtVAT.Text = string.Format("{0:#,##0}", (Convert.ToDouble(tienphong) * 0.1)).ToString();
             tienvat = Convert.ToDouble(tienphong) * 0.1;
         }
 

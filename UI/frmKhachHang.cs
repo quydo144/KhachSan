@@ -81,8 +81,11 @@ namespace Home
         private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
-            frm.AnflowLayoutPanel();
-            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            if (frm.ExitAllForm())
+            {
+                frm.AnflowLayoutPanel();
+                frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            }
         }
     }
 }

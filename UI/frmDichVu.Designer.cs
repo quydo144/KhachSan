@@ -119,11 +119,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlDV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gridControlDV.Location = new System.Drawing.Point(617, 190);
+            this.gridControlDV.Location = new System.Drawing.Point(617, 161);
             this.gridControlDV.MainView = this.gridView1;
             this.gridControlDV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.gridControlDV.Name = "gridControlDV";
-            this.gridControlDV.Size = new System.Drawing.Size(805, 544);
+            this.gridControlDV.Size = new System.Drawing.Size(805, 571);
             this.gridControlDV.TabIndex = 50;
             this.gridControlDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -133,7 +133,7 @@
             this.btnSuaDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
             this.btnSuaDV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDV.Image")));
             this.btnSuaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDV.Location = new System.Drawing.Point(247, 485);
+            this.btnSuaDV.Location = new System.Drawing.Point(250, 433);
             this.btnSuaDV.Margin = new System.Windows.Forms.Padding(6);
             this.btnSuaDV.Name = "btnSuaDV";
             this.btnSuaDV.Size = new System.Drawing.Size(128, 62);
@@ -147,7 +147,7 @@
             this.btnThemDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
             this.btnThemDV.Image = global::Home.Properties.Resources.add_icon;
             this.btnThemDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDV.Location = new System.Drawing.Point(60, 485);
+            this.btnThemDV.Location = new System.Drawing.Point(55, 433);
             this.btnThemDV.Margin = new System.Windows.Forms.Padding(6);
             this.btnThemDV.Name = "btnThemDV";
             this.btnThemDV.Size = new System.Drawing.Size(128, 62);
@@ -162,7 +162,7 @@
             this.btnXoaDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(210)))), ((int)(((byte)(242)))));
             this.btnXoaDV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDV.Image")));
             this.btnXoaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDV.Location = new System.Drawing.Point(435, 485);
+            this.btnXoaDV.Location = new System.Drawing.Point(440, 433);
             this.btnXoaDV.Margin = new System.Windows.Forms.Padding(6);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(128, 62);
@@ -250,7 +250,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(-1, -1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1434, 61);
+            this.label7.Size = new System.Drawing.Size(1434, 43);
             this.label7.TabIndex = 51;
             this.label7.Text = "Quản lý dịch vụ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -265,7 +265,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTenDV);
-            this.groupBox1.Location = new System.Drawing.Point(12, 74);
+            this.groupBox1.Location = new System.Drawing.Point(12, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(597, 348);
             this.groupBox1.TabIndex = 52;
@@ -297,7 +297,7 @@
             // 
             this.groupBox2.Controls.Add(this.cboTKDV);
             this.groupBox2.Controls.Add(this.txtTimKiem);
-            this.groupBox2.Location = new System.Drawing.Point(636, 74);
+            this.groupBox2.Location = new System.Drawing.Point(636, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(797, 109);
             this.groupBox2.TabIndex = 53;
@@ -333,6 +333,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dịch vụ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDichVu_FormClosing);
             this.Load += new System.EventHandler(this.frmDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).EndInit();

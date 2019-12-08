@@ -100,6 +100,7 @@ namespace Home
                     }
                 }
             }
+
             List<eThuePhong_Doan> lstp_d = new List<eThuePhong_Doan>();
             foreach (eChiTietThuePhong item in list_ect)
             {
@@ -127,10 +128,10 @@ namespace Home
             {
                 tongTienPhong += Convert.ToDouble(gridViewDsThuePhong.GetRowCellValue(i, gridViewDsThuePhong.Columns[1]));
             }
-            txtTongTienPhong.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong).ToString();
-            txtThueVAT.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong * 0.1).ToString();
-            txtKhuyenMai.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong * 0.2).ToString();
-            txtTienThanhToan.Text = string.Format("{0:#,##0 vnđ}", tongTienPhong + tongTienPhong * 0.1 - tongTienPhong * 0.2).ToString();
+            txtTongTienPhong.Text = string.Format("{0:#,##0}", tongTienPhong).ToString();
+            txtThueVAT.Text = string.Format("{0:#,##0}", tongTienPhong * 0.1).ToString();
+            txtKhuyenMai.Text = string.Format("{0:#,##0}", tongTienPhong * 0.2).ToString();
+            txtTienThanhToan.Text = string.Format("{0:#,##0}", tongTienPhong + tongTienPhong * 0.1 - tongTienPhong * 0.2).ToString();
         }
 
         private void frmTraKhachDoan_FormClosing(object sender, FormClosingEventArgs e)
@@ -205,6 +206,21 @@ namespace Home
                     listphong.Add(ctbc);
                 }
 
+                for (int i = 0; i < listphong.Count; i++)
+                {
+                    for (int j = 1; j < listphong.Count; j++)
+                    {
+                        if (i == j)
+                        {
+                            continue;
+                        }
+                        if (listphong[i].tenPhong.Equals(listphong[j].tenPhong))
+                        {
+                            listphong.RemoveAt(i);
+                        }
+                    }
+                }
+
                 foreach (var item in tpbus.getMaThue(tp.MaThue))
                 {
                     bc.tenNV = nvbus.getenNV_ByID(maNVThanhToan);
@@ -232,6 +248,8 @@ namespace Home
                             hddv.MaThue = item.MaThue;
                             hddv.MaKH = item.MaKhach;
                             hddv.MaPhong = item.MaPhong;
+                            hddv.NgayLap = DateTime.Now.Date;
+                            hddv.GioLap = gioHienTai;
                             hddvbus.insertThanhToanDV(hddv);
                             List<eCTDV> lsctdv = new List<eCTDV>();
                             foreach (eChiTetDichVu dv in ctdvbus.getctdv_MaThue_MaPhong(item.MaThue,item.MaPhong))

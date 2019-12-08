@@ -321,6 +321,23 @@ namespace Home
             return false;
         }
 
+        public bool ExitAllForm()
+        {
+            int stt = 0;
+            foreach (var item in MdiChildren)
+            {
+                stt++;
+            }
+            if (stt == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void AnflowLayoutPanel()
         {
             flowLayoutPanel1.Show();
@@ -341,8 +358,12 @@ namespace Home
 
         private void btndv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDichVu frm = new frmDichVu();
-            frm.ShowDialog();
+            frmDichVu frm = new frmDichVu(this);
+            panel1.Visible = false;
+            if (ExitForm(frm)) return;
+            flowLayoutPanel1.Hide();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void btnphong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -367,7 +388,8 @@ namespace Home
 
         private void btnNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNhanVien frm = new frmNhanVien();
+            frmNhanVien frm = new frmNhanVien(this);
+            panel1.Visible = false;
             if (ExitForm(frm)) return;
             flowLayoutPanel1.Hide();
             frm.MdiParent = this;
@@ -465,7 +487,7 @@ namespace Home
             LoaiPhongBUS lpbus = new LoaiPhongBUS();
             foreach (var item in lpbus.getDOnGia(0, 500000))
             {
-                //TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), joinbus.GetPhong_ThuePhong(true, 0), "Phòng dưới 500,000 đồng");
+                TaoGiaoDienPhong(pbus.getLoaiPhong(item.MaLoaiPhong), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, false), pbus.getLoaiPhong_Trong(item.MaLoaiPhong, true), "Phòng 1 triệu đồng đến 1 triệu 500 nghìn đồng");
             }
         }
 
@@ -497,7 +519,6 @@ namespace Home
             {
                 TaoGiaoDienPhong(pbus.getTang(item.ToString()), pbus.getTang_PhongTrong(item.ToString(), false), pbus.getTang_PhongTrong(item.ToString(), true), "Tầng " + item.ToString());
             }
-
         }
 
         private void btn1000_ItemClick(object sender, ItemClickEventArgs e)
@@ -555,6 +576,11 @@ namespace Home
         {
             frmTraKhachDoan frm = new frmTraKhachDoan(this);
             frm.ShowDialog();
+        }
+
+        private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

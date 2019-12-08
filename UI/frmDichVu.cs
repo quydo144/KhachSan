@@ -15,13 +15,19 @@ namespace Home
 {
     public partial class frmDichVu : DevExpress.XtraEditors.XtraForm
     {
-
+        frmHome frm;
         List<eDichVu> listDV;
         DichVuBUS dvBUS;
         eDichVu dv = new eDichVu();
         public frmDichVu()
         {
             InitializeComponent();
+        }
+
+        public frmDichVu(frmHome home)
+        {
+            InitializeComponent();
+            frm = home;
         }
 
         private void frmDichVu_Load(object sender, EventArgs e)
@@ -46,6 +52,16 @@ namespace Home
                 MessageBox.Show("Thêm thành công!!!");
             List<eDichVu> listDichVu = dvBUS.getalldv();
             gridControlDV.DataSource = listDichVu;
+        }
+
+        private void frmDichVu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PhongBUS pbus = new PhongBUS();
+            if (frm.ExitAllForm())
+            {
+                frm.AnflowLayoutPanel();
+                frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            }
         }
     }
 }

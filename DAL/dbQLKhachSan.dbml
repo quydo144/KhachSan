@@ -51,10 +51,12 @@
   </Table>
   <Table Name="dbo.HoaDonDichVu" Member="HoaDonDichVus">
     <Type Name="HoaDonDichVu">
-      <Column Name="maHDDV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maHDDV" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="maThue" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="maPhong" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="maKhach" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayLap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="gioLap" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Association Name="ChiTietThuePhong_HoaDonDichVu" Member="ChiTietThuePhong" ThisKey="maThue,maKhach,maPhong" OtherKey="maThue,maKhach,maPhong" Type="ChiTietThuePhong" IsForeignKey="true" />
     </Type>
   </Table>

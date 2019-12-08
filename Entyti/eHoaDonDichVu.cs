@@ -9,13 +9,17 @@ namespace Entyti
     public class eHoaDonDichVu
     {
         private string maHDDV, maThue, maKH, maPhong;
+        private DateTime ngayLap;
+        private TimeSpan gioLap;
 
-        public eHoaDonDichVu(string maHDDV, string maThue, string maKH, string maPhong)
+        public eHoaDonDichVu(DateTime ngayLap, TimeSpan gioLap, string maHDDV, string maThue, string maKH, string maPhong)
         {
             this.maHDDV = maHDDV;
             this.maThue = maThue;
             this.maKH = maKH;
             this.maPhong = maPhong;
+            this.ngayLap = ngayLap;
+            this.gioLap = gioLap;
         }
         
         public eHoaDonDichVu()
@@ -72,6 +76,32 @@ namespace Entyti
             set
             {
                 maThue = value;
+            }
+        }
+
+        public DateTime NgayLap
+        {
+            get
+            {
+                return ngayLap;
+            }
+
+            set
+            {
+                ngayLap = value;
+            }
+        }
+
+        public TimeSpan GioLap
+        {
+            get
+            {
+                return gioLap;
+            }
+
+            set
+            {
+                gioLap = value;
             }
         }
 

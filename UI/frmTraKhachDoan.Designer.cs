@@ -107,7 +107,7 @@
             // tienPhong
             // 
             this.tienPhong.Caption = "Tiền phòng";
-            this.tienPhong.DisplayFormat.FormatString = "{0:#,##0 vnđ}";
+            this.tienPhong.DisplayFormat.FormatString = "{0:#,##0}";
             this.tienPhong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.tienPhong.FieldName = "TienPhong";
             this.tienPhong.MinWidth = 25;

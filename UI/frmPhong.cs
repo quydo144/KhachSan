@@ -22,7 +22,6 @@ namespace Home
             InitializeComponent();
         }
 
-
         public frmPhong(frmHome frm1)
         {
             InitializeComponent();
@@ -95,8 +94,11 @@ namespace Home
         private void frmPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
             PhongBUS pbus = new PhongBUS();
-            frm.AnflowLayoutPanel();
-            frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            if (frm.ExitAllForm())
+            {
+                frm.AnflowLayoutPanel();
+                frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            }
         }
     }
 }

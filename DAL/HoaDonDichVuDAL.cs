@@ -18,6 +18,8 @@ namespace DAL
             temp.maThue = dv.MaThue;
             temp.maPhong = dv.MaPhong;
             temp.maKhach = dv.MaKH;
+            temp.ngayLap = dv.NgayLap;
+            temp.gioLap = dv.GioLap;
             db.HoaDonDichVus.InsertOnSubmit(temp);
             db.SubmitChanges();
             return 1;

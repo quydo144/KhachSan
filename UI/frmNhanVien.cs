@@ -15,12 +15,19 @@ namespace Home
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        frmHome frm;
         List<eNhanVien> listNV; //Khai báo danh sách phòng học (TreeView)
         NhanVienBUS nvBus;
         eNhanVien nv = new eNhanVien();
         public frmNhanVien()
         {
             InitializeComponent();
+        }
+
+        public frmNhanVien(frmHome frm1)
+        {
+            InitializeComponent();
+            frm = frm1;
         }
 
         private void frmNhanVien_Load(object sender, EventArgs e)
@@ -84,19 +91,7 @@ namespace Home
             newnv.SoDT = txtSdt.Text;
             newnv.PassWord = txtPass.Text;
             newnv.NgaySinh = Convert.ToDateTime(dtpNS.Text);
-            ////Đối tượng lấy ra từ gridcontrols
-            //eNhanVien nvgrid = new eNhanVien();
-            //nvgrid.MaNV= gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[0]).ToString();
-            //nvgrid.HoTen= gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[1]).ToString();
-            
-            //nvgrid.ChucVu = false;
-            //nvgrid.SoCMND = gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[2]).ToString();
-            //nvgrid.SoDT = gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[3]).ToString();
-            //nvgrid.PassWord = gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[4]).ToString();
-            //nvgrid.NgaySinh = Convert.ToDateTime(gridViewNV.GetRowCellValue(gridViewNV.FocusedRowHandle, gridViewNV.Columns[7]).ToString());
-
             nvBus.SuaNV(newnv);
-            //nvBus.SuaNV(nvgrid);
             //đưa lại datagridview
             List<eNhanVien> listNhanVien = nvBus.getallnv();
             gclDSNV.DataSource = listNhanVien;
@@ -149,10 +144,6 @@ namespace Home
             }
             else
                 gclDSNV.DataSource = nvBus.getallSoDTNV(str);
-            //else
-            //{
-            //    dsSach = sach.getAllTen(str);
-            //}
         }
 
         private void gridViewNV_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -178,6 +169,16 @@ namespace Home
             txtPass.Text = gridViewNV.GetFocusedRowCellValue("PassWord").ToString();
             if (Convert.ToBoolean(gridViewNV.GetFocusedRowCellValue("GioiTinh").ToString()) == true) radNam.Checked = true;
             else radNu.Checked = true;
+        }
+
+        private void frmNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            PhongBUS pbus = new PhongBUS();
+            if (frm.ExitAllForm())
+            {
+                frm.AnflowLayoutPanel();
+                frm.TaoGiaoDienPhong(pbus.getallphong(), pbus.gettinhtrangp(false), pbus.gettinhtrangp(true), "Phòng");
+            }
         }
     }
 }

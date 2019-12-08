@@ -1255,6 +1255,10 @@ namespace DAL
 		
 		private string _maKhach;
 		
+		private System.DateTime _ngayLap;
+		
+		private System.TimeSpan _gioLap;
+		
 		private EntityRef<ChiTietThuePhong> _ChiTietThuePhong;
 		
     #region Extensibility Method Definitions
@@ -1269,6 +1273,10 @@ namespace DAL
     partial void OnmaPhongChanged();
     partial void OnmaKhachChanging(string value);
     partial void OnmaKhachChanged();
+    partial void OnngayLapChanging(System.DateTime value);
+    partial void OnngayLapChanged();
+    partial void OngioLapChanging(System.TimeSpan value);
+    partial void OngioLapChanged();
     #endregion
 		
 		public HoaDonDichVu()
@@ -1277,7 +1285,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHDDV", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHDDV", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maHDDV
 		{
 			get
@@ -1365,6 +1373,46 @@ namespace DAL
 					this._maKhach = value;
 					this.SendPropertyChanged("maKhach");
 					this.OnmaKhachChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayLap", DbType="DateTime NOT NULL")]
+		public System.DateTime ngayLap
+		{
+			get
+			{
+				return this._ngayLap;
+			}
+			set
+			{
+				if ((this._ngayLap != value))
+				{
+					this.OnngayLapChanging(value);
+					this.SendPropertyChanging();
+					this._ngayLap = value;
+					this.SendPropertyChanged("ngayLap");
+					this.OnngayLapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioLap", DbType="Time NOT NULL")]
+		public System.TimeSpan gioLap
+		{
+			get
+			{
+				return this._gioLap;
+			}
+			set
+			{
+				if ((this._gioLap != value))
+				{
+					this.OngioLapChanging(value);
+					this.SendPropertyChanging();
+					this._gioLap = value;
+					this.SendPropertyChanged("gioLap");
+					this.OngioLapChanged();
 				}
 			}
 		}

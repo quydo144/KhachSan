@@ -59,5 +59,9 @@ namespace BUS
         {
             return ndal.getenNV_ByID(id);
         }
+        public string getTenNV_byEmail(string email)
+        {
+            return ndal.getTenNV_byEmail(email);
+        }
     }
 }
